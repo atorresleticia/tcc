@@ -1,0 +1,81 @@
+\chapter{Recuperação de Informação}
+\label{cap_2}
+
+Um ativo importante em qualquer organização é a informação. Segundo Kimball e Ross \cite{kimball2002dw} essa informação é mantida sob duas formas: sistemas de banco de dados operacionais, onde a informação é armazenada; e DWs, onde ela é recuperada. Em sistemas operacionais geralmente os usuários lidam com o mesmo registro e realizam a mesma tarefa exaustivamente sob uma única informação, permanecendo no domínio das transações; enquanto que em um DW pode-se ver o progresso da organização utilizando dados armazenados continuamente, de forma otimizada para a recuperação de dados. Também, são formuladas perguntas com a finalidade de responder a alguma questão de negócio, como \textit{"quantos pedidos foram recebidos pelo fornecedor X no período de tempo Y?"}, ou \textit{"qual foi o impacto no número de vendas ao mudar o formato de envio de A para B?"}. Para responder questões dessa natureza não é viável lidar com dados de forma individual, mas sim recuperar um conjunto de dados a fim de formular uma resposta.
+
+
+\section{\textit{Data Warehouses} e Aplicações OLAP}
+
+De acordo com Inmon \cite{inmon2005building}, DWs são base de todos os Sistemas de Decisão de Suporte (\textit{Decision Support Systems} -- DSS). DSS são tecnologias utilizadas para decisões de negócio e solução de problemas, e incluem componentes que realizam gerenciamento de banco de dados e que permitem uma interação com o usuário de forma a simplificar consultas e geração de relatórios \cite{shim2002past}. DWs foram as primeiras ferramentas a surgirem como solução para o suporte à decisão de negócio, integrando dados de diferentes bancos de dados operacionais \cite{inmon2005building, kimball2002dw}.
+
+De forma geral, um DW é um repositório de dados capaz de fornecer rapidamente informações consistentes e cruciais para a tomada de decisão de uma organização, de tal forma que essa informação possa ser acessada de maneira intuitiva e legível pelo usuário, a fim de combinar diferentes informações entre os dados armazenados \cite{kimball2002dw}. Deve também se adaptar a possíveis mudanças, sejam elas mudanças comerciais, mudanças nos dados ou na tecnologia. Inmon \cite{inmon2005building} define um DW como: uma coleção de dados não-volátil, ou seja, que não muda após inserida no \textit{warehouse}; orientado ao assunto principal da organização; integrado e variante no tempo para que seja mantido um histórico a fim de analisar situações passadas. Do ponto de vista estrutural, Wremble e Koncilia \cite{wrembel2007data} definem um DW como uma base de dados homogênea, local e centralizada.
+
+Para analisar os dados de um DW além de implementá-lo é necessário que alguma aplicação leia seu conteúdo e apresente-o de forma gráfica e intuitiva ao analisador. Aplicações OLTP (\textit{On-Line Transactional Processing}) são utilizadas por bancos de dados operacionais e operam transações atômicas e isoladas de forma repetitiva, que correspondem ao dia-a-dia de uma organização \cite{chaudhuri1997overview}. DWs trabalham com suporte à decisão e são intensivos à consultas \textit{ad hoc} complexas, que acessam milhões de registros. Sendo assim, os dados históricos, a taxa de vazão de uma consulta e o tempo de resposta são mais importantes que pequenas transações. À aplicação aceita por um DW dá-se o nome de OLAP, cujo objetivo, de acordo com Codd; Codd e Salley \cite{codd1998providing}, é identificar tendências, padrões de comportamento e anomalias, bem como relações em dados aparentemente não relacionados. Os resultados dessas análises são a base para tomada de decisões de negócio. Portanto, DWs e aplicações OLAP são componentes chave para a construção de um ambiente de análise.
+
+Dentro do domínio de um DW existem diversos componentes que realizam funções específicas a fim de construir um ambiente de \textit{warehouse} desde a obtenção dos dados de fontes externas e sistemas operacionais de bancos de dados, até o acesso a esses dados através do DW por alguma consulta analítica definida sob uma aplicação OLAP. Para entender esta arquitetura fim-a-fim, ilustrada na Figura \ref{fig:dw_arq}, é necessário compreender alguns componentes e conceitos que formam um DW \cite{kimball2002dw}:
+
+\begin{itemize}
+    \item \textbf{Sistemas de Fonte Operacional}: possuem detalhes sobre as transações do negócio, correspondendo a ambientes OLTP. Engloba os dados que irão estruturar as informações do DW, portanto se encontram externos ao \textit{warehouse}. Podem ser tanto sistemas de banco de dados ou alguma outra fonte de dados, como um documento no formato XLS, CSV, TXT; e sistemas CRM.
+    \item \textbf{\textit{Staging Area}}: compreende tanto uma área de armazenamento temporária quanto um conjunto de processos denominado ETL (\textit{extract-transformation-load}). De forma geral é uma área a qual os usuários não têm acesso, onde os dados são traduzidos para algo que possa ser enviado de maneira compatível ao \textit{warehouse} e não se trabalha diretamente sobre os dados transacionais. Quanto aos processos ETL, a fase de Extração (\textit{Extraction}) consiste na leitura da fonte de dados, transferindo o conteúdo necessário para a \textit{staging area}; após essa extração pode ser necessário realizar uma "limpeza" nos dados; unir dados de diferentes fontes; tratar duplicatas e atribuir chaves do \textit{warehouse}. A isto dá-se o nome de Transformação (\textit{Transformation}). A última fase, fase de Carregamento (\textit{Load}), é responsável por carregar, ou popular, os dados na área de estruturação de dados do DW.
+    \item \textbf{Estruturação de Dados}: trata de como os dados serão organizados, armazenados e disponibilizados para consultas de usuários, relatórios e outras aplicações. No que tange à comunidade empresarial, a fase de apresentação de dados \textit{é} o DW em si, pois corresponde ao que pode ser acessado via ferramentas de acesso a dados. A etapa de estruturação é comumente definida como sendo um conjunto de \textit{data marts}. \textit{Data marts} são subconjuntos do total de informações de um DW, cada qual representando os dados de um determinado assunto, departamento, ou processo de negócio. Nesta fase é definida a modelagem conceitual do ambiente de análise do DW.
+    \item \textbf{Ferramentas de Acesso aos Dados}: são formas de aplicar uma consulta, dentro de aplicações OLAP, aos dados organizados na fase de estruturação. Pode ser uma consulta \textit{ad hoc} ou algo mais complexo, como consultas aplicadas à mineração de dados.
+    
+\end{itemize}
+
+\begin{figure*}[htpb]
+	\centering
+		\includegraphics[width=\textwidth]{img/dw_arc}
+	\caption{Arquitetura de um \textit{Data Warehouse}. Fonte: adaptado de Kimball e Ross \cite{kimball2002dw}}
+	\label{fig:dw_arq}
+\end{figure*}
+
+Ainda não há um consenso acerca da modelagem conceitual da área de apresentação de dados de um ambiente de análise nos DWs \cite{sen2005comparison}. Segundo Sen e Sinha \cite{sen2005comparison} as duas técnicas de modelagem mais utilizadas são a ER (Entidade-Relacional) e a Dimensional. A primeira segue o padrão de modelagem para ambientes OLTP, que traduz a modelagem ER para um esquema relacional em seguida normalizando-o geralmente até a Terceira Forma Normal (3NF) \cite{kimball2002dw}. O modelo Dimensional, ou multidimensional, por sua vez, evita atingir o mesmo nível de normalização da modelagem ER. Ele é composto por tabelas denominadas Tabelas Fato e Tabelas Dimensão \cite{kimball2002dw}, conhecido comumente como modelo \textit{Star Join}, ou apenas \textit{Star} \cite{sen2005comparison}. Uma Tabela Fato é a principal tabela do modelo Dimensional, contemplando atributos responsáveis por determinar as métricas de negócio. Em sua maioria são atributos numéricos, relacionados à \textit{quantidade}; e aditivos, visto que uma consulta em um DW pode retornar até milhares de tuplas, tornando interessante o conhecimento de informações como o total de um atributo dada alguma questão de negócio. As Tabelas Fato são auxiliadas pelas Tabelas Dimensão no que concerne à descrição textual das questões de negócio. É comum estas tabelas terem de 50 a 100 atributos, e que estes atributos sejam responsáveis pelas restrições de uma consulta, sendo também comumente utilizados em agrupamentos. Todas as Tabelas Fato tem duas ou mais chaves estrangeiras (\textit{Foreign Keys} -- FKs) relacionadas às chaves primárias (\textit{Primary Keys} -- PKs) das Tabelas Dimensão, como mostra o exemplo da Figura \ref{fig:star_dim}, onde a tabela Vendas corresponde à uma Tabela Fato e as demais à Tabelas Dimensão. Note que esta figura também faz referência a um modelo \textit{Star}.
+
+\begin{figure*}[htpb]
+	\centering
+		\includegraphics[width=13cm]{img/star_dim}
+	\caption{Exemplo de esquema \textit{Star} com tabelas Fato e Dimensão}
+	\label{fig:star_dim}
+\end{figure*}
+
+Mesmo que a modelagem Dimensional não atinja a normalização 3NF, modelos \textit{Star} podem ser trabalhados de forma a oferecer suporte à hierarquia de atributos das Tabelas Dimensão, permitindo que estas tenham "Tabelas Subdimensão". A esse refinamento se dá o nome de \textit{Snow Flake} \cite{navathe2011banco}. Embora tenham uma estrutura mais simplificada, segundo Levene e Loizou \cite{levene2003snowflake} a escolha do uso de esquemas \textit{Snow Flake} se dá por serem um esquema intuitivo, de fácil entendimento, passíveis à otimização de consultas, e de fácil extensão -- uma vez que pode-se adicionar atributos às tabelas sem interferir em programas já existentes. Uma possível adaptação de um modelo \textit{Star} para \textit{Snow Flake} é como mostrado na Figura \ref{fig:snow}, no qual foi adaptado o modelo da Figura \ref{fig:star_dim}, adicionando a Tabela Subdimensão Cidade. 
+
+\begin{figure*}[htpb]
+	\centering
+		\includegraphics[width=13cm]{img/snow}
+	\caption{Exemplo de esquema \textit{Snow Flake} adaptado da Figura \ref{fig:star_dim}}
+	\label{fig:snow}
+\end{figure*}
+
+Para que possa ser construído um DW e aplicada a modelagem acima descrita, é necessário alguma ferramenta que possa fazer o gerenciamento deste DW. De acordo com Elmasri e Navathe \cite{navathe2011banco} um banco de dados pode ser gerenciado por um sistema que \textit{facilite} este processo de gerenciamento no banco de dados. Esse sistema é conhecido por o Sistema Gerenciador de Banco de Dados, ou SGBD.
+
+\section{Sistema Gerenciador de Banco de Dados}
+
+Elmasri e Navathe \cite{navathe2011banco} citam algumas vantagens do uso de um SGBD como que fazem com que possam ser aplicados como gerenciadores de um DW:
+
+\begin{itemize}
+    \item \textbf{Controle de redundância}: dados podem ser adicionados em um DW por diferentes fontes, e são passíveis de duplicação, causando desperdício na capacidade de armazenamento. A verificação de duplicatas pode ser imposta automaticamente no SGBD ao projetar o banco de dados, ou neste caso, o DW.
+    \item \textbf{Restrição de acesso}: em uma organização nem todos os funcionários devem ou podem ter acesso ao DW. Este acesso pode ser restringido utilizando as permissões de usuários definidas em um SGBD.
+    \item \textbf{Execução de consultas e atualizações de forma eficiente}: SGBDs utilizam estruturas de \textit{índices}, implementadas normalmente utilizando árvores ou \textit{hash} para tornar mais eficiente pesquisas em disco. 
+    \item \textbf{Restrições de Integridade}: o SGBD é responsável por garantir que (i) tipos de dados não sejam inseridos de forma inconsistente; (ii) relações entre registros sejam efetuadas e (iii) restrições de chave sejam mantidas.
+\end{itemize}
+
+Para realizar o gerenciamento de DWs podem ser utilizados SGBDs relacionais tradicionais orientados à linha, em que todas as informações de uma entidade são mantidas juntas. Porém, de acordo com Matei e Bank \cite{matei2010column} o tamanho dos DWs está chegando à casa dos \textit{petabytes}. O maior desafio portanto é garantir o bom desempenho destes \textit{warehouses}, bem como acesso do usuário; aspectos estes que acabam sendo degradados por estruturas orientadas à linha conforme o tamanho do DW aumenta. Ademais, consultas no domínio analítico percorrem todo o banco de dados processando somente os atributos necessários de um grande volume de dados, ao contrário de operações transacionais normalmente executadas por SGBDs orientados à linha, que percorrem a tupla toda, como mostra a Figura \ref{fig:sgbd_linha}. Mesmo a adição de índices prejudicaria o desempenho, pois o elevado número de diferentes consultas faz com que seja necessário mais processamento para ler os índices \cite{matei2010column}. Para que essa leitura seja aprimorada uma nova abordagem de SGBDs orientados à coluna pode ser aplicada como gerenciador de DWs.
+
+\begin{figure*}[h]
+	\centering
+		\includegraphics[width=12cm]{img/bd_linha}
+	\caption{Exemplo de leitura em um SGBD orientado à linha. Fonte: adaptado de Matei e Bank \cite{matei2010column}}
+	\label{fig:sgbd_linha}
+\end{figure*}
+
+Em um SGBD colunar, todas as instâncias de um mesmo atributo são armazenadas juntas. Com isso, em uma leitura, são retornados apenas os atributos requeridos pelo usuário, sem realizar a leitura de uma tupla inteira \cite{khoshafian1987query}, como mostra a Figura \ref{fig:sgbd_col}, o que casa com o modo de leitura de um ambiente analítico. Isso também torna mais eficiente as operações de agrupamento, bastante utilizado em ambientes OLAP, visto que os valores de um mesmo atributo são armazenados consecutivamente. Ainda, a compressão de dados, de acordo com Abadi; Madden e Ferreira \cite{abadi2006integrating}, é mais eficiente em um SGBD colunar, pois aumenta-se a chance de haver atributos iguais em linhas adjacentes na mesma coluna, visto que são do mesmo tipo. Em um SGBD orientado à linha para realizar compressão tuplas inteiras, com diferentes tipos de atributo, devem coincidir. Atributos com valor \textit{NULL} são tratados mais facilmente em um SGBD orientado à coluna, pois ele pode ser tratado como um valor a ser comprimido.
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=12cm]{img/bd_colunar.png}
+	\caption{Exemplo de leitura em um SGBD orientado à coluna. Fonte: adaptado de Matei e Bank \cite{matei2010column}}
+	\label{fig:sgbd_col}
+\end{figure}
+
+Exemplos de SGBDs colunares são o (i) Sybase IQ \cite{macnicol2004sybase}, que é utilizado para gerir DWs e otimizado para trabalhar com \textit{Big Data}, possuindo escalabilidade na casa dos \textit{petabytes}; o (ii) MonetDB \cite{monetdb2017c}, pioneiro na abordagem colunar; o (iii) Vertica \cite{vertica2017c}, projetado para DWs em nuvem; e o (iv) C-Store \cite{stonebraker2005c}, desenvolvido por colaboradores do MIT (\textit{Massachusetts Institute of Technology}), Yale, Brandeis University, Brown University e UMass Boston.

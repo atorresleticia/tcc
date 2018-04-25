@@ -1,0 +1,207 @@
+\documentclass[12pt,oneside,a4paper,brazil]{book}
+
+\usepackage[brazil]{babel}
+\usepackage{t1enc}				
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} 
+\usepackage{times}	
+\usepackage{latexsym}		
+\usepackage{alltt}	
+\usepackage{fancyhdr}	
+\usepackage{indentfirst}		  
+\usepackage{vmargin}
+\usepackage{bbm}
+\usepackage{ams}
+\usepackage[]{graphicx}	
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{clrscode}
+\usepackage{float}
+\usepackage[normal]{subfigure} 
+\usepackage[normalem]{ulem}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{graphicx} 
+\usepackage{environ}
+\usepackage{verbatim}
+%\usepackage[num]{abntex2cite}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{textcomp}
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{1,1,1}
+\lstset{
+	backgroundcolor=\color{lbcolor},
+	tabsize=3,
+	rulecolor=,
+	language=SQL,
+        basicstyle=\small,
+        upquote=true,
+        aboveskip={1\baselineskip},
+        columns=fixed,
+        showstringspaces=false,
+        extendedchars=true,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+				numbers=left,
+        numberstyle=\tiny,
+        keywordstyle=\color[rgb]{0,0,1},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+
+
+\NewEnviron{myequation}{%
+\begin{equation}
+\scalebox{1.5}{$\BODY$}
+\end{equation}
+}
+%=======================================================================
+
+% Dimensões a ocupar na página (package vmargin)
+\setpapersize [portrait]{A4}
+\setmarginsrb {30mm} % margem esquerda
+					{35mm} % margem superior com cabeçalho
+					{20mm} % margem direita
+					{20mm} % margem inferior
+					{0mm}	% altura do espaço para cabeçalho
+					{0mm}	% espaço entre fim do cabeçalho e início do
+							% texto
+					{10mm}	 % altura do espaço para rodapé
+					{10mm}	 % espaço entre fim do texto e fim do rodapé
+
+
+%--------------------------------------------------------------
+% Definições para o espaçamento entre linhas. -----------------
+
+\newlength{\defbaselineskip}
+\setlength{\defbaselineskip}{\baselineskip}
+\newcommand{\setlinespacing}[1]%
+			  {\setlength{\baselineskip}{#1 \defbaselineskip}}
+
+% Define espaçamento simples
+%\newcommand{\singlespacing}{\setlength{\baselineskip}{\defbaselineskip}}
+
+% Define espaçamento "um e meio"
+\newcommand{\oneandhalfspacing}{\setlength{\baselineskip}
+									{1.5 \defbaselineskip}}
+
+% Define espaçamento duplo
+%\newcommand{\doublespacing}{\setlength{\baselineskip}
+%									{2.0 \defbaselineskip}}
+
+%------------------------------------------------------------
+% Hifenizaç?o das palavras desconhecidas
+% Siga o modelo abaixo para hifenizar as palavras que o latex desconhece:
+
+\hyphenation{a-na-li-sa-dos}
+\hyphenation{con-tex-tu-a-li-za-ção}
+\hyphenation{de-ta-lha-men-to}
+\hyphenation{mi-cros-co-pi-a}
+\hyphenation{mo-de-los}
+\hyphenation{po-pu-la-ção}
+\hyphenation{pro-ble-má-ti-ca}
+\hyphenation{re-co-nhe-ce-dor}
+\hyphenation{trans-cre-ver}
+
+%---------------------------------------------------------------
+% Este espaço entre linhas parece ser o mais apropriado
+\oneandhalfspacing
+
+% Ser indulgente no preenchimento das linhas
+\sloppy
+
+\makeindex
+
+\makeglossary
+
+%============================================================
+\begin{document}
+
+
+
+% Numeraç?o em romanos para páginas iniciais (capa, agradecimentos, etc)
+\pagestyle{empty}
+\pagenumbering{roman}
+
+% Páginas iniciais
+\include{iniciais/capa}
+\include{iniciais/rosto}
+\include{iniciais/aprova}
+
+\oneandhalfspacing
+
+\include{iniciais/dedica}
+\include{iniciais/agradece}
+
+% Passa a numerar embaixo no centro
+\pagestyle{plain}
+\include{iniciais/sumario}
+\include{iniciais/resumo}
+
+%=======================================================================
+
+% Definir um estilo para páginas completas (cabeçalho + rodapé)
+\pagestyle{plain}
+
+% Marca de capítulo do tipo "2. Blábláblá..." no cabeçalho
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ {#1}}{}}
+
+% Para aumentar o tamanho da caixa para o cabeçalho
+\addtolength{\headheight}{\baselineskip}
+
+% Definindo o conteúdo do cabeçalho...
+\fancyhf{}
+\fancyhead[LO,LE]{\nouppercase{\textsf{\leftmark}}}
+\fancyhead[RO,RE]{\thepage}
+
+% Para garantir que a primeira página de cada capítulo...
+\fancypagestyle{plain}{
+\fancyhf{}									% n?o terá head ou foot
+\renewcommand{\headrulewidth}{0pt}} % nem linhas de cabeçalho
+
+%=======================================================================
+
+% Capítulos s?o numerados normalmente
+\pagenumbering {arabic}
+
+% Inclus?o dos capítulos
+\oneandhalfspacing
+\include{1-introducao/capitulo_intro}
+\include{2-DW/capitulo_dw}
+\include{3-SGBD/capitulo_sgbd}
+\include{4-NoSQL/capitulo_nosql}
+\include{5-TPCH/capitulo_tpch}
+\include{capitulo4/capitulo4}
+
+% Como numerar os apêndices como inteiros
+\appendix
+
+% Inclus?o dos apêndices
+\oneandhalfspacing
+\include{apend/apendice2}
+\include{apend/apendice3}
+
+% incluindo o glossário
+%\include {glossario/glossario}
+\pagebreak
+
+% Referências Bibliográficas
+\bibliographystyle{abnt-num} % Estilo abnt numérico. 
+%\bibliographystyle{abntex2-alf} % Estilo (AUTOR, data)
+
+\pagebreak
+\addcontentsline{toc}{chapter}{Referências Bibliográficas}
+
+\bibliography{Referencias}
+\end{document}
+
+%% Fim do Documento

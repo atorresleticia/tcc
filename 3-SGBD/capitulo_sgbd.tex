@@ -1,0 +1,31 @@
+\chapter{Sistemas Gerenciadores de Banco de Dados}
+\label{sgbd}
+
+Antes de se ter um sistema voltado para gerenciamento de um banco de dados, eram utilizados para persistência de dados o sistema de arquivos. 
+Apesar de simples, esta abordagem apresentava alguns problemas por não apresentar suporte à redundância de informações; não garantir integridade de dados; 
+falta de segurança; e o acesso e gerenciamento dos dados depende de programas e aplicativos, fazendo com que seja necessário criar um novo aplicativo a 
+cada requisição de dados diferente. Outro problema crítico é não se ter informação de relacionamento entre arquivos diferentes.
+
+Como forma de manter o gerenciamento de dados independente de aplicações e programas bem como solucionar os demais falhas do sistema de arquivos 
+foram criados os Sistemas Gerenciadores de Bancos de Dados, os SGBD.  De acordo com Elmasri e Navathe \cite{navathe2011banco}, os SGBD são uma coleção de programas para 
+criação e manutenção de um banco de dados, que facilita a definição, construção, manipulação e compartilhamento de dados entre usuários e aplicações.
+
+Dentre as vantagens que os SGBD trouxeram em detrimento ao sistema de arquivos estão:
+
+\begin{itemize}
+    \item{\textbf{Controle de redundância}}, para que não seja permitido duplicação de dados, pois isto causaria desperdício na capacidade de armazenamento.
+    \item{\textbf{Restrição de acesso aos usuários}}, pois não será permitida manipulação do banco a todos os usuários, ou funcionários de uma empresa por exemplo.
+    \item{\textbf{Execução de consultas eficiente}} através do uso de índices, normalmente implementadas utilizando hash ou árvores, para que o acesso ao disco seja mais rápido.
+    \item{\textbf{Restrições de integridade}}, a fim de garantir que (i) dados não sejam inseridos de forma inconsistente de acordo com o tipo de atributo definido; 
+    (ii) as relações entre entidades sejam efetuadas e (iii) restrições de chave sejam mantidas.
+    \item{\textbf{Persistência de dados}}, para garantir que os dados serão inseridos e de fato armazenados no modelo.
+    \item{\textbf{Backup}} de dados periodicamente para evitar problemas caso aconteça alguma perda no banco e posterior \textbf{restauração}, para recuperar uma imagem do último backup feito no banco.
+\end{itemize}
+
+SGBD podem ser classificados de acordo com diferentes critérios, 
+
+\section{SGBD Relacionais}
+
+
+
+\section{SGBD NoSQL}

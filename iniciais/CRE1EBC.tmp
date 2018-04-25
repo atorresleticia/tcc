@@ -1,0 +1,38 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% Lista de figuras, lista de Tabelas, Lista de Símbolos e Sumário
+%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagebreak
+\addcontentsline{toc}{chapter}{Lista de Figuras}
+\listoffigures
+
+\pagebreak
+\addcontentsline{toc}{chapter}{Lista de Tabelas}
+\listoftables
+
+\pagebreak
+\addcontentsline{toc}{chapter}{Lista de Abreviaturas e Siglas}
+\chapter*{Lista de Abreviaturas e Siglas}
+\begin{tabular}{ll}
+	BD & Banco de Dados\\
+	TPC & \textit{Transaction Processing Performance Council}\\
+	TPC-H & TPC \textit{Benchmark} H\\
+	DW & Data Warehouse\\
+	OLAP & \textit{Online Analytical Processing}
+\end{tabular}
+
+\pagebreak
+\addcontentsline{toc}{chapter}{Lista de Símbolos}
+\chapter*{Lista de Símbolos}
+\begin{tabular}{ll}
+	$Q_{i}$ & representa uma consulta, onde \mbox{$1 \le i \le 22$}\\
+	\textit{S} & define o número de sessões de consulta do Teste de Vazão\\
+	\textit{s} & representa uma dada sessão, onde \mbox{$1 \le s \le S$}\\
+	$RF_{j}$ & representa a Função de atualização\\
+\end{tabular}
+
+\pagebreak
+\addcontentsline{toc}{chapter}{Sumário}
+\tableofcontents

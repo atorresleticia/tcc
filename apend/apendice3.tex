@@ -1,0 +1,872 @@
+%============================================================
+
+\chapter{Consultas do Ambiente Desnormalizado}
+\label{queries_2}
+
+
+São apresentadas aqui as 22 consultas realizadas no Ambiente Desnormalizado adaptado da proposta original do TPC-H. As questões de negócio são as mesmas que as apresentadas no Apêndice \ref{queries_1}.
+
+\begin{enumerate}
+
+%--------------------------------------1
+\item Consulta de Relatório de Resumo de Preços 
+
+	\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	DELTA & 90\\
+\end{tabular}
+	
+	\begin{lstlisting}[language=SQL]
+select
+    i_returnflag,
+    i_linestatus,
+    sum(i_quantity) as sum_qty,
+    sum(i_extendedprice) as sum_base_price,
+    sum(i_extendedprice * (1 - i_discount)) as sum_disc_price,
+    sum(i_extendedprice * (1 - i_discount) * (1 + i_tax)) as sum_charge,
+    avg(i_quantity) as avg_qty,
+    avg(i_extendedprice) as avg_price,
+    avg(i_discount) as avg_disc,
+    count(*) as count_order
+from
+    item
+where
+    i_shipdate <= date '1998-12-01' - interval '[DELTA]' day (3)
+group by
+    i_returnflag,
+    i_linestatus
+order by
+    i_returnflag,
+    i_linestatus;
+	\end{lstlisting}
+
+%--------------------------------------2
+\item Consulta de Fornecedor de Custo Mínimo
+	
+	\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	SIZE & 15\\
+	TYPE & BRASS\\
+	REGION & EUROPE\\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+    s_acctbal,
+    s_name,
+    s_nation_name,
+    p_partkey,
+    p_mfgr,
+    s_address,
+    s_phone,
+    s_comment
+from
+    part,
+    supplier
+where
+    p_partkey = i_partkey
+    and s_suppkey = i_suppkey
+    and p_size = [SIZE]
+    and p_type like '%[TYPE]'
+    and s_region_name = '[REGION]'
+    and i_partsupp_supplycost = (
+        select
+            min(i_partsupp_supplycost)
+        from
+            item,
+            supplier
+        where
+            p_partkey = i_partkey
+            and s_suppkey = i_suppkey
+            and s_region_name = '[REGION]'
+    )
+order by
+    s_acctbal desc,
+    s_nation_name,
+    s_name,
+    p_partkey;
+set rowcount 100
+go
+	\end{lstlisting}
+
+%--------------------------------------3
+\item Consulta de Prioridade de Envio
+	
+	\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	SEGMENT & BUILDING\\
+	DATE & 1995-03-15\\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+	i_itemkey,
+	sum(i_extendedprice * (1 - i_discount)) as revenue,
+	i_order_orderdate,
+	i_order_shippriority
+from
+	customer,
+	item
+where
+	c_mktsegment = '[SEGMENT]'
+	and c_custkey = i_custkey
+	and i_order_orderdate < date '[DATE]'
+	and i_shipdate > date '[DATE]'
+group by
+	i_itemkey,
+	i_order_orderdate,
+	i_order_shippriority
+order by
+	revenue desc,
+	o_orderdate
+set rowcount 10
+go
+	\end{lstlisting}
+	
+%--------------------------------------4
+\item Consulta de Verificação de Prioridade de Pedido
+	
+	\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	DATE & 1993-07-01\\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+	i_order_orderpriority,
+	count(*) as order_count
+from
+	item
+where
+	i_order_orderdate >= date '[DATE]'
+	and i_order_orderdate < date '[DATE]' + interval '3' month
+	and exists (
+		select
+			*
+		from
+			item
+		where
+			i_commitdate < i_receiptdate
+	)
+group by
+	i_order_orderpriority
+order by
+	i_order_orderpriority;
+	\end{lstlisting}
+
+%--------------------------------------5
+\item Consulta de Volume do Fornecedor Local
+	
+	\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	REGION & ASIA\\
+	DATE & 1994-01-01\\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+	s_nation_name,
+	sum(i_extendedprice * (1 - i_discount)) as revenue
+from
+	customer,
+	item
+	supplier,
+where
+	c_custkey = i_custkey
+	and i_suppkey = s_suppkey
+	and c_nation_name = s_nation_name
+	and s_region_name = '[REGION]'
+	and i_order_orderdate >= date '[DATE]'
+	and i_order_orderdate < date '[DATE]' + interval '1' year
+group by
+	s_nation_name
+order by
+	revenue desc;
+	\end{lstlisting}
+	
+%--------------------------------------6
+\item Previsão de Mudança de Receita
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	DATE & 1994-01-01\\
+	DISCOUNT & .06\\
+	QUANTITY & 24\\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+	sum(i_extendedprice * i_discount) as revenue
+from
+	item
+where
+	i_shipdate >= date '[DATE]'
+	and i_shipdate < date '[DATE]' + interval '1' year
+	and i_discount between [DISCOUNT] - 0.01 and [DISCOUNT] + 0.01
+	and i_quantity < [QUANTITY];
+	\end{lstlisting}
+	
+%--------------------------------------7
+\item Consulta de Quantidade de Envio
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	NATION1 & FRANCE\\
+	NATION2 & GERMANY\\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+	supp_nation,
+	cust_nation,
+	i_year,
+	sum(volume) as revenue
+from
+	(
+		select
+			s_nation_name as supp_nation,
+			c_nation_name as cust_nation,
+			extract(year from i_shipdate) as i_year,
+			i_extendedprice * (1 - i_discount) as volume
+		from
+			supplier,
+			item,
+			customer,
+		where
+			s_suppkey = i_suppkey
+			and c_custkey = i_custkey
+			and (
+				(s_nation_name = '[NATION1]' and c_nation_name = '[NATION2]')
+				or (s_nation_name = '[NATION2]' and c_nation_name = '[NATION1]')
+			)
+			and i_shipdate between date '1995-01-01' and date '1996-12-31'
+	) as shipping
+group by
+	supp_nation,
+	cust_nation,
+	i_year
+order by
+	supp_nation,
+	cust_nation,
+	i_year;
+\end{lstlisting}
+
+%--------------------------------------8
+\item Consulta de Quota de Mercado Nacional
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	NATION & BRAZIL\\
+	REGION & AMERICA\\
+	TYPE &  ECONOMY ANODIZED STEEL\\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+	order_year,
+	sum(case
+		when nation = '[NATION]' then volume
+		else 0
+	end) / sum(volume) as mkt_share
+from
+	(
+		select
+			extract(year from i_order_orderdate) as order_year,
+			i_extendedprice * (1 - i_discount) as volume,
+			s_nation_name as nation
+		from
+			part,
+			supplier,
+			item,
+			customer
+		where
+			p_partkey = i_partkey
+			and s_suppkey = i_suppkey
+			and i_custkey = c_custkey
+			and c_region_name = '[REGION]'
+			and i_order_orderdate between date '1995-01-01' and date '1996-12-31'
+			and p_type = '[TYPE]'
+	) as all_nations
+group by
+	order_year
+order by
+	order_year;
+	\end{lstlisting}
+
+%--------------------------------------9
+\item Consulta ao Lucro de um Tipo de Produto
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	COLOR & green\\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+	nation,
+	order_year,
+	sum(amount) as sum_profit
+from
+	(
+		select
+			s_nation_name as nation,
+			extract(year from i_order_orderdate) as order_year,
+			i_extendedprice * (1 - i_discount) - i_partsupp_supplycost * i_quantity as amount
+		from
+			part,
+			supplier,
+			item
+		where
+			s_suppkey = i_suppkey
+			and p_partkey = i_partkey
+			and p_name like '%[COLOR]%'
+	) as profit
+group by
+	nation,
+	order_year
+order by
+	nation,
+	order_year desc;
+
+\end{lstlisting}
+
+%--------------------------------------10
+\item Consulta de Relatório de Itens Retornados
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	DATE & 1993-10-01\\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+	c_custkey,
+	c_name,
+	sum(i_extendedprice * (1 - i_discount)) as revenue,
+	c_acctbal,
+	c_nation_name,
+	c_address,
+	c_phone,
+	c_comment
+from
+	customer,
+	item
+where
+	c_custkey = i_custkey
+	and i_order_orderdate >= date '[DATE]'
+	and i_order_orderdate < date '[DATE]' + interval '3' month
+	and i_returnflag = 'R'
+group by
+	c_custkey,
+	c_name,
+	c_acctbal,
+	c_phone,
+	c_nation_name,
+	c_address,
+	c_comment
+order by
+	revenue desc;
+	
+set rowcount 20
+go
+	\end{lstlisting}
+
+%--------------------------------------11
+\item Consulta a Identificação de Estoques Importantes
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	NATION & GERMANY\\
+	FRACTION & .0001
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+	i_partkey,
+	sum(i_partsupp_supplycost * i_partsupp_availqty) as value
+from
+	item,
+	supplier
+where
+	i_suppkey = s_suppkey
+	and s_nation_name = '[NATION]'
+group by
+	i_partkey having
+		sum(i_partsupp_supplycost * i_partsupp_availqty) > (
+			select
+				sum(i_partsupp_supplycost * i_partsupp_availqty) * [FRACTION]
+			from
+				item,
+				supplier
+			where
+				i_suppkey = s_suppkey
+				and s_nation_name = '[NATION]'
+		)
+order by
+	value desc;
+	\end{lstlisting}
+
+%--------------------------------------12
+\item Consulta a Modos de Envio e Prioridade de Pedidos
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	SHIPMODE1 & MAIL\\
+	SHIPMODE2 & SHIP\\
+	DATE & 1994-01-01 \\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+	i_shipmode,
+	sum(case
+		when i_order_orderpriority = '1-URGENT'
+			or i_order_orderpriority = '2-HIGH'
+			then 1
+		else 0
+	end) as high_line_count,
+	sum(case
+		when i_order_orderpriority <> '1-URGENT'
+			and i_order_orderpriority <> '2-HIGH'
+			then 1
+		else 0
+	end) as low_line_count
+from
+	item
+where
+	and i_shipmode in ('[SHIPMODE1]', '[SHIPMODE2]')
+	and i_commitdate < i_receiptdate
+	and i_shipdate < i_commitdate
+	and i_receiptdate >= date '[DATE]'
+	and i_receiptdate < date '[DATE]' + interval '1' year
+group by
+	i_shipmode
+order by
+	i_shipmode;
+	\end{lstlisting}
+	
+%--------------------------------------13
+\item Consulta à Distribuição de Clientes
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	WORD1 & special\\
+	WORD2 & requests\\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+    c_count,
+    count(*) as custdist
+from
+    (
+        select
+            c_custkey,
+            count(i_itemkey)
+        from
+            customer left outer join item on
+                c_custkey = i_custkey
+                and i_order_comment not like '%[WORD1]%[WORD2]%'
+        group by
+                c_custkey
+    ) as c_orders (c_custkey, c_count)
+group by
+    c_count
+order by
+    custdist desc,
+    c_count desc;
+	\end{lstlisting}
+
+%--------------------------------------14
+\item Consulta aos Efeitos de Promoção
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	DATE & 1995-09-01\\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+	100.00 * sum(case
+		when p_type like 'PROMO%'
+			then i_extendedprice * (1 - i_discount)
+		else 0
+	end) / sum(i_extendedprice * (1 - i_discount)) as promo_revenue
+from
+	item,
+	part
+where
+	i_partkey = p_partkey
+	and i_shipdate >= date '[DATE]'
+	and i_shipdate < date '[DATE]' + interval '1' month;
+	\end{lstlisting}
+
+%--------------------------------------15
+\item Consulta de Fornecedor Principal
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	DATE & 1996-01-01\\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+create view revenue[STREAM_ID] (supplier_no, total_revenue) as
+	select
+		i_suppkey,
+		sum(i_extendedprice * (1 - i_discount))
+	from
+		item
+	where
+		i_shipdate >= date '[DATE]'
+		and i_shipdate < date '[DATE]' + interval '3' month
+	group by
+		i_suppkey;
+
+select
+	s_suppkey,
+	s_name,
+	s_address,
+	s_phone,
+	total_revenue
+from
+	supplier,
+	revenue[STREAM_ID]
+where
+	s_suppkey = supplier_no
+	and total_revenue = (
+		select
+			max(total_revenue)
+		from
+			revenue[STREAM_ID]
+	)
+order by
+	s_suppkey;
+
+drop view revenue[STREAM_ID];
+	\end{lstlisting}
+
+%--------------------------------------16
+\item Consulta à Relação \textit{Part/Supplier}
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	BRAND & Brand$\#$45\\
+	TYPE & MEDIUM POLISHED \\
+	SIZE1 & 49 \\
+	SIZE2 & 14 \\
+	SIZE3 & 23 \\
+	SIZE4 & 45 \\
+	SIZE5 & 19 \\
+	SIZE6 &  3 \\
+	SIZE7 & 36 \\
+	SIZE8 &  9 \\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+    p_brand,
+    p_type,
+    p_size,
+    count(distinct i_suppkey) as supplier_cnt
+from
+	item,
+    part
+where
+    p_partkey = i_partkey
+    and p_brand <> '[BRAND]'
+    and p_type not like '[TYPE]%'
+    and p_size in ([SIZE1], [SIZE2], [SIZE3], [SIZE4], [SIZE5], [SIZE6], [SIZE7], [SIZE8])
+    and i_suppkey not in (
+        select
+            s_suppkey
+        from
+            supplier
+        where
+            s_comment like '%Customer%Complaints%'
+    )
+group by
+    p_brand,
+    p_type,
+    p_size
+order by
+    supplier_cnt desc,
+    p_brand,
+    p_type,
+    p_size;
+go
+	\end{lstlisting}
+
+%--------------------------------------17
+\item Consulta a Receita de Pedidos de Pequenas Quantidades
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	BRAND & Brand$\#$23\\
+	TYPE & MEDIUM POLISHED \\
+	CONTAINER & MED BOX \\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+    sum(i_extendedprice) / 7.0 as avg_yearly
+from
+    item,
+    part
+where
+    p_partkey = i_partkey
+    and p_brand = '[BRAND]'
+    and p_container = '[CONTAINER]'
+    and i_quantity < (
+        select
+            0.2 * avg(i_quantity)
+        from
+            item
+        where
+            i_partkey = p_partkey
+    );
+	\end{lstlisting}
+
+%--------------------------------------18
+\item Consulta a Grandes Volumes de Clientes
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	QUANTITY & 300\\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+    c_name,
+    c_custkey,
+    i_itemkey,
+    i_order_orderdate,
+    i_order_totalprice,
+    sum(i_quantity)
+from
+    customer,
+    item
+where
+    i_itemkey in (
+        select
+            i_itemkey
+        from
+            item
+        group by
+            i_itemkey having
+                sum(i_quantity) > [QUANTITY]
+    )
+    and c_custkey = i_custkey
+group by
+    c_name,
+    c_custkey,
+    i_itemkey,
+    i_order_orderdate,
+    i_order_totalprice
+order by
+    i_order_totalprice desc,
+    i_order_orderdate;
+set rowcount 100
+go
+	\end{lstlisting}
+	
+%--------------------------------------19
+\item Consulta a Desconto de Receita
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	QUANTITY1 & 300\\
+	BRAND1 & Brand$\#12$ \\
+	QUANTITY2 & 10 \\
+	BRAND2 & Brand$\#23$ \\
+	QUANTITY3 & 20 \\
+	BRAND3 & Brand$\#34$ \\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+    sum(i_extendedprice* (1 - i_discount)) as revenue
+from
+    item,
+    part
+where
+    (
+        p_partkey = i_partkey
+        and p_brand = '[BRAND1]'
+        and p_container in ('SM CASE', 'SM BOX', 'SM PACK', 'SM PKG')
+        and i_quantity >= [QUANTITY1] and i_quantity <= [QUANTITY1] + 10
+        and p_size between 1 and 5
+        and i_shipmode in ('AIR', 'AIR REG')
+        and i_shipinstruct = 'DELIVER IN PERSON'
+    )
+    or
+    (
+        p_partkey = i_partkey
+        and p_brand = '[BRAND2]'
+        and p_container in ('MED BAG', 'MED BOX', 'MED PKG', 'MED PACK')
+        and i_quantity >= [QUANTITY2] and i_quantity <= [QUANTITY2] + 10
+        and p_size between 1 and 10
+        and i_shipmode in ('AIR', 'AIR REG')
+        and i_shipinstruct = 'DELIVER IN PERSON'
+    )
+    or
+    (
+        p_partkey = i_partkey
+        and p_brand = '[BRAND3]'
+        and p_container in ('LG CASE', 'LG BOX', 'LG PACK', 'LG PKG')
+        and i_quantity >= [QUANTITY3] and i_quantity <= [QUANTITY3] + 10
+        and p_size between 1 and 15
+        and i_shipmode in ('AIR', 'AIR REG')
+        and i_shipinstruct = 'DELIVER IN PERSON'
+    );
+	\end{lstlisting}
+
+%--------------------------------------20
+\item Consulta a Potenciais Promoções de Partes
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	COLOR & forest\\
+	DATE & 1994-01-01\\
+	NATION & CANADA\\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+    s_name,
+    s_address
+from
+    supplier
+where
+    s_suppkey in (
+        select
+            i_suppkey
+        from
+            item
+        where
+            i_partkey in (
+                select
+                    p_partkey
+                from
+                    part
+                where
+                    p_name like '[COLOR]%'
+            )
+            and i_partsupp_availqty > (
+                select
+                    0.5 * sum(i_quantity)
+                from
+                    item
+                where
+                    and i_shipdate >= date '[DATE]'
+                    and i_shipdate < date '[DATE]' + interval '1' year
+            )
+    )
+    and s_nation_name = '[NATION]'
+order by
+    s_name;
+
+\end{lstlisting}
+
+%--------------------------------------21
+\item Consulta a Forncedores que Mantiveram Pedidos em Espera
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	NATION & SAUDI ARABIA\\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+    s_name,
+    count(*) as numwait
+from
+    supplier,
+    item i1
+where
+    s_suppkey = i1.i_suppkey
+    and i1.i_order_orderstatus = 'F'
+    and i1.i_receiptdate > i1.i_commitdate
+    and exists (
+        select
+            *
+        from
+            item i2
+        where
+            i2.i_itemkey = i2.i_itemkey
+            and i2.i_suppkey <> i1.i_suppkey
+    )
+    and not exists (
+        select
+            *
+        from
+            item i3
+        where
+            i3.i_itemkey = i1.i_itemkey
+            and i3.i_suppkey <> i1.i_suppkey
+            and i3.i_receiptdate > i3.i_commitdate
+    )
+    and s_nation_name = '[NATION]'
+group by
+    s_name
+order by
+    numwait desc,
+    s_name;
+set rowcount 100
+go
+	\end{lstlisting}
+
+%--------------------------------------22
+\item Consulta a Oportunidades de Vendas Globais
+
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	I1 & 13 \\
+	I2 & 31 \\
+	I3 & 23 \\
+	I4 & 29 \\
+	I5 & 30 \\
+	I6 & 18 \\
+	I7 & 17 \\
+\end{tabular}
+
+	\begin{lstlisting}[language=SQL]
+select
+    cntrycode,
+    count(*) as numcust,
+    sum(c_acctbal) as totacctbal
+from
+    (
+        select
+            substring(c_phone from 1 for 2) as cntrycode,
+            c_acctbal
+        from
+            customer
+        where
+            substring(c_phone from 1 for 2) in
+                ('[I1]', '[I2]', '[I3]', '[I4]', '[I5]', '[I6]', '[I7]')
+            and c_acctbal > (
+                select
+                    avg(c_acctbal)
+                from
+                    customer
+                where
+                    c_acctbal > 0.00
+                    and substring(c_phone from 1 for 2) in
+                            ('[I1]', '[I2]', '[I3]', '[I4]', '[I5]', '[I6]', '[I7]')
+            )
+                and not exists (
+                    select
+                        *
+                    from
+                        item
+                    where
+                        i_custkey = c_custkey
+                )
+    ) as custsale
+group by
+    cntrycode
+order by
+    cntrycode;
+	\end{lstlisting}
+
+\end{enumerate}
