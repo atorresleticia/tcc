@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.4.22)  25 APR 2018 17:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.4.22)  25 APR 2018 17:45
 entering extended mode
-**"c:/Users/Leticia Torres/Downloads/TCC/ModeloTCC.tex"
-("c:/Users/Leticia Torres/Downloads/TCC/ModeloTCC.tex"
+**"c:/Users/Leticia Torres/Google Drive/UNIOESTE/TCC/TCC/ModeloTCC.tex"
+("c:/Users/Leticia Torres/Google Drive/UNIOESTE/TCC/TCC/ModeloTCC.tex"
 LaTeX2e <2018-04-01> patch level 2
 Babel <3.18> and hyphenation patterns for 76 language(s) loaded.
 ("C:\MiKTeX 2.9\tex\latex\base\book.cls"
@@ -880,44 +880,36 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [21]) [22 <./img/star.png>] [23]
 \openout2 = `capitulo4/capitulo4.aux'.
 
- (capitulo4/capitulo4.tex
-Cap\'{\i }tulo 6.
 
-Overfull \hbox (7.45311pt too wide) in paragraph at lines 35--50
- [][] 
- []
+No file capitulo4/capitulo4.tex.
+\openout2 = `apend/apendice2.aux'.
 
+(apend/apendice2.tex
+Ap\^endice A.
 [24
 
 
 
-]) [25]
-\openout2 = `apend/apendice2.aux'.
-
- (apend/apendice2.tex
-Ap\^endice A.
-[26
 
 
-
-] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40]
-[41] [42] [43] [44]) [45]
+] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38]
+[39] [40] [41] [42]) [43]
 \openout2 = `apend/apendice3.aux'.
 
  (apend/apendice3.tex
 Ap\^endice B.
-[46
+[44
 
 
 
-] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60]
-[61]) [62] (ModeloTCC.bbl
+] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58]
+[59]) [60] (ModeloTCC.bbl
 Underfull \hbox (badness 1789) in paragraph at lines 63--66
 []\T1/ptm/m/n/12 TRANSACTION PRO-CES-SING PER-FOR-MANCE COUN-CIL. \T1/ptm/m/it/
 12 TPC-H Ho-me-page\T1/ptm/m/n/12 .
  []
 
-[63
+[61
 
 
 ]
@@ -926,20 +918,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--124
 el em:
  []
 
-[64]) [65] (ModeloTCC.aux (iniciais/capa.aux) (iniciais/rosto.aux)
+[62]) [63] (ModeloTCC.aux (iniciais/capa.aux) (iniciais/rosto.aux)
 (iniciais/aprova.aux) (iniciais/dedica.aux) (iniciais/agradece.aux)
 (iniciais/sumario.aux) (iniciais/resumo.aux) (1-introducao/capitulo_intro.aux)
 (2-DW/capitulo_dw.aux) (3-SGBD/capitulo_sgbd.aux) (4-NoSQL/capitulo_nosql.aux)
 (5-TPCH/capitulo_tpch.aux) (capitulo4/capitulo4.aux) (apend/apendice2.aux)
 (apend/apendice3.aux)) ) 
 Here is how much of TeX's memory you used:
- 7504 strings out of 492972
- 98556 string characters out of 3142019
- 298947 words of memory out of 3000000
- 11004 multiletter control sequences out of 15000+200000
+ 7500 strings out of 492972
+ 99516 string characters out of 3142019
+ 297927 words of memory out of 3000000
+ 11002 multiletter control sequences out of 15000+200000
  73098 words of font info for 101 fonts, out of 3000000 for 9000
  1150 hyphenation exceptions out of 8191
- 41i,12n,44p,2033b,2105s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,12n,44p,2049b,2105s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmmi10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12
@@ -952,9 +944,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/MiKTeX 2.9/fonts/type1/public
 onts/type1/urw/courier/ucrr8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.p
 fb><C:/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/MiKTeX 2.9/fonts/type1/
 urw/times/utmr8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ModeloTCC.pdf (77 pages, 693866 bytes).
+Output written on ModeloTCC.pdf (75 pages, 689417 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
+ 325 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
