@@ -10,13 +10,6 @@
 {KIMBALL, R.; ROSS, M. \emph{The Data Warehouse Toolkit: The Complete Guide to
   Dimensional Modeling}. 2. ed. [S.l.]: Wiley Computer Publishing, 2002.}
 
-\bibitem{matei2010column}
-\abntrefinfo{Matei e Bank}{MATEI; BANK}{2010}
-{MATEI, G.; BANK, R.~C. Column-oriented databases, an alternative for
-  analytical environment.
-\emph{Database Systems Journal}, Academy of Economic Studies-Bucharest,
-  Romania, v.~1, n.~2, p. 3--16, 2010.}
-
 \bibitem{wrembel2007data}
 \abntrefinfo{Wrembel e Koncilia}{WREMBEL; KONCILIA}{2007}
 {WREMBEL, R.; KONCILIA, C. \emph{Data warehouses and OLAP: concepts,
@@ -91,42 +84,41 @@ Dispon{\'\i}vel em: $<$http://www.tpc.org/tpch/$>$.}
   design?
 \emph{Information Systems}, Elsevier, v.~28, n.~3, p. 225--240, 2003.}
 
-\bibitem{khoshafian1987query}
-\abntrefinfo{Khoshafian et al.}{KHOSHAFIAN et al.}{1987}
-{KHOSHAFIAN, S. et al. A query processing strategy for the decomposed storage
-  model. In:  IEEE. \emph{Data Engineering, 1987 IEEE Third International
-  Conference on}. [S.l.], 1987. p. 636--643.}
+\bibitem{codd1970relational}
+\abntrefinfo{Codd}{CODD}{1970}
+{CODD, E.~F. A relational model of data for large shared data banks.
+\emph{Communications of the ACM}, ACM, v.~13, n.~6, p. 377--387, 1970.}
 
-\bibitem{abadi2006integrating}
-\abntrefinfo{Abadi, Madden e Ferreira}{ABADI; MADDEN; FERREIRA}{2006}
-{ABADI, D.; MADDEN, S.; FERREIRA, M. Integrating compression and execution in
-  column-oriented database systems. In:  ACM. \emph{Proceedings of the 2006 ACM
-  SIGMOD international conference on Management of data}. [S.l.], 2006. p.
-  671--682.}
+\bibitem{pritchett2008base}
+\abntrefinfo{Pritchett}{PRITCHETT}{2008}
+{PRITCHETT, D. Base: An acid alternative.
+\emph{Queue}, ACM, v.~6, n.~3, p. 48--55, 2008.}
 
-\bibitem{macnicol2004sybase}
-\abntrefinfo{MacNicol e French}{MACNICOL; FRENCH}{2004}
-{MACNICOL, R.; FRENCH, B. Sybase iq multiplex-designed for analytics. In:  VLDB
-  ENDOWMENT. \emph{Proceedings of the Thirtieth international conference on
-  Very large data bases-Volume 30}. [S.l.], 2004. p. 1227--1230.}
+\bibitem{sharding2018educative}
+\abntrefinfo{Sharding\ldots}{SHARDING\ldots}{2018}
+{SHARDING or Data Partitioning. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em:
+  $<$https://www.educative.io/collection/page/5668639101419520/5649050225344512\\/5146118144917504$>$.}
 
-\bibitem{monetdb2017c}
-\abntrefinfo{MonetDB\ldots}{MONETDB\ldots}{2017}
-{MONETDB -- The column-store pioneer. 2017.
-Acessado em: 20 de agosto de 2017.
-Dispon{\'\i}vel em: $<$https://www.monetdb.org/Home$>$.}
+\bibitem{twitter2010}
+\abntrefinfo{Twitter\ldots}{TWITTER\ldots}{2010}
+{TWITTER growth prompts switch from MySQL to 'NoSQL' database. 2010.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em:
+  $<$https://www.computerworld.com/article/2520084/database-administration/twitter-growth-prompts-switch-from-mysql-to--nosql--database.html$>$.}
 
-\bibitem{vertica2017c}
-\abntrefinfo{Vertica}{VERTICA}{2017}
-{VERTICA. 2017.
-Acessado em: 20 de agosto de 2017.
-Dispon{\'\i}vel em: $<$https://www.vertica.com/$>$.}
+\bibitem{chang2008bigtable}
+\abntrefinfo{Chang et al.}{CHANG et al.}{2008}
+{CHANG, F. et al. Bigtable: A distributed storage system for structured data.
+\emph{ACM Transactions on Computer Systems (TOCS)}, ACM, v.~26, n.~2, p.~4,
+  2008.}
 
-\bibitem{stonebraker2005c}
-\abntrefinfo{Stonebraker et al.}{STONEBRAKER et al.}{2005}
-{STONEBRAKER, M. et al. C-store: a column-oriented dbms. In:  VLDB ENDOWMENT.
-  \emph{Proceedings of the 31st international conference on Very large data
-  bases}. [S.l.], 2005. p. 553--564.}
+\bibitem{decandia2007dynamo}
+\abntrefinfo{DeCandia et al.}{DECANDIA et al.}{2007}
+{DECANDIA, G. et al. Dynamo: amazon's highly available key-value store. In:
+  ACM. \emph{ACM SIGOPS operating systems review}. [S.l.], 2007. v.~41, n.~6,
+  p. 205--220.}
 
 \bibitem{bhutta1999benchmarking}
 \abntrefinfo{Bhutta e Huq}{BHUTTA; HUQ}{1999}

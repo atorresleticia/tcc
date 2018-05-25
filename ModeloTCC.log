@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.4.22)  25 APR 2018 17:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.4.22)  25 MAY 2018 15:06
 entering extended mode
 **"c:/Users/Leticia Torres/Google Drive/UNIOESTE/TCC/TCC/ModeloTCC.tex"
 ("c:/Users/Leticia Torres/Google Drive/UNIOESTE/TCC/TCC/ModeloTCC.tex"
@@ -381,6 +381,10 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
+("C:\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
 ("C:\MiKTeX 2.9\tex\latex\base\textcomp.sty"
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
@@ -559,26 +563,26 @@ Writing glossary file ModeloTCC.glo
 (apend/apendice3.aux))
 \openout1 = `ModeloTCC.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 127.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 127.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 128.
 
  ("C:\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 127.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 128.
 
 ("C:\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -759,11 +763,11 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
 ]
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 163.
+less on input line 164.
 
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
-less on input line 164.
+less on input line 165.
 
 \openout2 = `1-introducao/capitulo_intro.aux'.
 
@@ -808,42 +812,26 @@ File: img/snow.png Graphic file (type png)
 <use img/snow.png>
 Package pdftex.def Info: img/snow.png  used on input line 45.
 (pdftex.def)             Requested size: 369.88582pt x 177.38063pt.
- [8 <./img/star_dim.png> <./img/snow.png>]
+) [8 <./img/star_dim.png> <./img/snow.png>]
 [9]
-<img/bd_linha.png, id=84, 396.7322pt x 168.63pt>
-File: img/bd_linha.png Graphic file (type png)
-<use img/bd_linha.png>
-Package pdftex.def Info: img/bd_linha.png  used on input line 67.
-(pdftex.def)             Requested size: 341.43306pt x 145.12961pt.
-<img/bd_colunar.png, id=85, 396.7322pt x 168.63pt>
-File: img/bd_colunar.png Graphic file (type png)
-<use img/bd_colunar.png>
-Package pdftex.def Info: img/bd_colunar.png  used on input line 76.
-(pdftex.def)             Requested size: 341.43306pt x 145.12961pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) [10 <./img/bd_linha.png>] [11 <./img/bd_colunar.png>]
 \openout2 = `3-SGBD/capitulo_sgbd.aux'.
 
-
-(3-SGBD/capitulo_sgbd.tex
+ (3-SGBD/capitulo_sgbd.tex
 Cap\'{\i }tulo 3.
-[12
+[10
 
 
 
-]) [13]
+]) [11]
 \openout2 = `4-NoSQL/capitulo_nosql.aux'.
 
  (4-NoSQL/capitulo_nosql.tex
 Cap\'{\i }tulo 4.
-) [14
+[12
 
 
 
-]
+] [13]) [14]
 \openout2 = `5-TPCH/capitulo_tpch.aux'.
 
  (5-TPCH/capitulo_tpch.tex
@@ -862,13 +850,13 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 56.
  [18] [19]
-<img/snow_flake.png, id=127, 856.70062pt x 536.75531pt>
+<img/snow_flake.png, id=123, 856.70062pt x 536.75531pt>
 File: img/snow_flake.png Graphic file (type png)
 <use img/snow_flake.png>
 Package pdftex.def Info: img/snow_flake.png  used on input line 128.
 (pdftex.def)             Requested size: 455.8843pt x 285.62558pt.
  [20 <./img/snow_flake.png>]
-<img/star.png, id=132, 810.77907pt x 560.8453pt>
+<img/star.png, id=128, 810.77907pt x 560.8453pt>
 File: img/star.png Graphic file (type png)
 <use img/star.png>
 Package pdftex.def Info: img/star.png  used on input line 214.
@@ -903,19 +891,24 @@ Ap\^endice B.
 
 
 ] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58]
-[59]) [60] (ModeloTCC.bbl
-Underfull \hbox (badness 1789) in paragraph at lines 63--66
-[]\T1/ptm/m/n/12 TRANSACTION PRO-CES-SING PER-FOR-MANCE COUN-CIL. \T1/ptm/m/it/
-12 TPC-H Ho-me-page\T1/ptm/m/n/12 .
- []
-
-[61
+[59]) [60] (ModeloTCC.bbl [61
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 121--124
-[]\T1/ptm/m/n/12 VERTICA. 2017. Aces-sado em: 20 de agosto de 2017. Dis-po-ní-v
-el em:
+Underfull \hbox (badness 10000) in paragraph at lines 106--110
+[]\T1/ptm/m/n/12 TWITTER growth prompts switch from MySQL to 'NoSQL' da-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--110
+\T1/ptm/m/n/12 ta-base. 2010. Aces-sado em: 20 de maio de 2018. Dis-po-ní-vel e
+m:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--110
+\OML/cmm/m/it/12 <$\T1/ptm/m/n/12 https://www.computerworld.com/article/2520084
+/database-administration/twitter-growth-
  []
 
 [62]) [63] (ModeloTCC.aux (iniciais/capa.aux) (iniciais/rosto.aux)
@@ -925,13 +918,13 @@ el em:
 (5-TPCH/capitulo_tpch.aux) (capitulo4/capitulo4.aux) (apend/apendice2.aux)
 (apend/apendice3.aux)) ) 
 Here is how much of TeX's memory you used:
- 7500 strings out of 492972
- 99516 string characters out of 3142019
- 297927 words of memory out of 3000000
- 11002 multiletter control sequences out of 15000+200000
+ 7559 strings out of 492972
+ 100105 string characters out of 3142019
+ 299884 words of memory out of 3000000
+ 11059 multiletter control sequences out of 15000+200000
  73098 words of font info for 101 fonts, out of 3000000 for 9000
  1150 hyphenation exceptions out of 8191
- 41i,12n,44p,2049b,2105s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,12n,45p,2049b,2105s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmmi10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12
@@ -944,9 +937,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/MiKTeX 2.9/fonts/type1/public
 onts/type1/urw/courier/ucrr8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.p
 fb><C:/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/MiKTeX 2.9/fonts/type1/
 urw/times/utmr8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ModeloTCC.pdf (75 pages, 689417 bytes).
+Output written on ModeloTCC.pdf (75 pages, 683518 bytes).
 PDF statistics:
- 325 PDF objects out of 1000 (max. 8388607)
+ 321 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

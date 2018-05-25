@@ -8,11 +8,11 @@
 \contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}
 \contentsline {chapter}{\numberline {2}Recupera\IeC {\c c}\IeC {\~a}o de Informa\IeC {\c c}\IeC {\~a}o}{4}
 \contentsline {section}{\numberline {2.1}\textit {Data Warehouses} e Aplica\IeC {\c c}\IeC {\~o}es OLAP}{4}
-\contentsline {section}{\numberline {2.2}Sistema Gerenciador de Banco de Dados}{9}
-\contentsline {chapter}{\numberline {3}Sistemas Gerenciadores de Banco de Dados}{12}
-\contentsline {section}{\numberline {3.1}SGBD Relacionais}{13}
-\contentsline {section}{\numberline {3.2}SGBD NoSQL}{13}
-\contentsline {chapter}{\numberline {4}NoSQL}{14}
+\contentsline {chapter}{\numberline {3}Sistemas Gerenciadores de Banco de Dados}{10}
+\contentsline {section}{\numberline {3.1}SGBD Relacionais}{11}
+\contentsline {section}{\numberline {3.2}SGBD NoSQL}{11}
+\contentsline {chapter}{\numberline {4}NoSQL}{12}
+\contentsline {section}{\numberline {4.1}SGBD Colunar}{14}
 \contentsline {chapter}{\numberline {5}TPC \textit {Benchmark} H}{15}
 \contentsline {section}{\numberline {5.1}Metodologia}{17}
 \contentsline {subsection}{\numberline {5.1.1}Teste de For\IeC {\c c}a}{18}

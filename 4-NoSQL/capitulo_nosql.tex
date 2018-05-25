@@ -1,2 +1,107 @@
 \chapter{NoSQL}
 \label{nosql}
+
+O desenvolvimento de novas aplicações e surgimento de novas soluções 
+para sistemas gerou crescimento no volume de dados de maneira acelerada. 
+Com isso cresce também o número de usuários, necessitando portanto escalar 
+o banco de dados. Existem duas soluções para escalar um sistema: o 
+escalonamento vertical, que consiste em um \textit{upgrade} do servidor no 
+qual o banco está hospedado; e o horizontal, aumentando o número de 
+servidores e distribuindo o banco \cite{pritchett2008base, sharding2018educative}. 
+
+Existem algumas desvantagens no \textit{upgrade} de um sistema. 
+O banco de dados pode superar a capacidade da melhor configuração 
+disponível no mercado, e ainda é caro por requerer a aquisição de 
+uma configuração melhor. Mesmo considerado mais complexo, o 
+escalonamento horizontal é mais viável. Entre as soluções apresentadas 
+no particionamento horizontal estão o particionamento funcional e o 
+\textit{sharding} \cite{pritchett2008base}. 
+
+O particionamento funcional consiste em fragmentar os dados de acordo 
+com a forma como são utilizados dado um contexto. Um esquema com quatro entidades, 
+\textit{usuários}, \textit{produtos}, \textit{clientes} e \textit{endereço} 
+pode ser distribuído em quatro servidores, 
+um para cada entidade. Entidades que são utilizadas somente para leitura podem 
+ser separadas de entidades onde dados são escritos, caracterizando outro 
+exemplo de particionamento funcional. O problema com esta estratégia está 
+no acoplamento entre entidades: se duas ou mais entidades estiverem 
+relacionadas elas deverão estar no mesmo servidor, caso contrário não 
+será possível atribuir as restrições de chave àquele relacionamento \cite{pritchett2008base}. 
+Tomando o exemplo acima com as quatro entidades, supondo que \textit{cliente} 
+e \textit{endereço} estejam relacionadas estas devem 
+ser armazenados no mesmo servidor. 
+
+A segunda estratégia, o \textit{sharding}, consiste em dividir os dados do banco 
+utilizando algum critério de separação de dados que não seja limitado à 
+funcionalidade das entidades. Soluções como particionamento com base em 
+\textit{hash} ou listas podem ser aplicadas. Considerando dez servidores e uma chave 
+primária auto-incremental, a função de \textit{hash} pode tomar o módulo da chave 
+primária pelo total de servidores como critério de seleção da partição 
+na qual o dado será inserido. Utilizando uma lista é possível definir valores 
+para os servidores e distribuir os dados de acordo com esses valores. 
+Por exemplo, as linguagens C++, Java e C\# poderiam ser inseridas em uma 
+partição destinada à linguagens orientadas a objeto.
+
+O \textit{sharding} enfrenta problemas com junções entre dados, visto que os dados 
+devem ser recuperados de diferentes partições e a maioria dos SGBDR não 
+oferece suporte a chaves estrangeiras sob diferentes servidores, restando 
+ao desenvolvedor tratar isso no código da aplicação \cite{pritchett2008base}. 
+Uma solução para tais 
+problemas é a denormalização de dados para que o número de junções diminua ou, 
+no melhor dos casos e quando possível, seja zero. Contudo, isso é um problema 
+para modelos relacionais, visto que trabalham sobre uma modelagem normalizada de dados. 
+Além disso e de não se adaptarem à escalabilidade horizontal, 
+são complexos e o fato de trazerem todas as informações de uma entidade sob a 
+forma de tuplas causa lentidão em um ambiente analítico na recuperação de dados, 
+cujas consultas percorrem o banco visando atributos específicos, processando 
+somente o necessário. 
+
+Outro problema crítico ao não utilizar a escalabilidade horizontal está na 
+disponibilidade dos dados. Enquanto um banco se apoiar na escalabilidade vertical, 
+qualquer queda no servidor acarretará na queda total no sistema de armazenamento, 
+ao passo que quando se trabalha com servidores em paralelo a queda em uma máquina 
+não trará prejuízos no conjunto todo. Assim, soluções como melhorar o hardware do 
+servidor continuam sendo desvantajosas. Além da escalabilidade, disponibilidade 
+de dados foi um dos argumentos utilizados por um dos engenheiros da rede social 
+Twitter ao migrar do MySQL para o Cassandra, um SGBD NoSQL. 
+Em 2008 a rede ficou fora do ar por 84h \cite{twitter2010}.
+
+Com o intuito de suprir tais problemas de escalabilidade, disponibilidade 
+e recuperação rápida de dados, entre 2004 e 2007 os SGBD NoSQL começaram 
+a ganhar destaque com o surgimento das bases de dados BigTable da Google \cite{chang2008bigtable}, e Dynamo 
+da Amazon \cite{decandia2007dynamo}. O termo NoSQL, embora a princípio pareça indicar total independência 
+de SQL, significa \textit{Not Only SQL}, “Não Apenas SQL”. Também, ele não descreve um 
+único tipo de SGBD, mas sim uma classe de modelos, cada qual com suas propriedades. 
+As mais conhecidas são quatro:
+
+\begin{itemize}
+    \item{\textbf{Orientado a Grafos}}, que se utiliza da Teoria dos Grafos para estruturar seus dados. 
+    Um exemplo desta classe é o Neo4j
+    \item{\textbf{Orientado a Chave-Valor}}, que armazena os dados de forma similar a uma tabela \textit{hash}, 
+    com uma chave referenciando um valor, ou tipo de dado. Exemplos são o Project Voldemort, DyanmoDB, o Riak e o Redis.
+    \item{\textbf{Orientado a Documento}}, uma versão melhorada do Chave-Valor, 
+    no qual os valores são armazenados como documentos através de estruturas complexas como JSON e XML. 
+    Exemplos são o MongoDB e o CouchDB.
+    \item{\textbf{Orientado a Colunas}}, ou modelo colunar, 
+    que utiliza tabelas como armazenamento de entidades, 
+    porém não agrupa os dados sob forma de tuplas, e sim colunas. Exemplos são o MonetDB, BigTable e Cassandra.
+\end{itemize}
+
+ 
+Segundo Eric Brewer, de acordo com o teorema CAP um sistema distribuído não é 
+capaz de conciliar consistência, disponibilidade e tolerância a partição de dados simultaneamente. 
+SGBDR prezam por disponibilidade e consistência de dados, porém a preocupação com consistência 
+pode tornar a manipulação de dados lenta. Visto que o movimento NoSQL surgiu com a intenção de 
+melhorar a escalabilidade e disponibilidade de dados, e tornar a manipulação destes mais rápida, 
+a maioria deles trabalha com os atributos de disponibilidade e tolerância à partição. 
+Essa configuração assume um conceito diferente do ACID para bancos NoSQL, 
+o BASE (\textit{Basically Available, Soft State, Eventual Consistency}).
+
+O Teorema BASE foi proposto por Pritchett \cite{pritchett2008base}, e assume que a consistência em um banco 
+de dados está em estado de fluxo, ao contrário do ACID que força a consistência a cada operação, 
+sendo este considerado pelo autor um método pessimista. 
+Neste cenário a disponibilidade é garantida devido à tolerância a partição, fazendo 
+com que a falha de um servidor não cesse o funcionamento de todo o sistema.
+
+\section{SGBD Colunar}
+

@@ -4,8 +4,6 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Arquitetura de um \textit {Data Warehouse}. Fonte: adaptado de Kimball e Ross \cite {kimball2002dw}}}{7}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Exemplo de esquema \textit {Star} com tabelas Fato e Dimens\IeC {\~a}o}}{8}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Exemplo de esquema \textit {Snow Flake} adaptado da Figura \ref {fig:star_dim}}}{8}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Exemplo de leitura em um SGBD orientado \IeC {\`a} linha. Fonte: adaptado de Matei e Bank \cite {matei2010column}}}{10}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Exemplo de leitura em um SGBD orientado \IeC {\`a} coluna. Fonte: adaptado de Matei e Bank \cite {matei2010column}}}{11}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

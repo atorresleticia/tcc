@@ -47,35 +47,7 @@ Mesmo que a modelagem Dimensional não atinja a normalização 3NF, modelos \tex
 	\label{fig:snow}
 \end{figure*}
 
-Para que possa ser construído um DW e aplicada a modelagem acima descrita, é necessário alguma ferramenta que possa fazer o gerenciamento deste DW. De acordo com Elmasri e Navathe \cite{navathe2011banco} um banco de dados pode ser gerenciado por um sistema que \textit{facilite} este processo de gerenciamento no banco de dados. Esse sistema é conhecido por o Sistema Gerenciador de Banco de Dados, ou SGBD.
-
-\section{Sistema Gerenciador de Banco de Dados}
-
-Elmasri e Navathe \cite{navathe2011banco} citam algumas vantagens do uso de um SGBD como que fazem com que possam ser aplicados como gerenciadores de um DW:
-
-\begin{itemize}
-    \item \textbf{Controle de redundância}: dados podem ser adicionados em um DW por diferentes fontes, e são passíveis de duplicação, causando desperdício na capacidade de armazenamento. A verificação de duplicatas pode ser imposta automaticamente no SGBD ao projetar o banco de dados, ou neste caso, o DW.
-    \item \textbf{Restrição de acesso}: em uma organização nem todos os funcionários devem ou podem ter acesso ao DW. Este acesso pode ser restringido utilizando as permissões de usuários definidas em um SGBD.
-    \item \textbf{Execução de consultas e atualizações de forma eficiente}: SGBDs utilizam estruturas de \textit{índices}, implementadas normalmente utilizando árvores ou \textit{hash} para tornar mais eficiente pesquisas em disco. 
-    \item \textbf{Restrições de Integridade}: o SGBD é responsável por garantir que (i) tipos de dados não sejam inseridos de forma inconsistente; (ii) relações entre registros sejam efetuadas e (iii) restrições de chave sejam mantidas.
-\end{itemize}
-
-Para realizar o gerenciamento de DWs podem ser utilizados SGBDs relacionais tradicionais orientados à linha, em que todas as informações de uma entidade são mantidas juntas. Porém, de acordo com Matei e Bank \cite{matei2010column} o tamanho dos DWs está chegando à casa dos \textit{petabytes}. O maior desafio portanto é garantir o bom desempenho destes \textit{warehouses}, bem como acesso do usuário; aspectos estes que acabam sendo degradados por estruturas orientadas à linha conforme o tamanho do DW aumenta. Ademais, consultas no domínio analítico percorrem todo o banco de dados processando somente os atributos necessários de um grande volume de dados, ao contrário de operações transacionais normalmente executadas por SGBDs orientados à linha, que percorrem a tupla toda, como mostra a Figura \ref{fig:sgbd_linha}. Mesmo a adição de índices prejudicaria o desempenho, pois o elevado número de diferentes consultas faz com que seja necessário mais processamento para ler os índices \cite{matei2010column}. Para que essa leitura seja aprimorada uma nova abordagem de SGBDs orientados à coluna pode ser aplicada como gerenciador de DWs.
-
-\begin{figure*}[h]
-	\centering
-		\includegraphics[width=12cm]{img/bd_linha}
-	\caption{Exemplo de leitura em um SGBD orientado à linha. Fonte: adaptado de Matei e Bank \cite{matei2010column}}
-	\label{fig:sgbd_linha}
-\end{figure*}
-
-Em um SGBD colunar, todas as instâncias de um mesmo atributo são armazenadas juntas. Com isso, em uma leitura, são retornados apenas os atributos requeridos pelo usuário, sem realizar a leitura de uma tupla inteira \cite{khoshafian1987query}, como mostra a Figura \ref{fig:sgbd_col}, o que casa com o modo de leitura de um ambiente analítico. Isso também torna mais eficiente as operações de agrupamento, bastante utilizado em ambientes OLAP, visto que os valores de um mesmo atributo são armazenados consecutivamente. Ainda, a compressão de dados, de acordo com Abadi; Madden e Ferreira \cite{abadi2006integrating}, é mais eficiente em um SGBD colunar, pois aumenta-se a chance de haver atributos iguais em linhas adjacentes na mesma coluna, visto que são do mesmo tipo. Em um SGBD orientado à linha para realizar compressão tuplas inteiras, com diferentes tipos de atributo, devem coincidir. Atributos com valor \textit{NULL} são tratados mais facilmente em um SGBD orientado à coluna, pois ele pode ser tratado como um valor a ser comprimido.
-
-\begin{figure}[h]
-	\centering
-		\includegraphics[width=12cm]{img/bd_colunar.png}
-	\caption{Exemplo de leitura em um SGBD orientado à coluna. Fonte: adaptado de Matei e Bank \cite{matei2010column}}
-	\label{fig:sgbd_col}
-\end{figure}
-
-Exemplos de SGBDs colunares são o (i) Sybase IQ \cite{macnicol2004sybase}, que é utilizado para gerir DWs e otimizado para trabalhar com \textit{Big Data}, possuindo escalabilidade na casa dos \textit{petabytes}; o (ii) MonetDB \cite{monetdb2017c}, pioneiro na abordagem colunar; o (iii) Vertica \cite{vertica2017c}, projetado para DWs em nuvem; e o (iv) C-Store \cite{stonebraker2005c}, desenvolvido por colaboradores do MIT (\textit{Massachusetts Institute of Technology}), Yale, Brandeis University, Brown University e UMass Boston.
+Para que possa ser construído um DW e aplicada a modelagem acima descrita, 
+é necessário alguma ferramenta que possa fazer o gerenciamento deste DW. 
+De acordo com Elmasri e Navathe \cite{navathe2011banco} um banco de dados pode ser gerenciado por sistemas que 
+facilitem este processo de gerenciamento no banco de dados. Estes sistemas são conhecidos como Sistemas Gerenciadores de Banco de Dados, ou SGBD.
