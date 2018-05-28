@@ -6,9 +6,19 @@ Um ativo importante em qualquer organização é a informação. Segundo Kimball
 
 \section{\textit{Data Warehouses} e Aplicações OLAP}
 
-De acordo com Inmon \cite{inmon2005building}, DWs são base de todos os Sistemas de Decisão de Suporte (\textit{Decision Support Systems} -- DSS). DSS são tecnologias utilizadas para decisões de negócio e solução de problemas, e incluem componentes que realizam gerenciamento de banco de dados e que permitem uma interação com o usuário de forma a simplificar consultas e geração de relatórios \cite{shim2002past}. DWs foram as primeiras ferramentas a surgirem como solução para o suporte à decisão de negócio, integrando dados de diferentes bancos de dados operacionais \cite{inmon2005building, kimball2002dw}.
+De acordo com Inmon \cite{inmon2005building}, DWs são base de todos os Sistemas de Decisão de Suporte 
+(\textit{Decision Support Systems} -- DSS). DSS são tecnologias utilizadas para decisões de negócio e solução de problemas, 
+e incluem componentes que realizam gerenciamento de banco de dados e que 
+permitem uma interação com o usuário de forma a simplificar consultas e geração de relatórios 
+\cite{shim2002past}. DWs foram as primeiras ferramentas a surgirem como solução para o 
+suporte à decisão de negócio, integrando dados de diferentes bancos de dados operacionais 
+\cite{inmon2005building, kimball2002dw}.
 
-De forma geral, um DW é um repositório de dados capaz de fornecer rapidamente informações consistentes e cruciais para a tomada de decisão de uma organização, de tal forma que essa informação possa ser acessada de maneira intuitiva e legível pelo usuário, a fim de combinar diferentes informações entre os dados armazenados \cite{kimball2002dw}. Deve também se adaptar a possíveis mudanças, sejam elas mudanças comerciais, mudanças nos dados ou na tecnologia. Inmon \cite{inmon2005building} define um DW como: uma coleção de dados não-volátil, ou seja, que não muda após inserida no \textit{warehouse}; orientado ao assunto principal da organização; integrado e variante no tempo para que seja mantido um histórico a fim de analisar situações passadas. Do ponto de vista estrutural, Wremble e Koncilia \cite{wrembel2007data} definem um DW como uma base de dados homogênea, local e centralizada.
+De forma geral, um DW é um repositório de dados capaz de fornecer rapidamente 
+informações consistentes e cruciais para a tomada de decisão de uma organização, 
+de tal forma que essa informação possa ser acessada de maneira intuitiva e legível 
+pelo usuário, a fim de combinar diferentes informações entre os dados armazenados 
+\cite{kimball2002dw}. Deve também se adaptar a possíveis mudanças, sejam elas mudanças comerciais, mudanças nos dados ou na tecnologia. Inmon \cite{inmon2005building} define um DW como: uma coleção de dados não-volátil, ou seja, que não muda após inserida no \textit{warehouse}; orientado ao assunto principal da organização; integrado e variante no tempo para que seja mantido um histórico a fim de analisar situações passadas. Do ponto de vista estrutural, Wremble e Koncilia \cite{wrembel2007data} definem um DW como uma base de dados homogênea, local e centralizada.
 
 Para analisar os dados de um DW além de implementá-lo é necessário que alguma aplicação leia seu conteúdo e apresente-o de forma gráfica e intuitiva ao analisador. Aplicações OLTP (\textit{On-Line Transactional Processing}) são utilizadas por bancos de dados operacionais e operam transações atômicas e isoladas de forma repetitiva, que correspondem ao dia-a-dia de uma organização \cite{chaudhuri1997overview}. DWs trabalham com suporte à decisão e são intensivos à consultas \textit{ad hoc} complexas, que acessam milhões de registros. Sendo assim, os dados históricos, a taxa de vazão de uma consulta e o tempo de resposta são mais importantes que pequenas transações. À aplicação aceita por um DW dá-se o nome de OLAP, cujo objetivo, de acordo com Codd; Codd e Salley \cite{codd1998providing}, é identificar tendências, padrões de comportamento e anomalias, bem como relações em dados aparentemente não relacionados. Os resultados dessas análises são a base para tomada de decisões de negócio. Portanto, DWs e aplicações OLAP são componentes chave para a construção de um ambiente de análise.
 

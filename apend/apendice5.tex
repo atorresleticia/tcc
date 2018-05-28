@@ -1,0 +1,83 @@
+%============================================================
+
+\chapter{DDL para Criação do Ambiente \textit{Star}}
+\label{ddl_star}
+
+É apresentado aqui o código em SQL para criação das entidades para o ambiente \textit{star}, adaptado do \textit{snowflake}. 
+
+\begin{lstlisting}[language=SQL]
+CREATE TABLE supplier (
+	s_suppkey INTEGER NOT NULL,
+	s_name CHAR(25) NOT NULL,
+	s_address VARCHAR(40) NOT NULL,
+	s_nationkey INTEGER NOT NULL,
+	s_nation_name CHAR(25) NOT NULL,
+	s_region_name CHAR(25) NOT NULL,
+	s_phone CHAR(15) NOT NULL,
+	s_acctbal DECIMAL(15,2) NOT NULL,
+	s_comment VARCHAR(101) NOT NULL,
+	s_nation_comment VARCHAR(152),
+	s_region_comment VARCHAR(152)
+);
+
+CREATE TABLE customer (
+	c_custkey INTEGER NOT NULL,
+	c_name CHAR(25) NOT NULL,
+	c_address VARCHAR(40) NOT NULL,
+	c_nationkey INTEGER NOT NULL,
+	c_nation_name CHAR(25) NOT NULL,
+	c_region_name CHAR(25) NOT NULL,
+	c_phone CHAR(15) NOT NULL,
+	c_acctbal DECIMAL(15,2) NOT NULL,
+	c_mktsegment  CHAR(10) NOT NULL,
+	c_comment VARCHAR(117) NOT NULL,
+	c_nation_comment VARCHAR(152),
+	c_region_comment VARCHAR(152)
+);
+
+CREATE TABLE part ( 
+	p_partkey     INTEGER NOT NULL,
+	p_name        VARCHAR(55) NOT NULL,
+	p_mfgr        CHAR(25) NOT NULL,
+	p_brand       CHAR(10) NOT NULL,
+	p_type        VARCHAR(25) NOT NULL,
+	p_size        INTEGER NOT NULL,
+	p_container   CHAR(10) NOT NULL,
+	p_retailprice DECIMAL(15,2) NOT NULL,
+	p_comment     VARCHAR(23) NOT NULL 
+);
+
+CREATE TABLE item (
+	i_itemkey INTEGER NOT NULL, 
+	i_partkey INTEGER NOT NULL, 
+	i_suppkey INTEGER NOT NULL, 
+	i_custkey INTEGER NOT NULL, 
+	i_linenumber INTEGER NOT NULL, 
+	i_quantity DECIMAL (15,2) NOT NULL,
+	i_extendedprice DECIMAL (15,2) NOT NULL, 
+	i_discount DECIMAL (15,2) NOT NULL, 
+	i_tax DECIMAL (15,2) NOT NULL, 
+	i_returnflag char(1) not null, 
+	i_linestatus char(1) not null,
+	i_shipdate date not null,
+	i_commitdate date not null, 
+	i_receiptdate date not null, 
+	i_shipinstruct char(25) not null, 
+	i_shipmode char(10) not null,
+	i_comment varchar(44) not null,
+	i_orderstatus char(1) not null, 
+	i_ordertotalprice decimal(15,2) not null, 
+	i_orderdate date not null, 
+	i_orderpriority char(15) not null,
+	i_orderclerk char(15) not null,
+	i_shippriority integer not null, 
+	i_ordercomment varchar(79) not null, 
+	i_availqty integer not null, 
+	i_supplycost decimal(15,2)  not null, 
+	i_partsuppcomment varchar(199) not null
+);
+		
+\end{lstlisting}
+
+
+	

@@ -89,6 +89,12 @@ Dispon{\'\i}vel em: $<$http://www.tpc.org/tpch/$>$.}
 {CODD, E.~F. A relational model of data for large shared data banks.
 \emph{Communications of the ACM}, ACM, v.~13, n.~6, p. 377--387, 1970.}
 
+\bibitem{han2011nosql}
+\abntrefinfo{Han et al.}{HAN et al.}{2011}
+{HAN, J. et al. Survey on nosql database. In:  \emph{2011 6th International
+  Conference on Pervasive Computing and Applications}. [S.l.: s.n.], 2011. p.
+  363--366.}
+
 \bibitem{pritchett2008base}
 \abntrefinfo{Pritchett}{PRITCHETT}{2008}
 {PRITCHETT, D. Base: An acid alternative.
@@ -119,6 +125,84 @@ Dispon{\'\i}vel em:
 {DECANDIA, G. et al. Dynamo: amazon's highly available key-value store. In:
   ACM. \emph{ACM SIGOPS operating systems review}. [S.l.], 2007. v.~41, n.~6,
   p. 205--220.}
+
+\bibitem{brewer2000towards}
+\abntrefinfo{Brewer}{BREWER}{2000}
+{BREWER, E.~A. Towards robust distributed systems. In:  \emph{PODC}. [S.l.:
+  s.n.], 2000. v.~7.}
+
+\bibitem{gilbert2002brewer}
+\abntrefinfo{Gilbert e Lynch}{GILBERT; LYNCH}{2002}
+{GILBERT, S.; LYNCH, N. Brewer's conjecture and the feasibility of consistent,
+  available, partition-tolerant web services.
+\emph{Acm Sigact News}, ACM, v.~33, n.~2, p. 51--59, 2002.}
+
+\bibitem{khoshafian1987query}
+\abntrefinfo{Khoshafian et al.}{KHOSHAFIAN et al.}{1987}
+{KHOSHAFIAN, S. et al. A query processing strategy for the decomposed storage
+  model. In:  IEEE. \emph{Data Engineering, 1987 IEEE Third International
+  Conference on}. [S.l.], 1987. p. 636--643.}
+
+\bibitem{matei2010column}
+\abntrefinfo{Matei e Bank}{MATEI; BANK}{2010}
+{MATEI, G.; BANK, R.~C. Column-oriented databases, an alternative for
+  analytical environment.
+\emph{Database Systems Journal}, Academy of Economic Studies-Bucharest,
+  Romania, v.~1, n.~2, p. 3--16, 2010.}
+
+\bibitem{abadi2008column}
+\abntrefinfo{Abadi, Madden e Hachem}{ABADI; MADDEN; HACHEM}{2008}
+{ABADI, D.~J.; MADDEN, S.~R.; HACHEM, N. Column-stores vs. row-stores: how
+  different are they really? In:  ACM. \emph{Proceedings of the 2008 ACM SIGMOD
+  international conference on Management of data}. [S.l.], 2008. p. 967--980.}
+
+\bibitem{abadi2013design}
+\abntrefinfo{Abadi et al.}{ABADI et al.}{2013}
+{ABADI, D. et al. The design and implementation of modern column-oriented
+  database systems.
+\emph{Foundations and Trends{\textregistered} in Databases}, Now Publishers,
+  Inc., v.~5, n.~3, p. 197--280, 2013.}
+
+\bibitem{abadi2007materialization}
+\abntrefinfo{Abadi et al.}{ABADI et al.}{2007}
+{ABADI, D.~J. et al. Materialization strategies in a column-oriented dbms. In:
+  IEEE. \emph{Data Engineering, 2007. ICDE 2007. IEEE 23rd International
+  Conference on}. [S.l.], 2007. p. 466--475.}
+
+\bibitem{abadi2008query}
+\abntrefinfo{Abadi}{ABADI}{2008}
+{ABADI, D.~J.
+\emph{Query execution in column-oriented database systems}.
+Tese (Doutorado) --- Massachusetts Institute of Technology, 2008.}
+
+\bibitem{stonebraker2005c}
+\abntrefinfo{Stonebraker et al.}{STONEBRAKER et al.}{2005}
+{STONEBRAKER, M. et al. C-store: a column-oriented dbms. In:  VLDB ENDOWMENT.
+  \emph{Proceedings of the 31st international conference on Very large data
+  bases}. [S.l.], 2005. p. 553--564.}
+
+\bibitem{boncz2005monetdb}
+\abntrefinfo{Boncz, Zukowski e Nes}{BONCZ; ZUKOWSKI; NES}{2005}
+{BONCZ, P.~A.; ZUKOWSKI, M.; NES, N. Monetdb/x100: Hyper-pipelining query
+  execution. In:  \emph{Cidr}. [S.l.: s.n.], 2005. v.~5, p. 225--237.}
+
+\bibitem{westmann2000implementation}
+\abntrefinfo{Westmann et al.}{WESTMANN et al.}{2000}
+{WESTMANN, T. et al. The implementation and performance of compressed
+  databases.
+\emph{ACM Sigmod Record}, ACM, v.~29, n.~3, p. 55--67, 2000.}
+
+\bibitem{roth1993database}
+\abntrefinfo{Roth e Horn}{ROTH; HORN}{1993}
+{ROTH, M.~A.; HORN, S.~J. V. Database compression.
+\emph{ACM Sigmod Record}, ACM, v.~22, n.~3, p. 31--39, 1993.}
+
+\bibitem{abadi2006integrating}
+\abntrefinfo{Abadi, Madden e Ferreira}{ABADI; MADDEN; FERREIRA}{2006}
+{ABADI, D.; MADDEN, S.; FERREIRA, M. Integrating compression and execution in
+  column-oriented database systems. In:  ACM. \emph{Proceedings of the 2006 ACM
+  SIGMOD international conference on Management of data}. [S.l.], 2006. p.
+  671--682.}
 
 \bibitem{bhutta1999benchmarking}
 \abntrefinfo{Bhutta e Huq}{BHUTTA; HUQ}{1999}
@@ -171,5 +255,11 @@ Feb, 2012.}
   Specification. Revision 2.17.2}.
 San Francisco, 2017. Acessado em: 12 de maio de 2017. Dispon{\'\i}vel em:
   $<$https://goo.gl/uaRRcv$>$.}
+
+\bibitem{raasveldt2018fair}
+\abntrefinfo{Raasveldt et al.}{RAASVELDT et al.}{2018}
+{RAASVELDT, M. et al. Fair benchmarking considered difficult: Common pitfalls
+  in database performance testing.
+2018.}
 
 \end{thebibliography}
