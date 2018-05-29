@@ -6,32 +6,32 @@
 \contentsline {chapter}{Sum\IeC {\'a}rio}{x}
 \contentsline {chapter}{Resumo}{xii}
 \contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}
-\contentsline {chapter}{\numberline {2}Recupera\IeC {\c c}\IeC {\~a}o de Informa\IeC {\c c}\IeC {\~a}o}{4}
-\contentsline {section}{\numberline {2.1}\textit {Data Warehouses} e Aplica\IeC {\c c}\IeC {\~o}es OLAP}{4}
-\contentsline {chapter}{\numberline {3}Sistemas Gerenciadores de Banco de Dados}{10}
-\contentsline {section}{\numberline {3.1}SGBD Relacional}{11}
-\contentsline {section}{\numberline {3.2}SGBD NoSQL}{13}
-\contentsline {chapter}{\numberline {4}NoSQL}{14}
-\contentsline {section}{\numberline {4.1}SGBD Colunar}{17}
-\contentsline {section}{\numberline {4.2}Implementa\IeC {\c c}\IeC {\~a}o do Sistema Colunar}{18}
-\contentsline {subsection}{\numberline {4.2.1}Particionamento Vertical}{19}
-\contentsline {subsection}{\numberline {4.2.2}Modifica\IeC {\c c}\IeC {\~a}o na Camada de Armazenamento}{19}
-\contentsline {subsection}{\numberline {4.2.3}Modifica\IeC {\c c}\IeC {\~a}o na Camada de Armazenamento e Particionamento Vertical}{20}
-\contentsline {section}{\numberline {4.3}Compress\IeC {\~a}o de Dados}{20}
-\contentsline {chapter}{\numberline {5}TPC \textit {Benchmark} H}{22}
-\contentsline {section}{\numberline {5.1}Metodologia}{24}
-\contentsline {subsection}{\numberline {5.1.1}Teste de For\IeC {\c c}a}{25}
-\contentsline {subsection}{\numberline {5.1.2}Teste de Vaz\IeC {\~a}o}{26}
-\contentsline {section}{\numberline {5.2}Ambiente Original Normalizado}{27}
-\contentsline {section}{\numberline {5.3}Ambiente Desnormalizado}{28}
-\contentsline {chapter}{\numberline {6}O Experimento}{31}
-\contentsline {section}{\numberline {6.1}Carregamento de Dados}{33}
-\contentsline {section}{\numberline {6.2}Base de 1GB}{33}
-\contentsline {section}{\numberline {6.3}Base de 10GB}{33}
-\contentsline {section}{\numberline {6.4}Base de 30GB}{33}
-\contentsline {chapter}{\numberline {7}Conclus\IeC {\~a}o}{34}
-\contentsline {chapter}{\numberline {A}Consultas do Ambiente Original Normalizado}{35}
-\contentsline {chapter}{\numberline {B}Consultas do Ambiente Denormalizado}{49}
-\contentsline {chapter}{\numberline {C}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Snowflake}}{61}
-\contentsline {chapter}{\numberline {D}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Star}}{64}
-\contentsline {chapter}{Refer\IeC {\^e}ncias Bibliogr\IeC {\'a}ficas}{66}
+\contentsline {chapter}{\numberline {2}Recupera\IeC {\c c}\IeC {\~a}o de Informa\IeC {\c c}\IeC {\~a}o}{5}
+\contentsline {section}{\numberline {2.1}\textit {Data Warehouses} e Aplica\IeC {\c c}\IeC {\~o}es OLAP}{5}
+\contentsline {chapter}{\numberline {3}Sistemas Gerenciadores de Banco de Dados}{11}
+\contentsline {section}{\numberline {3.1}SGBD Relacional}{12}
+\contentsline {section}{\numberline {3.2}SGBD NoSQL}{14}
+\contentsline {chapter}{\numberline {4}NoSQL}{15}
+\contentsline {section}{\numberline {4.1}SGBD Colunar}{18}
+\contentsline {section}{\numberline {4.2}Implementa\IeC {\c c}\IeC {\~a}o do Sistema Colunar}{19}
+\contentsline {subsection}{\numberline {4.2.1}Particionamento Vertical}{20}
+\contentsline {subsection}{\numberline {4.2.2}Modifica\IeC {\c c}\IeC {\~a}o na Camada de Armazenamento}{20}
+\contentsline {subsection}{\numberline {4.2.3}Modifica\IeC {\c c}\IeC {\~a}o na Camada de Armazenamento e Particionamento Vertical}{21}
+\contentsline {section}{\numberline {4.3}Compress\IeC {\~a}o de Dados}{21}
+\contentsline {chapter}{\numberline {5}TPC \textit {Benchmark} H}{24}
+\contentsline {section}{\numberline {5.1}Metodologia}{26}
+\contentsline {subsection}{\numberline {5.1.1}Teste de For\IeC {\c c}a}{27}
+\contentsline {subsection}{\numberline {5.1.2}Teste de Vaz\IeC {\~a}o}{28}
+\contentsline {section}{\numberline {5.2}Ambiente Original Normalizado}{29}
+\contentsline {section}{\numberline {5.3}Ambiente Desnormalizado}{30}
+\contentsline {chapter}{\numberline {6}O Experimento}{33}
+\contentsline {section}{\numberline {6.1}Carregamento de Dados}{35}
+\contentsline {section}{\numberline {6.2}Base de 1GB}{35}
+\contentsline {section}{\numberline {6.3}Base de 10GB}{35}
+\contentsline {section}{\numberline {6.4}Base de 30GB}{35}
+\contentsline {chapter}{\numberline {7}Conclus\IeC {\~a}o}{36}
+\contentsline {chapter}{\numberline {A}Consultas do Ambiente Original Normalizado}{37}
+\contentsline {chapter}{\numberline {B}Consultas do Ambiente Denormalizado}{51}
+\contentsline {chapter}{\numberline {C}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Snowflake}}{63}
+\contentsline {chapter}{\numberline {D}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Star}}{66}
+\contentsline {chapter}{Refer\IeC {\^e}ncias Bibliogr\IeC {\'a}ficas}{68}

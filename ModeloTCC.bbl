@@ -5,11 +5,6 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{1.42.2.1 }
 
-\bibitem{kimball2002dw}
-\abntrefinfo{Kimball e Ross}{KIMBALL; ROSS}{2002}
-{KIMBALL, R.; ROSS, M. \emph{The Data Warehouse Toolkit: The Complete Guide to
-  Dimensional Modeling}. 2. ed. [S.l.]: Wiley Computer Publishing, 2002.}
-
 \bibitem{wrembel2007data}
 \abntrefinfo{Wrembel e Koncilia}{WREMBEL; KONCILIA}{2007}
 {WREMBEL, R.; KONCILIA, C. \emph{Data warehouses and OLAP: concepts,
@@ -25,6 +20,11 @@
 \abntrefinfo{Chaudhuri e Dayal}{CHAUDHURI; DAYAL}{1997}
 {CHAUDHURI, S.; DAYAL, U. An overview of data warehousing and olap technology.
 \emph{ACM Sigmod record}, ACM, v.~26, n.~1, p. 65--74, 1997.}
+
+\bibitem{kimball2002dw}
+\abntrefinfo{Kimball e Ross}{KIMBALL; ROSS}{2002}
+{KIMBALL, R.; ROSS, M. \emph{The Data Warehouse Toolkit: The Complete Guide to
+  Dimensional Modeling}. 2. ed. [S.l.]: Wiley Computer Publishing, 2002.}
 
 \bibitem{navathe2011banco}
 \abntrefinfo{Elmasri e Navathe}{ELMASRI; NAVATHE}{2011}
@@ -89,6 +89,43 @@ Dispon{\'\i}vel em: $<$http://www.tpc.org/tpch/$>$.}
 {CODD, E.~F. A relational model of data for large shared data banks.
 \emph{Communications of the ACM}, ACM, v.~13, n.~6, p. 377--387, 1970.}
 
+\bibitem{postgres2018r}
+\abntrefinfo{PostgreSQL\ldots}{POSTGRESQL\ldots}{2018}
+{POSTGRESQL: The World's Most Advanced Open Source Relational Database. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$https://www.postgresql.org/$>$.}
+
+\bibitem{mysql2018r}
+\abntrefinfo{MySQL\ldots}{MYSQL\ldots}{2018}
+{MYSQL: The world's most popular open source database. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$https://www.mysql.com/$>$.}
+
+\bibitem{microsoft2018r}
+\abntrefinfo{Microsoft\ldots}{MICROSOFT\ldots}{2018a}
+{MICROSOFT SQL Server. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em:
+  $<$https://www.microsoft.com/en-us/sql-server/sql-server-2017$>$.}
+
+\bibitem{lite2018r}
+\abntrefinfo{Microsoft\ldots}{MICROSOFT\ldots}{2018b}
+{MICROSOFT SQL Server. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$https://www.sqlite.org/index.html$>$.}
+
+\bibitem{maria2018r}
+\abntrefinfo{MariaDB\ldots}{MARIADB\ldots}{2018}
+{MARIADB - Supporting continuity and open collaboration. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$https://mariadb.org/$>$.}
+
+\bibitem{oracle2018r}
+\abntrefinfo{Database\ldots}{DATABASE\ldots}{2018}
+{DATABASE and Cloud Database - Oracle. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$https://www.oracle.com/database/index.html$>$.}
+
 \bibitem{han2011nosql}
 \abntrefinfo{Han et al.}{HAN et al.}{2011}
 {HAN, J. et al. Survey on nosql database. In:  \emph{2011 6th International
@@ -125,6 +162,72 @@ Dispon{\'\i}vel em:
 {DECANDIA, G. et al. Dynamo: amazon's highly available key-value store. In:
   ACM. \emph{ACM SIGOPS operating systems review}. [S.l.], 2007. v.~41, n.~6,
   p. 205--220.}
+
+\bibitem{neo2018nosql}
+\abntrefinfo{The\ldots}{THE\ldots}{2018}
+{THE Neo4j Graph Plataform - The \#1 Platform for Connected Data. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$https://neo4j.com/$>$.}
+
+\bibitem{voldemort2018nosql}
+\abntrefinfo{Project\ldots}{PROJECT\ldots}{2018}
+{PROJECT Voldemort: A distributed database. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$https://www.project-voldemort.com/voldemort/$>$.}
+
+\bibitem{amazon2018nosql}
+\abntrefinfo{Amazon\ldots}{AMAZON\ldots}{2018}
+{AMAZON DynamoDB - NoSQL Database Service. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$https://aws.amazon.com/dynamodb/$>$.}
+
+\bibitem{riak2018nosql}
+\abntrefinfo{Riak}{RIAK}{2018}
+{RIAK. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$http://basho.com/products/$>$.}
+
+\bibitem{redis2018nosql}
+\abntrefinfo{Redis}{REDIS}{2018}
+{REDIS. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$https://redis.io/$>$.}
+
+\bibitem{mongo2018nosql}
+\abntrefinfo{MongoDB\ldots}{MONGODB\ldots}{2018}
+{MONGODB for Giant Ideas. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$https://www.mongodb.com/$>$.}
+
+\bibitem{couch2018nosql}
+\abntrefinfo{Apache\ldots}{APACHE\ldots}{2018}
+{APACHE CouchDB. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$http://couchdb.apache.org/$>$.}
+
+\bibitem{monetdb2017c}
+\abntrefinfo{MonetDB\ldots}{MONETDB\ldots}{2017}
+{MONETDB -- The column-store pioneer. 2017.
+Acessado em: 20 de agosto de 2017.
+Dispon{\'\i}vel em: $<$https://www.monetdb.org/Home$>$.}
+
+\bibitem{cstore2018nosql}
+\abntrefinfo{C-Store\ldots}{C-STORE\ldots}{2018}
+{C-STORE: A Column-Oriented DBMS. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$http://db.lcs.mit.edu/projects/cstore/$>$.}
+
+\bibitem{google2018nosql}
+\abntrefinfo{BigTable\ldots}{BIGTABLE\ldots}{2018}
+{BIGTABLE - Scalable NoSQL Database Service. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$https://cloud.google.com/bigtable/$>$.}
+
+\bibitem{cassandra2018nosql}
+\abntrefinfo{Apache\ldots}{APACHE\ldots}{2018}
+{APACHE Cassandra. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$http://cassandra.apache.org/$>$.}
 
 \bibitem{brewer2000towards}
 \abntrefinfo{Brewer}{BREWER}{2000}
@@ -247,6 +350,12 @@ Tese (Doutorado) --- Massachusetts Institute of Technology, 2008.}
 {RUTISHAUSER, N.; NOURELDIN, A. Tpc-h applied to mongodb: How a nosql database
   performs.
 Feb, 2012.}
+
+\bibitem{soares2012avaliaccao}
+\abntrefinfo{Soares}{SOARES}{2012}
+{SOARES, B.~E. Uma avaliação experimental de desempenho entre sistemas
+  gerenciadores de bancos de dados colunares e relacionais.
+2012.}
 
 \bibitem{tpc2017specs}
 \abntrefinfo{Transaction Processing Performance Council}{TRANSACTION PROCESSING

@@ -77,15 +77,16 @@ As mais conhecidas são quatro:
 
 \begin{itemize}
     \item{\textbf{Orientado a Grafos}}, que se utiliza da Teoria dos Grafos para estruturar seus dados. 
-    Um exemplo desta classe é o Neo4j
+    Um exemplo desta classe é o Neo4j \cite{neo2018nosql}.
     \item{\textbf{Orientado a Chave-Valor}}, que armazena os dados de forma similar a uma tabela \textit{hash}, 
-    com uma chave referenciando um valor, ou tipo de dado. Exemplos são o Project Voldemort, DyanmoDB, o Riak e o Redis.
+    com uma chave referenciando um valor, ou tipo de dado. Exemplos são o Project Voldemort \cite{voldemort2018nosql}, 
+    DyanmoDB \cite{amazon2018nosql}, o Riak \cite{riak2018nosql} e o Redis \cite{redis2018nosql}.
     \item{\textbf{Orientado a Documento}}, uma versão melhorada do Chave-Valor, 
     no qual os valores são armazenados como documentos através de estruturas complexas como JSON e XML. 
-    Exemplos são o MongoDB e o CouchDB.
+    Exemplos são o MongoDB \cite{mongo2018nosql} e o CouchDB \cite{couch2018nosql}.
     \item{\textbf{Orientado a Colunas}}, ou modelo colunar, 
     que utiliza tabelas como armazenamento de entidades, 
-    porém não agrupa os dados sob forma de tuplas, e sim colunas. Exemplos são o MonetDB, BigTable e Cassandra.
+    porém não agrupa os dados sob forma de tuplas, e sim colunas. Exemplos são o MonetDB \cite{monetdb2017c}, C-Store \cite{cstore2018nosql}, BigTable \cite{google2018nosql} e Cassandra \cite{cassandra2018nosql}.
 \end{itemize}
 
 De maneira geral, as vantagens no uso de um SGBD NoSQL estão no rápido processamento de um grande volume de dados, flexibilidade para expansão e baixo custo de escalabilidade. Devido ao vasto número de SGBD dentro de cada classe de NoSQL, esses bancos também podem ser classificados de acordo com o Teorema CAP (do inglês \textit{Consistency, Availability, Partition tolerance}). Segundo Eric Brewer \cite{brewer2000towards, gilbert2002brewer}, um sistema distribuído não é 
@@ -269,4 +270,17 @@ Um método bastante empregado é a Codificação por Dicionário. Nele atributos
 3 a 19 (3, 5, 7, 11, 13, 17, 19), podem ser representados por um dicionário de 3 bits. Este algoritmo pode ser utilizado para compressão 
 de valores NULL, considerando-o como um possível valor no padrão.
 
-Abadi, Madden e Ferreira \cite{abadi2006integrating} utilizam a compressão por dicionário e uma variação do algoritmo \textit{null supression} para implementar o BD C-Store. Ainda apresentam dois outros métodos utilizados por eles. O primeiro é o \textit{run-length} 
+Abadi, Madden e Ferreira \cite{abadi2006integrating} utilizam a compressão por dicionário e uma variação do algoritmo \textit{null supression} para implementar o BD C-Store e ainda apresentam dois outros métodos. O primeiro é o \textit{run-length}, que pode ser bem aproveitado 
+em bancos colunares quando atributos são repetidos sequencialmente e possuem pouca variação. Ele consiste em contar o número de vezes no qual 
+um valor é repetido utilizando a tripla (valor, posição inicial, tamanho). Um exemplo é ilustrado na Figura A com o atributo \textit{especialização}.
+
+% inserir uma imagem run length com graduação, mestrado, doutorado.
+
+O último método apresentado pelos autores é a Codificação por Vetor de Bit, bastante útil quando uma coluna possui número limitado 
+de possibilidades, como linguagens de programação dentro de um dado paradigma ou estados do Brasil. Uma string de bits representa a 
+ocorrência do valor de atributo, onde '1' representa a ocorrência naquela posição e '0' a não ocorrência. Como exemplo, uma coluna com os 
+valores {M M F M F F M} podem ser representados pela cadeia de bits 1 1 0 1 0 0 1 para o valor M, e 0 0 1 0 1 1 0 para F.
+
+Em suma, ao implementar um banco colunar tanto a aplicação deve ser capaz de entender e conseguir recuperar informações mesmo comprimidas, como a modificação da camada de armazenamento deve ser implementada tal que se possa usufruir de algum método de compressão. Caso contrário um 
+dos principais diferenciais de modelos colunares não será explorado e poderá não haver impacto no desempenho quando trabalhado com uma 
+grande massa de dados, como é a realidade de empresas.
