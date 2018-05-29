@@ -5,11 +5,20 @@
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Exemplo de esquema \textit {Star} com tabelas Fato e Dimens\IeC {\~a}o}}{9}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Exemplo de esquema \textit {Snow Flake} adaptado da Figura \ref {fig:star_dim}}}{9}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Atributos das entidades \textit {funcion\IeC {\'a}rio} e \textit {projeto}}}{13}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Relacionamento entre \textit {funcion\IeC {\'a}rio} e \textit {projeto}}}{14}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Exemplos de registros para a entidade \textit {funcion\IeC {\'a}rio} apresentada no Cap\IeC {\'\i }tulo \ref {sgbd}}}{19}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Diferen\IeC {\c c}a visual entre registros armazenados em um banco relacional e colunar}}{19}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Tuplas reconstru\IeC {\'\i }das a partir da \textit {early materialization}}}{21}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Tuplas reconstru\IeC {\'\i }das a partir da \textit {late materialization}}}{21}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Implementa\IeC {\c c}\IeC {\~a}o do modelo colunar utilizando particionamento vertical}}{22}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Esquema do ambiente normalizado}}{29}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Esquema do ambiente desnormalizado}}{31}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Esquema do ambiente normalizado}}{31}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Esquema do ambiente desnormalizado}}{33}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Fluxograma do desenvolvimento at\IeC {\'e} o c\IeC {\'a}lculo final de desempenho do TPC-H}}{37}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Fluxograma do desenvolvimento do teste de for\IeC {\c c}a considerando todas as varia\IeC {\c c}\IeC {\~o}es de cen\IeC {\'a}rio}}{37}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

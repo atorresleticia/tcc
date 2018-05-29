@@ -55,24 +55,52 @@ no escopo de banco de dados \cite{raasveldt2018fair}:
 \end{enumerate}
 
 Os itens 1 e 2 foram tratados antes da execução do TPC-H. Nos Apêndices \ref{ddl_snow} e \ref{ddl_star} se encontram as SQL 
-utilizadas para criar os esquemas \textit{snowflake} e \textit{star} nos SGBD. O fluxograma da Figura A 
+utilizadas para criar os esquemas \textit{snowflake} e \textit{star} nos SGBD. O fluxograma da Figura \ref{fig:flux} 
 ilustra ainda a sequência de passos desde a criação dos bancos até a execução do \textit{benchmark}. 
 
 O item 3 foi tratado durante a execução das consultas do teste de força: para cada cenário é realizada três 
 análises diferentes, a primeira considerando a primeira execução de consultas; a segunda considerando o melhor 
 resultado entre três execuções; e a terceira limpando parte da cache do sistema operacional antes de 
 rodar a terceira execução. Essa análise é feita somente sob as consultas do teste de força por ser o primeiro 
-teste a ser feito, como pode ser observado na Figura A. No teste de vazão todas as consultas já foram executadas 
+teste a ser feito, como pode ser observado na Figura \ref{fig:power_flux}, que ilustra o fluxograma do teste de força. No teste de vazão todas as consultas já foram executadas 
 uma vez e as funções de atualização trabalham sobre dados diferentes a cada vez que são executadas, impossibilitando 
 o armazenamento em cache.
+
+\begin{figure*}[htpb]
+	\centering
+        \includegraphics[width=\textwidth]{flux}
+	\caption{Fluxograma do desenvolvimento até o cálculo final de desempenho do TPC-H}
+	\label{fig:flux}
+\end{figure*}
+
+\begin{figure*}[htpb]
+	\centering
+        \includegraphics[width=\textwidth]{power_flux}
+	\caption{Fluxograma do desenvolvimento do teste de força considerando todas as variações de cenário}
+	\label{fig:power_flux}
+\end{figure*}
 
 Para averiguar se todas as 22 consultas do TPC-H executam de forma correta e em tempo hábil, principalmente 
 atentando-se ao fato de que no ambiente denormalizado elas foram modificadas, foi realizada uma execução 
 prévia de cada uma, sob a menor base de dados, utilizando o JDBC. Dessa execução, foram eliminadas as consultas 
 Q1, Q2, Q4, Q15, Q17, Q20 e Q21 por terem demorado horas no ambiente denormalizado -- e algumas tendo a execução 
-cancelada antes -- enquanto que as demais levaram apenas alguns segundos para executar.
+cancelada antes -- enquanto que as demais levaram apenas alguns segundos para executar. Essa mudança no número 
+de consultas fez com que as equações originais fossem adaptadas para a nova quantidade, 15.
+
+\begin{myequation}%
+\label{eq:1-2}
+{\scriptstyle Power@Size} = \frac{3600 * SF}{\sqrt[17]{\prod_{i = 1}^{i = 15}Q(i, 0) * \prod_{j = 1}^{j = 2}RF(j, 0)}} %
+\end{myequation}
+%
+
+\begin{myequation}%
+\label{eq:2-2}
+{\scriptstyle Throughput@Size} = \frac{S * 15 * 3600}{T_s * SF} %
+\end{myequation}
+%
 
 \section{Carregamento de Dados}
+
 
 
 \section{Base de 1GB}

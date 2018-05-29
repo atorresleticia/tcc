@@ -1,13 +1,15 @@
+\graphicspath{ {3-SGBD/} }
+
 \chapter{Sistemas Gerenciadores de Banco de Dados}
 \label{sgbd}
 
-Antes de se ter um sistema voltado para gerenciamento de um banco de dados, eram utilizados para persistência de dados o sistema de arquivos. 
+Antes de se ter um sistema que visava gerenciamento de um banco de dados, era utilizado para persistência de dados o sistema de arquivos. 
 Apesar de simples, esta abordagem apresentava alguns problemas por não apresentar suporte à redundância de informações; não garantir integridade de dados; 
-falta de segurança; e o acesso e gerenciamento dos dados depende de programas e aplicativos, fazendo com que seja necessário criar um novo aplicativo a 
+falta de segurança; e o acesso e gerenciamento dos dados dependia de programas e aplicativos, fazendo com que seja necessário criar um novo aplicativo, ou adaptá-lo, a 
 cada requisição de dados diferente. Outro problema crítico é não se ter informação de relacionamento entre arquivos diferentes.
 
 Como forma de manter o gerenciamento de dados independente de aplicações e programas bem como solucionar os demais falhas do sistema de arquivos 
-foram criados os Sistemas Gerenciadores de Bancos de Dados, os SGBD.  De acordo com Elmasri e Navathe \cite{navathe2011banco}, os SGBD são uma coleção de programas para 
+foram criados os Sistemas Gerenciadores de Bancos de Dados, os SGBD.  De acordo com Elmasri e Navathe \cite{navathe2011banco}, SGBD são uma coleção de programas para 
 criação e manutenção de um banco de dados, que facilita a definição, construção, manipulação e compartilhamento de dados entre usuários e aplicações.
 
 Dentre as vantagens que os SGBD trouxeram em detrimento ao sistema de arquivos estão:
@@ -34,20 +36,26 @@ vantagens de um modelo relacional em detrimento a um modelo de redes.
 
 Um modelo relacional define através de um conjunto de tabelas entidades que representam 
 objetos do mundo real, cada qual com seus atributos. Esse conjunto de atributos é 
-denominado registro do banco de dados, representando uma tupla na tabela. Assim como no mundo real, 
+denominado registro do banco de dados, representando uma tupla, ou linha, na tabela. Assim como no mundo real, 
 objetos devem estar também relacionados, e para tal SGBDR utilizam-se de chaves.
 
 Em um SGBDR além de definir relacionamentos, as chaves também garantem integridade entre os dados. 
-Existem dois tipos de chaves, uma que define a unicidade de um atributo, ou seja, assegura que 
-não haverão registros repetidos no banco, chamada de chave primária (\textit{primary key}, ou PK); e 
-outra que garante integridade no relacionamento entre duas entidades referenciando uma tabela na outra, que 
+Existem dois tipos de chaves, uma que garante a unicidade de um atributo, ou seja, assegura que 
+não haverão registros repetidos no banco tomando como referência aquele valor de chave, chamada de chave primária (\textit{primary key}, ou PK). A outra chave garante integridade no relacionamento entre duas entidades referenciando uma tabela na outra, que 
 é a chave estrangeira (\textit{foreign key}, ou FK).
 
 Tomando como exemplo uma empresa fictícia, são criados dois objetos reais que precisam ser 
-representados sob a forma relacional, \textit{funcionário} e \textit{projeto}. Nesta emprese funcionários possuem nome, 
-CPF, sexo, salário, um supervisor e trabalham em um ou mais projetos. Esses projetos também possuem atributos: 
-nome, código e o departamento no qual foram criados. Apenas com estas informações duas tabelas já são definidas 
-no banco, funcionário e projeto, bem como seus atributos, como ilustra a Figura X.
+representados sob a forma relacional, \textit{funcionário} e \textit{projeto}. Nesta empresa funcionários possuem \textit{nome, 
+CPF, sexo, salário,} um \textit{supervisor} e trabalham em um ou mais \textit{projetos}. Esses projetos também possuem atributos: 
+\textit{nome, código} e o número do \textit{departamento} no qual foram criados. Apenas com estas informações duas tabelas já são definidas 
+no banco, \textit{funcionário} e \textit{projeto}, bem como seus atributos, como ilustra a Figura \ref{fig:func_proj}.
+
+\begin{figure*}[htpb]
+	\centering
+		\includegraphics[width=13cm]{funcionario_projeto}
+	\caption{Atributos das entidades \textit{funcionário} e \textit{projeto}}
+	\label{fig:func_proj}
+\end{figure*}
 
 Como descrito, um funcionário trabalha em um ou mais projetos e ele precisa ainda registrar o número 
 de horas trabalhadas nestes projetos. Desta forma é preciso de alguma forma relacionar funcionário com os projetos. 
@@ -61,7 +69,14 @@ uma PK válida é o número do CPF e para o projeto o próprio atributo código.
 as entidades que relaciona, nesse caso \textit{funcionário\_projeto}, ou quando faz sentido pode ser nomeada de acordo com a função 
 que realiza, neste caso como um funcionário trabalha em um projeto a relação pode ser \textit{trabalha\_em}.
 
-O esquema que representa estas relações é como mostrado na Figura Z. Nela podemos ver as chaves primárias, em destaque, nas relações \textit{funcionário} e \textit{projeto}, e seus valores como chave estrangeira na relação \textit{trabalha\_em}. 
+O esquema que representa estas relações é como mostrado na Figura \ref{fig:relacao_func_proj}. Nela podemos ver as chaves primárias, em destaque, nas relações \textit{funcionário} e \textit{projeto}, e seus valores como chave estrangeira na relação \textit{trabalha\_em}. 
+
+\begin{figure*}[htpb]
+	\centering
+		\includegraphics[width=13cm]{relacao_func_proj}
+	\caption{Relacionamento entre \textit{funcionário} e \textit{projeto}}
+	\label{fig:relacao_func_proj}
+\end{figure*}
 
 Modelos de bancos de dados prezam, sempre que possível, pela consistência de dados, principalmente se tomar operações transacionais como transações bancárias, que necessitam de um alto grau de consistência após operações de inserção e atualização, para que não haja perda de valores ou que esses ainda façam sentido no sistema. Por essa razão SGBDR seguem o conceito ACID (Atomicidade, Consistência, Isolamento e Durabilidade). 
 

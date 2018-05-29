@@ -113,9 +113,23 @@ lidos \cite{khoshafian1987query}, o que diminui o tempo de acesso
 ao disco \cite{matei2010column, abadi2008column}. Cada uma destas colunas pode armazenar seus valores utilizando o par 
 \textit{chave, valor} \cite{abadi2013design, khoshafian1987query}, sendo esta uma das formas de implementação 
 de um sistema colunar (descrita na Seção \ref{sec:implementacao_col} deste capítulo). 
-A Figura X ilustra de forma simples, embora apenas visual, 
+A Figura \ref{fig:row-col} ilustra de forma simples, embora apenas visual, 
 a diferença principal entre um armazenamento utilizando linhas e outro utilizando 
-colunas.
+colunas a partir dos registros da Figura \ref{fig:regs}, baseada na entidade \textit{funcionário} apresentada no Capítulo \ref{sgbd}.
+
+\begin{figure*}[htpb]
+	\centering
+		\includegraphics[width=12cm]{registros}
+	\caption{Exemplos de registros para a entidade \textit{funcionário} apresentada no Capítulo \ref{sgbd}}
+	\label{fig:regs}
+\end{figure*}
+
+\begin{figure*}[htpb]
+	\centering
+        \includegraphics[width=\textwidth]{row_col}
+	\caption{Diferença visual entre registros armazenados em um banco relacional e colunar}
+	\label{fig:row-col}
+\end{figure*}
 
 Matei \cite{matei2010column} cita algumas vantagens de sistemas colunares:
 
@@ -158,14 +172,28 @@ a consulta a seguir:
 \end{lstlisting}
 
 A EM irá processar essa consulta e construir uma tupla com os atributos \textit{nome, salário} e \textit{sexo}, com todos os registros 
-armazenados em banco. Considere que os registros são como mostrados na Figura X. Esse método só analisa o predicado após a construção das tuplas. Isso não acontece na LM. 
+armazenados em banco. Considere que os registros são como mostrados na Figura \ref{fig:regs}. Esse método só analisa o predicado após a construção das tuplas. Isso não acontece na LM. 
 
 % inserir imagem com valores de registros
 
 Na LM, ou materialização tardia, é analisado primeiro o predicado e verificado quais valores atendem a esse predicado em cada coluna. 
 No caso da SQL acima primeiro seria analisado o predicado de seleção, nesse caso \texttt{WHERE salario >= 1000 AND sexo='F'}, e então 
 através de um operador lógico AND seria possível retornar a posição dos atributos que satisfazem essa seleção, para então 
-construir a tupla a partir do predicado de projeção somente com o atributo \textit{nome}. Em suma, apenas após ter a posição de cada atributo é que a tupla é construída, descartando a reconstrução de tuplas que seriam posteriormente descartadas. A Figura A e B representam o resultado final de cada materialização.
+construir a tupla a partir do predicado de projeção somente com o atributo \textit{nome}. Em suma, apenas após ter a posição de cada atributo é que a tupla é construída, descartando a reconstrução de tuplas que seriam posteriormente descartadas. A Figura \ref{fig:em} e \ref{fig:lm} representam o resultado final de cada materialização.
+
+\begin{figure*}[htpb]
+	\centering
+        \includegraphics[width=14cm]{em}
+	\caption{Tuplas reconstruídas a partir da \textit{early materialization}}
+	\label{fig:em}
+\end{figure*}
+
+\begin{figure*}[htpb]
+	\centering
+        \includegraphics[width=14cm]{lm}
+	\caption{Tuplas reconstruídas a partir da \textit{late materialization}}
+	\label{fig:lm}
+\end{figure*}
 
 % inserir subfigure com tuplas
 
@@ -177,10 +205,17 @@ em uma tabela de duas colunas contendo o par <chave/índice, valor do atributo> 
 
 % inserir figura de particionamento vertical
 
-A Figura Y mostra que é possível desmembrar o esquema relacional em colunas de atributos. 
+A Figura \ref{fig:vertical} mostra que é possível desmembrar o esquema relacional da Figura \ref{fig:regs} em colunas de atributos -- foram desmembrados os atributos \textit{nome, sexo} e \textit{salario}. 
 No momento em que uma consulta analítica é realizada, não serão processados dados além 
 dos de fato requeridos e nenhum dado é perdido pois ainda haverá referência entre os atributos 
 através das chaves.
+
+\begin{figure*}[htpb]
+	\centering
+        \includegraphics[width=\textwidth]{vertical}
+	\caption{Implementação do modelo colunar utilizando particionamento vertical}
+	\label{fig:vertical}
+\end{figure*}
 
 Essa abordagem é a mais simples de se implementar, pois nenhuma mudança é feita 
 na codificação do BD, sendo que a única alteração necessária está a nível 
@@ -272,7 +307,10 @@ de valores NULL, considerando-o como um possível valor no padrão.
 
 Abadi, Madden e Ferreira \cite{abadi2006integrating} utilizam a compressão por dicionário e uma variação do algoritmo \textit{null supression} para implementar o BD C-Store e ainda apresentam dois outros métodos. O primeiro é o \textit{run-length}, que pode ser bem aproveitado 
 em bancos colunares quando atributos são repetidos sequencialmente e possuem pouca variação. Ele consiste em contar o número de vezes no qual 
-um valor é repetido utilizando a tripla (valor, posição inicial, tamanho). Um exemplo é ilustrado na Figura A com o atributo \textit{especialização}.
+um valor é repetido utilizando a tripla (valor, posição inicial, tamanho). 
+% Um exemplo é ilustrado na Figura A com o atributo \textit{especialização}.
+
+
 
 % inserir uma imagem run length com graduação, mestrado, doutorado.
 
