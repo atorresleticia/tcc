@@ -6,6 +6,27 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {5.1}{\ignorespaces N\IeC {\'u}mero m\IeC {\'\i }nimo de sess\IeC {\~o}es para uma classe de banco de dados}}{30}
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Tempo de carregamento em segundos para os cen\IeC {\'a}rios de \textit {benchmark}}}{39}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Tamanho em bytes das entidades}}{39}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Tamanho do banco de dados em Mb para os cen\IeC {\'a}rios de \textit {benchmark}}}{39}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {cold run} para 1Gb}}{40}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {cold run} para 1Gb}}{41}
+\contentsline {table}{\numberline {6.6}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {cold run} para 10Gb}}{41}
+\contentsline {table}{\numberline {6.7}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {cold run} para 10Gb}}{42}
+\contentsline {table}{\numberline {6.8}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {cold run} para 30Gb}}{42}
+\contentsline {table}{\numberline {6.9}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {cold run} para 30Gb}}{43}
+\contentsline {table}{\numberline {6.10}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {hot run} para 1Gb}}{45}
+\contentsline {table}{\numberline {6.11}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {hot run} para 1Gb}}{46}
+\contentsline {table}{\numberline {6.12}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {hot run} para 10Gb}}{46}
+\contentsline {table}{\numberline {6.13}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {hot run} para 10Gb}}{47}
+\contentsline {table}{\numberline {6.14}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {hot run} para 30Gb}}{47}
+\contentsline {table}{\numberline {6.15}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {hot run} para 30Gb}}{48}
+\contentsline {table}{\numberline {6.16}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o das consultas da 1\IeC {\textordfeminine }, 2\IeC {\textordfeminine } e 3\IeC {\textordfeminine } execu\IeC {\c c}\IeC {\~a}o para 1Gb}}{50}
+\contentsline {table}{\numberline {6.17}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o da primeira consulta para 1Gb}}{51}
+\contentsline {table}{\numberline {6.18}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o das consultas da 1\IeC {\textordfeminine }, 2\IeC {\textordfeminine } e 3\IeC {\textordfeminine } execu\IeC {\c c}\IeC {\~a}o para 10Gb}}{51}
+\contentsline {table}{\numberline {6.19}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o da primeira consulta para 10Gb}}{51}
+\contentsline {table}{\numberline {6.20}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o das consultas da 1\IeC {\textordfeminine }, 2\IeC {\textordfeminine } e 3\IeC {\textordfeminine } execu\IeC {\c c}\IeC {\~a}o para 30Gb}}{52}
+\contentsline {table}{\numberline {6.21}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o da primeira consulta para 30Gb}}{52}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,10 +1,10 @@
 \babel@toc {brazil}{}
 \contentsline {chapter}{Lista de Figuras}{vi}
-\contentsline {chapter}{Lista de Tabelas}{vii}
-\contentsline {chapter}{Lista de Abreviaturas e Siglas}{viii}
-\contentsline {chapter}{Lista de S\IeC {\'\i }mbolos}{ix}
-\contentsline {chapter}{Sum\IeC {\'a}rio}{x}
-\contentsline {chapter}{Resumo}{xii}
+\contentsline {chapter}{Lista de Tabelas}{viii}
+\contentsline {chapter}{Lista de Abreviaturas e Siglas}{x}
+\contentsline {chapter}{Lista de S\IeC {\'\i }mbolos}{xi}
+\contentsline {chapter}{Sum\IeC {\'a}rio}{xii}
+\contentsline {chapter}{Resumo}{xiv}
 \contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}
 \contentsline {chapter}{\numberline {2}Recupera\IeC {\c c}\IeC {\~a}o de Informa\IeC {\c c}\IeC {\~a}o}{5}
 \contentsline {section}{\numberline {2.1}\textit {Data Warehouses} e Aplica\IeC {\c c}\IeC {\~o}es OLAP}{5}
@@ -26,12 +26,24 @@
 \contentsline {section}{\numberline {5.3}Ambiente Desnormalizado}{32}
 \contentsline {chapter}{\numberline {6}O Experimento}{35}
 \contentsline {section}{\numberline {6.1}Carregamento de Dados}{38}
-\contentsline {section}{\numberline {6.2}Base de 1GB}{38}
-\contentsline {section}{\numberline {6.3}Base de 10GB}{38}
-\contentsline {section}{\numberline {6.4}Base de 30GB}{38}
-\contentsline {chapter}{\numberline {7}Conclus\IeC {\~a}o}{39}
-\contentsline {chapter}{\numberline {A}Consultas do Ambiente Original Normalizado}{40}
-\contentsline {chapter}{\numberline {B}Consultas do Ambiente Denormalizado}{54}
-\contentsline {chapter}{\numberline {C}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Snowflake}}{66}
-\contentsline {chapter}{\numberline {D}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Star}}{69}
-\contentsline {chapter}{Refer\IeC {\^e}ncias Bibliogr\IeC {\'a}ficas}{71}
+\contentsline {section}{\numberline {6.2}Execu\IeC {\c c}\IeC {\~a}o \textit {Cold Run}}{40}
+\contentsline {subsection}{\numberline {6.2.1}Base de Dados de 1Gb}{40}
+\contentsline {subsection}{\numberline {6.2.2}Base de Dados de 10Gb}{41}
+\contentsline {subsection}{\numberline {6.2.3}Base de Dados de 30Gb}{42}
+\contentsline {subsection}{\numberline {6.2.4}Desempenho Geral}{43}
+\contentsline {section}{\numberline {6.3}Execu\IeC {\c c}\IeC {\~a}o \textit {Hot Run}}{45}
+\contentsline {subsection}{\numberline {6.3.1}Base de Dados de 1Gb}{45}
+\contentsline {subsection}{\numberline {6.3.2}Base de Dados de 10Gb}{46}
+\contentsline {subsection}{\numberline {6.3.3}Base de Dados de 30Gb}{46}
+\contentsline {subsection}{\numberline {6.3.4}Desempenho Geral}{47}
+\contentsline {section}{\numberline {6.4}Execu\IeC {\c c}\IeC {\~a}o com \textit {Drop Cache}}{50}
+\contentsline {subsection}{\numberline {6.4.1}Base de Dados de 1Gb}{50}
+\contentsline {subsection}{\numberline {6.4.2}Base de Dados de 10Gb}{51}
+\contentsline {subsection}{\numberline {6.4.3}Base de Dados de 30Gb}{51}
+\contentsline {subsection}{\numberline {6.4.4}Desempenho Geral}{52}
+\contentsline {chapter}{\numberline {7}Conclus\IeC {\~a}o}{55}
+\contentsline {chapter}{\numberline {A}Consultas do Ambiente Original Normalizado}{56}
+\contentsline {chapter}{\numberline {B}Consultas do Ambiente Denormalizado}{70}
+\contentsline {chapter}{\numberline {C}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Snowflake}}{82}
+\contentsline {chapter}{\numberline {D}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Star}}{85}
+\contentsline {chapter}{Refer\IeC {\^e}ncias Bibliogr\IeC {\'a}ficas}{87}
