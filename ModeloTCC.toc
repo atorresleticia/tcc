@@ -23,7 +23,7 @@
 \contentsline {subsection}{\numberline {5.1.1}Teste de For\IeC {\c c}a}{29}
 \contentsline {subsection}{\numberline {5.1.2}Teste de Vaz\IeC {\~a}o}{30}
 \contentsline {section}{\numberline {5.2}Ambiente Original Normalizado}{31}
-\contentsline {section}{\numberline {5.3}Ambiente Desnormalizado}{32}
+\contentsline {section}{\numberline {5.3}Ambiente Denormalizado}{32}
 \contentsline {chapter}{\numberline {6}O Experimento}{35}
 \contentsline {section}{\numberline {6.1}Carregamento de Dados}{38}
 \contentsline {section}{\numberline {6.2}Execu\IeC {\c c}\IeC {\~a}o \textit {Cold Run}}{40}
