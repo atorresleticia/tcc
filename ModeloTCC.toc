@@ -34,16 +34,17 @@
 \contentsline {section}{\numberline {6.3}Execu\IeC {\c c}\IeC {\~a}o \textit {Hot Run}}{45}
 \contentsline {subsection}{\numberline {6.3.1}Base de Dados de 1Gb}{45}
 \contentsline {subsection}{\numberline {6.3.2}Base de Dados de 10Gb}{46}
-\contentsline {subsection}{\numberline {6.3.3}Base de Dados de 30Gb}{46}
+\contentsline {subsection}{\numberline {6.3.3}Base de Dados de 30Gb}{47}
 \contentsline {subsection}{\numberline {6.3.4}Desempenho Geral}{47}
-\contentsline {section}{\numberline {6.4}Execu\IeC {\c c}\IeC {\~a}o com \textit {Drop Cache}}{50}
-\contentsline {subsection}{\numberline {6.4.1}Base de Dados de 1Gb}{50}
+\contentsline {section}{\numberline {6.4}Execu\IeC {\c c}\IeC {\~a}o com \textit {Drop Cache}}{51}
+\contentsline {subsection}{\numberline {6.4.1}Base de Dados de 1Gb}{51}
 \contentsline {subsection}{\numberline {6.4.2}Base de Dados de 10Gb}{51}
-\contentsline {subsection}{\numberline {6.4.3}Base de Dados de 30Gb}{51}
+\contentsline {subsection}{\numberline {6.4.3}Base de Dados de 30Gb}{52}
 \contentsline {subsection}{\numberline {6.4.4}Desempenho Geral}{52}
-\contentsline {chapter}{\numberline {7}Conclus\IeC {\~a}o}{55}
-\contentsline {chapter}{\numberline {A}Consultas do Ambiente Original Normalizado}{56}
-\contentsline {chapter}{\numberline {B}Consultas do Ambiente Denormalizado}{70}
-\contentsline {chapter}{\numberline {C}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Snowflake}}{82}
-\contentsline {chapter}{\numberline {D}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Star}}{85}
-\contentsline {chapter}{Refer\IeC {\^e}ncias Bibliogr\IeC {\'a}ficas}{87}
+\contentsline {chapter}{\numberline {7}Conclus\IeC {\~o}es}{56}
+\contentsline {section}{\numberline {7.1}Trabalhos Futuros}{58}
+\contentsline {chapter}{\numberline {A}Consultas do Ambiente Original Normalizado}{60}
+\contentsline {chapter}{\numberline {B}Consultas do Ambiente Denormalizado}{74}
+\contentsline {chapter}{\numberline {C}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Snowflake}}{86}
+\contentsline {chapter}{\numberline {D}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Star}}{89}
+\contentsline {chapter}{Refer\IeC {\^e}ncias Bibliogr\IeC {\'a}ficas}{91}

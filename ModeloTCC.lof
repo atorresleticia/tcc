@@ -25,7 +25,7 @@
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Gr\IeC {\'a}ficos de desempenho entre ambientes sob \textit {cold run}}}{44}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{44}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{44}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Gr\IeC {\'a}ficos de desempenho entre SGBD sob \textit {hot run}}}{45}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Gr\IeC {\'a}ficos de desempenho entre SGBD sob \textit {cold run}}}{45}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{45}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{45}
 \contentsline {figure}{\numberline {6.6}{\ignorespaces Gr\IeC {\'a}ficos de for\IeC {\c c}a entre ambientes sob \textit {hot run}}}{49}
@@ -37,24 +37,24 @@
 \contentsline {figure}{\numberline {6.8}{\ignorespaces Gr\IeC {\'a}ficos de desempenho entre SGBD sob \textit {hot run}}}{49}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{49}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{49}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Gr\IeC {\'a}fico de for\IeC {\c c}a entre ambientes sob influ\IeC {\^e}ncia da limpeza de \textit {cache}}}{52}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{52}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{52}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Gr\IeC {\'a}fico de for\IeC {\c c}a entre ambientes sob influ\IeC {\^e}ncia da limpeza de \textit {cache}}}{53}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{53}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{53}
 \contentsline {figure}{\numberline {6.10}{\ignorespaces Gr\IeC {\'a}ficos de for\IeC {\c c}a sem limpeza de \textit {cache}}}{53}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{53}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{53}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Gr\IeC {\'a}ficos de desempenho entre SGBD sob influ\IeC {\^e}ncia da limpeza de \textit {cache}}}{53}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{53}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{53}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Gr\IeC {\'a}ficos de desempenho entre SGBD sob influ\IeC {\^e}ncia da limpeza de \textit {cache}}}{54}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{54}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{54}
 \contentsline {figure}{\numberline {6.12}{\ignorespaces Gr\IeC {\'a}ficos de desempenho entre ambientes sob influ\IeC {\^e}ncia da limpeza de \textit {cache}}}{54}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{54}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{54}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Gr\IeC {\'a}ficos de desempenho entre ambientes sem limpeza de \textit {cache}}}{54}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{54}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{54}
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Gr\IeC {\'a}ficos de desempenho entre SGBD sem limpeza de \textit {cache}}}{54}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{54}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{54}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Gr\IeC {\'a}ficos de desempenho entre ambientes sem limpeza de \textit {cache}}}{55}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{55}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{55}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Gr\IeC {\'a}ficos de desempenho entre SGBD sem limpeza de \textit {cache}}}{55}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{55}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{55}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

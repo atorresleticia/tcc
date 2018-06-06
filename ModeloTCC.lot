@@ -15,19 +15,24 @@
 \contentsline {table}{\numberline {6.7}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {cold run} para 10Gb}}{42}
 \contentsline {table}{\numberline {6.8}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {cold run} para 30Gb}}{42}
 \contentsline {table}{\numberline {6.9}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {cold run} para 30Gb}}{43}
-\contentsline {table}{\numberline {6.10}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {hot run} para 1Gb}}{45}
-\contentsline {table}{\numberline {6.11}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {hot run} para 1Gb}}{46}
-\contentsline {table}{\numberline {6.12}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {hot run} para 10Gb}}{46}
-\contentsline {table}{\numberline {6.13}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {hot run} para 10Gb}}{47}
-\contentsline {table}{\numberline {6.14}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {hot run} para 30Gb}}{47}
-\contentsline {table}{\numberline {6.15}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {hot run} para 30Gb}}{48}
-\contentsline {table}{\numberline {6.16}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o das consultas da 1\IeC {\textordfeminine }, 2\IeC {\textordfeminine } e 3\IeC {\textordfeminine } execu\IeC {\c c}\IeC {\~a}o para 1Gb}}{50}
-\contentsline {table}{\numberline {6.17}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o da primeira consulta para 1Gb}}{51}
-\contentsline {table}{\numberline {6.18}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o das consultas da 1\IeC {\textordfeminine }, 2\IeC {\textordfeminine } e 3\IeC {\textordfeminine } execu\IeC {\c c}\IeC {\~a}o para 10Gb}}{51}
-\contentsline {table}{\numberline {6.19}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o da primeira consulta para 10Gb}}{51}
-\contentsline {table}{\numberline {6.20}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o das consultas da 1\IeC {\textordfeminine }, 2\IeC {\textordfeminine } e 3\IeC {\textordfeminine } execu\IeC {\c c}\IeC {\~a}o para 30Gb}}{52}
-\contentsline {table}{\numberline {6.21}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o da primeira consulta para 30Gb}}{52}
+\contentsline {table}{\numberline {6.10}{\ignorespaces Porcentagem de ganho de desempenho do MonetDB em rela\IeC {\c c}\IeC {\~a}o ao PostgreSQL sob \textit {cold run}}}{44}
+\contentsline {table}{\numberline {6.11}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {hot run} para 1Gb}}{46}
+\contentsline {table}{\numberline {6.12}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {hot run} para 1Gb}}{46}
+\contentsline {table}{\numberline {6.13}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {hot run} para 10Gb}}{47}
+\contentsline {table}{\numberline {6.14}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {hot run} para 10Gb}}{47}
+\contentsline {table}{\numberline {6.15}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {hot run} para 30Gb}}{48}
+\contentsline {table}{\numberline {6.16}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {hot run} para 30Gb}}{48}
+\contentsline {table}{\numberline {6.17}{\ignorespaces Porcentagem de ganho de desempenho do MonetDB em rela\IeC {\c c}\IeC {\~a}o ao PostgreSQL sob \textit {hot run}}}{49}
+\contentsline {table}{\numberline {6.18}{\ignorespaces Porcentagem de ganho e perda de desempenho do PostgreSQL da \textit {hot run} em rela\IeC {\c c}\IeC {\~a}o \IeC {\`a} \textit {cold run}}}{50}
+\contentsline {table}{\numberline {6.19}{\ignorespaces Porcentagem de ganho de desempenho do MonetDB da \textit {hot run} em rela\IeC {\c c}\IeC {\~a}o \IeC {\`a} \textit {cold run}}}{50}
+\contentsline {table}{\numberline {6.20}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o das consultas da 1\IeC {\textordfeminine }, 2\IeC {\textordfeminine } e 3\IeC {\textordfeminine } execu\IeC {\c c}\IeC {\~a}o para 1Gb}}{51}
+\contentsline {table}{\numberline {6.21}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o da primeira consulta para 1Gb}}{51}
+\contentsline {table}{\numberline {6.22}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o das consultas da 1\IeC {\textordfeminine }, 2\IeC {\textordfeminine } e 3\IeC {\textordfeminine } execu\IeC {\c c}\IeC {\~a}o para 10Gb}}{52}
+\contentsline {table}{\numberline {6.23}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o da primeira consulta para 10Gb}}{52}
+\contentsline {table}{\numberline {6.24}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o das consultas da 1\IeC {\textordfeminine }, 2\IeC {\textordfeminine } e 3\IeC {\textordfeminine } execu\IeC {\c c}\IeC {\~a}o para 30Gb}}{52}
+\contentsline {table}{\numberline {6.25}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o da primeira consulta para 30Gb}}{53}
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {7.1}{\ignorespaces Porcentagem de ganho de tempo de carregamento do MonetDB em rela\IeC {\c c}\IeC {\~a}o ao PostgreSQL}}{57}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

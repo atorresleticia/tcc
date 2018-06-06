@@ -1,2 +1,43 @@
-\chapter{Conclusão}
+\chapter{Conclusões}
 
+A principal discussão em um ambiente analítico é a necessidade por desempenho na recuperação de informações para tomada de decisão. Para conseguir alcançar de forma eficiente esse desempenho bancos relacionais são muito utilizados, porém podem trazer alguns problemas de acordo com a modelagem dos dados dos DWs. Para tanto, bancos NoSQL, mais especificamente da classe orientada a colunas, ganham destaque por satisfazerem questões mais complexas em SGBD relacionais, tornando possível a recuperação rápida de dados.
+
+Entre os destaques encontrados em um modelo de SGBD colunar estão (i) a capacidade de escalabilidade horizontal devido ao melhor desempenho sob modelagens denormalizadas no formato \textit{star}, o que faz com que não seja preciso normalizar um modelo a um nível que gere alto grau de acoplamento entre as tabelas do banco, (ii) busca dos atributos requeridos de forma direta, sem precisar processar tuplas inteiras, satisfazendo as requisições de consultas analíticas por poucos atributos, gerando rapidez na recuperação de dados, e (iii) alta capacidade de compressão de dados. Ao realizar a avaliação experimental os dois últimos pontos ficaram bem evidentes.
+
+Desde o carregamento de dados nota-se uma grande diferença entre os SGBD MonetDB e PostgreSQL. O comando \textit{COPY INTO} utilizado pelo MonetDB consegue inserir os dados no SGBD concorrentemente -- um fator que o torna preferível ao invés de vários \textit{INSERT}, por tratar o comando como uma única \textit{query}\footnote{Aqui \textit{query} não significa exatamente uma \textit{consulta}, portanto optou-se por deixar a palavra no inglês por não encontrar uma tradução adequada} independentemente de ter o modo de \textit{auto-commit} das transações ativo ou não. Mesmo que o comando \textit{COPY FROM} do PostgreSQL assim como do MonetDB trate o comando como uma única \textit{query}, o mesmo desempenho não foi atingido. A Tabela \ref{tab:ganho_carregamento} mostra os ganhos do MonetDB em relação ao PostgreSQL no tempo de carregamento. Logo após a inserção de dados também percebe-se um grande diferencial dos bancos colunares: a compressão de dados, uma vez que o MonetDB realiza compressão de \textit{strings} utilizando codificação por dicionário.
+
+\begin{table}[htpb]
+    \centering
+    \caption{Porcentagem de ganho de tempo de carregamento do MonetDB em relação ao PostgreSQL}
+    \label{tab:ganho_carregamento}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \multirow{2}{*}{\textbf{Ambiente}} & \multicolumn{3}{c|}{\textbf{Base de Dados (Gb)}} \\ \cline{2-4} 
+                                       & \textbf{1}     & \textbf{10}    & \textbf{30}    \\ \hline
+    \textit{Snowflake}                 & 58\%           & 50\%           & 73\%           \\ \hline
+    \textit{Star}                      & 47\%           & 71\%           & 69\%           \\ \hline
+    \end{tabular}
+    \end{table}
+    
+Como um todo a teoria sobre SGBDR vs. SGBDC se aplicou bem à prática. O PostgreSQL teve um ótimo desempenho se comparar o ambiente mais normalizado ao denormalizado. Por ser desenvolvido visando modelos relacionais, o processamento de dados nas consultas tanto com uma quanto com várias \textit{streams} foi mais rápido no ambiente normalizado. Considerando vários usuários ativos o PostgreSQL conseguiu ser mais rápido que o MonetDB no ambiente normalizado para as bases de dados maiores (10Gb e 30Gb). Porém se analisar o desempenho final isso não fez com que o banco relacional pudesse ter desempenho melhor que o colunar no ambiente analítico.
+
+Um fator que trouxe resultados melhores no MonetDB, além dos já citados de bancos colunares, foi o fato de que MonetDB faz uso intensivo de memória para processamento -- vale frisar que ele não requer que todos os dados caibam em toda memória física disponível, pois utiliza o espaço disponível em \textit{swap} e arquivos mapeados em memória. Devido a esse uso intensivo de memória, medir o tempo de uma consulta é algo delicado no MonetDB. Os testes comparando \textit{cold run}, \textit{hot run} e limpeza de \textit{cache} mostraram como a mesma consulta executada várias vezes e sob um cenário alterando a memória trazem resultados diferentes nesse SGBD, fazendo com que sob a primeira execução os resultados não acordem com a teoria descrita sobre o desempenho superior em ambientes \textit{star}.
+
+Retomando a discussão entre OLAP e OLTP, armazenar os dados de um ambiente transacional em memória pode trazer problemas, tornando mais interessante de fato para um ambiente transacional que seus dados sejam armazenados em um dispositivo não-volátil. Um ambiente altamente normalizado perde por não escalar horizontalmente de forma tão simples, o que já acarreta demora na recuperação do servidor em caso de queda, portanto não é interessante que ocorra perda de dados em memória. Em um ambiente analítico, a inserção de dados já é mais rápida considerando o uso do MonetDB e ele pode ser escalável horizontalmente, fazendo com que uma queda e perda de dados em memória não seja tão crítica.
+
+Para ambientes transacionais cuja modelagem ainda segue os padrões de normalização o uso de um SGBD como o PostgreSQL continua sendo vantajoso, pois além dos resultados obtidos deve se considerar que um SGBDR preza pela consistência nos dados, e para um sistema transacional que envolva transações bancárias, por exemplo, a consistência é fundamental. Em ambiente analítico é confirmado que um banco colunar traz melhor desempenho para a recuperação de informações e o MonetDB ainda possui a vantagem de utilizar dados em memória. Para que se faça um bom uso da \textit{cache} nesse SGBD é possível aproveitar justamente o fator de consultas analíticas, embora não idênticas, serem similares por simular cenários com agrupamentos e atributos Fato, para realizar um \textit{warm-up} de dados para que estes já estejam em \textit{cache}.
+
+\section{Trabalhos Futuros}
+
+Como continuidade para a pesquisa sugere-se:
+
+\begin{itemize}
+    \item Realizar um estudo mais aprofundado sobre escalabilidade horizontal em bancos NoSQL, e se possível aplicar o \textit{benchmark} considerando um cenário utilizando um único servidor para processamento de consultas e outro com vários servidores, a fim de simular problemas que teoricamente são solucionados pela partição horizontal, como queda, ou falha, e distribuição de dados.
+
+    \item Utilizar bases de dados maiores, a partir de 100Gb, para que se possa também comparar os resultados com os contidos na página oficial do TPC-H.
+
+    \item Aplicar os resultados encontrados nesta pesquisa em empresas que ainda utilizem bancos relacionais ou, mesmo que usem outras alternativas, que ainda tenham uma modelagem normalizada, realizando a migração tanto do SGBD quanto da modelagem para um modelo colunar denormalizado.
+
+    \item Comparar diferentes modelos colunares que, de preferência, trabalhem sob diferentes algoritmos de compressão, como o Cassandra \cite{cassandra2018nosql} e o C-Store \cite{cstore2018nosql}. Pode-se também incluir diferentes classes de NoSQL a fim de verificar se alguma consegue desempenho melhor que a classe colunar em ambiente analítico, como o MongoDB \cite{mongo2018nosql}.
+
+\end{itemize}
