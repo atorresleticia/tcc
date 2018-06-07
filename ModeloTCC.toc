@@ -7,15 +7,14 @@
 \contentsline {chapter}{Resumo}{xiv}
 \contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}
 \contentsline {chapter}{\numberline {2}Recupera\IeC {\c c}\IeC {\~a}o de Informa\IeC {\c c}\IeC {\~a}o}{5}
-\contentsline {section}{\numberline {2.1}\textit {Data Warehouses} e Aplica\IeC {\c c}\IeC {\~o}es OLAP}{5}
 \contentsline {chapter}{\numberline {3}Sistemas Gerenciadores de Banco de Dados}{11}
-\contentsline {section}{\numberline {3.1}SGBD Relacional}{12}
-\contentsline {section}{\numberline {3.2}SGBD NoSQL}{14}
-\contentsline {chapter}{\numberline {4}NoSQL}{16}
-\contentsline {section}{\numberline {4.1}SGBD Colunar}{19}
+\contentsline {section}{\numberline {3.1}Modelo de SGBD Relacional}{12}
+\contentsline {section}{\numberline {3.2}Modelo de SGBD NoSQL}{15}
+\contentsline {chapter}{\numberline {4}Banco de Dados NoSQL}{16}
+\contentsline {section}{\numberline {4.1}Modelo de SGBD Colunar}{19}
 \contentsline {section}{\numberline {4.2}Implementa\IeC {\c c}\IeC {\~a}o do Sistema Colunar}{20}
 \contentsline {subsection}{\numberline {4.2.1}Particionamento Vertical}{22}
-\contentsline {subsection}{\numberline {4.2.2}Modifica\IeC {\c c}\IeC {\~a}o na Camada de Armazenamento}{22}
+\contentsline {subsection}{\numberline {4.2.2}Modifica\IeC {\c c}\IeC {\~a}o na Camada de Armazenamento}{23}
 \contentsline {subsection}{\numberline {4.2.3}Modifica\IeC {\c c}\IeC {\~a}o na Camada de Armazenamento e Particionamento Vertical}{23}
 \contentsline {section}{\numberline {4.3}Compress\IeC {\~a}o de Dados}{23}
 \contentsline {chapter}{\numberline {5}TPC \textit {Benchmark} H}{26}

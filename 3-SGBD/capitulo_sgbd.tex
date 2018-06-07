@@ -9,7 +9,7 @@ falta de segurança; e o acesso e gerenciamento dos dados dependia de programas 
 cada requisição de dados diferente. Outro problema crítico é não se ter informação de relacionamento entre arquivos diferentes.
 
 Como forma de manter o gerenciamento de dados independente de aplicações e programas bem como solucionar os demais falhas do sistema de arquivos 
-foram criados os Sistemas Gerenciadores de Bancos de Dados, os SGBD.  De acordo com Elmasri e Navathe \cite{navathe2011banco}, SGBD são uma coleção de programas para 
+foram criados os Sistemas Gerenciadores de Bancos de Dados, os SGBD. De acordo com Elmasri e Navathe \cite{navathe2011banco}, SGBD são uma coleção de programas para 
 criação e manutenção de um banco de dados, que facilita a definição, construção, manipulação e compartilhamento de dados entre usuários e aplicações.
 
 Dentre as vantagens que os SGBD trouxeram em detrimento ao sistema de arquivos estão:
@@ -28,7 +28,7 @@ Existem várias classes de SGBD, conforme sua estruturação e a forma como mani
 entre as mais conhecidas estão o modelo relacional, objeto-relacional, orientado a 
 objetos e a abordagem mais recente NoSQL.
 
-\section{SGBD Relacional}
+\section{Modelo de SGBD Relacional}
 
 O modelo mais utilizado de SGBD é o relacional, ou SGBDR (SGBD Relacional). Ele foi conceituado por 
 Codd \cite{codd1970relational} em 1970 em um artigo no qual são expostas as 
@@ -41,8 +41,8 @@ objetos devem estar também relacionados, e para tal SGBDR utilizam-se de chaves
 
 Em um SGBDR além de definir relacionamentos, as chaves também garantem integridade entre os dados. 
 Existem dois tipos de chaves, uma que garante a unicidade de um atributo, ou seja, assegura que 
-não haverão registros repetidos no banco tomando como referência aquele valor de chave, chamada de chave primária (\textit{primary key}, ou PK). A outra chave garante integridade no relacionamento entre duas entidades referenciando uma tabela na outra, que 
-é a chave estrangeira (\textit{foreign key}, ou FK).
+não haverão registros repetidos no banco tomando como referência aquele valor de chave, chamada de chave primária (do inglês \textit{Primary Key}, ou PK). A outra chave garante integridade no relacionamento entre duas entidades referenciando uma tabela na outra, que 
+é a chave estrangeira (do inglês \textit{Foreign Key}, ou FK).
 
 Tomando como exemplo uma empresa fictícia, são criados dois objetos reais que precisam ser 
 representados sob a forma relacional, \textit{funcionário} e \textit{projeto}. Nesta empresa funcionários possuem \textit{nome, 
@@ -78,15 +78,15 @@ O esquema que representa estas relações é como mostrado na Figura \ref{fig:re
 	\label{fig:relacao_func_proj}
 \end{figure*}
 
-Modelos de bancos de dados prezam, sempre que possível, pela consistência de dados, principalmente se tomar operações transacionais como transações bancárias, que necessitam de um alto grau de consistência após operações de inserção e atualização, para que não haja perda de valores ou que esses ainda façam sentido no sistema. Por essa razão SGBDR seguem o conceito ACID (Atomicidade, Consistência, Isolamento e Durabilidade). 
+Modelos de bancos de dados prezam, sempre que possível, pela consistência de dados, principalmente se tomar operações transacionais como transações bancárias, que necessitam de um alto grau de consistência após operações de inserção e atualização, para que não haja perda de valores ou que esses ainda façam sentido no sistema. Por essa razão SGBDR seguem o conceito ACID (do inglês \textit{Atomicity, Consistency, Isolation, Durability}), o qual garante Atomicidade, Consistência, Isolamento e Durabilidade, ou Persistência, de dados. 
 
-Modelos relacionais também seguem um alto grau de normalização nos dados a fim de evitar redundância e confusão entre atributos que podem ser desmembrados em outras entidades. Essa normalização é realizada normalmente até a Terceira Forma Normal (3NF), e o esquema final conterá um número maior de tabelas que o original devido ao desmembramento de atributos. Essa quantidade maior de tabelas acarreta no aumento de junções necessárias para recuperar atributos entre entidades relacionadas, ou seja, no aumento do acesso a entidades e no processamento de tuplas.
+Modelos relacionais também seguem um alto grau de normalização nos dados a fim de evitar redundância e confusão entre atributos que podem ser desmembrados em outras entidades. Essa normalização é realizada normalmente até a Terceira Forma Normal, e o esquema final conterá um número maior de tabelas que o original devido ao desmembramento de atributos. Essa quantidade maior de tabelas acarreta no aumento de junções necessárias para recuperar atributos entre entidades relacionadas, ou seja, no aumento do acesso a entidades e no processamento de tuplas.
 
 Além de diminuir o desempenho na recuperação de dados, um esquema normalizado causa um forte acoplamento entre tabelas, o que tornaria inviável o particionamento dos dados do banco em \textit{n} servidores como forma de escalar estes dados conforme seu volume aumenta (mais detalhes no Capítulo \ref{nosql}), como é o caso de um ambiente analítico. Uma solução trivial para este problema é a denormalização de dados, porém para um SGBDR essa solução pode não ser viável, visto que sua implementação se dá seguindo a modelagem relacional.
 
 Exemplos de SGBDR são PostgreSQL \cite{postgres2018r}, MySQL \cite{mysql2018r}, Microsoft SQL Server \cite{microsoft2018r}, SQLite \cite{lite2018r}, MariaDB \cite{maria2018r} e Oracle \cite{oracle2018r}. 
 
-\section{SGBD NoSQL}
+\section{Modelo de SGBD NoSQL}
 
 Bancos com o objetivo de suprir problemas apresentados por SGBDR começaram a emergir entre 2004 e 2007 visando alta escalabilidade, recuperação e armazenamento de grandes volumes de dados de forma eficiente, e ao mesmo tempo diminuir custos com hardware \cite{han2011nosql}. Esses bancos levaram o nome de NoSQL, porém isso não significa que não utilizam SQL para manipulação de dados.
 

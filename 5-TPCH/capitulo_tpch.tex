@@ -3,15 +3,15 @@
 
 A essência de um \textit{benchmark} é identificar e definir os melhores padrões de excelência para produtos, serviços e/ou processos, e então realizar aperfeiçoamentos de forma que esses padrões sejam alcançados \cite{bhutta1999benchmarking}. De maneira geral, \textit{benchmarks} se consolidaram como uma ferramenta para melhorar o desempenho de organizações e a competitividade nos negócios \cite{kyro2003revising}.
 
-O TPC \textit{\textit{benchmark}} H é um padrão de decisão de negócio internacionalmente aceito para comparações de desempenho entre SGBD utilizados em ambientes OLAP criado pela organização TPC. De acordo com a página oficial do TPC\footnote{http://www.tpc.org/information/about/abouttpc.asp}, esta organização sem fins lucrativos foi fundada com o objetivo de definir padrões para \textit{benchmarks} no processamento de transações e bancos de dados. Ela é responsável pelo desenvolvimento e atualização destes \textit{benchmarks}, bem como pela divulgação dos resultados apresentados por eles. Entre os sócios\footnote{Lista de sócios acessada em Junho de 2017} responsáveis por isto estão as empresas Dell, Hewlet Packard, IBM, Microsoft, Oracle, Intel e Cisco. A lista de todos os sócios pode ser acessada na página oficial da organização.
+O TPC \textit{\textit{Benchmark}} H é um padrão de decisão de negócio internacionalmente aceito para comparações de desempenho entre SGBD utilizados em ambientes OLAP, criado pela organização TPC. De acordo com a página oficial do TPC \cite{tpc2017page}, esta organização sem fins lucrativos foi fundada com o objetivo de definir padrões para \textit{benchmarks} no processamento de transações e bancos de dados em geral. Ela é responsável pelo desenvolvimento e atualização destes \textit{benchmarks}, bem como pela divulgação dos resultados apresentados por eles. Entre os sócios\footnote{Lista de sócios acessada em Junho de 2017} responsáveis por isto estão as empresas Dell, Hewlet Packard, IBM, Microsoft, Oracle, Intel e Cisco. A lista de todos os sócios pode ser acessada na página oficial da organização.
 
-Alguns trabalhos já foram realizados utilizando o TPC-H \cite{ngamsuriyaroj2010performance, nadee2012performance, thanopoulou2012benchmarking, barata2014ycsb, rutishauser2012tpc, soares2012avaliaccao}. Ngamsuriyaroj e Pornpattana \cite{ngamsuriyaroj2010performance} aplicam as consultas do TPC-H no MySQL Cluster a fim de avaliar seu desempenho. O trabalho de Nadee e Ngamsuriyaroj \cite{nadee2012performance} tem uma proposta parecida com o primeiro \cite{ngamsuriyaroj2010performance}, porém o intuito é avaliar o desempenho de um \textit{cluster} Java EE baseado nas características das consultas do TPC-H. Thanopoulou et al. \cite{thanopoulou2012benchmarking} foca em aplicar o TPC-H em bancos de dados de pequenas empresas que não podem arcar com configurações de \textit{hardware} melhores para administrar um banco de dados. Barata, Bernardino e Furtado \cite{barata2014ycsb} fazem uma descrição teórica de dois \textit{benchmarks}, o YCSB (\textit{Yahoo Cloud Serving Benchmark}), voltado para a área de \textit{Big Data}, e o TPC-H. Rutishauser e Noureldin \cite{rutishauser2012tpc} realizam uma análise comparativa entre PostgreSQL e MongoDB aplicando o TPC-H. O primeiro é um SGBD relacional clássico, e o outro um SGBD NoSQL com algumas consultas do TPC-H adaptadas. Por fim, Soares \cite{soares2012avaliaccao} compara SGBD relacionais e colunares executando um teste de força sob o \textit{Star Schema Benchmark} simulando bases de dados de 1Gb, 2Gb, 5Gb e 10Gb.
+Alguns trabalhos já foram realizados utilizando o TPC-H \cite{ngamsuriyaroj2010performance, nadee2012performance, thanopoulou2012benchmarking, barata2014ycsb, rutishauser2012tpc, soares2012avaliaccao}. Ngamsuriyaroj e Pornpattana \cite{ngamsuriyaroj2010performance} aplicam as consultas do TPC-H no MySQL Cluster a fim de avaliar seu desempenho. O trabalho de Nadee e Ngamsuriyaroj \cite{nadee2012performance} tem uma proposta parecida com o primeiro \cite{ngamsuriyaroj2010performance}, porém o intuito é avaliar o desempenho de um \textit{cluster} Java EE baseado nas características das consultas do TPC-H. Thanopoulou et al. \cite{thanopoulou2012benchmarking} foca em aplicar o TPC-H em bancos de dados de pequenas empresas que não podem arcar com configurações de \textit{hardware} melhores para administrar um banco de dados. Barata, Bernardino e Furtado \cite{barata2014ycsb} fazem uma descrição teórica de dois \textit{benchmarks}, o YCSB (\textit{Yahoo Cloud Serving Benchmark}), voltado para a área de \textit{Big Data}, e o TPC-H. Rutishauser e Noureldin \cite{rutishauser2012tpc} realizam uma análise comparativa entre PostgreSQL e MongoDB aplicando o TPC-H. O primeiro é um SGBD relacional clássico, e o outro um SGBD NoSQL com algumas consultas do TPC-H adaptadas. Por fim, Soares \cite{soares2012avaliaccao} compara SGBD relacionais e colunares executando um teste de força sob o \textit{Star Schema Benchmark} simulando bases de dados de 1GB, 2GB, 5GB e 10GB.
 
-De acordo com o manual de especificação fornecido pelo TPC \cite{tpc2017specs}, o TPC-H é um \textit{\textit{benchmark}} de suporte à decisão de negócios, constituído de uma série de consultas comerciais \textit{ad-hoc} e modificações simultâneas de dados com finalidade de retratar a realidade das empresas. Ele representa DSS que examinam grandes volumes de dados; executam consultas com um alto grau de complexidade; e respondem questões críticas de negócio. Como o \textit{\textit{benchmark}} trata de grandes volumes de dados, o tamanho mínimo de banco de dados proposto pelo TPC-H é de 1GB, seguido por 10GB, 30GB, 100GB, 300GB, 1000GB, 3000GB, 10000GB, 30000GB e 100000GB. Estes valores também correspondem ao Fator de Escala (\textit{Factor Scale} -- SF). 
+De acordo com o manual de especificação fornecido pelo TPC \cite{tpc2017specs}, o TPC-H é um \textit{\textit{benchmark}} de suporte à decisão de negócios, constituído de uma série de consultas comerciais \textit{ad-hoc} e modificações simultâneas de dados com finalidade de retratar a realidade das empresas. Ele representa sistemas de suporte à decisão que examinam grandes volumes de dados, executam consultas com um alto grau de complexidade, e respondem questões críticas de negócio. Como o \textit{\textit{benchmark}} trata de grandes volumes de dados, o tamanho mínimo de banco de dados proposto pelo TPC-H é de 1GB, seguido por 10GB, 30GB, 100GB, 300GB, 1TB, 3TB, 10TB, 30TB e 100TB. Estes valores correspondem ao Fator de Escala (do inglês \textit{Scale Factor}, ou SF) do banco de dados. 
 
 Com o intuito de avaliar o resultado do desempenho de SGBD como DW, é necessário ter conhecimento de como os dados que irão popular o DW estão distribuídos. Para tal, o TPC-H propõe um ambiente normalizado \textit{snowflake}. Ele é composto por oito tabelas e é descrito na Seção \ref{ambiente_1}. Do mesmo modo, a fim de obedecer as regras de modelagem deste ambiente, é preciso ter dados conhecidos para popular os DWs. Estes dados são fornecidos pelo \textit{software} DBGen.
 
-O DBGen foi implementado pelo TPC-H, com o objetivo de realizar a população de dados em um DW seguindo a modelagem original \textit{snowflake}. São gerados oito arquivos separados no formato \texttt{<nome da tabela>.tbl} -- exemplificando, a tabela de dados \textit{Part} será gerada como \texttt{part.tbl}; onde as linhas de cada arquivo representam as tuplas dentro da respectiva tabela, tendo seus atributos separados por um delimitador \textit{pipe} ("$\mid$"). Por padrão, os arquivos são gerados para uma base de dados da classe de 1GB, quando nenhum SF é especificado.
+O DBGen foi implementado pelo TPC-H, com o objetivo de realizar a população de dados em um DW seguindo a modelagem original \textit{snowflake}. São gerados oito arquivos separados no formato \texttt{<nome da tabela>.tbl} -- exemplificando, a tabela de dados \textit{part} será gerada como \texttt{part.tbl}; onde as linhas de cada arquivo representam as tuplas dentro da respectiva tabela, tendo seus atributos separados por um delimitador \textit{pipe} ("$\mid$"). Por padrão, os arquivos são gerados para uma base de dados da classe de 1GB, quando nenhum SF é especificado.
 
 Assim como é necessário conhecer os dados de modo a seguir a modelagem proposta pelo \textit{benchmark}, é preciso formular consultas que visam responder às questões de negócio definidas pelo TPC-H sobre o modelo de dados. O próprio TPC define para seu modelo 22 consultas, cada qual definida por (i) uma questão de negócio, que ilustra o contexto no qual a consulta pode ser aplicada; (ii) uma definição funcional, que corresponde à implementação da consulta utilizando a Linguagem SQL-92; (iii) parâmetros de substituição, que geram os valores necessários para completar os parâmetros da consulta; e (iv) validação, que descreve como validar a consulta no BD. Igualmente à geração de dados, a geração de consultas também é feita com o uso de um programa fornecido pelo TPC, o QGen.
 
@@ -20,17 +20,17 @@ Com o QGen é possível gerar as consultas de acordo com a especificação do TP
 \section{Metodologia}
 \label{metodologia}
 
-Após a geração dos arquivos é criado em cada SGBD um esquema correspondente às classes utilizadas, tanto para o Ambiente Normalizado quanto para o Denormalizado. Cada SGBD é então executado sobre os dois ambientes propostos. Em cada ambiente será executado o teste de performance, que consiste de duas execuções: o Teste de Força (\textit{Power Test}) e o Teste de Vazão (\textit{Throughput Test}), descritos nas Subseções \ref{power_test} e \ref{through_test}, respectivamente. O tempo resultante de cada etapa é utilizado para calcular o desempenho final do SGBD, medido em \textit{QphH@Size} -- quantidade de consultas executadas por hora, dada uma classe de tamanho de banco de dados. Uma execução é composta por:
+Após a geração dos arquivos é criado em cada SGBD um esquema correspondente às classes utilizadas, tanto para o ambiente normalizado quanto para o denormalizado. Cada SGBD é então executado sobre os dois ambientes propostos. Em cada ambiente será executado o teste de desempenho, que consiste de duas execuções: o teste de força (do inglês \textit{Power Test}) e o teste de vazão (do inglês \textit{Throughput Test}), descritos nas Subseções \ref{power_test} e \ref{through_test}, respectivamente. O tempo resultante de cada etapa é utilizado para calcular o desempenho final do SGBD, medido em \textit{QphH@Size} -- quantidade de consultas executadas por hora, dada uma classe de tamanho de banco de dados. Uma execução é composta por:
 
 \begin{itemize}
 	\item \textit{SF}, que representa a classe do banco de dados.
 	\item \textit{$Q_{i}$}, que representa uma consulta, onde \mbox{$1 \le i \le 22$}.
-	\item \textit{S}, que define o número de sessões de consulta do Teste de Vazão.
+	\item \textit{S}, que define o número de sessões de consulta do teste de vazão.
 	\item \textit{s}, que representa uma dada sessão, onde \mbox{$1 \le s \le S$}.
 	\item \textit{$T_{s}$}, que representa o tempo, em segundos, resultante do processo inteiro.
-	\item \textit{$RF_{j}$}, que representa a Função de Atualização (\textit{Refresh Function} -- RF), onde:
+	\item \textit{$RF_{j}$}, que representa a Função de Atualização (do inglês \textit{Refresh Function}, ou RF), onde:
 		\begin{itemize}
-		    \item RF1: inserção de novos registros. O número de registros inseridos deve ser igual para o número de registros removidos pela RF2. O pseudocódigo para a RF1 é como:
+		    \item RF-1: inserção de novos registros. O número de registros inseridos deve ser igual para o número de registros removidos pela RF-2. O pseudocódigo para a RF-1 é como:
 		
 \begin{verbatim}
     loop (SF * 1500) times
@@ -40,7 +40,7 @@ Após a geração dos arquivos é criado em cada SGBD um esquema correspondente 
         end loop
     end loop
 \end{verbatim}
-		    \item RF2: remoção de registros antigos. O pseudocódigo para a RF1 é como:
+		    \item RF-2: remoção de registros antigos. O pseudocódigo para a RF-1 é como:
 		
 \begin{verbatim}
     loop (SF * 1500) times
@@ -55,15 +55,15 @@ O conjunto de dados para executar com sucesso as RFs também são gerados pelo D
 
 \subsection{Teste de Força}
 \label{power_test}
-O Teste de Força objetiva medir a execução de uma dada consulta do sistema com um único usuário ativo. Neste teste é criada uma única sessão com o respectivo SGBD e as seguintes instruções são executadas:
+O teste de força objetiva medir a execução de uma dada consulta do sistema com um único usuário ativo. Neste teste é criada uma única sessão com o respectivo SGBD e as seguintes instruções são executadas:
 
 \begin{itemize}
-	\item Execução da RF1.
+	\item Execução da RF-1.
 	\item Execução de cada consulta proposta pelo TPC-H, ou adaptada, de forma sequencial uma única vez até a última consulta.
-	\item Execução da RF2.
+	\item Execução da RF-2.
 \end{itemize}
 
-Será armazenado ao fim do teste o tempo em segundos resultante de cada consulta, bem como o tempo de execução de cada função. Este resultado será utilizado na Equação \ref{eq:1}.
+Será armazenado ao fim do teste o tempo em segundos resultante de cada consulta, bem como o tempo de execução de cada função. Este resultado será utilizado na Equação \ref{eq:1}, onde \textit{Size} representa o SF.
 
 \begin{myequation}%
 \label{eq:1}
@@ -73,7 +73,7 @@ Será armazenado ao fim do teste o tempo em segundos resultante de cada consulta
 
 \subsection{Teste de Vazão}
 \label{through_test}
-Este teste mede a capacidade do sistema de processar a maior quantidade possível de consultas no menor intervalo de tempo. Aqui o TPC-H exige um número mínimo de sessões de consulta de acordo com a classe de tamanho do banco de dados, como mostra a Tabela \ref{min_sessions}.
+Este teste mede a capacidade do sistema de processar a maior quantidade possível de consultas no menor intervalo de tempo considerando vários usuários ativos no SGBD. Aqui o TPC-H exige um número mínimo de sessões de consulta de acordo com a classe de tamanho do banco de dados, como mostra a Tabela \ref{min_sessions}.
 
 \begin{table}[htpb]
 \centering
@@ -81,28 +81,28 @@ Este teste mede a capacidade do sistema de processar a maior quantidade possíve
 \label{min_sessions}
 \begin{tabular}{|c|c|}
 \hline
-\multicolumn{1}{|c|}{\textbf{Classe do Banco de Dados}} & \textbf{Número de Sessões} \\ \hline
-1 GB                                      & 2                            \\ \hline
-10 GB                                      & 3                          \\ \hline
-30 GB                                        & 4                             \\ \hline
-100 GB                                        & 5                             \\ \hline
-300 GB                                        & 6                             \\ \hline
-1000 GB                                        & 7                             \\ \hline
-3000 GB                                        & 8                             \\ \hline
-10000 GB                                        & 9                             \\ \hline
-30000 GB                                        & 10                             \\ \hline
-100000 GB                                        & 11                             \\ \hline
-\end{tabular}
+\textbf{\begin{tabular}[c]{@{}c@{}}Classe do \\ Banco de Dados\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Número de \\ Sessões\end{tabular}} \\ \hline
+	1 GB                                                                         & 2                                                                     \\ \hline
+	10 GB                                                                        & 3                                                                     \\ \hline
+	30 GB                                                                        & 4                                                                     \\ \hline
+	100 GB                                                                       & 5                                                                     \\ \hline
+	300 GB                                                                       & 6                                                                     \\ \hline
+	1 TB                                                                         & 7                                                                     \\ \hline
+	3 TB                                                                         & 8                                                                     \\ \hline
+	10 TB                                                                        & 9                                                                     \\ \hline
+	30 TB                                                                        & 10                                                                    \\ \hline
+	100 TB                                                                       & 11                                                                    \\ \hline
+	\end{tabular}
 \end{table}
 
-É criada uma sessão para executar as Funções e \textit{N} sessões para executar as consultas, de acordo com a Tabela \ref{min_sessions}. As instruções são executadas concorrentemente. Para a sessão das Funções, as seguintes instruções são executadas:
+São geradas \textit{N} duplas de RFs (um arquivo com os registros para inserção e um com os índices a serem removidos), e é criada uma sessão para executar essas duplas de RFs e \textit{N} sessões para executar as consultas, de acordo com o número mínimo que cada classe requer. As instruções são executadas concorrentemente da seguinte forma:
 
 \begin{itemize}
-	\item A RF1 e RF2 deverão ser executadas sequencialmente \textit{N} vezes, onde \textit{N} é o número de sessões para a execução de consultas.
+	\item As RFs ser executadas sequencialmente \textit{N} vezes, onde \textit{N} é o número de sessões para a execução de consultas.
 	\item Para cada sessão de consultas, cada consulta será executada sequencialmente até a última.
 \end{itemize}
 
-Ao fim do teste, é armazenado o tempo em segundos da execução do processo inteiro. O processo inicia quando a primeira sessão, seja de consulta ou de Função, executa sua instrução e finaliza quando a última sessão recebe uma resposta. O resultado é utilizado para calcular o desempenho do SGBD para o Teste de Vazão conforme a Equação \ref{eq:2}.
+Ao fim do teste, é armazenado o tempo em segundos da execução do processo inteiro. O processo inicia quando a primeira sessão, seja de consulta ou de RF, executa sua instrução e finaliza quando a última sessão recebe uma resposta. O resultado é utilizado para calcular o desempenho do SGBD para o teste de vazão conforme a Equação \ref{eq:2}.
 
 \begin{myequation}%
 \label{eq:2}
@@ -110,7 +110,7 @@ Ao fim do teste, é armazenado o tempo em segundos da execução do processo int
 \end{myequation}
 %
 
-O resultado dos cálculos de Força e Vazão serão utilizados para calcular o desempenho final do SGBD da seguinte forma:
+O resultado dos cálculos de força e vazão serão ponderados para calcular o desempenho final do SGBD da seguinte forma:
 
 \begin{myequation}%
 \label{eq:3}
@@ -121,7 +121,7 @@ O resultado dos cálculos de Força e Vazão serão utilizados para calcular o d
 \section{Ambiente Original Normalizado}
 \label{ambiente_1}
 
-O modelo de ambiente proposto pelo TPC-H é um esquema normalizado \textit{snowflake}. Ele é composto por oito tabelas, sendo que destas, seis têm o tamanho multiplicado por um Fator de Escala, que corresponde ao tamanho da classe do banco de dados; enquanto que as demais, \textit{NATION} e \textit{REGION}, têm tamanho fixo. O relacionamento \textit{one-to-many} entre as tabelas do esquema \textit{snowflake} é apresentado na Figura \ref{fig:snow_flake}, adaptada do manual de especificação do TPC-H \cite{tpc2017specs}.
+O modelo de ambiente proposto pelo TPC-H é um esquema normalizado \textit{snowflake}. Ele é composto por oito tabelas, sendo que destas, seis têm o tamanho multiplicado pelo SF, enquanto que as demais, \textit{nation} e \textit{region}, têm tamanho fixo. A cardinalidade do relacionamento entre as tabelas é \textit{one-to-many} e é apresentado na Figura \ref{fig:snow_flake}, adaptada do manual de especificação do TPC-H \cite{tpc2017specs}.
 
 \begin{figure*}[h]
 	\centering
@@ -192,7 +192,7 @@ Total																					&												 & 								\\ \hline
 Os tipos de dados atribuídos aos atributos de uma entidade podem ser:
 
 \begin{itemize}
-    \item Identificador: \textit{identifier} -- corresponde a um inteiro que define a PK de uma entidade
+    \item Identificador, ou \textit{identifier}: corresponde a um inteiro que define a PK de uma entidade
     \item Inteiro: int
     \item Decimal: decimal
     \item Texto fixo de tamanho N: text(N)
@@ -205,21 +205,19 @@ Detalhes sobre as consultas implementadas na Linguagem SQL relacionadas a esse a
 
 \section{Ambiente Denormalizado}
 
-Embora modelos de dados normalizados sejam eficientes em processos operacionais, SGBD relacionais não executam uma consulta de maneira eficiente em um esquema normalizado \cite{kimball2002dw}. A otimização é afetada pelo número de \textit{joins}, o que vai contra um dos objetivos de um \textit{warehouse}: recuperação de dados com rapidez. 
-
-As modificações no modelo do Ambiente Normalizado se fundamentaram na criação de um modelo parecido com o apresentado pela modelagem \textit{star}, com uma Tabela Fato central descrita por Tabelas Dimensão. Também procurou-se eliminar quaisquer tabelas cujos atributos sejam frequentemente utilizados em operações de \textit{join}, alguns característicos de um modelo com Tabelas Subdimensionais, e que possam ser incluídos nas tabelas que possuam relacionamento com eles. O esquema final do modelo \textit{star} é mostrado na Figura \ref{fig:star}.
+As modificações no modelo do ambiente \textit{snowflake} se fundamentaram na criação de um modelo parecido com o apresentado pela modelagem \textit{star}, com uma Tabela Fato central descrita por Tabelas Dimensão. Também procurou-se eliminar quaisquer tabelas cujos atributos sejam frequentemente utilizados em operações de junção, alguns característicos de um modelo com Tabelas Subdimensão, e que possam ser incluídos nas tabelas que possuam relacionamento com eles. O esquema final do modelo \textit{star} é mostrado na Figura \ref{fig:star}.
 
 \begin{figure*}[h]
 	\centering
 		\includegraphics[width=\textwidth]{img/star.png}
-	\caption{Esquema do ambiente Denormalizado}
+	\caption{Esquema do ambiente denormalizado}
 	\label{fig:star}
 \end{figure*}
  
-A primeira modificação no modelo \textit{snowflake} foi a exclusão das entidades Dimensão \textit{Nation} e \textit{Region}. Essas entidades são Tabelas Subdimensionais das entidades \textit{Customer} e \textit{Supplier}, sendo frequentemente requeridas quando há a necessidade de consultar a nação e/ou a região de um cliente e/ou de um fornecedor, assim optou-se por incluir os atributos \texttt{N\_NAME, N\_COMMENT, R\_NAME} e \texttt{R\_COMMENT} nas entidades \textit{Supplier} e \textit{Customer}. 
+A primeira modificação no modelo \textit{snowflake} foi a remoção das entidades Dimensão \textit{nation} e \textit{region}. Essas entidades são Tabelas Subdimensão das entidades \textit{customer} e \textit{supplier}, sendo frequentemente requeridas quando há a necessidade de consultar a nação e/ou a região de um cliente e/ou de um fornecedor, assim optou-se por incluir os atributos \texttt{n\_name, n\_comment, r\_name} e \texttt{r\_comment} nas entidades \textit{supplier} e \textit{customer}. 
 
-Com a intenção de criar uma única Tabela Fato no esquema Denormalizado, observou-se (i) a possibilidade de unir as entidades \textit{Lineitem} e \textit{Orders} em uma única entidade nomeada como \textit{Item}, visto que as duas possuem um relacionamento. Isto também eliminaria alguns \textit{joins} realizados entre as duas entidades nas consultas listadas no Apêndice \ref{queries_1}. A PK \texttt{C\_CUSTKEY} de \textit{Customer} que antes estava em \textit{Orders} como FK é transferida agora para \textit{Item}. Também nota-se que (ii) as entidades \textit{Part} e \textit{Supplier} têm suas PKs como FKs na entidade antes denominada \textit{Lineitem}, provenientes da entidade intermediária \textit{Partsupp}. Optou-se assim por incluir os atributos de \textit{Partsupp} na nova entidade \textit{Item}, excluindo a primeira do esquema e mantendo o relacionamento de \textit{Supplier} e \textit{Part} diretamente com \textit{Item}, através das chaves \texttt{P\_PARTKEY} e \texttt{S\_SUPPKEY}.
+Com a intenção de criar uma única Tabela Fato no esquema denormalizado, observou-se (i) a possibilidade de unir as entidades \textit{lineitem} e \textit{orders} em uma única entidade nomeada como \textit{item}, visto que as duas possuem um relacionamento. Isto também eliminaria algumas junções realizadas entre as duas entidades nas consultas listadas no Apêndice \ref{queries_1}. A PK \texttt{c\_custkey} de \textit{customer} que antes estava em \textit{orders} como FK é transferida agora para \textit{item}. Também nota-se que (ii) as entidades \textit{part} e \textit{supplier} têm suas PKs como FKs na entidade antes denominada \textit{lineitem}, provenientes da entidade intermediária \textit{partsupp}. Optou-se assim por incluir os atributos de \textit{partsupp} na nova entidade \textit{item}, excluindo a primeira do esquema e mantendo o relacionamento de \textit{supplier} e \textit{part} diretamente com \textit{item}, através das chaves \texttt{p\_partkey} e \texttt{s\_suppkey}.
 
-O esquema final agora possui uma Tabela Fato, \textit{Item}; e três tabelas Dimensão, \textit{Part}, \textit{Customer} e \textit{Supplier}, cada qual com sua chave mantendo o relacionamento com a tabela \textit{Item}. Os dados presentes nas entidades são do mesmo tipo descritos na Seção \ref{ambiente_1}. As consultas em Linguagem SQL relacionadas a esse ambiente são encontradas no Apêndice \ref{queries_2}.
+O esquema final agora possui uma Tabela Fato, \textit{item}; e três tabelas Dimensão, \textit{part}, \textit{customer} e \textit{supplier}, cada qual com sua chave mantendo o relacionamento com a tabela \textit{item}. Os dados presentes nas entidades são do mesmo tipo descritos na Seção \ref{ambiente_1}. As consultas em Linguagem SQL relacionadas a esse ambiente são encontradas no Apêndice \ref{queries_2}.
 
-A inserção dos dados do Ambiente Denormalizado será realizada após todos os dados gerados pelo DBGen do Ambiente Normalizado terem sido populados nos SGBD. Com isso, é possível realizar \textit{joins} de acordo com as mudanças e o resultado destes será armazenado no esquema correspondente. Por exemplo, ao realizar um \textit{join} entre as entidades \textit{Nation} e \textit{Region} selecionando todos os seus atributos, estes são enviados como entrada para a inserção em uma nova tabela do esquema Denormalizado correspondente, digamos, \textit{Nation\_Region}. Após, é realizado um novo \textit{join} com as entidades \textit{Supplier} e \textit{Part}, separadamente, para incluir os atributos de \textit{Nation\_Region}: \texttt{N\_NAME, N\_COMMENT, R\_NAME} e \texttt{R\_COMMENT}; bem como os atributos originais das duas entidades anteriores, nas novas entidades \textit{Supplier} e \textit{Part}.
+A inserção dos dados no ambiente \textit{star} será realizada após todos os dados gerados pelo DBGen do ambiente normalizado terem sido populados nos SGBD. Com isso, é possível realizar junções de acordo com as mudanças e o resultado destes será armazenado no esquema correspondente. Por exemplo, ao realizar uma junção entre as entidades \textit{nation} e \textit{region} selecionando todos os seus atributos, estes são enviados como entrada para a inserção em uma nova tabela do esquema Denormalizado correspondente, digamos, \textit{nation\_region}. Após, é realizado uma nova junção com as entidades \textit{supplier} e \textit{part}, separadamente, para incluir os atributos de \textit{nation\_region}: \texttt{n\_name, n\_comment, r\_name} e \texttt{r\_comment}; bem como os atributos originais das duas entidades anteriores, nas novas entidades \textit{supplier} e \textit{part}.

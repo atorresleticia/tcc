@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.4.22)  5 JUN 2018 20:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.4.22)  7 JUN 2018 17:22
 entering extended mode
 **"c:/Users/Leticia Torres/Google Drive/UNIOESTE/TCC/TCC/ModeloTCC.tex"
 ("c:/Users/Leticia Torres/Google Drive/UNIOESTE/TCC/TCC/ModeloTCC.tex"
@@ -759,7 +759,7 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 
 ] (ModeloTCC.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 21.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 20.
 
 [12
 
@@ -796,10 +796,6 @@ Cap\'{\i }tulo 1.
 
  (2-DW/capitulo_dw.tex
 Cap\'{\i }tulo 2.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 7.
-LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 7.
 [5
 
 
@@ -808,22 +804,20 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17.28> not available
 <img/dw_arc.png, id=74, 898.85812pt x 468.24937pt>
 File: img/dw_arc.png Graphic file (type png)
 <use img/dw_arc.png>
-Package pdftex.def Info: img/dw_arc.png  used on input line 37.
+Package pdftex.def Info: img/dw_arc.png  used on input line 39.
 (pdftex.def)             Requested size: 455.8843pt x 237.48935pt.
- [7]
-<img/star_dim.png, id=79, 545.78906pt x 272.51813pt>
+ [7] [8 <./img/dw_arc.png>]
+<img/star_dim.png, id=83, 545.78906pt x 272.51813pt>
 File: img/star_dim.png Graphic file (type png)
 <use img/star_dim.png>
-Package pdftex.def Info: img/star_dim.png  used on input line 48.
+Package pdftex.def Info: img/star_dim.png  used on input line 54.
 (pdftex.def)             Requested size: 369.88582pt x 184.68613pt.
- [8 <./img/dw_arc.png>]
 <img/snow.png, id=84, 552.56438pt x 264.99pt>
 File: img/snow.png Graphic file (type png)
 <use img/snow.png>
-Package pdftex.def Info: img/snow.png  used on input line 57.
+Package pdftex.def Info: img/snow.png  used on input line 63.
 (pdftex.def)             Requested size: 369.88582pt x 177.38063pt.
-) [9 <./img/star_dim.png> <./img/snow.png>]
-[10]
+) [9 <./img/star_dim.png>] [10 <./img/snow.png>]
 \openout2 = `3-SGBD/capitulo_sgbd.aux'.
 
  (3-SGBD/capitulo_sgbd.tex
@@ -832,7 +826,10 @@ Cap\'{\i }tulo 3.
 
 
 
-] [12]
+]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 31.
+ [12]
 <3-SGBD/funcionario_projeto.png, id=100, 408.02437pt x 80.55093pt>
 File: 3-SGBD/funcionario_projeto.png Graphic file (type png)
 <use 3-SGBD/funcionario_projeto.png>
@@ -860,34 +857,38 @@ File: 4-NoSQL/registros.png Graphic file (type png)
 <use 4-NoSQL/registros.png>
 Package pdftex.def Info: 4-NoSQL/registros.png  used on input line 122.
 (pdftex.def)             Requested size: 341.43306pt x 93.45976pt.
-<4-NoSQL/row_col.png, id=122, 726.46407pt x 146.79843pt>
-File: 4-NoSQL/row_col.png Graphic file (type png)
-<use 4-NoSQL/row_col.png>
-Package pdftex.def Info: 4-NoSQL/row_col.png  used on input line 129.
-(pdftex.def)             Requested size: 455.8843pt x 92.12286pt.
- [19 <./4-NoSQL/registros.png> <./4-NoSQL/row_col.png>]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 170.
-
-("C:\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+<4-NoSQL/row.png, id=122, 397.485pt x 84.315pt>
+File: 4-NoSQL/row.png Graphic file (type png)
+<use 4-NoSQL/row.png>
+Package pdftex.def Info: 4-NoSQL/row.png  used on input line 129.
+(pdftex.def)             Requested size: 227.62204pt x 48.28517pt.
+<4-NoSQL/column.png, id=123, 308.65312pt x 142.28156pt>
+File: 4-NoSQL/column.png Graphic file (type png)
+<use 4-NoSQL/column.png>
+Package pdftex.def Info: 4-NoSQL/column.png  used on input line 130.
+(pdftex.def)             Requested size: 193.47882pt x 89.19061pt.
+ [19 <./4-NoSQL/registros.png> <./4-NoSQL/row.png> <./4-NoSQL/column.png>]
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 171.
+ ("C:\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [20]
-<4-NoSQL/em.png, id=132, 373.395pt x 97.86563pt>
+<4-NoSQL/em.png, id=134, 373.395pt x 97.86563pt>
 File: 4-NoSQL/em.png Graphic file (type png)
 <use 4-NoSQL/em.png>
-Package pdftex.def Info: 4-NoSQL/em.png  used on input line 186.
+Package pdftex.def Info: 4-NoSQL/em.png  used on input line 180.
 (pdftex.def)             Requested size: 398.33858pt x 104.40755pt.
-<4-NoSQL/lm.png, id=133, 561.59813pt x 332.74312pt>
+<4-NoSQL/lm.png, id=135, 561.59813pt x 332.74312pt>
 File: 4-NoSQL/lm.png Graphic file (type png)
 <use 4-NoSQL/lm.png>
-Package pdftex.def Info: 4-NoSQL/lm.png  used on input line 193.
+Package pdftex.def Info: 4-NoSQL/lm.png  used on input line 187.
 (pdftex.def)             Requested size: 398.33858pt x 236.01062pt.
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 200.
  [21 <./4-NoSQL/em.png> <./4-NoSQL/lm.png>]
-<4-NoSQL/vertical.png, id=139, 525.46312pt x 126.4725pt>
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 199.
+<4-NoSQL/vertical.png, id=141, 525.46312pt x 126.4725pt>
 File: 4-NoSQL/vertical.png Graphic file (type png)
 <use 4-NoSQL/vertical.png>
-Package pdftex.def Info: 4-NoSQL/vertical.png  used on input line 215.
+Package pdftex.def Info: 4-NoSQL/vertical.png  used on input line 214.
 (pdftex.def)             Requested size: 455.8843pt x 109.72913pt.
  [22 <./4-NoSQL/vertical.png>] [23] [24]) [25]
 \openout2 = `5-TPCH/capitulo_tpch.aux'.
@@ -902,16 +903,16 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <24.88> not available
 
 
 ] [27] [28] [29] [30]
-<img/snow_flake.png, id=176, 612.78937pt x 497.60907pt>
+<img/snow_flake.png, id=178, 612.78937pt x 497.60907pt>
 File: img/snow_flake.png Graphic file (type png)
 <use img/snow_flake.png>
 Package pdftex.def Info: img/snow_flake.png  used on input line 128.
 (pdftex.def)             Requested size: 455.8843pt x 370.1991pt.
  [31 <./img/snow_flake.png>]
-<img/star.png, id=181, 670.75594pt x 396.7322pt>
+<img/star.png, id=183, 670.75594pt x 396.7322pt>
 File: img/star.png Graphic file (type png)
 <use img/star.png>
-Package pdftex.def Info: img/star.png  used on input line 214.
+Package pdftex.def Info: img/star.png  used on input line 212.
 (pdftex.def)             Requested size: 455.8843pt x 269.64113pt.
 
 
@@ -927,50 +928,53 @@ Cap\'{\i }tulo 6.
 
 
 ]
-<6-Experimento/flux.png, id=196, 758.08218pt x 347.79938pt>
+<6-Experimento/flux.png, id=198, 758.08218pt x 347.79938pt>
 File: 6-Experimento/flux.png Graphic file (type png)
 <use 6-Experimento/flux.png>
 Package pdftex.def Info: 6-Experimento/flux.png  used on input line 71.
 (pdftex.def)             Requested size: 455.8843pt x 209.15886pt.
-<6-Experimento/power_flux.png, id=197, 816.04875pt x 302.63063pt>
+<6-Experimento/power_flux.png, id=199, 816.04875pt x 302.63063pt>
 File: 6-Experimento/power_flux.png Graphic file (type png)
 <use 6-Experimento/power_flux.png>
 Package pdftex.def Info: 6-Experimento/power_flux.png  used on input line 78.
 (pdftex.def)             Requested size: 455.8843pt x 169.06563pt.
  [36] [37 <./6-Experimento/flux.png> <./6-Experimento/power_flux.png>]
-[38] [39] [40] [41] [42]
-<6-Experimento/power_snow_cold.png, id=220, 355.3275pt x 212.29312pt>
+[38]
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17.28> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 166.
+ [39] [40] [41] [42]
+<6-Experimento/power_snow_cold.png, id=222, 355.3275pt x 212.29312pt>
 File: 6-Experimento/power_snow_cold.png Graphic file (type png)
 <use 6-Experimento/power_snow_cold.png>
 Package pdftex.def Info: 6-Experimento/power_snow_cold.png  used on input line 
 335.
 (pdftex.def)             Requested size: 204.85974pt x 122.398pt.
-<6-Experimento/power_star_cold.png, id=221, 352.31625pt x 210.7875pt>
+<6-Experimento/power_star_cold.png, id=223, 352.31625pt x 210.7875pt>
 File: 6-Experimento/power_star_cold.png Graphic file (type png)
 <use 6-Experimento/power_star_cold.png>
 Package pdftex.def Info: 6-Experimento/power_star_cold.png  used on input line 
 336.
 (pdftex.def)             Requested size: 204.85974pt x 122.5656pt.
  [43]
-<6-Experimento/qph_snow_cold.png, id=225, 414.79968pt x 252.19218pt>
+<6-Experimento/qph_snow_cold.png, id=227, 414.79968pt x 252.19218pt>
 File: 6-Experimento/qph_snow_cold.png Graphic file (type png)
 <use 6-Experimento/qph_snow_cold.png>
 Package pdftex.def Info: 6-Experimento/qph_snow_cold.png  used on input line 34
 5.
 (pdftex.def)             Requested size: 204.85974pt x 124.54881pt.
-<6-Experimento/qph_star_cold.png, id=226, 412.54124pt x 245.41687pt>
+<6-Experimento/qph_star_cold.png, id=228, 412.54124pt x 245.41687pt>
 File: 6-Experimento/qph_star_cold.png Graphic file (type png)
 <use 6-Experimento/qph_star_cold.png>
 Package pdftex.def Info: 6-Experimento/qph_star_cold.png  used on input line 34
 6.
 (pdftex.def)             Requested size: 204.85974pt x 121.8693pt.
-<6-Experimento/qph_monet_cold.png, id=227, 414.79968pt x 251.43938pt>
+<6-Experimento/qph_monet_cold.png, id=229, 414.79968pt x 251.43938pt>
 File: 6-Experimento/qph_monet_cold.png Graphic file (type png)
 <use 6-Experimento/qph_monet_cold.png>
 Package pdftex.def Info: 6-Experimento/qph_monet_cold.png  used on input line 3
 66.
 (pdftex.def)             Requested size: 204.85974pt x 124.17703pt.
-<6-Experimento/qph_psql_cold.png, id=228, 417.81094pt x 249.93375pt>
+<6-Experimento/qph_psql_cold.png, id=230, 417.81094pt x 249.93375pt>
 File: 6-Experimento/qph_psql_cold.png Graphic file (type png)
 <use 6-Experimento/qph_psql_cold.png>
 Package pdftex.def Info: 6-Experimento/qph_psql_cold.png  used on input line 36
@@ -980,37 +984,37 @@ Package pdftex.def Info: 6-Experimento/qph_psql_cold.png  used on input line 36
 > <./6-Experimento/qph_snow_cold.png> <./6-Experimento/qph_star_cold.png>] [45 
 <./6-Experimento/qph_monet_cold.png> <./6-Experimento/qph_psql_cold.png>] [46] 
 [47]
-<6-Experimento/power_snow_hot.png, id=248, 420.06938pt x 248.42813pt>
+<6-Experimento/power_snow_hot.png, id=250, 420.06938pt x 248.42813pt>
 File: 6-Experimento/power_snow_hot.png Graphic file (type png)
 <use 6-Experimento/power_snow_hot.png>
 Package pdftex.def Info: 6-Experimento/power_snow_hot.png  used on input line 5
 32.
 (pdftex.def)             Requested size: 204.85974pt x 121.15465pt.
-<6-Experimento/power_star_hot.png, id=249, 444.15938pt x 267.24844pt>
+<6-Experimento/power_star_hot.png, id=251, 444.15938pt x 267.24844pt>
 File: 6-Experimento/power_star_hot.png Graphic file (type png)
 <use 6-Experimento/power_star_hot.png>
 Package pdftex.def Info: 6-Experimento/power_star_hot.png  used on input line 5
 33.
 (pdftex.def)             Requested size: 204.85974pt x 123.262pt.
-<6-Experimento/qph_snow_hot.png, id=250, 414.79968pt x 252.19218pt>
+<6-Experimento/qph_snow_hot.png, id=252, 414.79968pt x 252.19218pt>
 File: 6-Experimento/qph_snow_hot.png Graphic file (type png)
 <use 6-Experimento/qph_snow_hot.png>
 Package pdftex.def Info: 6-Experimento/qph_snow_hot.png  used on input line 542
 .
 (pdftex.def)             Requested size: 204.85974pt x 124.54881pt.
-<6-Experimento/qph_star_hot.png, id=251, 414.04688pt x 245.41687pt>
+<6-Experimento/qph_star_hot.png, id=253, 414.04688pt x 245.41687pt>
 File: 6-Experimento/qph_star_hot.png Graphic file (type png)
 <use 6-Experimento/qph_star_hot.png>
 Package pdftex.def Info: 6-Experimento/qph_star_hot.png  used on input line 543
 .
 (pdftex.def)             Requested size: 204.85974pt x 121.42741pt.
-<6-Experimento/qph_monet_hot.png, id=252, 416.30531pt x 255.20343pt>
+<6-Experimento/qph_monet_hot.png, id=254, 416.30531pt x 255.20343pt>
 File: 6-Experimento/qph_monet_hot.png Graphic file (type png)
 <use 6-Experimento/qph_monet_hot.png>
 Package pdftex.def Info: 6-Experimento/qph_monet_hot.png  used on input line 56
 3.
 (pdftex.def)             Requested size: 204.85974pt x 125.58426pt.
-<6-Experimento/qph_psql_hot.png, id=253, 419.31656pt x 254.45062pt>
+<6-Experimento/qph_psql_hot.png, id=255, 419.31656pt x 254.45062pt>
 File: 6-Experimento/qph_psql_hot.png Graphic file (type png)
 <use 6-Experimento/qph_psql_hot.png>
 Package pdftex.def Info: 6-Experimento/qph_psql_hot.png  used on input line 564
@@ -1019,26 +1023,26 @@ Package pdftex.def Info: 6-Experimento/qph_psql_hot.png  used on input line 564
  [48] [49 <./6-Experimento/power_snow_hot.png> <./6-Experimento/power_star_hot.
 png> <./6-Experimento/qph_snow_hot.png> <./6-Experimento/qph_star_hot.png> <./6
 -Experimento/qph_monet_hot.png> <./6-Experimento/qph_psql_hot.png>] [50] [51]
-<6-Experimento/power_snow_cache.png, id=272, 399.74344pt x 248.42813pt>
+<6-Experimento/power_snow_cache.png, id=274, 399.74344pt x 248.42813pt>
 File: 6-Experimento/power_snow_cache.png Graphic file (type png)
 <use 6-Experimento/power_snow_cache.png>
 Package pdftex.def Info: 6-Experimento/power_snow_cache.png  used on input line
  713.
 (pdftex.def)             Requested size: 204.85974pt x 127.31454pt.
-<6-Experimento/power_star_cache.png, id=273, 415.5525pt x 249.18094pt>
+<6-Experimento/power_star_cache.png, id=275, 415.5525pt x 249.18094pt>
 File: 6-Experimento/power_star_cache.png Graphic file (type png)
 <use 6-Experimento/power_star_cache.png>
 Package pdftex.def Info: 6-Experimento/power_star_cache.png  used on input line
  714.
 (pdftex.def)             Requested size: 204.85974pt x 122.84114pt.
  [52]
-<6-Experimento/power_snow_cache_2.png, id=277, 391.4625pt x 236.38312pt>
+<6-Experimento/power_snow_cache_2.png, id=279, 391.4625pt x 236.38312pt>
 File: 6-Experimento/power_snow_cache_2.png Graphic file (type png)
 <use 6-Experimento/power_snow_cache_2.png>
 Package pdftex.def Info: 6-Experimento/power_snow_cache_2.png  used on input li
 ne 723.
 (pdftex.def)             Requested size: 204.85974pt x 123.70622pt.
-<6-Experimento/power_star_cache_2.png, id=278, 349.305pt x 212.29312pt>
+<6-Experimento/power_star_cache_2.png, id=280, 349.305pt x 212.29312pt>
 File: 6-Experimento/power_star_cache_2.png Graphic file (type png)
 <use 6-Experimento/power_star_cache_2.png>
 Package pdftex.def Info: 6-Experimento/power_star_cache_2.png  used on input li
@@ -1047,49 +1051,49 @@ ne 724.
  [53 <./6-Experimento/power_snow_cache.png> <./6-Experimento/power_star_cache.p
 ng> <./6-Experimento/power_snow_cache_2.png> <./6-Experimento/power_star_cache_
 2.png>]
-<6-Experimento/qph_monet_cache.png, id=287, 418.56375pt x 253.69781pt>
+<6-Experimento/qph_monet_cache.png, id=289, 418.56375pt x 253.69781pt>
 File: 6-Experimento/qph_monet_cache.png Graphic file (type png)
 <use 6-Experimento/qph_monet_cache.png>
 Package pdftex.def Info: 6-Experimento/qph_monet_cache.png  used on input line 
 733.
 (pdftex.def)             Requested size: 204.85974pt x 124.16591pt.
-<6-Experimento/qph_psql_cache.png, id=288, 418.56375pt x 252.19218pt>
+<6-Experimento/qph_psql_cache.png, id=290, 418.56375pt x 252.19218pt>
 File: 6-Experimento/qph_psql_cache.png Graphic file (type png)
 <use 6-Experimento/qph_psql_cache.png>
 Package pdftex.def Info: 6-Experimento/qph_psql_cache.png  used on input line 7
 34.
 (pdftex.def)             Requested size: 204.85974pt x 123.42902pt.
-<6-Experimento/qph_snow_cache.png, id=289, 415.5525pt x 255.20343pt>
+<6-Experimento/qph_snow_cache.png, id=291, 415.5525pt x 255.20343pt>
 File: 6-Experimento/qph_snow_cache.png Graphic file (type png)
 <use 6-Experimento/qph_snow_cache.png>
 Package pdftex.def Info: 6-Experimento/qph_snow_cache.png  used on input line 7
 43.
 (pdftex.def)             Requested size: 204.85974pt x 125.81012pt.
-<6-Experimento/qph_star_cache.png, id=290, 409.53pt x 244.66406pt>
+<6-Experimento/qph_star_cache.png, id=292, 409.53pt x 244.66406pt>
 File: 6-Experimento/qph_star_cache.png Graphic file (type png)
 <use 6-Experimento/qph_star_cache.png>
 Package pdftex.def Info: 6-Experimento/qph_star_cache.png  used on input line 7
 44.
 (pdftex.def)             Requested size: 204.85974pt x 122.39145pt.
-<6-Experimento/qph_snow_cache_2.png, id=291, 414.79968pt x 255.95625pt>
+<6-Experimento/qph_snow_cache_2.png, id=293, 414.79968pt x 255.95625pt>
 File: 6-Experimento/qph_snow_cache_2.png Graphic file (type png)
 <use 6-Experimento/qph_snow_cache_2.png>
 Package pdftex.def Info: 6-Experimento/qph_snow_cache_2.png  used on input line
  751.
 (pdftex.def)             Requested size: 204.85974pt x 126.40776pt.
-<6-Experimento/qph_star_cache_2.png, id=292, 409.53pt x 244.66406pt>
+<6-Experimento/qph_star_cache_2.png, id=294, 409.53pt x 244.66406pt>
 File: 6-Experimento/qph_star_cache_2.png Graphic file (type png)
 <use 6-Experimento/qph_star_cache_2.png>
 Package pdftex.def Info: 6-Experimento/qph_star_cache_2.png  used on input line
  752.
 (pdftex.def)             Requested size: 204.85974pt x 122.39145pt.
-<6-Experimento/qph_monet_cache_2.png, id=293, 414.79968pt x 256.70906pt>
+<6-Experimento/qph_monet_cache_2.png, id=295, 414.79968pt x 256.70906pt>
 File: 6-Experimento/qph_monet_cache_2.png Graphic file (type png)
 <use 6-Experimento/qph_monet_cache_2.png>
 Package pdftex.def Info: 6-Experimento/qph_monet_cache_2.png  used on input lin
 e 759.
 (pdftex.def)             Requested size: 204.85974pt x 126.77954pt.
-<6-Experimento/qph_psql_cache_2.png, id=294, 417.05812pt x 252.945pt>
+<6-Experimento/qph_psql_cache_2.png, id=296, 417.05812pt x 252.945pt>
 File: 6-Experimento/qph_psql_cache_2.png Graphic file (type png)
 <use 6-Experimento/qph_psql_cache_2.png>
 Package pdftex.def Info: 6-Experimento/qph_psql_cache_2.png  used on input line
@@ -1151,36 +1155,36 @@ Ap\^endice D.
 
 
 ] [92]
-Underfull \hbox (badness 10000) in paragraph at lines 149--153
+Underfull \hbox (badness 10000) in paragraph at lines 155--159
 []\T1/ptm/m/n/12 TWITTER growth prompts switch from MySQL to 'NoSQL' da-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--153
+Underfull \hbox (badness 10000) in paragraph at lines 155--159
 \T1/ptm/m/n/12 ta-base. 2010. Aces-sado em: 20 de maio de 2018. Dis-po-ní-vel e
 m:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--153
+Underfull \hbox (badness 10000) in paragraph at lines 155--159
 \OML/cmm/m/it/12 <$\T1/ptm/m/n/12 https://www.computerworld.com/article/2520084
 /database-administration/twitter-growth-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 186--189
+Underfull \hbox (badness 10000) in paragraph at lines 192--195
 []\T1/ptm/m/n/12 RIAK. 2018. Aces-sado em: 20 de maio de 2018. Dis-po-ní-vel em
 :
  []
 
 
-Underfull \hbox (badness 1371) in paragraph at lines 204--207
+Underfull \hbox (badness 1371) in paragraph at lines 210--213
 []\T1/ptm/m/n/12 APACHE Cou-chDB. 2018. Aces-sado em: 20 de maio de 2018. Dis-p
 o-ní-vel em:
  []
 
 [93]
-Underfull \hbox (badness 1270) in paragraph at lines 228--231
+Underfull \hbox (badness 1270) in paragraph at lines 234--237
 []\T1/ptm/m/n/12 APACHE Cas-san-dra. 2018. Aces-sado em: 20 de maio de 2018. Di
 s-po-ní-vel em:
  []
@@ -1193,13 +1197,13 @@ s-po-ní-vel em:
 (7-Conclusao/capitulo_conclusao.aux) (apend/apendice2.aux) (apend/apendice3.aux
 ) (apend/apendice4.aux) (apend/apendice5.aux)) ) 
 Here is how much of TeX's memory you used:
- 7948 strings out of 492972
- 110179 string characters out of 3142019
- 290672 words of memory out of 3000000
- 11387 multiletter control sequences out of 15000+200000
+ 7958 strings out of 492972
+ 110329 string characters out of 3142019
+ 290780 words of memory out of 3000000
+ 11396 multiletter control sequences out of 15000+200000
  73557 words of font info for 102 fonts, out of 3000000 for 9000
  1150 hyphenation exceptions out of 8191
- 41i,12n,45p,1783b,1892s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,16n,45p,1783b,1892s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/MiKTeX 2.9/fonts/enc/dvips/
 base/8r.enc}<C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/MiKTeX 2.9/fonts/type1/p
@@ -1213,9 +1217,9 @@ m10.pfb><C:/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/MiKTeX 2.9/fonts/
 type1/urw/times/utmb8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:
 /MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/tim
 es/utmri8a.pfb>
-Output written on ModeloTCC.pdf (110 pages, 1047027 bytes).
+Output written on ModeloTCC.pdf (110 pages, 1052065 bytes).
 PDF statistics:
- 495 PDF objects out of 1000 (max. 8388607)
+ 497 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 196 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 201 words of extra memory for PDF output out of 10000 (max. 10000000)
 

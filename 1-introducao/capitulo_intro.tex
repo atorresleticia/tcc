@@ -22,7 +22,7 @@ De acordo com a literatura, existe uma série de princípios que devem ser segui
 na maior parte da literatura referente à construção de ambientes OLAP, a exemplo de Codd; Codd e Salley \cite{codd1998providing}, Kimball e Ross \cite{kimball2002dw} 
 e Wremble e Koncilia \cite{wrembel2007data}. Sendo assim, vários aspectos técnicos devem ser considerados sob diferentes pontos de vista. 
 Políticas de \textit{cache} específicas para um servidor de estruturas utilizadas pela aplicação OLAP para armazenar e recuperar dados em memória 
-e o SGBD (Sistema Gerenciador de Banco de Dados) utilizado para o gerenciamento do DW são exemplos de aspectos técnicos que também fazem parte de um ambiente OLAP, 
+e o SGBD (Sistemas Gerenciadores de Banco de Dados) utilizado para o gerenciamento do DW são exemplos de aspectos técnicos que também fazem parte de um ambiente OLAP, 
 e que devem ser considerados. 
 
 De acordo com Elmasri e Navathe \cite{navathe2011banco} SGBD são importantes para a manutenção 
@@ -31,12 +31,12 @@ a escolha do SGBD no processo de desenvolvimento de um ambiente de análise para
 como auxílio na tomada de decisões é importante. 
 
 Duas classes de SGBD podem ser utilizadas para realizar o gerenciamento de um DW: SGBD relacionais tradicionais orientados à linha e uma nova abordagem de SGBD 
-NoSQL que são orientados à coluna (SGBD colunares), que fornecem um melhor desempenho à recuperação de dados \cite{good2017column}. 
+NoSQL que são orientados à coluna, que fornecem um melhor desempenho à recuperação de dados \cite{good2017column}. 
 Dada a importância na escolha do SGBD e as diferentes soluções apresentadas por cada um, torna-se útil o uso de um 
-benchmark\footnote{Ferramentas utilizadas para medir e validar o desempenho de alguma tecnologia sob condições de avaliação \cite{bouckaert2010benchmarking}} 
-para a realização de uma análise entre SGBD. Existe uma organização sem fins lucrativos fundada com o objetivo de definir padrões para avaliar o 
-desempenho de transações e de bancos de dados com o uso de benchmarks, o TPC (\textit{Transactional Processing Performance Council}) \cite{tpc2017page}. 
-Esta organização é responsável pela criação de um benchmark voltado para decisões de negócio, o TPC-H \cite{tpch2017page}.
+\textit{benchmark}\footnote{Ferramentas utilizadas para medir e validar o desempenho de alguma tecnologia sob condições de avaliação \cite{bouckaert2010benchmarking}} 
+para a realização de uma análise entre os SGBD. Existe uma organização sem fins lucrativos fundada com o objetivo de definir padrões para avaliar o 
+desempenho de transações e de bancos de dados com o uso de \textit{benchmarks}, o TPC (\textit{Transactional Processing Performance Council}) \cite{tpc2017page}. 
+Esta organização é responsável pela criação de um \textit{benchmark} voltado para decisões de negócio, o TPC-H \cite{tpch2017page}.
 
 Para refletir a realidade de uma empresa, o TPC-H propõe um ambiente de análise normalizado. Segundo Bax e Souza \cite{bax2003modelagem} 
 existe uma discussão sobre a normalização e a denormalização dos dados de um DW. Algumas empresas utilizam um modelo normalizado e têm como 
@@ -44,24 +44,24 @@ justificativa a flexibilidade e a facilidade em situações de manutenção do D
 e têm como justificativa o ganho de desempenho nas consultas, visto que um modelo denormalizado tende a diminuir o número de tabelas e, por consequência, 
 as operações de junção entre tabelas. 
 
-O objetivo deste trabalho é a realização de um estudo comparativo entre SGBD, relacionais orientados à linha e orientados à coluna, 
-como gerenciadores de DWs em ambientes OLAP. A comparação será realizada utilizando-se o benchmark TPC-H em sua proposta original, um modelo de banco normalizado; 
+O objetivo deste trabalho é a realização de um estudo comparativo entre os SGBD PostgreSQL e MonetDB, o primeiro relacional orientado à linha e o segundo orientado à coluna, 
+como gerenciadores de DWs em ambientes OLAP. A comparação será realizada utilizando-se o \textit{benchmark} TPC-H em sua proposta original, um modelo de banco normalizado; 
 além de uma adaptação para um modelo DW denormalizado. Desta maneira, será possível avaliar os SGBD selecionados de acordo com o modelo do DW, não apenas no 
-contexto original proposto pelo benchmark. Para alcançar tal objetivo, é necessária a execução de uma série de tarefas. A primeira parte engloba o 
-desenvolvimento dos dois ambientes de análise, o modelo padrão proposto pelo TPC-H e o modelo denormalizado, adaptado do TPC-H. Após, são gerados os 
+contexto original proposto pelo \textit{benchmark}. Para alcançar tal objetivo, é necessária a execução de uma série de tarefas. A primeira parte engloba o 
+desenvolvimento dos dois ambientes de análise, o modelo padrão proposto pelo TPC-H e o modelo denormalizado adaptado do TPC-H. Após, são gerados os 
 dados para popular os SGBD e as consultas para as questões de negócio propostas pelo TPC-H; então é feita a população dos dados gerados nos SGBD. 
-A segunda parte consiste na execução das consultas para cada um dos ambientes de análise, sendo que para o ambiente adaptado as consultas devem 
+A segunda parte consiste na execução das consultas para cada um dos ambientes de análise de acordo com a metodologia proposta pelo TPC-H, sendo que para o ambiente adaptado as consultas devem 
 ser escritas de acordo com as alterações efetuadas. E por fim a aplicação do cálculo de desempenho proposto pelo TPC-H para os dois ambientes. 
 
 A organização do documento segue da seguinte forma:
 
 \begin{itemize}
-	\item \textbf{Capítulo 2}: apresenta detalhes sobre recuperação de informações, explicando os conceitos de \textit{Data Warehouses}, 
+	\item \textbf{Capítulo 2}: apresenta detalhes sobre recuperação de informações, explicando os conceitos de \textit{Data Warehouse}, 
 	ambientes OLAP e a conexão entre ambos.
-	\item \textbf{Capítulo 3}: apresenta uma breve descrição da motivação no uso de SGBD como gerenciadores de DW, bem como a descrição 
+	\item \textbf{Capítulo 3}: apresenta uma breve descrição da motivação no uso de SGBD como gerenciadores de DWs, bem como a descrição 
 	do modelo relacional, suas limitações e uma introdução a NoSQL.
 	\item \textbf{Capítulo 4}: apresenta detalhes de como e porquê surgiram os SGBD NoSQL, assim como a descrição do modelo colunar.
-	\item \textbf{Capítulo 5}: apresenta detalhes sobre o benchmark TPC-H, abrangendo informações sobre o ambiente normalizado proposto pelo próprio benchmark; bem como sobre o ambiente denormalizado proposto neste trabalho. É também apresentada a metodologia utilizada para medição e análise do desempenho dos SGBD.
+	\item \textbf{Capítulo 5}: apresenta detalhes sobre o \textit{benchmark} TPC-H, abrangendo informações sobre o ambiente normalizado proposto pelo próprio \textit{benchmark}; bem como sobre o ambiente denormalizado proposto neste trabalho. É também apresentada a metodologia utilizada para medição e análise do desempenho dos SGBD.
 	\item \textbf{Capítulo 6}: é apresentado o estudo comparativo entre os SGBD PostgreSQL e MonetDB, dividido em cenários conforme o fator 
 	de escala, bem como a discussão dos resultados obtidos.
 	\item \textbf{Capítulo 7}: são discorridas as conclusões obtidas a partir dos resultados obtidos no experimento, assim como 

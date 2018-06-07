@@ -73,6 +73,12 @@ Dispon{\'\i}vel em: $<$http://www.tpc.org/tpch/$>$.}
 {SHIM, J.~P. et al. Past, present, and future of decision support technology.
 \emph{Decision support systems}, Elsevier, v.~33, n.~2, p. 111--126, 2002.}
 
+\bibitem{vertabelo2017olap}
+\abntrefinfo{Zelen}{ZELEN}{2017}
+{ZELEN, A. \emph{OLTP vs. OLAP — What’s the Difference?} 2017.
+\url{https://academy.vertabelo.com/blog/oltp-vs-olap-whats-difference/}.
+Acessado em: 12 de abril de 2018.}
+
 \bibitem{sen2005comparison}
 \abntrefinfo{Sen e Sinha}{SEN; SINHA}{2005}
 {SEN, A.; SINHA, A.~P. A comparison of data warehousing methodologies.

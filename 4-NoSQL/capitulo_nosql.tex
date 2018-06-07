@@ -1,21 +1,21 @@
 \graphicspath{ {4-NoSQL/} }
-\chapter{NoSQL}
+\chapter{Banco de Dados NoSQL}
 \label{nosql}
 
 O desenvolvimento de novas aplicações e surgimento de novas soluções 
 para sistemas gerou crescimento no volume de dados de maneira acelerada. 
 Com isso cresce também o número de usuários, necessitando portanto escalar 
-o BD. Existem duas soluções para escalar um sistema: o 
+o banco de dados. Existem duas soluções para escalar um sistema: o 
 escalonamento vertical, que consiste em um \textit{upgrade} do servidor no 
 qual o banco está hospedado; e o horizontal, aumentando o número de 
 servidores e distribuindo o banco \cite{pritchett2008base, sharding2018educative}. 
 
 Existem algumas desvantagens no \textit{upgrade} de um sistema. 
-O BD pode superar a capacidade da melhor configuração 
+O banco de dados pode superar a capacidade da melhor configuração 
 disponível no mercado, e ainda é caro por requerer a aquisição de 
 uma configuração melhor. Mesmo considerado mais complexo, o 
 escalonamento horizontal é mais viável. Entre as soluções apresentadas 
-no particionamento horizontal estão o particionamento funcional e o 
+no particionamento horizontal em banco de dados estão o particionamento funcional e o 
 \textit{sharding} \cite{pritchett2008base}. 
 
 O particionamento funcional consiste em fragmentar os dados de acordo 
@@ -33,7 +33,7 @@ e \textit{endereço} estejam relacionadas estas devem
 ser armazenados no mesmo servidor. 
 
 A segunda estratégia, o \textit{sharding}, consiste em dividir os dados do banco 
-utilizando algum critério de separação de dados que não seja limitado à 
+utilizando algum critério de separação que não seja limitado à 
 funcionalidade das entidades. Soluções como particionamento com base em 
 \textit{hash} ou listas podem ser aplicadas. Considerando dez servidores e uma chave 
 primária auto-incremental, a função de \textit{hash} pode tomar o módulo da chave 
@@ -95,7 +95,7 @@ SGBDR prezam por disponibilidade e consistência de dados seguindo o ACID, poré
 pode tornar a manipulação de dados lenta. Visto que o movimento NoSQL surgiu com a intenção de 
 melhorar a escalabilidade e disponibilidade de dados, e tornar a manipulação destes mais rápida, 
 a maioria deles trabalha com os atributos de disponibilidade e tolerância à partição. 
-Essa configuração assume um conceito diferente do ACID para bancos NoSQL, e Pritchett \cite{pritchett2008base} propôs um teorema diferente do ACID, mais otimista, onde a consistência é relaxada, o Teorema BASE (\textit{Basically Available, Soft State, Eventual Consistency}).
+Essa configuração assume um conceito diferente do ACID para bancos NoSQL, e Pritchett \cite{pritchett2008base} propôs um teorema diferente deste, mais otimista, onde a consistência é relaxada, o Teorema BASE (\textit{Basically Available, Soft State, Eventual Consistency}).
 
 O Teorema BASE assume que a consistência em um banco 
 de dados está em estado de fluxo, ao contrário do ACID que força a consistência a cada operação, 
@@ -104,7 +104,7 @@ Neste cenário a disponibilidade é garantida devido à tolerância a partição
 com que a falha de um servidor não cesse o funcionamento de todo o sistema -- por exemplo, caso uma partição falhe em um sistema rodando sobre dez servidores, apenas 10\% dos dados estarão indisponíveis e somente os usuários daquela partição serão afetados.
 
 
-\section{SGBD Colunar}
+\section{Modelo de SGBD Colunar}
 
 Dentre as categorias de bancos de dados NoSQL a que melhor se adequa aos 
 propósitos analíticos é a colunar. Sistemas colunares armazenam seus dados 
@@ -114,8 +114,8 @@ ao disco \cite{matei2010column, abadi2008column}. Cada uma destas colunas pode a
 \textit{chave, valor} \cite{abadi2013design, khoshafian1987query}, sendo esta uma das formas de implementação 
 de um sistema colunar (descrita na Seção \ref{sec:implementacao_col} deste capítulo). 
 A Figura \ref{fig:row-col} ilustra de forma simples, embora apenas visual, 
-a diferença principal entre um armazenamento utilizando linhas e outro utilizando 
-colunas a partir dos registros da Figura \ref{fig:regs}, baseada na entidade \textit{funcionário} apresentada no Capítulo \ref{sgbd}.
+a diferença principal entre um armazenamento utilizando linhas, conforme a Figura \ref{fig:row}, e outro utilizando 
+colunas, Figura \ref{fig:column}, a partir dos registros da Figura \ref{fig:regs}, baseada na entidade \textit{funcionário} apresentada no Capítulo \ref{sgbd}.
 
 \begin{figure*}[htpb]
 	\centering
@@ -125,10 +125,11 @@ colunas a partir dos registros da Figura \ref{fig:regs}, baseada na entidade \te
 \end{figure*}
 
 \begin{figure*}[htpb]
-	\centering
-        \includegraphics[width=\textwidth]{row_col}
-	\caption{Diferença visual entre registros armazenados em um banco relacional e colunar}
-	\label{fig:row-col}
+    \centering
+    \subfigure[]{\includegraphics[width=8cm]{row}\label{fig:row}}
+    \subfigure[]{\includegraphics[width=6.8cm]{column}\label{fig:column}}
+    \caption{Diferença visual entre registros armazenados em um banco relacional e colunar}
+    \label{fig:row-col}
 \end{figure*}
 
 Matei \cite{matei2010column} cita algumas vantagens de sistemas colunares:
@@ -154,15 +155,15 @@ segunda em \textbf{modificar a camada de armazenamento} e a terceira corresponde
 \section{Implementação do Sistema Colunar}
 \label{sec:implementacao_col}
 
-Antes de detalhar os métodos de implementação de um BD colunar, é fundamental discutir sobre a reconstrução de tuplas nesse tipo de SGBD. 
-Segundo Abadi et al. \cite{abadi2007materialization}, a parte lógica e visual de um BD colunar se apresenta da mesma forma que 
-um BD relacional. Isso faz com que a maioria dos SGBD colunares ofereçam uma interface relacional de comunicação, compatível com os padrões.
+Antes de detalhar os métodos de implementação de um banco de dados colunar, é fundamental discutir sobre a reconstrução de tuplas nesse tipo de SGBD. 
+Segundo Abadi et al. \cite{abadi2007materialization}, a parte lógica e visual de um banco de dados colunar se apresenta da mesma forma que 
+um relacional. Isso faz com que a maioria dos SGBD colunares ofereçam uma interface relacional de comunicação, compatível com os padrões.
 
 Como os atributos de um modelo colunar acabam ficando separados em disco um do outro, eles precisam ser unidos novamente em tuplas para 
-que o resultado de uma consulta seja exibido. Existem duas técnicas para realizar essa reconstrução, ou materialização: \textit{early materialization} (EM) e 
-\textit{late materialization} (LM) \cite{abadi2007materialization, abadi2008query}.
+que o resultado de uma consulta seja exibido. Existem duas técnicas para realizar essa reconstrução, ou materialização: \textit{Early Materialization} (EM) e 
+\textit{Late Materialization} (LM) \cite{abadi2007materialization, abadi2008query}.
 
-A \textit{early materialization}, melhor traduzida como materialização prévia nesse contexto, é a política adotada por BD relacionais, e consiste 
+A técnica de \textit{Early Materialization}, melhor traduzida como materialização prévia nesse contexto, é a política adotada por banco de dados relacionais, e consiste 
 em adicionar as colunas à tupla conforme a coluna é requisitada na consulta. Essa técnica não leva em conta o predicado da consulta, isto é, considere 
 a consulta a seguir:
 
@@ -172,28 +173,26 @@ a consulta a seguir:
 \end{lstlisting}
 
 A EM irá processar essa consulta e construir uma tupla com os atributos \textit{nome, salário} e \textit{sexo}, com todos os registros 
-armazenados em banco. Considere que os registros são como mostrados na Figura \ref{fig:regs}. Esse método só analisa o predicado após a construção das tuplas. Isso não acontece na LM. 
-
-% inserir imagem com valores de registros
-
-Na LM, ou materialização tardia, é analisado primeiro o predicado e verificado quais valores atendem a esse predicado em cada coluna. 
-No caso da SQL acima primeiro seria analisado o predicado de seleção, nesse caso \texttt{WHERE salario >= 1000 AND sexo='F'}, e então 
-através de um operador lógico AND seria possível retornar a posição dos atributos que satisfazem essa seleção, para então 
-construir a tupla a partir do predicado de projeção somente com o atributo \textit{nome}. Em suma, apenas após ter a posição de cada atributo é que a tupla é construída, descartando a reconstrução de tuplas que seriam posteriormente descartadas. A Figura \ref{fig:em} e \ref{fig:lm} representam o resultado final de cada materialização.
+armazenados em banco. Considere que os registros são como mostrados na Figura \ref{fig:regs}, o construtor de tuplas retornará os registros conforme a Figura \ref{fig:em}. Esse método só analisa o predicado após a construção das tuplas, o que não acontece na LM. 
 
 \begin{figure*}[htpb]
 	\centering
         \includegraphics[width=14cm]{em}
-	\caption{Tuplas reconstruídas a partir da \textit{early materialization}}
+	\caption{Tuplas reconstruídas a partir da \textit{Early Materialization}}
 	\label{fig:em}
 \end{figure*}
 
 \begin{figure*}[htpb]
 	\centering
         \includegraphics[width=14cm]{lm}
-	\caption{Tuplas reconstruídas a partir da \textit{late materialization}}
+	\caption{Tuplas reconstruídas a partir da \textit{Late Materialization}}
 	\label{fig:lm}
 \end{figure*}
+
+Na LM, ou materialização tardia, é analisado primeiro o predicado e verificado quais valores atendem a esse predicado em cada coluna. 
+No caso da SQL acima primeiro seria analisado o predicado de seleção, nesse caso \texttt{WHERE salario >= 1000 AND sexo='F'}, e então 
+através do operador lógico AND seria possível retornar a posição dos atributos que satisfazem essa seleção, para então 
+construir a tupla a partir do predicado de projeção somente com o atributo \textit{nome}. Em suma, apenas após ter a posição de cada atributo é que a tupla é construída, descartando a reconstrução de tuplas que seriam posteriormente descartadas. A Figura \ref{fig:lm} apresenta o resultado após a construção das tuplas na LM.
 
 % inserir subfigure com tuplas
 
@@ -218,7 +217,7 @@ através das chaves.
 \end{figure*}
 
 Essa abordagem é a mais simples de se implementar, pois nenhuma mudança é feita 
-na codificação do BD, sendo que a única alteração necessária está a nível 
+na codificação do banco de dados, sendo que a única alteração necessária está a nível 
 da aplicação responsável por executar as consultas, mudando a lógica de acesso aos dados. Isso torna prático para empresas a 
 mudança entre a estratégia relacional e a colunar, pois torna possível o uso de um mesmo 
 SGBD como DW.
@@ -244,7 +243,7 @@ Neste método a reconstrução de tuplas é realizada antes da execução da con
 
 \subsection{Modificação na Camada de Armazenamento e Particionamento Vertical}
 
-A última, e melhor, abordagem consiste em modificar a camada de armazenamento do BD e a aplicação que processa as consultas \cite{stonebraker2005c, boncz2005monetdb}, assim o processador pode manter os dados sob a forma de colunas sem precisar unir as colunas e construir tuplas. Uma vantagem óbvia desta técnica é a eliminação da reconstrução de tuplas e com isso menos dados precisam ser previamente movimentados, diminuindo 
+A última, e melhor, abordagem consiste em modificar a camada de armazenamento do banco de dados e a aplicação que processa as consultas \cite{stonebraker2005c, boncz2005monetdb}, assim o processador pode manter os dados sob a forma de colunas sem precisar unir as colunas e construir tuplas. Uma vantagem óbvia desta técnica é a eliminação da reconstrução de tuplas e com isso menos dados precisam ser previamente movimentados, diminuindo 
 o tempo de processamento.  
 
 \section{Compressão de Dados}
@@ -254,7 +253,7 @@ Existem diversas formas de comprimir os dados, porém deve-se ater ao fato de
 que o tempo de compressão e descompressão não deve afetar significativamente o processamento 
 dos dados no SGBD. Para tal, uma solução é utilizar métodos que consigam operar sob os dados 
 ainda comprimidos -- ainda nesta seção são apresentados alguns dos algoritmos utilizados para 
-compressão em BD.
+compressão em banco de dados.
 
 Como exemplo, apenas ilustrativo, de como os dados em um sistema colunar podem ser comprimidos de forma mais 
 eficiente que em um relacional, considere a entidade \textit{usuário} a seguir, com os 
@@ -290,7 +289,7 @@ Comprimindo estas repetições o nosso modelo é armazenado da forma:
     1, 2, 5: M, 3, 4: F
 \end{verbatim}
 
-Westmann et al. \cite{westmann2000implementation} consideram que os métodos de compressão em um BD devem ser capazes de se aplicar 
+Westmann et al. \cite{westmann2000implementation} consideram que os métodos de compressão em um banco de dados devem ser capazes de se aplicar 
 no banco como um todo, bem como em uma tupla ou a cada atributo de tupla, e serem rápidos em processamento quando há casos em que seja 
 necessário realizar descompressão.
 
@@ -305,7 +304,7 @@ Um método bastante empregado é a Codificação por Dicionário. Nele atributos
 3 a 19 (3, 5, 7, 11, 13, 17, 19), podem ser representados por um dicionário de 3 bits. Este algoritmo pode ser utilizado para compressão 
 de valores NULL, considerando-o como um possível valor no padrão.
 
-Abadi, Madden e Ferreira \cite{abadi2006integrating} utilizam a compressão por dicionário e uma variação do algoritmo \textit{null supression} para implementar o BD C-Store e ainda apresentam dois outros métodos. O primeiro é o \textit{run-length}, que pode ser bem aproveitado 
+Abadi, Madden e Ferreira \cite{abadi2006integrating} utilizam a compressão por dicionário e uma variação do algoritmo \textit{null supression} para implementar o banco de dados C-Store e ainda apresentam dois outros métodos. O primeiro é o \textit{run-length}, que pode ser bem aproveitado 
 em bancos colunares quando atributos são repetidos sequencialmente e possuem pouca variação. Ele consiste em contar o número de vezes no qual 
 um valor é repetido utilizando a tripla (valor, posição inicial, tamanho). 
 % Um exemplo é ilustrado na Figura A com o atributo \textit{especialização}.
