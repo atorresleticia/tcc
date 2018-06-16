@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.4.22)  16 JUN 2018 01:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.4.22)  16 JUN 2018 01:53
 entering extended mode
 **"c:/Users/Leticia Torres/Google Drive/UNIOESTE/TCC/TCC/ModeloTCC.tex"
 ("c:/Users/Leticia Torres/Google Drive/UNIOESTE/TCC/TCC/ModeloTCC.tex"
@@ -956,37 +956,37 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17.28> not available
 File: 6-Experimento/power_snow_cold.png Graphic file (type png)
 <use 6-Experimento/power_snow_cold.png>
 Package pdftex.def Info: 6-Experimento/power_snow_cold.png  used on input line 
-352.
+422.
 (pdftex.def)             Requested size: 204.85974pt x 122.398pt.
 <6-Experimento/power_star_cold.png, id=213, 352.31625pt x 210.7875pt>
 File: 6-Experimento/power_star_cold.png Graphic file (type png)
 <use 6-Experimento/power_star_cold.png>
 Package pdftex.def Info: 6-Experimento/power_star_cold.png  used on input line 
-353.
+423.
 (pdftex.def)             Requested size: 204.85974pt x 122.5656pt.
 <6-Experimento/qph_snow_cold.png, id=214, 414.79968pt x 252.19218pt>
 File: 6-Experimento/qph_snow_cold.png Graphic file (type png)
 <use 6-Experimento/qph_snow_cold.png>
-Package pdftex.def Info: 6-Experimento/qph_snow_cold.png  used on input line 36
+Package pdftex.def Info: 6-Experimento/qph_snow_cold.png  used on input line 43
 2.
 (pdftex.def)             Requested size: 204.85974pt x 124.54881pt.
 <6-Experimento/qph_star_cold.png, id=215, 412.54124pt x 245.41687pt>
 File: 6-Experimento/qph_star_cold.png Graphic file (type png)
 <use 6-Experimento/qph_star_cold.png>
-Package pdftex.def Info: 6-Experimento/qph_star_cold.png  used on input line 36
+Package pdftex.def Info: 6-Experimento/qph_star_cold.png  used on input line 43
 3.
 (pdftex.def)             Requested size: 204.85974pt x 121.8693pt.
  [39]
 <6-Experimento/qph_monet_cold.png, id=219, 414.79968pt x 251.43938pt>
 File: 6-Experimento/qph_monet_cold.png Graphic file (type png)
 <use 6-Experimento/qph_monet_cold.png>
-Package pdftex.def Info: 6-Experimento/qph_monet_cold.png  used on input line 3
-83.
+Package pdftex.def Info: 6-Experimento/qph_monet_cold.png  used on input line 4
+53.
 (pdftex.def)             Requested size: 204.85974pt x 124.17703pt.
 <6-Experimento/qph_psql_cold.png, id=220, 417.81094pt x 249.93375pt>
 File: 6-Experimento/qph_psql_cold.png Graphic file (type png)
 <use 6-Experimento/qph_psql_cold.png>
-Package pdftex.def Info: 6-Experimento/qph_psql_cold.png  used on input line 38
+Package pdftex.def Info: 6-Experimento/qph_psql_cold.png  used on input line 45
 4.
 (pdftex.def)             Requested size: 204.85974pt x 122.54869pt.
  [40 <./6-Experimento/power_snow_cold.png> <./6-Experimento/power_star_cold.png
@@ -995,38 +995,38 @@ Package pdftex.def Info: 6-Experimento/qph_psql_cold.png  used on input line 38
 <6-Experimento/power_snow_hot.png, id=237, 420.06938pt x 248.42813pt>
 File: 6-Experimento/power_snow_hot.png Graphic file (type png)
 <use 6-Experimento/power_snow_hot.png>
-Package pdftex.def Info: 6-Experimento/power_snow_hot.png  used on input line 5
-49.
+Package pdftex.def Info: 6-Experimento/power_snow_hot.png  used on input line 6
+91.
 (pdftex.def)             Requested size: 204.85974pt x 121.15465pt.
 <6-Experimento/power_star_hot.png, id=238, 444.15938pt x 267.24844pt>
 File: 6-Experimento/power_star_hot.png Graphic file (type png)
 <use 6-Experimento/power_star_hot.png>
-Package pdftex.def Info: 6-Experimento/power_star_hot.png  used on input line 5
-50.
+Package pdftex.def Info: 6-Experimento/power_star_hot.png  used on input line 6
+92.
 (pdftex.def)             Requested size: 204.85974pt x 123.262pt.
  [43]
 <6-Experimento/qph_snow_hot.png, id=242, 414.79968pt x 252.19218pt>
 File: 6-Experimento/qph_snow_hot.png Graphic file (type png)
 <use 6-Experimento/qph_snow_hot.png>
-Package pdftex.def Info: 6-Experimento/qph_snow_hot.png  used on input line 559
+Package pdftex.def Info: 6-Experimento/qph_snow_hot.png  used on input line 701
 .
 (pdftex.def)             Requested size: 204.85974pt x 124.54881pt.
 <6-Experimento/qph_star_hot.png, id=243, 414.04688pt x 245.41687pt>
 File: 6-Experimento/qph_star_hot.png Graphic file (type png)
 <use 6-Experimento/qph_star_hot.png>
-Package pdftex.def Info: 6-Experimento/qph_star_hot.png  used on input line 560
+Package pdftex.def Info: 6-Experimento/qph_star_hot.png  used on input line 702
 .
 (pdftex.def)             Requested size: 204.85974pt x 121.42741pt.
 <6-Experimento/qph_monet_hot.png, id=244, 416.30531pt x 255.20343pt>
 File: 6-Experimento/qph_monet_hot.png Graphic file (type png)
 <use 6-Experimento/qph_monet_hot.png>
-Package pdftex.def Info: 6-Experimento/qph_monet_hot.png  used on input line 58
-0.
+Package pdftex.def Info: 6-Experimento/qph_monet_hot.png  used on input line 72
+2.
 (pdftex.def)             Requested size: 204.85974pt x 125.58426pt.
 <6-Experimento/qph_psql_hot.png, id=245, 419.31656pt x 254.45062pt>
 File: 6-Experimento/qph_psql_hot.png Graphic file (type png)
 <use 6-Experimento/qph_psql_hot.png>
-Package pdftex.def Info: 6-Experimento/qph_psql_hot.png  used on input line 581
+Package pdftex.def Info: 6-Experimento/qph_psql_hot.png  used on input line 723
 .
 (pdftex.def)             Requested size: 204.85974pt x 124.31305pt.
  [44] [45 <./6-Experimento/power_snow_hot.png> <./6-Experimento/power_star_hot.
@@ -1036,26 +1036,26 @@ png> <./6-Experimento/qph_snow_hot.png> <./6-Experimento/qph_star_hot.png> <./6
 File: 6-Experimento/power_snow_cache.png Graphic file (type png)
 <use 6-Experimento/power_snow_cache.png>
 Package pdftex.def Info: 6-Experimento/power_snow_cache.png  used on input line
- 730.
+ 872.
 (pdftex.def)             Requested size: 204.85974pt x 127.31454pt.
 <6-Experimento/power_star_cache.png, id=266, 415.5525pt x 249.18094pt>
 File: 6-Experimento/power_star_cache.png Graphic file (type png)
 <use 6-Experimento/power_star_cache.png>
 Package pdftex.def Info: 6-Experimento/power_star_cache.png  used on input line
- 731.
+ 873.
 (pdftex.def)             Requested size: 204.85974pt x 122.84114pt.
  [48]
 <6-Experimento/power_snow_cache_2.png, id=270, 391.4625pt x 236.38312pt>
 File: 6-Experimento/power_snow_cache_2.png Graphic file (type png)
 <use 6-Experimento/power_snow_cache_2.png>
 Package pdftex.def Info: 6-Experimento/power_snow_cache_2.png  used on input li
-ne 740.
+ne 882.
 (pdftex.def)             Requested size: 204.85974pt x 123.70622pt.
 <6-Experimento/power_star_cache_2.png, id=271, 349.305pt x 212.29312pt>
 File: 6-Experimento/power_star_cache_2.png Graphic file (type png)
 <use 6-Experimento/power_star_cache_2.png>
 Package pdftex.def Info: 6-Experimento/power_star_cache_2.png  used on input li
-ne 741.
+ne 883.
 (pdftex.def)             Requested size: 204.85974pt x 124.5068pt.
  [49 <./6-Experimento/power_snow_cache.png> <./6-Experimento/power_star_cache.p
 ng> <./6-Experimento/power_snow_cache_2.png> <./6-Experimento/power_star_cache_
@@ -1064,49 +1064,49 @@ ng> <./6-Experimento/power_snow_cache_2.png> <./6-Experimento/power_star_cache_
 File: 6-Experimento/qph_monet_cache.png Graphic file (type png)
 <use 6-Experimento/qph_monet_cache.png>
 Package pdftex.def Info: 6-Experimento/qph_monet_cache.png  used on input line 
-750.
+892.
 (pdftex.def)             Requested size: 204.85974pt x 124.16591pt.
 <6-Experimento/qph_psql_cache.png, id=280, 418.56375pt x 252.19218pt>
 File: 6-Experimento/qph_psql_cache.png Graphic file (type png)
 <use 6-Experimento/qph_psql_cache.png>
-Package pdftex.def Info: 6-Experimento/qph_psql_cache.png  used on input line 7
-51.
+Package pdftex.def Info: 6-Experimento/qph_psql_cache.png  used on input line 8
+93.
 (pdftex.def)             Requested size: 204.85974pt x 123.42902pt.
 <6-Experimento/qph_snow_cache.png, id=281, 415.5525pt x 255.20343pt>
 File: 6-Experimento/qph_snow_cache.png Graphic file (type png)
 <use 6-Experimento/qph_snow_cache.png>
-Package pdftex.def Info: 6-Experimento/qph_snow_cache.png  used on input line 7
-60.
+Package pdftex.def Info: 6-Experimento/qph_snow_cache.png  used on input line 9
+02.
 (pdftex.def)             Requested size: 204.85974pt x 125.81012pt.
 <6-Experimento/qph_star_cache.png, id=282, 409.53pt x 244.66406pt>
 File: 6-Experimento/qph_star_cache.png Graphic file (type png)
 <use 6-Experimento/qph_star_cache.png>
-Package pdftex.def Info: 6-Experimento/qph_star_cache.png  used on input line 7
-61.
+Package pdftex.def Info: 6-Experimento/qph_star_cache.png  used on input line 9
+03.
 (pdftex.def)             Requested size: 204.85974pt x 122.39145pt.
 <6-Experimento/qph_snow_cache_2.png, id=283, 414.79968pt x 255.95625pt>
 File: 6-Experimento/qph_snow_cache_2.png Graphic file (type png)
 <use 6-Experimento/qph_snow_cache_2.png>
 Package pdftex.def Info: 6-Experimento/qph_snow_cache_2.png  used on input line
- 768.
+ 910.
 (pdftex.def)             Requested size: 204.85974pt x 126.40776pt.
 <6-Experimento/qph_star_cache_2.png, id=284, 409.53pt x 244.66406pt>
 File: 6-Experimento/qph_star_cache_2.png Graphic file (type png)
 <use 6-Experimento/qph_star_cache_2.png>
 Package pdftex.def Info: 6-Experimento/qph_star_cache_2.png  used on input line
- 769.
+ 911.
 (pdftex.def)             Requested size: 204.85974pt x 122.39145pt.
 <6-Experimento/qph_monet_cache_2.png, id=285, 414.79968pt x 256.70906pt>
 File: 6-Experimento/qph_monet_cache_2.png Graphic file (type png)
 <use 6-Experimento/qph_monet_cache_2.png>
 Package pdftex.def Info: 6-Experimento/qph_monet_cache_2.png  used on input lin
-e 776.
+e 918.
 (pdftex.def)             Requested size: 204.85974pt x 126.77954pt.
 <6-Experimento/qph_psql_cache_2.png, id=286, 417.05812pt x 252.945pt>
 File: 6-Experimento/qph_psql_cache_2.png Graphic file (type png)
 <use 6-Experimento/qph_psql_cache_2.png>
 Package pdftex.def Info: 6-Experimento/qph_psql_cache_2.png  used on input line
- 777.
+ 919.
 (pdftex.def)             Requested size: 204.85974pt x 124.24904pt.
  [50 <./6-Experimento/qph_monet_cache.png> <./6-Experimento/qph_psql_cache.png>
  <./6-Experimento/qph_snow_cache.png> <./6-Experimento/qph_star_cache.png>]) [5
