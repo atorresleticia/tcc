@@ -1,36 +1,30 @@
 \chapter{Introdução}
 \label{intro}
 
-Vivencia-se atualmente uma economia caracterizada por uma rápida e constante mudança de mercado e oportunidades de negócio, 
-tal que se tornou essencial às empresas a tomada de decisão correta e de forma rápida baseada em alguma decisão de negócio. 
-Essas decisões são tomadas com base na análise de situações passadas e presentes de uma empresa, ou seja, com base nos dados armazenados por ela. 
-Além disso, uma boa decisão também se utiliza da análise de mercado e predições.
-
-Sob a ótica operacional, de acordo com Wremble e Koncilia \cite{wrembel2007data}, os dados de uma empresa são persistidos em sistemas de armazenamento 
+Decisões são tomadas com base na análise de situações passadas e presentes de uma empresa, ou seja, através dos dados armazenados por ela. Sob a ótica operacional, de acordo com Wremble e Koncilia \cite{wrembel2007data}, os dados de uma empresa são persistidos em sistemas de armazenamento 
 de dados que podem ser heterogêneos, autônomos, e geograficamente distribuídos. Estas características diminuem a eficiência no acesso e processamento dos dados. 
 A gestão de uma empresa requer, no entanto, uma visão abrangente de todos os seus aspectos, exigindo acesso eficiente a todos os dados de interesse. 
 Por este motivo, a capacidade de integrar informações de várias fontes de dados é crucial para uma boa decisão de negócios \cite{wrembel2007data}.
 
-Para se obter êxito em uma decisão de negócio é trivial (i) recuperar os dados mantidos por uma empresa; e sobretudo 
+Para obter êxito em uma decisão de negócio há que (i) recuperar os dados mantidos por uma empresa; e sobretudo 
 (ii) desenvolver um ambiente de análise cujo objetivo deve ser não apenas informar o significado destes dados, 
 mas sim especular cenários sobre eles com questionamentos como \textit{"e se"} ou \textit{"por quê?"} \cite{codd1998providing}. 
 Segundo Chaudhuri e Dayal \cite{chaudhuri1997overview} dois elementos são essenciais, dadas as condições anteriores, para uma boa decisão de negócio: 
 \textit{Data Warehouses} (DWs), responsáveis pelo armazenamento homogêneo de dados oriundos de sistemas heterogêneos, e recuperação destes dados; 
 e aplicações OLAP (\textit{On-Line Analytical Processing}).
 
-De acordo com a literatura, existe uma série de princípios que devem ser seguidos ao projetar e implementar um ambiente OLAP dentro de um DW, destacando-se a rapidez com que os dados devem ser recuperados e processados no DW. Este princípio é considerado fundamental 
-na maior parte da literatura referente à construção de ambientes OLAP, a exemplo de Codd; Codd e Salley \cite{codd1998providing}, Kimball e Ross \cite{kimball2002dw} 
-e Wremble e Koncilia \cite{wrembel2007data}. Sendo assim, vários aspectos técnicos devem ser considerados sob diferentes pontos de vista. 
+De acordo com a literatura \cite{wrembel2007data, codd1998providing, kimball2002dw}, existe uma série de princípios que devem ser seguidos ao projetar e implementar um ambiente OLAP dentro de um DW, destacando-se a rapidez com que os dados devem ser recuperados e processados no DW. Este princípio é considerado fundamental 
+na construção de ambientes OLAP. Sendo assim, vários aspectos técnicos devem ser considerados sob diferentes pontos de vista. 
 Políticas de \textit{cache} específicas para um servidor de estruturas utilizadas pela aplicação OLAP para armazenar e recuperar dados em memória 
 e o SGBD (Sistemas Gerenciadores de Banco de Dados) utilizado para o gerenciamento do DW são exemplos de aspectos técnicos que também fazem parte de um ambiente OLAP, 
 e que devem ser considerados. 
 
-De acordo com Elmasri e Navathe \cite{navathe2011banco} SGBD são importantes para a manutenção 
+De acordo com Elmasri e Navathe \cite{navathe2011banco} SGBD são importantes à manutenção 
 e proteção de um banco de dados por um longo período; e também atuam no processo de recuperação de dados de um DW. Neste contexto, 
 a escolha do SGBD no processo de desenvolvimento de um ambiente de análise para organizações com grande quantidade de dados e que utilizam ferramentas OLAP 
 como auxílio na tomada de decisões é importante. 
 
-Duas classes de SGBD podem ser utilizadas para realizar o gerenciamento de um DW: SGBD relacionais tradicionais orientados à linha e uma nova abordagem de SGBD 
+Duas classes de SGBD podem ser utilizadas para realizar o gerenciamento de um DW: SGBD relacionais tradicionais orientados à linha (tupla) e uma nova abordagem de SGBD 
 NoSQL que são orientados à coluna, que fornecem um melhor desempenho à recuperação de dados \cite{good2017column}. 
 Dada a importância na escolha do SGBD e as diferentes soluções apresentadas por cada um, torna-se útil o uso de um 
 \textit{benchmark}\footnote{Ferramentas utilizadas para medir e validar o desempenho de alguma tecnologia sob condições de avaliação \cite{bouckaert2010benchmarking}} 
@@ -47,25 +41,20 @@ as operações de junção entre tabelas.
 O objetivo deste trabalho é a realização de um estudo comparativo entre os SGBD PostgreSQL e MonetDB, o primeiro relacional orientado à linha e o segundo orientado à coluna, 
 como gerenciadores de DWs em ambientes OLAP. A comparação será realizada utilizando-se o \textit{benchmark} TPC-H em sua proposta original, um modelo de banco normalizado; 
 além de uma adaptação para um modelo DW denormalizado. Desta maneira, será possível avaliar os SGBD selecionados de acordo com o modelo do DW, não apenas no 
-contexto original proposto pelo \textit{benchmark}. Para alcançar tal objetivo, é necessária a execução de uma série de tarefas. A primeira parte engloba o 
+contexto original proposto pelo \textit{benchmark}. 
+
+Para alcançar tal objetivo, é necessária a execução de uma série de tarefas. A primeira parte engloba o 
 desenvolvimento dos dois ambientes de análise, o modelo padrão proposto pelo TPC-H e o modelo denormalizado adaptado do TPC-H. Após, são gerados os 
 dados para popular os SGBD e as consultas para as questões de negócio propostas pelo TPC-H; então é feita a população dos dados gerados nos SGBD. 
 A segunda parte consiste na execução das consultas para cada um dos ambientes de análise de acordo com a metodologia proposta pelo TPC-H, sendo que para o ambiente adaptado as consultas devem 
 ser escritas de acordo com as alterações efetuadas. E por fim a aplicação do cálculo de desempenho proposto pelo TPC-H para os dois ambientes. 
 
-A organização do documento segue da seguinte forma:
+A organização do documento segue da seguinte forma: 
 
-\begin{itemize}
-	\item \textbf{Capítulo 2}: apresenta detalhes sobre recuperação de informações, explicando os conceitos de \textit{Data Warehouse}, 
-	ambientes OLAP e a conexão entre ambos.
-	\item \textbf{Capítulo 3}: apresenta uma breve descrição da motivação no uso de SGBD como gerenciadores de DWs, bem como a descrição 
-	do modelo relacional, suas limitações e uma introdução a NoSQL.
-	\item \textbf{Capítulo 4}: apresenta detalhes de como e porquê surgiram os SGBD NoSQL, assim como a descrição do modelo colunar.
-	\item \textbf{Capítulo 5}: apresenta detalhes sobre o \textit{benchmark} TPC-H, abrangendo informações sobre o ambiente normalizado proposto pelo próprio \textit{benchmark}; bem como sobre o ambiente denormalizado proposto neste trabalho. É também apresentada a metodologia utilizada para medição e análise do desempenho dos SGBD.
-	\item \textbf{Capítulo 6}: é apresentado o estudo comparativo entre os SGBD PostgreSQL e MonetDB, dividido em cenários conforme o fator 
-	de escala, bem como a discussão dos resultados obtidos.
-	\item \textbf{Capítulo 7}: são discorridas as conclusões obtidas a partir dos resultados obtidos no experimento, assim como 
-	trabalhos futuros.
-\end{itemize}
+O Capítulo 2 apresenta detalhes sobre recuperação de informações, explicando os conceitos de \textit{Data Warehouse}, ambientes OLAP e a conexão entre ambos, bem como a forma de gerenciamento do DW através de SGBD. Assim é apresentada uma descrição da motivação no uso de SGBD como gerenciadores de DWs, assim como a descrição do modelo relacional e suas limitações. A partir destas limitações é descrito o modelo de SGBD NoSQL, com detalhes de como e porquê surgiram, incluindo a descrição do modelo colunar de banco de dados.
 
+No Capítulo 3 é detalhado o \textit{benchmark} TPC-H, abrangendo informações sobre o ambiente normalizado proposto pelo próprio \textit{benchmark}, bem como sobre o ambiente denormalizado proposto neste trabalho. É também apresentada a metodologia utilizada para medição e análise do desempenho dos SGBD.
 
+O Capítulo 4 mostra detalhes da avaliação experimental do trabalho, introduzindo as considerações realizadas antes de executar o \textit{benchmark}, e o estudo conforme a metodologia do TPC-H. Aqui são mostrados os resultados obtidos, ganhos e é realizada uma breve discussão acerca destes valores.
+
+No Capítulo 5 são discorridas as conclusões sobre a melhor modelagem para se usar em um DW, bem como o SGBD como gerenciador dele, através dos resultados apresentados no Capítulo 4 e na fundamentação teórica, bem como o que se espera como trabalhos futuros desta pesquisa. 

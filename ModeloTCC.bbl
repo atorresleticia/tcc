@@ -132,12 +132,6 @@ Dispon{\'\i}vel em: $<$https://mariadb.org/$>$.}
 Acessado em: 20 de maio de 2018.
 Dispon{\'\i}vel em: $<$https://www.oracle.com/database/index.html$>$.}
 
-\bibitem{han2011nosql}
-\abntrefinfo{Han et al.}{HAN et al.}{2011}
-{HAN, J. et al. Survey on nosql database. In:  \emph{2011 6th International
-  Conference on Pervasive Computing and Applications}. [S.l.: s.n.], 2011. p.
-  363--366.}
-
 \bibitem{pritchett2008base}
 \abntrefinfo{Pritchett}{PRITCHETT}{2008}
 {PRITCHETT, D. Base: An acid alternative.
@@ -149,13 +143,6 @@ Dispon{\'\i}vel em: $<$https://www.oracle.com/database/index.html$>$.}
 Acessado em: 20 de maio de 2018.
 Dispon{\'\i}vel em:
   $<$https://www.educative.io/collection/page/5668639101419520/5649050225344512\\/5146118144917504$>$.}
-
-\bibitem{twitter2010}
-\abntrefinfo{Twitter\ldots}{TWITTER\ldots}{2010}
-{TWITTER growth prompts switch from MySQL to 'NoSQL' database. 2010.
-Acessado em: 20 de maio de 2018.
-Dispon{\'\i}vel em:
-  $<$https://www.computerworld.com/article/2520084/database-administration/twitter-growth-prompts-switch-from-mysql-to--nosql--database.html$>$.}
 
 \bibitem{chang2008bigtable}
 \abntrefinfo{Chang et al.}{CHANG et al.}{2008}
@@ -376,5 +363,14 @@ San Francisco, 2017. Acessado em: 12 de maio de 2017. Dispon{\'\i}vel em:
 {RAASVELDT, M. et al. Fair benchmarking considered difficult: Common pitfalls
   in database performance testing.
 2018.}
+
+\bibitem{tpc2018resultados}
+\abntrefinfo{Transaction Processing Performance Council}{TRANSACTION PROCESSING
+  PERFORMANCE COUNCIL}{2018}
+{TRANSACTION PROCESSING PERFORMANCE COUNCIL. \emph{TPC-H - Top Ten Performance
+  Results}. 2018.
+Acessado em: 14 de junho de 2018.
+Dispon{\'\i}vel em:
+  $<$http://www.tpc.org/tpch/results/tpch\_perf\_results.asp$>$.}
 
 \end{thebibliography}

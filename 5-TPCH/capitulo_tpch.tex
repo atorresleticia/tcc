@@ -3,9 +3,9 @@
 
 A essência de um \textit{benchmark} é identificar e definir os melhores padrões de excelência para produtos, serviços e/ou processos, e então realizar aperfeiçoamentos de forma que esses padrões sejam alcançados \cite{bhutta1999benchmarking}. De maneira geral, \textit{benchmarks} se consolidaram como uma ferramenta para melhorar o desempenho de organizações e a competitividade nos negócios \cite{kyro2003revising}.
 
-O TPC \textit{\textit{Benchmark}} H é um padrão de decisão de negócio internacionalmente aceito para comparações de desempenho entre SGBD utilizados em ambientes OLAP, criado pela organização TPC. De acordo com a página oficial do TPC \cite{tpc2017page}, esta organização sem fins lucrativos foi fundada com o objetivo de definir padrões para \textit{benchmarks} no processamento de transações e bancos de dados em geral. Ela é responsável pelo desenvolvimento e atualização destes \textit{benchmarks}, bem como pela divulgação dos resultados apresentados por eles. Entre os sócios\footnote{Lista de sócios acessada em Junho de 2017} responsáveis por isto estão as empresas Dell, Hewlet Packard, IBM, Microsoft, Oracle, Intel e Cisco. A lista de todos os sócios pode ser acessada na página oficial da organização.
+O TPC \textit{\textit{Benchmark}} H é um padrão de decisão de negócio internacionalmente aceito para comparações de desempenho entre SGBD utilizados em ambientes OLAP, criado pela organização TPC. De acordo com a página oficial do TPC \cite{tpc2017page}, esta organização sem fins lucrativos foi fundada com o objetivo de definir padrões para \textit{benchmarks} no processamento de transações e bancos de dados em geral. Ela é responsável pelo desenvolvimento e atualização destes \textit{benchmarks}, bem como pela divulgação dos resultados apresentados por eles. Entre os sócios\footnote{Lista de sócios acessada em Junho de 2017 (http://www.tpc.org/information/who/whoweare.asp)} responsáveis por isto estão as empresas Dell, Hewlet Packard, IBM, Microsoft, Oracle, Intel e Cisco.
 
-Alguns trabalhos já foram realizados utilizando o TPC-H \cite{ngamsuriyaroj2010performance, nadee2012performance, thanopoulou2012benchmarking, barata2014ycsb, rutishauser2012tpc, soares2012avaliaccao}. Ngamsuriyaroj e Pornpattana \cite{ngamsuriyaroj2010performance} aplicam as consultas do TPC-H no MySQL Cluster a fim de avaliar seu desempenho. O trabalho de Nadee e Ngamsuriyaroj \cite{nadee2012performance} tem uma proposta parecida com o primeiro \cite{ngamsuriyaroj2010performance}, porém o intuito é avaliar o desempenho de um \textit{cluster} Java EE baseado nas características das consultas do TPC-H. Thanopoulou et al. \cite{thanopoulou2012benchmarking} foca em aplicar o TPC-H em bancos de dados de pequenas empresas que não podem arcar com configurações de \textit{hardware} melhores para administrar um banco de dados. Barata, Bernardino e Furtado \cite{barata2014ycsb} fazem uma descrição teórica de dois \textit{benchmarks}, o YCSB (\textit{Yahoo Cloud Serving Benchmark}), voltado para a área de \textit{Big Data}, e o TPC-H. Rutishauser e Noureldin \cite{rutishauser2012tpc} realizam uma análise comparativa entre PostgreSQL e MongoDB aplicando o TPC-H. O primeiro é um SGBD relacional clássico, e o outro um SGBD NoSQL com algumas consultas do TPC-H adaptadas. Por fim, Soares \cite{soares2012avaliaccao} compara SGBD relacionais e colunares executando um teste de força sob o \textit{Star Schema Benchmark} simulando bases de dados de 1GB, 2GB, 5GB e 10GB.
+Alguns trabalhos já foram realizados utilizando o TPC-H \cite{ngamsuriyaroj2010performance, nadee2012performance, thanopoulou2012benchmarking, barata2014ycsb, rutishauser2012tpc, soares2012avaliaccao}. Ngamsuriyaroj e Pornpattana \cite{ngamsuriyaroj2010performance} aplicam as consultas do TPC-H no MySQL Cluster a fim de avaliar seu desempenho. O trabalho de Nadee e Ngamsuriyaroj \cite{nadee2012performance} tem uma proposta parecida com o primeiro \cite{ngamsuriyaroj2010performance}, porém, o intuito é avaliar o desempenho de um \textit{cluster} Java EE baseado nas características das consultas do TPC-H. Thanopoulou et al. \cite{thanopoulou2012benchmarking} foca em aplicar o TPC-H em bancos de dados de pequenas empresas que não podem arcar com configurações de \textit{hardware} melhores para administrar um banco de dados. Barata, Bernardino e Furtado \cite{barata2014ycsb} fazem uma descrição teórica de dois \textit{benchmarks}, o YCSB (\textit{Yahoo Cloud Serving Benchmark}), voltado para a área de \textit{Big Data}, e o TPC-H. Rutishauser e Noureldin \cite{rutishauser2012tpc} realizam uma análise comparativa entre PostgreSQL e MongoDB aplicando o TPC-H. O primeiro é um SGBD relacional clássico, e o outro um SGBD NoSQL com algumas consultas do TPC-H adaptadas. Por fim, Soares \cite{soares2012avaliaccao} compara SGBD relacionais e colunares executando um teste de força sob o \textit{Star Schema Benchmark} simulando bases de dados de 1GB, 2GB, 5GB e 10GB.
 
 De acordo com o manual de especificação fornecido pelo TPC \cite{tpc2017specs}, o TPC-H é um \textit{\textit{benchmark}} de suporte à decisão de negócios, constituído de uma série de consultas comerciais \textit{ad-hoc} e modificações simultâneas de dados com finalidade de retratar a realidade das empresas. Ele representa sistemas de suporte à decisão que examinam grandes volumes de dados, executam consultas com um alto grau de complexidade, e respondem questões críticas de negócio. Como o \textit{\textit{benchmark}} trata de grandes volumes de dados, o tamanho mínimo de banco de dados proposto pelo TPC-H é de 1GB, seguido por 10GB, 30GB, 100GB, 300GB, 1TB, 3TB, 10TB, 30TB e 100TB. Estes valores correspondem ao Fator de Escala (do inglês \textit{Scale Factor}, ou SF) do banco de dados. 
 
@@ -102,7 +102,7 @@ São geradas \textit{N} duplas de RFs (um arquivo com os registros para inserç�
 	\item Para cada sessão de consultas, cada consulta será executada sequencialmente até a última.
 \end{itemize}
 
-Ao fim do teste, é armazenado o tempo em segundos da execução do processo inteiro. O processo inicia quando a primeira sessão, seja de consulta ou de RF, executa sua instrução e finaliza quando a última sessão recebe uma resposta. O resultado é utilizado para calcular o desempenho do SGBD para o teste de vazão conforme a Equação \ref{eq:2}.
+Ao fim do teste, é armazenado o tempo em segundos da execução do processo inteiro. O processo inicia quando a primeira sessão, seja de consulta ou de RF, executa sua instrução e finaliza quando a última sessão recebe uma resposta. O resultado é utilizado para calcular o desempenho do SGBD para o teste de vazão, conforme a Equação \ref{eq:2}.
 
 \begin{myequation}%
 \label{eq:2}
@@ -127,6 +127,7 @@ O modelo de ambiente proposto pelo TPC-H é um esquema normalizado \textit{snowf
 	\centering
 		\includegraphics[width=\textwidth]{img/snow_flake.png}
 	\caption{Esquema do ambiente normalizado}
+	% \floatfoot{Fonte: adaptado do manual do TPC-H \cite{tpc2017specs}}
 	\label{fig:snow_flake}
 \end{figure*}
 
@@ -189,19 +190,7 @@ Total																					&												 & 								\\ \hline
 \end{table}
 \end{comment}
 
-Os tipos de dados atribuídos aos atributos de uma entidade podem ser:
-
-\begin{itemize}
-    \item Identificador, ou \textit{identifier}: corresponde a um inteiro que define a PK de uma entidade
-    \item Inteiro: int
-    \item Decimal: decimal
-    \item Texto fixo de tamanho N: text(N)
-    \item Texto variável de tamanho N: varchar(N)
-    \item Data: date
-    
-\end{itemize}
-
-Detalhes sobre as consultas implementadas na Linguagem SQL relacionadas a esse ambiente são encontradas no Apêndice \ref{queries_1}.
+Os tipos de dados atribuídos aos atributos de uma entidade podem ser do tipo identificador, que corresponde a um inteiro que define a PK de uma tabela; inteiro; decimal; texto fixo de tamanho \textit{n}; texto variável de tamanho \textit{n}; e data. Detalhes sobre as consultas implementadas na linguagem SQL relacionadas a esse ambiente são encontradas no Apêndice \ref{queries_1}.
 
 \section{Ambiente Denormalizado}
 
@@ -221,3 +210,5 @@ Com a intenção de criar uma única Tabela Fato no esquema denormalizado, obser
 O esquema final agora possui uma Tabela Fato, \textit{item}; e três tabelas Dimensão, \textit{part}, \textit{customer} e \textit{supplier}, cada qual com sua chave mantendo o relacionamento com a tabela \textit{item}. Os dados presentes nas entidades são do mesmo tipo descritos na Seção \ref{ambiente_1}. As consultas em Linguagem SQL relacionadas a esse ambiente são encontradas no Apêndice \ref{queries_2}.
 
 A inserção dos dados no ambiente \textit{star} será realizada após todos os dados gerados pelo DBGen do ambiente normalizado terem sido populados nos SGBD. Com isso, é possível realizar junções de acordo com as mudanças e o resultado destes será armazenado no esquema correspondente. Por exemplo, ao realizar uma junção entre as entidades \textit{nation} e \textit{region} selecionando todos os seus atributos, estes são enviados como entrada para a inserção em uma nova tabela do esquema Denormalizado correspondente, digamos, \textit{nation\_region}. Após, é realizado uma nova junção com as entidades \textit{supplier} e \textit{part}, separadamente, para incluir os atributos de \textit{nation\_region}: \texttt{n\_name, n\_comment, r\_name} e \texttt{r\_comment}; bem como os atributos originais das duas entidades anteriores, nas novas entidades \textit{supplier} e \textit{part}.
+
+Dada a importância do \textit{benchmarking} para avaliar o gerenciamento de um ambiente analítico, a aplicação do TPC-H pode responder às questões apresentadas no capítulo anterior. Embora sua essência esteja em uma modelagem normalizada, a adaptação para uma modelagem denormalizada fará com que não apenas seja esclarecido qual SGBD é melhor como gerenciador de DW, mas também sob qual modelagem eles se destacam, visando ainda corroborar como um todo a teoria sobre SGBD apresentada.

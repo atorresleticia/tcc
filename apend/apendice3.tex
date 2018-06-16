@@ -4,93 +4,93 @@
 \label{queries_2}
 
 
-São apresentadas aqui as 15 consultas realizadas no Ambiente Denormalizado adaptado da proposta original do TPC-H. As questões de negócio são as mesmas que as apresentadas no Apêndice \ref{queries_1}.
+São apresentadas aqui as 22 consultas do ambiente denormalizado \textit{star} adaptado da proposta original do TPC-H. As questões de negócio são as mesmas que as apresentadas no Apêndice \ref{queries_1}.
 
 \begin{enumerate}
 
 %--------------------------------------1
-% \item Consulta de Relatório de Resumo de Preços 
+\item[Q1 --] Consulta de Relatório de Resumo de Preços 
 
-% 	\begin{tabular}{ll}
-% 	Parâmetro de Substituição & Valor\\
-% 	DELTA & 90\\
-% \end{tabular}
+	\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	DELTA & 90\\
+\end{tabular}
 	
-% 	\begin{lstlisting}[language=SQL]
-% select
-%     i_returnflag,
-%     i_linestatus,
-%     sum(i_quantity) as sum_qty,
-%     sum(i_extendedprice) as sum_base_price,
-%     sum(i_extendedprice * (1 - i_discount)) as sum_disc_price,
-%     sum(i_extendedprice * (1 - i_discount) * (1 + i_tax)) as sum_charge,
-%     avg(i_quantity) as avg_qty,
-%     avg(i_extendedprice) as avg_price,
-%     avg(i_discount) as avg_disc,
-%     count(*) as count_order
-% from
-%     item
-% where
-%     i_shipdate <= date '1998-12-01' - interval '[DELTA]' day (3)
-% group by
-%     i_returnflag,
-%     i_linestatus
-% order by
-%     i_returnflag,
-%     i_linestatus;
-% 	\end{lstlisting}
+	\begin{lstlisting}[language=SQL]
+select
+    i_returnflag,
+    i_linestatus,
+    sum(i_quantity) as sum_qty,
+    sum(i_extendedprice) as sum_base_price,
+    sum(i_extendedprice * (1 - i_discount)) as sum_disc_price,
+    sum(i_extendedprice * (1 - i_discount) * (1 + i_tax)) as sum_charge,
+    avg(i_quantity) as avg_qty,
+    avg(i_extendedprice) as avg_price,
+    avg(i_discount) as avg_disc,
+    count(*) as count_order
+from
+    item
+where
+    i_shipdate <= date '1998-12-01' - interval '[DELTA]' day (3)
+group by
+    i_returnflag,
+    i_linestatus
+order by
+    i_returnflag,
+    i_linestatus;
+	\end{lstlisting}
 
 % %--------------------------------------2
-% \item Consulta de Fornecedor de Custo Mínimo
+\item[Q2 --] Consulta de Fornecedor de Custo Mínimo
 	
-% 	\begin{tabular}{ll}
-% 	Parâmetro de Substituição & Valor\\
-% 	SIZE & 15\\
-% 	TYPE & BRASS\\
-% 	REGION & EUROPE\\
-% \end{tabular}
+	\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	SIZE & 15\\
+	TYPE & BRASS\\
+	REGION & EUROPE\\
+\end{tabular}
 
-% 	\begin{lstlisting}[language=SQL]
-% select
-%     s_acctbal,
-%     s_name,
-%     s_nation_name,
-%     p_partkey,
-%     p_mfgr,
-%     s_address,
-%     s_phone,
-%     s_comment
-% from
-%     part,
-%     supplier
-% where
-%     p_partkey = i_partkey
-%     and s_suppkey = i_suppkey
-%     and p_size = [SIZE]
-%     and p_type like '%[TYPE]'
-%     and s_region_name = '[REGION]'
-%     and i_partsupp_supplycost = (
-%         select
-%             min(i_partsupp_supplycost)
-%         from
-%             item,
-%             supplier
-%         where
-%             p_partkey = i_partkey
-%             and s_suppkey = i_suppkey
-%             and s_region_name = '[REGION]'
-%     )
-% order by
-%     s_acctbal desc,
-%     s_nation_name,
-%     s_name,
-%     p_partkey;
-% set rowcount 100
-% go
-% 	\end{lstlisting}
+	\begin{lstlisting}[language=SQL]
+select
+    s_acctbal,
+    s_name,
+    s_nation_name,
+    p_partkey,
+    p_mfgr,
+    s_address,
+    s_phone,
+    s_comment
+from
+    part,
+    supplier
+where
+    p_partkey = i_partkey
+    and s_suppkey = i_suppkey
+    and p_size = [SIZE]
+    and p_type like '%[TYPE]'
+    and s_region_name = '[REGION]'
+    and i_partsupp_supplycost = (
+        select
+            min(i_partsupp_supplycost)
+        from
+            item,
+            supplier
+        where
+            p_partkey = i_partkey
+            and s_suppkey = i_suppkey
+            and s_region_name = '[REGION]'
+    )
+order by
+    s_acctbal desc,
+    s_nation_name,
+    s_name,
+    p_partkey;
+set rowcount 100
+go
+	\end{lstlisting}
 
 %--------------------------------------3
-\item Consulta de Prioridade de Envio
+\item[Q3 --] Consulta de Prioridade de Envio
 	
 	\begin{tabular}{ll}
 	Parâmetro de Substituição & Valor\\
@@ -124,38 +124,38 @@ go
 	\end{lstlisting}
 	
 %--------------------------------------4
-% \item Consulta de Verificação de Prioridade de Pedido
+\item[Q4 --] Consulta de Verificação de Prioridade de Pedido
 	
-% 	\begin{tabular}{ll}
-% 	Parâmetro de Substituição & Valor\\
-% 	DATE & 1993-07-01\\
-% \end{tabular}
+	\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	DATE & 1993-07-01\\
+\end{tabular}
 
-% 	\begin{lstlisting}[language=SQL]
-% select
-% 	i_order_orderpriority,
-% 	count(*) as order_count
-% from
-% 	item
-% where
-% 	i_order_orderdate >= date '[DATE]'
-% 	and i_order_orderdate < date '[DATE]' + interval '3' month
-% 	and exists (
-% 		select
-% 			*
-% 		from
-% 			item
-% 		where
-% 			i_commitdate < i_receiptdate
-% 	)
-% group by
-% 	i_order_orderpriority
-% order by
-% 	i_order_orderpriority;
-% 	\end{lstlisting}
+	\begin{lstlisting}[language=SQL]
+select
+	i_order_orderpriority,
+	count(*) as order_count
+from
+	item
+where
+	i_order_orderdate >= date '[DATE]'
+	and i_order_orderdate < date '[DATE]' + interval '3' month
+	and exists (
+		select
+			*
+		from
+			item
+		where
+			i_commitdate < i_receiptdate
+	)
+group by
+	i_order_orderpriority
+order by
+	i_order_orderpriority;
+	\end{lstlisting}
 
 %--------------------------------------5
-\item Consulta de Volume do Fornecedor Local
+\item[Q5 --] Consulta de Volume do Fornecedor Local
 	
 	\begin{tabular}{ll}
 	Parâmetro de Substituição & Valor\\
@@ -185,7 +185,7 @@ order by
 	\end{lstlisting}
 	
 %--------------------------------------6
-\item Previsão de Mudança de Receita
+\item[Q6 --] Previsão de Mudança de Receita
 
 \begin{tabular}{ll}
 	Parâmetro de Substituição & Valor\\
@@ -207,7 +207,7 @@ where
 	\end{lstlisting}
 	
 %--------------------------------------7
-\item Consulta de Quantidade de Envio
+\item[Q7 --] Consulta de Quantidade de Envio
 
 \begin{tabular}{ll}
 	Parâmetro de Substituição & Valor\\
@@ -252,7 +252,7 @@ order by
 \end{lstlisting}
 
 %--------------------------------------8
-\item Consulta de Quota de Mercado Nacional
+\item[Q8 --] Consulta de Quota de Mercado Nacional
 
 \begin{tabular}{ll}
 	Parâmetro de Substituição & Valor\\
@@ -294,7 +294,7 @@ order by
 	\end{lstlisting}
 
 %--------------------------------------9
-\item Consulta ao Lucro de um Tipo de Produto
+\item[Q9 --] Consulta ao Lucro de um Tipo de Produto
 
 \begin{tabular}{ll}
 	Parâmetro de Substituição & Valor\\
@@ -331,7 +331,7 @@ order by
 \end{lstlisting}
 
 %--------------------------------------10
-\item Consulta de Relatório de Itens Retornados
+\item[Q10 --] Consulta de Relatório de Itens Retornados
 
 \begin{tabular}{ll}
 	Parâmetro de Substituição & Valor\\
@@ -372,7 +372,7 @@ go
 	\end{lstlisting}
 
 %--------------------------------------11
-\item Consulta a Identificação de Estoques Importantes
+\item[Q11 --] Consulta a Identificação de Estoques Importantes
 
 \begin{tabular}{ll}
 	Parâmetro de Substituição & Valor\\
@@ -407,7 +407,7 @@ order by
 	\end{lstlisting}
 
 %--------------------------------------12
-\item Consulta a Modos de Envio e Prioridade de Pedidos
+\item[Q12 --] Consulta a Modos de Envio e Prioridade de Pedidos
 
 \begin{tabular}{ll}
 	Parâmetro de Substituição & Valor\\
@@ -446,7 +446,7 @@ order by
 	\end{lstlisting}
 	
 %--------------------------------------13
-\item Consulta à Distribuição de Clientes
+\item[Q13 --] Consulta à Distribuição de Clientes
 
 \begin{tabular}{ll}
 	Parâmetro de Substituição & Valor\\
@@ -478,7 +478,7 @@ order by
 	\end{lstlisting}
 
 %--------------------------------------14
-\item Consulta aos Efeitos de Promoção
+\item[Q14 --] Consulta aos Efeitos de Promoção
 
 \begin{tabular}{ll}
 	Parâmetro de Substituição & Valor\\
@@ -502,51 +502,51 @@ where
 	\end{lstlisting}
 
 %--------------------------------------15
-% \item Consulta de Fornecedor Principal
+\item[Q15 --] Consulta de Fornecedor Principal
 
-% \begin{tabular}{ll}
-% 	Parâmetro de Substituição & Valor\\
-% 	DATE & 1996-01-01\\
-% \end{tabular}
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	DATE & 1996-01-01\\
+\end{tabular}
 
-% 	\begin{lstlisting}[language=SQL]
-% create view revenue[STREAM_ID] (supplier_no, total_revenue) as
-% 	select
-% 		i_suppkey,
-% 		sum(i_extendedprice * (1 - i_discount))
-% 	from
-% 		item
-% 	where
-% 		i_shipdate >= date '[DATE]'
-% 		and i_shipdate < date '[DATE]' + interval '3' month
-% 	group by
-% 		i_suppkey;
+	\begin{lstlisting}[language=SQL]
+create view revenue[STREAM_ID] (supplier_no, total_revenue) as
+	select
+		i_suppkey,
+		sum(i_extendedprice * (1 - i_discount))
+	from
+		item
+	where
+		i_shipdate >= date '[DATE]'
+		and i_shipdate < date '[DATE]' + interval '3' month
+	group by
+		i_suppkey;
 
-% select
-% 	s_suppkey,
-% 	s_name,
-% 	s_address,
-% 	s_phone,
-% 	total_revenue
-% from
-% 	supplier,
-% 	revenue[STREAM_ID]
-% where
-% 	s_suppkey = supplier_no
-% 	and total_revenue = (
-% 		select
-% 			max(total_revenue)
-% 		from
-% 			revenue[STREAM_ID]
-% 	)
-% order by
-% 	s_suppkey;
+select
+	s_suppkey,
+	s_name,
+	s_address,
+	s_phone,
+	total_revenue
+from
+	supplier,
+	revenue[STREAM_ID]
+where
+	s_suppkey = supplier_no
+	and total_revenue = (
+		select
+			max(total_revenue)
+		from
+			revenue[STREAM_ID]
+	)
+order by
+	s_suppkey;
 
-% drop view revenue[STREAM_ID];
-% 	\end{lstlisting}
+drop view revenue[STREAM_ID];
+	\end{lstlisting}
 
 %--------------------------------------16
-\item Consulta à Relação \textit{Part/Supplier}
+\item[Q16 --] Consulta à Relação \textit{Part/Supplier}
 
 \begin{tabular}{ll}
 	Parâmetro de Substituição & Valor\\
@@ -597,37 +597,37 @@ go
 	\end{lstlisting}
 
 %--------------------------------------17
-% \item Consulta a Receita de Pedidos de Pequenas Quantidades
+\item[Q17 --] Consulta a Receita de Pedidos de Pequenas Quantidades
 
-% \begin{tabular}{ll}
-% 	Parâmetro de Substituição & Valor\\
-% 	BRAND & Brand$\#$23\\
-% 	TYPE & MEDIUM POLISHED \\
-% 	CONTAINER & MED BOX \\
-% \end{tabular}
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	BRAND & Brand$\#$23\\
+	TYPE & MEDIUM POLISHED \\
+	CONTAINER & MED BOX \\
+\end{tabular}
 
-% 	\begin{lstlisting}[language=SQL]
-% select
-%     sum(i_extendedprice) / 7.0 as avg_yearly
-% from
-%     item,
-%     part
-% where
-%     p_partkey = i_partkey
-%     and p_brand = '[BRAND]'
-%     and p_container = '[CONTAINER]'
-%     and i_quantity < (
-%         select
-%             0.2 * avg(i_quantity)
-%         from
-%             item
-%         where
-%             i_partkey = p_partkey
-%     );
-% 	\end{lstlisting}
+	\begin{lstlisting}[language=SQL]
+select
+    sum(i_extendedprice) / 7.0 as avg_yearly
+from
+    item,
+    part
+where
+    p_partkey = i_partkey
+    and p_brand = '[BRAND]'
+    and p_container = '[CONTAINER]'
+    and i_quantity < (
+        select
+            0.2 * avg(i_quantity)
+        from
+            item
+        where
+            i_partkey = p_partkey
+    );
+	\end{lstlisting}
 
 %--------------------------------------18
-\item Consulta a Grandes Volumes de Clientes
+\item[Q18 --] Consulta a Grandes Volumes de Clientes
 
 \begin{tabular}{ll}
 	Parâmetro de Substituição & Valor\\
@@ -670,7 +670,7 @@ go
 	\end{lstlisting}
 	
 %--------------------------------------19
-\item Consulta a Desconto de Receita
+\item[Q19 --] Consulta a Desconto de Receita
 
 \begin{tabular}{ll}
 	Parâmetro de Substituição & Valor\\
@@ -721,102 +721,102 @@ where
 	\end{lstlisting}
 
 %--------------------------------------20
-% \item Consulta a Potenciais Promoções de Partes
+\item[Q20 --] Consulta a Potenciais Promoções de Partes
 
-% \begin{tabular}{ll}
-% 	Parâmetro de Substituição & Valor\\
-% 	COLOR & forest\\
-% 	DATE & 1994-01-01\\
-% 	NATION & CANADA\\
-% \end{tabular}
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	COLOR & forest\\
+	DATE & 1994-01-01\\
+	NATION & CANADA\\
+\end{tabular}
 
-% 	\begin{lstlisting}[language=SQL]
-% select
-%     s_name,
-%     s_address
-% from
-%     supplier
-% where
-%     s_suppkey in (
-%         select
-%             i_suppkey
-%         from
-%             item
-%         where
-%             i_partkey in (
-%                 select
-%                     p_partkey
-%                 from
-%                     part
-%                 where
-%                     p_name like '[COLOR]%'
-%             )
-%             and i_partsupp_availqty > (
-%                 select
-%                     0.5 * sum(i_quantity)
-%                 from
-%                     item
-%                 where
-%                     and i_shipdate >= date '[DATE]'
-%                     and i_shipdate < date '[DATE]' + interval '1' year
-%             )
-%     )
-%     and s_nation_name = '[NATION]'
-% order by
-%     s_name;
+	\begin{lstlisting}[language=SQL]
+select
+    s_name,
+    s_address
+from
+    supplier
+where
+    s_suppkey in (
+        select
+            i_suppkey
+        from
+            item
+        where
+            i_partkey in (
+                select
+                    p_partkey
+                from
+                    part
+                where
+                    p_name like '[COLOR]%'
+            )
+            and i_partsupp_availqty > (
+                select
+                    0.5 * sum(i_quantity)
+                from
+                    item
+                where
+                    and i_shipdate >= date '[DATE]'
+                    and i_shipdate < date '[DATE]' + interval '1' year
+            )
+    )
+    and s_nation_name = '[NATION]'
+order by
+    s_name;
 
-% \end{lstlisting}
+\end{lstlisting}
 
 % %--------------------------------------21
-% \item Consulta a Forncedores que Mantiveram Pedidos em Espera
+\item[Q21 --] Consulta a Fornecedores que Mantiveram Pedidos em Espera
 
-% \begin{tabular}{ll}
-% 	Parâmetro de Substituição & Valor\\
-% 	NATION & SAUDI ARABIA\\
-% \end{tabular}
+\begin{tabular}{ll}
+	Parâmetro de Substituição & Valor\\
+	NATION & SAUDI ARABIA\\
+\end{tabular}
 
-% 	\begin{lstlisting}[language=SQL]
-% select
-%     s_name,
-%     count(*) as numwait
-% from
-%     supplier,
-%     item i1
-% where
-%     s_suppkey = i1.i_suppkey
-%     and i1.i_order_orderstatus = 'F'
-%     and i1.i_receiptdate > i1.i_commitdate
-%     and exists (
-%         select
-%             *
-%         from
-%             item i2
-%         where
-%             i2.i_itemkey = i2.i_itemkey
-%             and i2.i_suppkey <> i1.i_suppkey
-%     )
-%     and not exists (
-%         select
-%             *
-%         from
-%             item i3
-%         where
-%             i3.i_itemkey = i1.i_itemkey
-%             and i3.i_suppkey <> i1.i_suppkey
-%             and i3.i_receiptdate > i3.i_commitdate
-%     )
-%     and s_nation_name = '[NATION]'
-% group by
-%     s_name
-% order by
-%     numwait desc,
-%     s_name;
-% set rowcount 100
-% go
-% 	\end{lstlisting}
+	\begin{lstlisting}[language=SQL]
+select
+    s_name,
+    count(*) as numwait
+from
+    supplier,
+    item i1
+where
+    s_suppkey = i1.i_suppkey
+    and i1.i_order_orderstatus = 'F'
+    and i1.i_receiptdate > i1.i_commitdate
+    and exists (
+        select
+            *
+        from
+            item i2
+        where
+            i2.i_itemkey = i2.i_itemkey
+            and i2.i_suppkey <> i1.i_suppkey
+    )
+    and not exists (
+        select
+            *
+        from
+            item i3
+        where
+            i3.i_itemkey = i1.i_itemkey
+            and i3.i_suppkey <> i1.i_suppkey
+            and i3.i_receiptdate > i3.i_commitdate
+    )
+    and s_nation_name = '[NATION]'
+group by
+    s_name
+order by
+    numwait desc,
+    s_name;
+set rowcount 100
+go
+	\end{lstlisting}
 
 %--------------------------------------22
-\item Consulta a Oportunidades de Vendas Globais
+\item[Q22 --] Consulta a Oportunidades de Vendas Globais
 
 \begin{tabular}{ll}
 	Parâmetro de Substituição & Valor\\

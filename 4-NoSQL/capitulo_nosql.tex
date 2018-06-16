@@ -89,17 +89,17 @@ As mais conhecidas são quatro:
     porém não agrupa os dados sob forma de tuplas, e sim colunas. Exemplos são o MonetDB \cite{monetdb2017c}, C-Store \cite{cstore2018nosql}, BigTable \cite{google2018nosql} e Cassandra \cite{cassandra2018nosql}.
 \end{itemize}
 
-De maneira geral, as vantagens no uso de um SGBD NoSQL estão no rápido processamento de um grande volume de dados, flexibilidade para expansão e baixo custo de escalabilidade. Devido ao vasto número de SGBD dentro de cada classe de NoSQL, esses bancos também podem ser classificados de acordo com o Teorema CAP (do inglês \textit{Consistency, Availability, Partition tolerance}). Segundo Eric Brewer \cite{brewer2000towards, gilbert2002brewer}, um sistema distribuído não é 
+De maneira geral, as vantagens no uso de um SGBD NoSQL estão no rápido processamento de um grande volume de dados, flexibilidade para expansão e baixo custo de escalabilidade. Devido ao vasto número de SGBD dentro de cada classe de NoSQL, esses banco de dados também podem ser classificados de acordo com o Teorema CAP (do inglês \textit{Consistency, Availability, Partition tolerance}). Segundo Eric Brewer \cite{brewer2000towards, gilbert2002brewer}, um sistema distribuído não é 
 capaz de conciliar consistência, disponibilidade e tolerância a partição de dados simultaneamente, tendo que optar por apenas dois destes. 
-SGBDR prezam por disponibilidade e consistência de dados seguindo o ACID, porém a preocupação com consistência 
+SGBDR prezam por disponibilidade e consistência de dados seguindo ACID, porém, a preocupação com consistência 
 pode tornar a manipulação de dados lenta. Visto que o movimento NoSQL surgiu com a intenção de 
 melhorar a escalabilidade e disponibilidade de dados, e tornar a manipulação destes mais rápida, 
 a maioria deles trabalha com os atributos de disponibilidade e tolerância à partição. 
 Essa configuração assume um conceito diferente do ACID para bancos NoSQL, e Pritchett \cite{pritchett2008base} propôs um teorema diferente deste, mais otimista, onde a consistência é relaxada, o Teorema BASE (\textit{Basically Available, Soft State, Eventual Consistency}).
 
 O Teorema BASE assume que a consistência em um banco 
-de dados está em estado de fluxo, ao contrário do ACID que força a consistência a cada operação, 
-sendo este considerado pelo autor um método pessimista. 
+de dados está em estado de fluxo, ao contrário de ACID que força a consistência a cada operação, 
+sendo este considerado por Pritchett \cite{pritchett2008base} um método pessimista. 
 Neste cenário a disponibilidade é garantida devido à tolerância a partição, fazendo 
 com que a falha de um servidor não cesse o funcionamento de todo o sistema -- por exemplo, caso uma partição falhe em um sistema rodando sobre dez servidores, apenas 10\% dos dados estarão indisponíveis e somente os usuários daquela partição serão afetados.
 
@@ -164,8 +164,7 @@ que o resultado de uma consulta seja exibido. Existem duas técnicas para realiz
 \textit{Late Materialization} (LM) \cite{abadi2007materialization, abadi2008query}.
 
 A técnica de \textit{Early Materialization}, melhor traduzida como materialização prévia nesse contexto, é a política adotada por banco de dados relacionais, e consiste 
-em adicionar as colunas à tupla conforme a coluna é requisitada na consulta. Essa técnica não leva em conta o predicado da consulta, isto é, considere 
-a consulta a seguir:
+em adicionar as colunas à tupla conforme a coluna é requisitada na consulta. Essa técnica não leva em conta o predicado da consulta. Como exemplo, considere a consulta a seguir:
 
 \begin{lstlisting}[language=SQL,label=sql_1]
                     SELECT nome FROM funcionario 
@@ -289,13 +288,13 @@ Comprimindo estas repetições o nosso modelo é armazenado da forma:
     1, 2, 5: M, 3, 4: F
 \end{verbatim}
 
-Westmann et al. \cite{westmann2000implementation} consideram que os métodos de compressão em um banco de dados devem ser capazes de se aplicar 
+Westmann \textit{et al.} \cite{westmann2000implementation} consideram que os métodos de compressão em um banco de dados devem ser capazes de se aplicar 
 no banco como um todo, bem como em uma tupla ou a cada atributo de tupla, e serem rápidos em processamento quando há casos em que seja 
 necessário realizar descompressão.
 
 O primeiro método consiste em comprimir a representação de valores inteiros, baseado no algoritmo \textit{null supression} \cite{westmann2000implementation, roth1993database}. A ideia é descartar zeros na representação de um inteiro de quatro bytes, por exemplo, 
 ao invés de se representar o número 10 da forma '00000000000000000000000000001010', seriam utilizados apenas quatro bits, '1010'. É 
-necessário entretanto guardar a informação de quantos bits são utilizados para armazenar um número e em alguns casos também é preciso 
+necessário entretanto, guardar a informação de quantos bits são utilizados para armazenar um número e em alguns casos também é preciso 
 armazenar um bit a mais para o sinal do inteiro. Esse algoritmo pode ser utilizado para comprimir o tamanho de strings no banco 
 quando estas são representadas pelo tipo VARCHAR, visto que para esse tipo de dado o tamanho também é armazenado devido a possibilidade 
 deste variar.
