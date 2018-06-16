@@ -12,14 +12,14 @@ Desde a carga de dados nota-se uma grande diferença entre os SGBD MonetDB e Pos
     \label{tab:ganho_carregamento}
     \begin{tabular}{|c|c|c|c|}
     \hline
-    \multirow{2}{*}{\textbf{Ambiente}} & \multicolumn{3}{c|}{\textbf{Base de Dados (Gb)}} \\ \cline{2-4} 
+    \multirow{2}{*}{\textbf{Ambiente}} & \multicolumn{3}{c|}{\textbf{Base de Dados (GB)}} \\ \cline{2-4} 
                                        & \textbf{1}     & \textbf{10}    & \textbf{30}    \\ \hline
     \textit{Snowflake}                 & 58\%           & 50\%           & 73\%           \\ \hline
     \textit{Star}                      & 47\%           & 71\%           & 69\%           \\ \hline
     \end{tabular}
     \end{table}
     
-Como um todo a teoria sobre SGBDR vs. SGBDC se aplicou bem à prática. O PostgreSQL teve um ótimo desempenho se comparar o ambiente mais normalizado ao denormalizado. Por ser desenvolvido visando modelos relacionais, o processamento de dados nas consultas tanto com uma quanto com várias \textit{streams} foi mais rápido no ambiente normalizado. Considerando vários usuários ativos o PostgreSQL conseguiu ser mais rápido que o MonetDB no ambiente normalizado para as bases de dados maiores (10Gb e 30Gb). Porém se analisar o desempenho final isso não fez com que o banco relacional pudesse ter desempenho melhor que o colunar no ambiente analítico.
+Como um todo a teoria sobre SGBDR vs. SGBDC se aplicou bem à prática. O PostgreSQL teve um ótimo desempenho se comparar o ambiente mais normalizado ao denormalizado. Por ser desenvolvido visando modelos relacionais, o processamento de dados nas consultas tanto com uma quanto com várias \textit{streams} foi mais rápido no ambiente normalizado. Considerando vários usuários ativos o PostgreSQL conseguiu ser mais rápido que o MonetDB no ambiente normalizado para as bases de dados maiores (10GB e 30GB). Porém se analisar o desempenho final isso não fez com que o banco relacional pudesse ter desempenho melhor que o colunar no ambiente analítico.
 
 Um fator que trouxe resultados melhores no MonetDB, além dos já citados de bancos colunares, foi o fato de que MonetDB faz uso intensivo de memória para processamento -- vale frisar que ele não requer que todos os dados caibam em toda memória física disponível, pois utiliza o espaço disponível em \textit{swap} e arquivos mapeados em memória. Devido a esse uso intensivo de memória, medir o tempo de uma consulta é algo delicado no MonetDB. Os testes comparando \textit{cold run}, \textit{hot run} e limpeza de \textit{cache} mostraram como a mesma consulta executada várias vezes e sob um cenário alterando a memória trazem resultados diferentes nesse SGBD, fazendo com que sob a primeira execução os resultados não acordem com a teoria descrita sobre o desempenho superior em ambientes \textit{star}.
 
@@ -38,7 +38,7 @@ Como continuidade para a pesquisa sugere-se:
 \begin{itemize}
     \item Realizar um estudo mais aprofundado sobre escalabilidade horizontal em bancos NoSQL, e se possível aplicar o \textit{benchmark} considerando um cenário utilizando um único servidor para processamento de consultas e outro com vários servidores, a fim de simular problemas que teoricamente são solucionados pelo particionamento horizontal, como queda, ou falha, e distribuição de dados.
 
-    \item Utilizar bases de dados maiores, a partir de 100Gb, para que se possa também comparar os resultados com os contidos na página oficial do TPC-H.
+    \item Utilizar bases de dados maiores, a partir de 100GB, para que se possa também comparar os resultados com os contidos na página oficial do TPC-H.
 
     \item Aplicar os resultados encontrados nesta pesquisa em empresas que ainda utilizem bancos relacionais ou, mesmo que usem outras alternativas, que ainda tenham uma modelagem normalizada, realizando a migração tanto do SGBD quanto da modelagem para um modelo colunar denormalizado.
 

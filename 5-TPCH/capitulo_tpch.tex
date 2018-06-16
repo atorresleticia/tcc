@@ -121,74 +121,17 @@ O resultado dos cálculos de força e vazão serão ponderados para calcular o d
 \section{Ambiente Original Normalizado}
 \label{ambiente_1}
 
-O modelo de ambiente proposto pelo TPC-H é um esquema normalizado \textit{snowflake}. Ele é composto por oito tabelas, sendo que destas, seis têm o tamanho multiplicado pelo SF, enquanto que as demais, \textit{nation} e \textit{region}, têm tamanho fixo. A cardinalidade do relacionamento entre as tabelas é \textit{one-to-many} e é apresentado na Figura \ref{fig:snow_flake}, adaptada do manual de especificação do TPC-H \cite{tpc2017specs}.
-
-\begin{figure*}[h]
+\begin{figure*}[htpb]
 	\centering
 		\includegraphics[width=\textwidth]{img/snow_flake.png}
-	\caption{Esquema do ambiente normalizado}
-	% \floatfoot{Fonte: adaptado do manual do TPC-H \cite{tpc2017specs}}
+	\caption[Esquema do ambiente normalizado do TPC-H]
+		{Esquema do ambiente normalizado do TPC-H \\ Fonte: adaptado do TPC-H \cite{tpc2017specs}}
 	\label{fig:snow_flake}
 \end{figure*}
 
-\begin{comment}
-\begin{table}[h]
-\centering
-\caption{Dados para a classe de 1GB}
-\label{1gb_table}
-\begin{tabular}{|l|c|c|}
-\hline
-\multicolumn{1}{|c|}{\textbf{Nome da tabela}} & \textbf{Cardinalidade} & \textbf{Tamanho} \\ \hline
-CUSTOMER                                      & 150 K                  & 23.3 MB          \\ \hline
-LINEITEM                                      & 6 M                    & 730 MB           \\ \hline
-NATION                                        & 25                     & 2.19 KB          \\ \hline
-ORDERS                                        & 1.5 M                  & 165 MB           \\ \hline
-PART                                          & 200 K                  & 23.2 MB          \\ \hline
-PARTSUPP                                      & 800 K                  & 114 MB           \\ \hline
-REGION                                        & 5                      & 394 Bytes        \\ \hline
-SUPPLIER                                      & 10 K                   & 1.35 MB          \\ \hline
-Total																					&												 & 								\\ \hline
-\end{tabular}
-\end{table}
+% \\ Fonte: adaptado do manual do TPC-H \cite{tpc2017specs}
 
-\begin{table}[h]
-\centering
-\caption{Dados para a classe de 10GB}
-\label{10gb_table}
-\begin{tabular}{|l|c|c|}
-\hline
-\multicolumn{1}{|c|}{\textbf{Nome da tabela}} & \textbf{Cardinalidade} & \textbf{Tamanho} \\ \hline
-CUSTOMER                                      & 1.5 M                  & 234 MB          	\\ \hline
-LINEITEM                                      & 60 M                   & 7.29 GB          \\ \hline
-NATION                                        & 25                     & 2.19 KB          \\ \hline
-ORDERS                                        & 15 M                   & 1.64 GB          \\ \hline
-PART                                          & 2 M                  	 & 233 MB          	\\ \hline
-PARTSUPP                                      & 8 M                  	 & 1.12 GB          \\ \hline
-REGION                                        & 5                      & 394 Bytes        \\ \hline
-SUPPLIER                                      & 100 K                  & 13.6 MB          \\ \hline
-Total																					&												 & 								\\ \hline
-\end{tabular}
-\end{table}
-
-\begin{table}[h]
-\centering
-\caption{Dados para a classe de 30GB}
-\label{30gb_table}
-\begin{tabular}{|l|c|c|}
-\hline
-\multicolumn{1}{|c|}{\textbf{Nome da tabela}} & \textbf{Cardinalidade} & \textbf{Tamanho} \\ \hline
-CUSTOMER                                      & 4.5 m                  & 706 MB           \\ \hline
-LINEITEM                                      & 180 M                  & 22.1 GB          \\ \hline
-NATION                                        & 25                     & 2.19 KB          \\ \hline
-ORDERS                                        & 450 M                  & 4.97 GB          \\ \hline
-PART                                          & 6 M                  	 & 704 MB           \\ \hline
-PARTSUPP                                      & 24 M                   & 3.41 GB          \\ \hline
-REGION                                        & 5                      & 394 Bytes        \\ \hline
-SUPPLIER                                      & 30 K                   & 41 MB            \\ \hline
-Total																					&												 & 								\\ \hline
-\end{tabular}
-\end{table}
-\end{comment}
+O modelo de ambiente proposto pelo TPC-H é um esquema normalizado \textit{snowflake}. Ele é composto por oito tabelas, sendo que destas, seis têm o tamanho multiplicado pelo SF, enquanto que as demais, \textit{nation} e \textit{region}, têm tamanho fixo. A cardinalidade do relacionamento entre as tabelas é \textit{one-to-many} e é apresentado na Figura \ref{fig:snow_flake}, adaptada do manual de especificação do TPC-H \cite{tpc2017specs}.
 
 Os tipos de dados atribuídos aos atributos de uma entidade podem ser do tipo identificador, que corresponde a um inteiro que define a PK de uma tabela; inteiro; decimal; texto fixo de tamanho \textit{n}; texto variável de tamanho \textit{n}; e data. Detalhes sobre as consultas implementadas na linguagem SQL relacionadas a esse ambiente são encontradas no Apêndice \ref{queries_1}.
 
@@ -199,7 +142,7 @@ As modificações no modelo do ambiente \textit{snowflake} se fundamentaram na c
 \begin{figure*}[h]
 	\centering
 		\includegraphics[width=\textwidth]{img/star.png}
-	\caption{Esquema do ambiente denormalizado}
+	\caption{Esquema do ambiente denormalizado adaptado a partir do original do TPC-H}
 	\label{fig:star}
 \end{figure*}
  
