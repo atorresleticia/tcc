@@ -20,11 +20,12 @@ pelo usuário, a fim de combinar diferentes informações entre os dados armazen
 
 Para analisar os dados de um DW além de implementá-lo é necessário que alguma aplicação leia seu conteúdo e apresente-o de forma gráfica e intuitiva ao analisador. Aplicações OLTP (\textit{On-Line Transactional Processing}) são utilizadas por bancos de dados operacionais e operam transações atômicas e isoladas de forma repetitiva, que correspondem ao dia-a-dia de uma organização \cite{chaudhuri1997overview}. DWs trabalham com suporte à decisão e são intensivos à consultas \textit{ad hoc} complexas, que acessam milhões de registros. Sendo assim, os dados históricos, a taxa de vazão de uma consulta e o tempo de resposta são mais importantes que pequenas transações.
 
-À aplicação aceita por um DW dá-se o nome de OLAP, cujo objetivo, de acordo com Codd; Codd e Salley \cite{codd1998providing}, é identificar tendências, padrões de comportamento e anomalias, bem como relações em dados aparentemente não relacionados. Geralmente as consultas em uma aplicação analítica são longas, levam tempo para executar e estão interessadas 
+À aplicação aceita por um DW dá-se o nome de OLAP, cujo objetivo, de acordo com Codd; Codd e Salley \cite{codd1998providing}, é identificar tendências, padrões de comportamento e anomalias, bem como relações em dados aparentemente não relacionados. Portanto, DWs e aplicações OLAP são componentes chave para a construção de um ambiente de análise.
+Geralmente as consultas em uma aplicação analítica são longas, levam tempo para executar e estão interessadas 
 em atributos específicos. Os resultados dessas análises servem de base para tomada de decisões de negócio. Ainda, o processo de inserção de dados em um ambiente OLAP é um pouco mais complexo que sistemas OLTP por seguir um processo fim-a-fim conhecido 
-como ETL (extração, transformação e carga, do inglês \textit{extract, transformation, load}) \cite{vertabelo2017olap}. Portanto, DWs e aplicações OLAP são componentes chave para a construção de um ambiente de análise.
+como ETL (extração, transformação e carga, do inglês \textit{extract, transformation, load}) \cite{vertabelo2017olap}. 
 
-O processo ETL faz parte da arquitetura de um DW. Neste domínio existem diversos componentes que realizam funções específicas a fim de construir um ambiente de \textit{warehouse} desde a obtenção dos dados de fontes externas e sistemas operacionais de bancos de dados, até o acesso a esses dados por meio do DW por alguma consulta analítica definida sob uma aplicação OLAP. Para entender esta arquitetura fim-a-fim, ilustrada na Figura \ref{fig:dw_arq} adaptada de Kimball e Ross \cite{kimball2002dw}, é necessário compreender alguns componentes e conceitos que formam um DW \cite{kimball2002dw}:
+O processo ETL faz parte da arquitetura de um DW. Neste domínio existem diversos componentes que realizam funções específicas a fim de construir um ambiente de \textit{warehouse} desde a obtenção dos dados de fontes externas e sistemas operacionais de bancos de dados, até o acesso a esses dados por meio do DW por alguma consulta analítica definida sob uma aplicação OLAP. Para entender esta arquitetura fim-a-fim, ilustrada na Figura \ref{fig:dw_arq}, é necessário compreender alguns componentes e conceitos que formam um DW \cite{kimball2002dw}:
 
 \begin{itemize}
     \item \textbf{Sistemas de Fonte Operacional}: possuem detalhes sobre as transações do negócio, correspondendo a ambientes OLTP. Engloba os dados que irão estruturar as informações do DW, portanto, se encontram externos ao \textit{warehouse}. Podem ser tanto sistemas de banco de dados ou alguma outra fonte de dados, como um documento no formato XLS, CSV, TXT; e sistemas CRM.
@@ -44,7 +45,7 @@ O processo ETL faz parte da arquitetura de um DW. Neste domínio existem diverso
 
 Existe uma discussão acerca da modelagem conceitual da área de apresentação de dados de um ambiente de análise nos DWs \cite{sen2005comparison}. Segundo Sen e Sinha \cite{sen2005comparison} as duas técnicas de modelagem mais utilizadas são a Entidade-Relacional (ER) e a Dimensional. A primeira segue o padrão de modelagem para ambientes OLTP, que traduz a modelagem ER para um esquema relacional em seguida normalizando-o geralmente até a Terceira Forma Normal (3NF) \cite{kimball2002dw}, normalmente utilizadas por banco de dados relacionais. O modelo Dimensional, ou multidimensional, por sua vez, evita atingir o mesmo nível de normalização da modelagem ER, e faz analogia a um cubo para representação de dados, uma vez que uma informação pode ser vista através de \textit{n} dimensões. 
 
-O modelo dimensional é composto por tabelas denominadas Tabelas Fato e Tabelas Dimensão \cite{kimball2002dw}, e é conhecido comumente como modelo \textit{star join}, ou apenas \textit{star} \cite{sen2005comparison}, pelo seu formato lembrar o de uma estrela. A Tabela Fato é a principal tabela do modelo Dimensional, contemplando atributos responsáveis por determinar as regras e métricas de negócio, ou um fato. Em sua maioria são atributos numéricos, relacionados a quantidade, e aditivos, visto que uma consulta em um DW pode retornar até milhares de tuplas, tornando interessante o conhecimento de informações como o total de um atributo dada alguma questão de negócio. Atributos textuais não são definidos como um fato, na maioria das vezes descrevem algo e devem estar inseridos em Tabelas Dimensão pois há maior chance de estarem relacionados com os atributos dimensão. Outro ponto a se ater é a importância de se evitar incluir dados com zeros que não representam dados úteis, ou representando nada, pois a inclusão de dados sem significado sobrecarregariam o DW sem motivo.
+O modelo dimensional é composto por tabelas denominadas Tabelas Fato e Tabelas Dimensão \cite{kimball2002dw}, e é conhecido comumente como modelo \textit{star join}, ou apenas \textit{star} \cite{sen2005comparison}, pelo seu formato lembrar o de uma estrela. A Tabela Fato é a principal tabela do modelo Dimensional, contemplando atributos responsáveis por determinar as regras e métricas de negócio, ou um fato. Em sua maioria são atributos numéricos, relacionados a quantidade, e aditivos, visto que uma consulta em um DW pode retornar até milhares de tuplas, tornando interessante o conhecimento de informações como o total de um atributo dada alguma questão de negócio. Atributos textuais não são definidos como um fato, na maioria das vezes descrevem algo e devem estar inseridos em Tabelas Dimensão pois há maior chance de estarem relacionados com os atributos dimensão. Outro ponto a se ater é a importância de se evitar dados que não representam informação alguma, pois a inclusão de dados sem significado sobrecarregariam o DW sem motivo.
 
 As Tabelas Fato são auxiliadas pelas Tabelas Dimensão no que concerne à descrição textual das questões de negócio. É comum essas tabelas terem de 50 a 100 atributos, ou mais, pois a intenção das dimensões é descrever as regras de negócio. É nestas tabelas que são realizados os filtros de consulta. Por filtros entende-se agrupamentos, padrões e ordenações por exemplo. De forma a exemplificar, se fosse desejado buscar as vendas por nome de fornecedor em um determinado intervalo de data, os atributos "nome de fornecedor" e "data" deveriam estar armazenados em tabelas dimensão. Segundo Kimball \cite{kimball2002dw}, quanto mais bem descritos os atributos dimensão, melhor o DW é, tornando a qualidade do \textit{warehouse} dependente das entidades de dimensão.
 
@@ -99,6 +100,7 @@ entre as mais conhecidas estão o modelo relacional, objeto-relacional, orientad
 objetos e a abordagem mais recente NoSQL.
 
 \subsection{Modelo de SGBD Relacional}
+\label{section:sgbd_relacional}
 
 O modelo mais utilizado de SGBD é o relacional, ou SGBDR (SGBD Relacional). Ele foi conceituado por 
 Codd \cite{codd1970relational} em 1970 em um artigo no qual são expostas as 
@@ -156,22 +158,14 @@ Além de diminuir o desempenho na recuperação de dados, um esquema normalizado
 
 Exemplos de SGBDR são PostgreSQL \cite{postgres2018r}, MySQL \cite{mysql2018r}, Microsoft SQL Server \cite{microsoft2018r}, SQLite \cite{lite2018r}, MariaDB \cite{maria2018r} e Oracle \cite{oracle2018r}. 
 
-\subsection{Modelo de SGBD NoSQL}
-
-% Bancos com o objetivo de suprir problemas apresentados por SGBDR começaram a emergir entre 2004 e 2007 visando alta escalabilidade, recuperação e armazenamento de grandes volumes de dados de forma eficiente, e ao mesmo tempo diminuir custos com hardware \cite{han2011nosql}. Esses bancos levaram o nome de NoSQL, porém isso não significa que não utilizam SQL para manipulação de dados.
-
-% Detalhes sobre bancos de dados NoSQL são encontrados no Capítulo \ref{nosql}, no qual também é descrito o modelo colunar, utilizado por satisfazer os requerimentos de um ambiente de DW.
-
-% \graphicspath{ {4-NoSQL/} }
-% \chapter{Banco de Dados NoSQL}
-% \label{nosql}
+\subsection{Modelo de SGBD Colunar}
 
 % NOSQL ==============================================================================================
 
 O desenvolvimento de novas aplicações e surgimento de novas soluções 
 para sistemas gerou crescimento no volume de dados de maneira acelerada. 
 Com isso cresce também o número de usuários, necessitando portanto escalar 
-o banco de dados. Existem duas soluções para escalar um sistema: o 
+o banco de dados e recuperar de forma rápida suas informações. Existem duas soluções para escalar um sistema: o 
 escalonamento vertical, que consiste em um \textit{upgrade} do servidor no 
 qual o banco está hospedado; e o horizontal, aumentando o número de 
 servidores e distribuindo o banco \cite{pritchett2008base, sharding2018educative}. 
@@ -230,56 +224,59 @@ ao passo que quando se trabalha com servidores em paralelo a queda em uma máqui
 não trará prejuízos no conjunto todo. Assim, soluções como melhorar o hardware do 
 servidor continuam sendo desvantajosas. 
 
-Com o intuito de suprir tais problemas de escalabilidade, disponibilidade 
-e recuperação rápida de dados, entre 2004 e 2007 os SGBD NoSQL começaram 
-a ganhar destaque com o surgimento das bases de dados BigTable da Google \cite{chang2008bigtable}, e Dynamo 
-da Amazon \cite{decandia2007dynamo}. O termo NoSQL, embora a princípio pareça indicar total independência 
-de SQL, significa \textit{Not Only SQL}, “Não Apenas SQL”. Também, ele não descreve um 
-único tipo de SGBD, mas sim uma classe de modelos, cada qual com suas propriedades. 
-As mais conhecidas são quatro:
-
-\begin{itemize}
-    \item{\textbf{Orientado a Grafos}}, que se utiliza da Teoria dos Grafos para estruturar seus dados. 
-    Um exemplo desta classe é o Neo4j \cite{neo2018nosql}.
-    \item{\textbf{Orientado a Chave-Valor}}, que armazena os dados de forma similar a uma tabela \textit{hash}, 
-    com uma chave referenciando um valor, ou tipo de dado. Exemplos são o Project Voldemort \cite{voldemort2018nosql}, 
-    DyanmoDB \cite{amazon2018nosql}, o Riak \cite{riak2018nosql} e o Redis \cite{redis2018nosql}.
-    \item{\textbf{Orientado a Documento}}, uma versão melhorada do Chave-Valor, 
-    no qual os valores são armazenados como documentos através de estruturas complexas como JSON e XML. 
-    Exemplos são o MongoDB \cite{mongo2018nosql} e o CouchDB \cite{couch2018nosql}.
-    \item{\textbf{Orientado a Colunas}}, ou modelo colunar, 
-    que utiliza tabelas como armazenamento de entidades, 
-    porém não agrupa os dados sob forma de tuplas, e sim colunas. Exemplos são o MonetDB \cite{monetdb2017c}, C-Store \cite{cstore2018nosql}, BigTable \cite{google2018nosql} e Cassandra \cite{cassandra2018nosql}.
-\end{itemize}
-
-De maneira geral, as vantagens no uso de um SGBD NoSQL estão no rápido processamento de um grande volume de dados, flexibilidade para expansão e baixo custo de escalabilidade. Devido ao vasto número de SGBD dentro de cada classe de NoSQL, esses banco de dados também podem ser classificados de acordo com o Teorema CAP (do inglês \textit{Consistency, Availability, Partition tolerance}). Segundo Eric Brewer \cite{brewer2000towards, gilbert2002brewer}, um sistema distribuído não é 
-capaz de conciliar consistência, disponibilidade e tolerância a partição de dados simultaneamente, tendo que optar por apenas dois destes. 
-SGBDR prezam por disponibilidade e consistência de dados seguindo ACID, porém, a preocupação com consistência 
-pode tornar a manipulação de dados lenta. Visto que o movimento NoSQL surgiu com a intenção de 
-melhorar a escalabilidade e disponibilidade de dados, e tornar a manipulação destes mais rápida, 
-a maioria deles trabalha com os atributos de disponibilidade e tolerância à partição. 
-Essa configuração assume um conceito diferente do ACID para bancos NoSQL, e Pritchett \cite{pritchett2008base} propôs um teorema diferente deste, mais otimista, onde a consistência é relaxada, o Teorema BASE (\textit{Basically Available, Soft State, Eventual Consistency}).
-
-O Teorema BASE assume que a consistência em um banco 
-de dados está em estado de fluxo, ao contrário de ACID que força a consistência a cada operação, 
-sendo este considerado por Pritchett \cite{pritchett2008base} um método pessimista. 
-Neste cenário a disponibilidade é garantida devido à tolerância a partição, fazendo 
-com que a falha de um servidor não cesse o funcionamento de todo o sistema -- por exemplo, caso uma partição falhe em um sistema rodando sobre dez servidores, apenas 10\% dos dados estarão indisponíveis e somente os usuários daquela partição serão afetados.
-
-% COLUNAR =============================================================================
-
-% \subsubsection{Modelo de SGBD NoSQL Colunar}
-
-Dentre as categorias de bancos de dados NoSQL citadas a que melhor se adequa aos 
-propósitos analíticos é a colunar. Sistemas colunares armazenam seus dados 
+Com o intuito de suprir tais problemas de escalabilidade, disponibilidade e recuperação rápida de dados, uma 
+nova abordagem de SGBD pode ser aplicada no gerenciamento de DWs, o modelo colunar. Sistemas colunares armazenam seus dados 
 em colunas que representam atributos das entidades, fazendo com que apenas os atributos necessários sejam 
 lidos \cite{khoshafian1987query}, o que diminui o tempo de acesso 
 ao disco \cite{matei2010column, abadi2008column}. Cada uma destas colunas pode armazenar seus valores utilizando o par 
 \textit{chave, valor} \cite{abadi2013design, khoshafian1987query}, sendo esta uma das formas de implementação 
 de um sistema colunar. 
+
 A Figura \ref{fig:row-col} ilustra de forma simples, embora apenas visual, 
 a diferença principal entre um armazenamento utilizando linhas, conforme a Figura \ref{fig:row}, e outro utilizando 
-colunas, Figura \ref{fig:column}, a partir dos registros da Figura \ref{fig:regs}, baseada na entidade \textit{funcionário} apresentada no Capítulo \ref{sgbd}.
+colunas, Figura \ref{fig:column}, a partir dos registros da Figura \ref{fig:regs}, baseada na entidade \textit{funcionário} apresentada na Seção \ref{section:sgbd_relacional}.
+% Com o intuito de suprir tais problemas de escalabilidade, disponibilidade 
+% e recuperação rápida de dados, entre 2004 e 2007 os SGBD NoSQL começaram 
+% a ganhar destaque com o surgimento das bases de dados BigTable da Google \cite{chang2008bigtable}, e Dynamo 
+% da Amazon \cite{decandia2007dynamo}. O termo NoSQL, embora a princípio pareça indicar total independência 
+% de SQL, significa \textit{Not Only SQL}, “Não Apenas SQL”. Também, ele não descreve um 
+% único tipo de SGBD, mas sim uma classe de modelos, cada qual com suas propriedades. 
+% As mais conhecidas são quatro:
+
+% \begin{itemize}
+%     \item{\textbf{Orientado a Grafos}}, que se utiliza da Teoria dos Grafos para estruturar seus dados. 
+%     Um exemplo desta classe é o Neo4j \cite{neo2018nosql}.
+%     \item{\textbf{Orientado a Chave-Valor}}, que armazena os dados de forma similar a uma tabela \textit{hash}, 
+%     com uma chave referenciando um valor, ou tipo de dado. Exemplos são o Project Voldemort \cite{voldemort2018nosql}, 
+%     DyanmoDB \cite{amazon2018nosql}, o Riak \cite{riak2018nosql} e o Redis \cite{redis2018nosql}.
+%     \item{\textbf{Orientado a Documento}}, uma versão melhorada do Chave-Valor, 
+%     no qual os valores são armazenados como documentos através de estruturas complexas como JSON e XML. 
+%     Exemplos são o MongoDB \cite{mongo2018nosql} e o CouchDB \cite{couch2018nosql}.
+%     \item{\textbf{Orientado a Colunas}}, ou modelo colunar, 
+%     que utiliza tabelas como armazenamento de entidades, 
+%     porém não agrupa os dados sob forma de tuplas, e sim colunas. Exemplos são o MonetDB \cite{monetdb2017c}, C-Store \cite{cstore2018nosql}, BigTable \cite{google2018nosql} e Cassandra \cite{cassandra2018nosql}.
+% \end{itemize}
+
+% De maneira geral, as vantagens no uso de um SGBD NoSQL estão no rápido processamento de um grande volume de dados, flexibilidade para expansão e baixo custo de escalabilidade. Devido ao vasto número de SGBD dentro de cada classe de NoSQL, esses banco de dados também podem ser classificados de acordo com o Teorema CAP (do inglês \textit{Consistency, Availability, Partition tolerance}). Segundo Eric Brewer \cite{brewer2000towards, gilbert2002brewer}, um sistema distribuído não é 
+% capaz de conciliar consistência, disponibilidade e tolerância a partição de dados simultaneamente, tendo que optar por apenas dois destes. 
+% SGBDR prezam por disponibilidade e consistência de dados seguindo ACID, porém, a preocupação com consistência 
+% pode tornar a manipulação de dados lenta. Visto que o movimento NoSQL surgiu com a intenção de 
+% melhorar a escalabilidade e disponibilidade de dados, e tornar a manipulação destes mais rápida, 
+% a maioria deles trabalha com os atributos de disponibilidade e tolerância à partição. 
+% Essa configuração assume um conceito diferente do ACID para bancos NoSQL, e Pritchett \cite{pritchett2008base} propôs um teorema diferente deste, mais otimista, onde a consistência é relaxada, o Teorema BASE (\textit{Basically Available, Soft State, Eventual Consistency}).
+
+% O Teorema BASE assume que a consistência em um banco 
+% de dados está em estado de fluxo, ao contrário de ACID que força a consistência a cada operação, 
+% sendo este considerado por Pritchett \cite{pritchett2008base} um método pessimista. 
+% Neste cenário a disponibilidade é garantida devido à tolerância a partição, fazendo 
+% com que a falha de um servidor não cesse o funcionamento de todo o sistema -- por exemplo, caso uma partição falhe em um sistema rodando sobre dez servidores, apenas 10\% dos dados estarão indisponíveis e somente os usuários daquela partição serão afetados.
+
+% COLUNAR =============================================================================
+
+% \subsubsection{Modelo de SGBD NoSQL Colunar}
+
+% Dentre as categorias de bancos de dados NoSQL citadas a que melhor se adequa aos 
+% propósitos analíticos é a colunar. 
 
 % (descrita na Seção \ref{sec:implementacao_col} deste capítulo)
 
@@ -487,12 +484,13 @@ Em suma, ao implementar um banco colunar tanto a aplicação deve ser capaz de e
 dos principais diferenciais de modelos colunares não será explorado e poderá não haver impacto no desempenho quando trabalhado com uma 
 grande massa de dados, como é a realidade de empresas.
 
+Exemplos de SGBD colunares são o MonetDB \cite{monetdb2017c}, C-Store \cite{cstore2018nosql}, Vertica \cite{vertica2017c}, e o LucidDB \cite{lucid2018column}.
 \section{Considerações Finais}
 
 % data warehouses e olap -> modelo denormalizado -> sgbdr x sgbdc
 
 Tendo surgido como solução para dar suporte à tomada de decisão, DWs precisam ter seus dados recuperados de forma eficiente. A principal discussão acerca disso está em torno de qual modelagem utilizar e como realizar o gerenciamento deste repositório de forma a conseguir um bom desempenho na recuperação de dados como informação útil à uma empresa. Como solução a isso estão os SGBDR, entretanto, seu uso causa queda no desempenho conforme o volume de dados aumenta, para tanto são necessários outros meios de gerenciamento que possam lidar com esse grande volume de dados.
 
-Apresentando soluções aos impasses de um SGBDR estão os SGBD NoSQL, e dentre suas classes a que melhor supre as necessidades de um ambiente analítico é a colunar. Com uma implementação diferente da utilizada pelos SGBDR, este SGBD possibilita altas taxas de compressão e recuperação de atributos específicos sem processar mais do que o requisitado por uma consulta. 
+Apresentando soluções aos impasses de um SGBDR estão os SGBD colunares. Com uma implementação diferente da utilizada pelos SGBDR, os SGBDC possibilitam altas taxas de compressão e recuperação de atributos específicos sem processar mais do que o requisitado por uma consulta, sendo um atrativo para ambientes analíticos. 
 
 Empresas ainda utilizam SGBDR para gerenciar DWs, e para analisar qual SGBD é melhor nesta função pode-se aplicar alguma métrica para cálculo de desempenho e comparar um com o outro, ou vários. Esse cálculo deve considerar ainda as possíveis modelagens entre os SGBD, possibilitando adaptar diferentes modelagens dentro de um DW. Na área de banco de dados são utilizados \textit{benchmarks} produzidos por empresas com foco em desenvolver padrões no processo de transações.

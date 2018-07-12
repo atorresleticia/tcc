@@ -3,21 +3,18 @@
 \chapter{Avaliação Experimental}
 
 Como mencionado no Capítulo \ref{sgbd}, muitas empresas ainda utilizam 
-bancos relacionais como forma de gerenciar seus dados. Existem vários SGBDR 
-atuantes no mercado, como MySQL, PostgreSQL e algumas variantes da Oracle. 
+bancos relacionais como forma de gerenciar seus dados. 
 Por se tratar de um SGBD \textit{open source} e ser amplamente 
 conhecido, foi escolhido para o estudo o PostgreSQL. Ele possui vasta 
 documentação, tutoriais e suporte em fóruns sobre bancos de dados e 
 programação de forma geral, além de receber recorrentes atualizações. 
 
-A categoria de NoSQL escolhida foi a colunar, por ser a mais 
-recomendada para gerenciamento do grande volume de dados de um DW. 
 O fato do PostgreSQL utilizar a Linguagem SQL como forma de 
 manipulação de dados faz com que seja necessário também escolher 
-o banco colunar para comparação utilizando esse filtro. A escolha também 
+o banco colunar para comparação utilizando esse filtro. Para tanto, o 
+SGBDC escolhido foi o MonetDB, pioneiro na categoria colunar. A escolha também 
 se deu com base na simplicidade do uso do SGBD, e na praticidade de 
-migração dos dados armazenados entre um banco e outro. Para tanto, 
-o MonetDB foi definido para o estudo.
+migração dos dados armazenados entre um banco e outro. 
 
 O gerenciamento dos SGBD foi realizado por meio do \textit{driver} JDBC 
 disponibilizado nas páginas oficiais do PostgreSQL e do MonetDB. Seu uso se deu 
@@ -25,7 +22,7 @@ devido à simplificação no desenvolvimento de aplicações, por dar suporte a
 diferentes SGBD e possuir boa documentação e tutoriais. Na análise de tempo 
 foi considerada a latência da Máquina Virtual Java (JVM), assim incluindo essa 
 latência no tempo total. As versões dos SGBD utilizadas 
-foram o PostgreSQL 9.6 e o MonetDB 11.29.3 e foram instalados no servidor do laboratório GIA, operando sob o 
+foram o PostgreSQL 9.6 e o MonetDB 11.29.3 e foram instalados no servidor do laboratório GIA (Grupo de Inteligência Aplicada), operando sob o 
 sistema operacional Ubuntu Linux 16.04 LTS, com 16GB de RAM e dois 
 processadores Intel Xeon CPU E5620 2.40GHz.
 
@@ -85,7 +82,7 @@ atentando-se ao fato de que no ambiente denormalizado elas foram modificadas, fo
 prévia de cada uma, sob a menor base de dados, utilizando o JDBC. Dessa execução, foram eliminadas as consultas 
 Q1, Q2, Q4, Q15, Q17, Q20 e Q21 por terem demorado horas no ambiente denormalizado -- e algumas tendo a execução 
 cancelada antes -- enquanto que as demais levaram apenas alguns segundos para executar. Essa mudança no número 
-de consultas fez com que as equações originais fossem adaptadas para a nova quantidade, 15.
+de consultas fez com que as equações originais fossem adaptadas para a nova quantidade, 15. Tem-se neste caso a 17ª raiz do produto dos termos no teste de força conforme a Equação \ref{eq:1-2}.
 
 \begin{myequation}%
 \label{eq:1-2}
@@ -141,19 +138,6 @@ Toma-se como exemplo a entidade \textit{nation}: no modelo \textit{snowflake} el
         \end{tabular}
         \end{table}
 
-% \begin{table}[htpb]
-% \centering
-% \caption{Tamanho em bytes das entidades}
-% \label{tab:tamanho}
-% \begin{tabular}{@{}lcc@{}}
-% \toprule
-%               & Snowflake & Star       \\ \midrule
-% Supplier      & 1.409.184   & 2.990.430    \\
-% Customer      & 24.346.144  & 48.055.517   \\
-% Part          & 24.135.125  & 24.135.125   \\
-% Lineitem/Item & 759.863.287 & 2.226.620.122 \\ \bottomrule
-% \end{tabular}
-% \end{table}
 
 Um ponto importante a ser analisado foi o tamanho final de cada SGBD. A Tabela \ref{tab:carregamento_size} 
 mostra que mesmo para a mesma quantidade de dados o MonetDB tem o tamanho em bytes reduzido, mostrando a capacidade 
@@ -161,7 +145,7 @@ que um SGBD colunar tem de realizar compressão de dados de forma mais eficiente
 
 \begin{table}[htpb]
     \centering
-    \caption{Tamanho do banco de dados em Mb para os cenários de \textit{benchmark}}
+    \caption{Tamanho da base de dados nos SGBD em Mb para os cenários de \textit{benchmark}}
     \label{tab:carregamento_size}
     \begin{tabular}{c|ccc|c}
         \hline
@@ -185,7 +169,8 @@ O primeiro cenário de execução consiste em analisar os resultados de desempen
 
 Considerando fator de escala de 1GB, o número de registros das tabelas \textit{supplier, customer, part, partsupp, orders} e \textit{lineitem} são, respectivamente, 10.000, 150.000, 200.000, 800.000, 1.500.000 e 6.001.215. O número de registros das tabelas \textit{region} e \textit{nation} são fixos em 5 e 25, respectivamente. Também, em \textit{lineitem} o número de registros depende de um pedido em \textit{orders}, sendo definido sob um número aleatório entre um e quatro.
 
-% TABELA DE TEMPO DE CONSULTAS E RF
+O primeiro conjunto de resultados para a execução de 1GB pode ser visto nas Tabelas \ref{tab:queries_cold_1} e \ref{tab:forca_vazao_cold_1}. A primeira mostra os tempos em segundos que os dois SGBD levaram para executar as RF e as 15 consultas. Nela é possível verificar que a primeira consulta (Q3) é a que mais consome tempo de execução, e que o MonetDB não tem desempenho melhor que o PostgreSQL na remoção de registros no ambiente \textit{snowflake}, e ao contrário do que se esperava, este SGBD em ambiente denormalizado levou mais tempo para processar as consultas ao normalizado. 
+
 \begin{table}[htpb]
         \centering
         \caption{Tempo em segundos de todas as consultas do teste de força e funções de atualização sob \textit{cold run} para 1GB}
@@ -233,8 +218,7 @@ Considerando fator de escala de 1GB, o número de registros das tabelas \textit{
          \textbf{RF-2}        & 40.812            & 38.091                        & 20.260            & 20.575                    \\
         \hline
         \end{tabular}
-        \end{table}
-
+\end{table}
 
 \begin{table}[htpb]
         \centering
@@ -253,11 +237,6 @@ Considerando fator de escala de 1GB, o número de registros das tabelas \textit{
         \end{tabular}
 \end{table}
 
-% TABELA DE POWER E VAZÃO
-O primeiro conjunto de resultados para a execução de 1GB pode ser visto nas Tabelas \ref{tab:queries_cold_1} e \ref{tab:forca_vazao_cold_1}. A primeira mostra os tempos em segundos que os dois SGBD levaram para executar as RF e as 15 consultas. Nela é possível verificar que a primeira consulta (Q3) é a que mais consome tempo de execução, e que o MonetDB não tem desempenho melhor que o PostgreSQL na remoção de registros no ambiente \textit{snowflake}, e ao contrário do que se esperava, este SGBD em ambiente denormalizado levou mais tempo para processar as consultas ao normalizado. 
-
-
-
 Na Tabela \ref{tab:forca_vazao_cold_1} é possível perceber que o SGBD que obteve resultados dentro do esperado foi o PostgreSQL. O desempenho considerando um único usuário ativo foi melhor no ambiente normalizado, assim como no teste simulando vários usuários ativos. O MonetDB só alcançou resultados melhores no ambiente denormalizado para o último teste.
 
 
@@ -265,6 +244,10 @@ Na Tabela \ref{tab:forca_vazao_cold_1} é possível perceber que o SGBD que obte
 % BASE DE 10 GB
 
 \subsection{Base de Dados de 10GB}
+
+O número de registros das tabelas \textit{supplier, customer, part, partsupp} e \textit{orders} correspondem aos valores da base de 1GB, porém 10 vezes maior -- exceto \textit{lineitem}, cujo valor é 59.986.052. São, respectivamente, 100.000, 1.500.000, 2.000.000, 8.000.000, 15.000.000.
+
+Nesta execução fica evidente a diferença de tempo da primeira consulta para as demais no SGBD colunar. Tomando a segunda mais lenta no MonetDB normalizado e denormalizado (Q13), a Q3 é 6.3 vezes no primeiro ambiente, e quase quatro vezes no segundo, mais demorada. Ainda, o ambiente denormalizado continua tendo desempenho pior que o normalizado no MonetDB, como é possível verificar na Tabela \ref{tab:queries_cold_10}. A Tabela \ref{tab:forca_vazao_cold_10} continua apresentando a mesma lógica que a Tabela \ref{tab:forca_vazao_cold_1} nos resultados.
 
 \begin{table}[htpb]
         \centering
@@ -315,10 +298,6 @@ Na Tabela \ref{tab:forca_vazao_cold_1} é possível perceber que o SGBD que obte
                 \end{tabular}
                 \end{table}
 
-O número de registros das tabelas \textit{supplier, customer, part, partsupp} e \textit{orders} correspondem aos valores da base de 1GB, porém 10 vezes maior -- exceto \textit{lineitem}, cujo valor é 59.986.052. São, respectivamente, 100.000, 1.500.000, 2.000.000, 8.000.000, 15.000.000.
-
-Nesta execução fica evidente a diferença de tempo da primeira consulta para as demais no SGBD colunar. Tomando a segunda mais lenta no MonetDB normalizado e denormalizado (Q13), a Q3 é 6.3 vezes no primeiro ambiente, e quase quatro vezes no segundo, mais demorada. Ainda, o ambiente denormalizado continua tendo desempenho pior que o normalizado no MonetDB, como é possível verificar na Tabela \ref{tab:queries_cold_10}. A Tabela \ref{tab:forca_vazao_cold_10} continua apresentando a mesma lógica que a Tabela \ref{tab:forca_vazao_cold_1} nos resultados.
-
 \begin{table}[htpb]
         \centering
         \caption{Valores do teste de força e vazão sob \textit{cold run} para 10GB}
@@ -327,37 +306,20 @@ Nesta execução fica evidente a diferença de tempo da primeira consulta para a
                 \cline{2-5}
                 \multicolumn{1}{c|}{} & \multicolumn{2}{c|}{\textbf{Teste de Força} } & \multicolumn{2}{c|}{\textbf{Teste de Vazão} }  \\ 
                 \hline
-                 \textbf{SGBD}        & \textbf{MonetDB}  & \textbf{PostgreSQL}       & \textbf{MonetDB}  & \textbf{PostgreSQL}        \\ 
+                        \textbf{SGBD}        & \textbf{MonetDB}  & \textbf{PostgreSQL}       & \textbf{MonetDB}  & \textbf{PostgreSQL}        \\ 
                 \hline
-                 \textbf{Snowflake}   & 3687.621          & 775.652                   & 330.479           & 364.541                    \\ 
+                        \textbf{Snowflake}   & 3687.621          & 775.652                   & 330.479           & 364.541                    \\ 
                 \hline
-                 \textbf{Star}        & 3116.068          & 174.381                   & 583.560           & 149.455                    \\
+                        \textbf{Star}        & 3116.068          & 174.381                   & 583.560           & 149.455                    \\
                 \hline
                 \end{tabular}
                 \end{table}
-
+                
 \subsection{Base de Dados de 30GB}
 
 O número de registros das tabelas \textit{supplier, customer, part, partsupp} e \textit{orders} correspondem aos valores da base de 1GB, porém 30 vezes maior. São, respectivamente, 300.000, 4.500.000, 6.000.000, 24.000.000, 45.000.000, e \textit{lineitem} tem agora 179.998.372 registros.
 
 Pela Tabela \ref{tab:queries_cold_30} pode-se verificar que no SGBD colunar o comportamento permanece o mesmo às bases anteriores. Desta vez ainda a escalabilidade do tempo da consulta Q14 aumentou em 208 vezes em comparação à base de 1GB no ambiente normalizado e 334 vezes no denormalizado, enquanto que as demais consultas escalaram em um intervalo de valores com menos discrepâncias, ficando entre 13 e 75, e 12 e 69. Os resultados do teste de força e vazão são apresentados na Tabela \ref{tab:forca_vazao_cold_30}.
-
-\begin{table}[htpb]
-        \centering
-        \caption{Valores do teste de força e vazão sob \textit{cold run} para 30GB}
-        \label{tab:forca_vazao_cold_30}
-        \begin{tabular}{|c|c|c|c|c|} 
-                \cline{2-5}
-                \multicolumn{1}{c|}{} & \multicolumn{2}{c|}{\textbf{Teste de Força} } & \multicolumn{2}{c|}{\textbf{Teste de Vazão} }  \\ 
-                \hline
-                 \textbf{SGBD}        & \textbf{MonetDB}  & \textbf{PostgreSQL}       & \textbf{MonetDB}  & \textbf{PostgreSQL}        \\ 
-                \hline
-                 \textbf{Snowflake}   & 2329.918          & 369.019                   & 112.572           & 220.005                    \\ 
-                \hline
-                 \textbf{Star}        & 1474.766          & 145.064                   & 165.419           & 120.578                    \\
-                \hline
-                \end{tabular}
-                \end{table}
 
 \begin{table}[t]
         \centering
@@ -408,6 +370,22 @@ Pela Tabela \ref{tab:queries_cold_30} pode-se verificar que no SGBD colunar o co
                 \end{tabular}
                 \end{table}
 
+\begin{table}[htpb]
+        \centering
+        \caption{Valores do teste de força e vazão sob \textit{cold run} para 30GB}
+        \label{tab:forca_vazao_cold_30}
+        \begin{tabular}{|c|c|c|c|c|} 
+                \cline{2-5}
+                \multicolumn{1}{c|}{} & \multicolumn{2}{c|}{\textbf{Teste de Força} } & \multicolumn{2}{c|}{\textbf{Teste de Vazão} }  \\ 
+                \hline
+                 \textbf{SGBD}        & \textbf{MonetDB}  & \textbf{PostgreSQL}       & \textbf{MonetDB}  & \textbf{PostgreSQL}        \\ 
+                \hline
+                 \textbf{Snowflake}   & 2329.918          & 369.019                   & 112.572           & 220.005                    \\ 
+                \hline
+                 \textbf{Star}        & 1474.766          & 145.064                   & 165.419           & 120.578                    \\
+                \hline
+                \end{tabular}
+                \end{table}
 
 \subsection{Desempenho Geral}
 
@@ -425,7 +403,7 @@ O comportamento do teste de força no banco MonetDB não segue uma queda conform
         \label{fig:power_cold}
 \end{figure*}
 
-O cálculo de desempenho final foi afetado por essa inflexão. Se analisar os resultados considerando os SGBD sob as modelagens \textit{snowflake} e \textit{star}, o MonetDB se destaca no resultado final, fazendo dele a melhor escolha entre os SGBD, como mostram os gráficos da Figuras \ref{fig:qph_snow_cold} e \ref{fig:qph_star_cold} e os ganhos obtidos por ele em relação ao PostgreSQL conforme a Tabela \ref{tab:ganho_monet_psql_cold}. Porém ao considerar os ambientes sob cada SGBD, a única conclusão coerente que se tem é de que o PostgreSQL é melhor em ambientes normalizados, como ilustra o gráfico da Figura \ref{fig:qph_psql_cold}, no qual conforme a base de dados aumenta o cálculo de desempenho é menor e sempre há ganhos do normalizado em relação ao denormalizado, sendo estes \textbf{42\%, 70\%} e \textbf{54\%} para 1GB, 10GB e 30GB, respectivamente.
+O cálculo de desempenho final foi afetado por essa inflexão. Se analisar os resultados considerando os SGBD sob as modelagens \textit{snowflake} e \textit{star}, o MonetDB se destaca no resultado final, fazendo dele a melhor escolha entre os SGBD, como mostram os gráficos da Figuras \ref{fig:qph_snow_cold} e \ref{fig:qph_star_cold} e os ganhos obtidos por ele em relação ao PostgreSQL conforme a Tabela \ref{tab:ganho_monet_psql_cold}. Porém ao considerar os ambientes sob cada SGBD, a única conclusão coerente que se tem é de que o PostgreSQL é melhor em ambientes normalizados, como ilustra os gráficos das Figuras \ref{fig:qph_monet_cold} e \ref{fig:fig:qph_psql_hot}, no qual conforme a base de dados aumenta o cálculo de desempenho é menor e sempre há ganhos do normalizado em relação ao denormalizado, sendo estes \textbf{42\%, 70\%} e \textbf{54\%} para 1GB, 10GB e 30GB, respectivamente.
 
 \begin{figure*}[htpb]
         \centering
@@ -456,7 +434,7 @@ O cálculo de desempenho final foi afetado por essa inflexão. Se analisar os re
         \label{fig:qph_sgbd_cold}
 \end{figure*}
 
-O MonetDB não segue uma lógica da qual se pode tirar alguma conclusão de acordo com a modelagem. Conforme o tamanho da base de dados aumenta o valor diminui assim como no PostgreSQL, porém entre as modelagens há uma inconsistência na comparação entre seus valores, visto que para 1GB o ambiente normalizado foi melhor com ganho de \textbf{5\%}, já para 10GB foi o denormalizado com \textbf{22\%} de ganho, e para 30GB o comportamento é como em 1GB com \textbf{4\%} de ganho do normalizado, como ilustra o gráfico da Figura \ref{fig:qph_monet_cold}. 
+O MonetDB não segue uma lógica da qual se pode tirar alguma conclusão de acordo com a modelagem. Conforme o tamanho da base de dados aumenta o valor diminui assim como no PostgreSQL, porém entre as modelagens há uma inconsistência na comparação entre seus valores, visto que para 1GB o ambiente normalizado foi melhor com ganho de \textbf{5\%}, já para 10GB foi o denormalizado com \textbf{22\%} de ganho, e para 30GB o comportamento é como em 1GB com \textbf{4\%} de ganho do normalizado. 
 
 % --------------------------------------------
 % HOT RUN
@@ -468,25 +446,6 @@ O segundo cenário de execução analisa os resultados de desempenho considerand
 \subsection{Base de Dados de 1GB}
 
 Na terceira execução de todas as consultas já se nota uma grande diferença nos valores do MonetDB, tanto no ambiente normalizado quanto no denormalizado. A primeira consulta já não é a mais lenta, e todas as demais têm valores similares considerando que a base de dados é pequena, como mostra a Tabela \ref{tab:queries_hot_1}. Percebe-se também que agora o ambiente denormalizado não é mais lento que o normalizado. Este resultado impacta nos valores de força, visto que pode-se analisar a partir da Tabela \ref{tab:forca_vazao_hot_1} que agora o ambiente \textit{star} tem valor superior ao \textit{snowflake} no MonetDB. Não apenas superior, os valores resultantes do teste de força possuem magnitude maior que os do cenário anterior devido a eficiência do processamento das consultas.
-
-% TABELA DE POWER E VAZÃO
-
-\begin{table}[htpb]
-        \centering
-        \caption{Valores do teste de força e vazão sob \textit{hot run} para 1GB}
-        \label{tab:forca_vazao_hot_1}
-        \begin{tabular}{|c|c|c|c|c|} 
-                \cline{2-5}
-                \multicolumn{1}{c|}{}         & \multicolumn{2}{c|}{\textbf{Teste de Força} } & \multicolumn{2}{c|}{\textbf{Teste de Vazão} }  \\ 
-                \hline
-                 \textbf{SGBD}                & \textbf{MonetDB}  & \textbf{PostgreSQL}       & \textbf{MonetDB}  & \textbf{PostgreSQL}        \\ 
-                \hline
-                 \textit{\textbf{Snowflake}}  & 14043.395         & 1222.570                  & 1622.929          & 958.028                    \\ 
-                \hline
-                 \textit{\textbf{Star}}       & 21811.705         & 659.758                   & 2468.020          & 637.310                    \\
-                \hline
-                \end{tabular}
-                \end{table}
 
 % TABELA DE TEMPO DE CONSULTAS E RF
 \begin{table}[t]
@@ -536,7 +495,26 @@ Na terceira execução de todas as consultas já se nota uma grande diferença n
                  \textbf{RF-2}        & 40.812            & 38.091                        & 20.260            & 20.575                    \\
                 \hline
                 \end{tabular}
-                \end{table}
+\end{table}
+
+% TABELA DE POWER E VAZÃO
+
+\begin{table}[htpb]
+        \centering
+        \caption{Valores do teste de força e vazão sob \textit{hot run} para 1GB}
+        \label{tab:forca_vazao_hot_1}
+        \begin{tabular}{|c|c|c|c|c|} 
+                \cline{2-5}
+                \multicolumn{1}{c|}{}         & \multicolumn{2}{c|}{\textbf{Teste de Força} } & \multicolumn{2}{c|}{\textbf{Teste de Vazão} }  \\ 
+                \hline
+                 \textbf{SGBD}                & \textbf{MonetDB}  & \textbf{PostgreSQL}       & \textbf{MonetDB}  & \textbf{PostgreSQL}        \\ 
+                \hline
+                 \textit{\textbf{Snowflake}}  & 14043.395         & 1222.570                  & 1622.929          & 958.028                    \\ 
+                \hline
+                 \textit{\textbf{Star}}       & 21811.705         & 659.758                   & 2468.020          & 637.310                    \\
+                \hline
+                \end{tabular}
+\end{table}
 
 
 % ---------------------------------
@@ -544,24 +522,7 @@ Na terceira execução de todas as consultas já se nota uma grande diferença n
 
 \subsection{Base de Dados de 10GB}
 
-Assim como a base de dados de 1GB, a de 10GB possui um comportamento que trazem resultados melhores que no cenário considerando \textit{cold run}, e novamente o MonetDB apresentou valores mais consistentes, e o ambiente denormalizado apresentou resultados melhores que o normalizado.
-
-\begin{table}[htpb]
-        \centering
-        \caption{Valores do teste de força e vazão sob \textit{hot run} para 10GB}
-        \label{tab:forca_vazao_hot_10}
-        \begin{tabular}{|c|c|c|c|c|} 
-                \cline{2-5}
-                \multicolumn{1}{c|}{}         & \multicolumn{2}{c|}{\textbf{Teste de Força} } & \multicolumn{2}{c|}{\textbf{Teste de Vazão} }  \\ 
-                \hline
-                 \textbf{SGBD}                & \textbf{MonetDB}  & \textbf{PostgreSQL}       & \textbf{MonetDB}  & \textbf{PostgreSQL}        \\ 
-                \hline
-                 \textit{\textbf{Snowflake}}  & 11861.997         & 870.994                   & 330.479           & 364.541                    \\ 
-                \hline
-                 \textit{\textbf{Star}}       & 17902.155         & 190.307                   & 583.560           & 149.455                    \\
-                \hline
-                \end{tabular}
-                \end{table}
+Assim como a base de dados de 1GB, a de 10GB possui um comportamento que trazem resultados melhores que no cenário considerando \textit{cold run}, e novamente o MonetDB apresentou valores mais consistentes, e o ambiente denormalizado apresentou resultados melhores que o normalizado, como mostram as Tabelas \ref{tab:queries_hot_10} e \ref{tab:forca_vazao_hot_10}.
 
 \begin{table}[t]
         \centering
@@ -612,26 +573,26 @@ Assim como a base de dados de 1GB, a de 10GB possui um comportamento que trazem 
                 \end{tabular}
                 \end{table}
 
-\subsection{Base de Dados de 30GB}
-
-Para a base de 30GB além de manter-se o comportamento das anteriores, percebe-se um distanciamento maior dos valores do MonetDB para o PostgreSQL em \textit{hot run}. Os valores da Tabela \ref{tab:queries_hot_30} mostram isso e a Tabela \ref{tab:forca_vazao_hot_30} apresenta os valores de força e vazão.
-
 \begin{table}[htpb]
         \centering
-        \caption{Valores do teste de força e vazão sob \textit{hot run} para 30GB}
-        \label{tab:forca_vazao_hot_30}
+        \caption{Valores do teste de força e vazão sob \textit{hot run} para 10GB}
+        \label{tab:forca_vazao_hot_10}
         \begin{tabular}{|c|c|c|c|c|} 
                 \cline{2-5}
                 \multicolumn{1}{c|}{}         & \multicolumn{2}{c|}{\textbf{Teste de Força} } & \multicolumn{2}{c|}{\textbf{Teste de Vazão} }  \\ 
                 \hline
                  \textbf{SGBD}                & \textbf{MonetDB}  & \textbf{PostgreSQL}       & \textbf{MonetDB}  & \textbf{PostgreSQL}        \\ 
                 \hline
-                 \textit{\textbf{Snowflake}}  & 5457.325          & 363.441                   & 112.572           & 220.005                    \\ 
+                 \textit{\textbf{Snowflake}}  & 11861.997         & 870.994                   & 330.479           & 364.541                    \\ 
                 \hline
-                 \textit{\textbf{Star}}       & 6873.122          & 149.514                   & 165.419           & 120.578                    \\
+                 \textit{\textbf{Star}}       & 17902.155         & 190.307                   & 583.560           & 149.455                    \\
                 \hline
                 \end{tabular}
                 \end{table}
+
+\subsection{Base de Dados de 30GB}
+
+Para a base de 30GB além de manter-se o comportamento das anteriores, percebe-se um distanciamento maior dos valores do MonetDB para o PostgreSQL em \textit{hot run}. Os valores da Tabela \ref{tab:queries_hot_30} mostram isso e a Tabela \ref{tab:forca_vazao_hot_30} apresenta os valores de força e vazão.
 
 \begin{table}[t]
         \centering
@@ -682,11 +643,27 @@ Para a base de 30GB além de manter-se o comportamento das anteriores, percebe-s
                 \end{tabular}
                 \end{table}
 
+\begin{table}[htpb]
+        \centering
+        \caption{Valores do teste de força e vazão sob \textit{hot run} para 30GB}
+        \label{tab:forca_vazao_hot_30}
+        \begin{tabular}{|c|c|c|c|c|} 
+                \cline{2-5}
+                \multicolumn{1}{c|}{}         & \multicolumn{2}{c|}{\textbf{Teste de Força} } & \multicolumn{2}{c|}{\textbf{Teste de Vazão} }  \\ 
+                \hline
+                        \textbf{SGBD}                & \textbf{MonetDB}  & \textbf{PostgreSQL}       & \textbf{MonetDB}  & \textbf{PostgreSQL}        \\ 
+                \hline
+                        \textit{\textbf{Snowflake}}  & 5457.325          & 363.441                   & 112.572           & 220.005                    \\ 
+                \hline
+                        \textit{\textbf{Star}}       & 6873.122          & 149.514                   & 165.419           & 120.578                    \\
+                \hline
+                \end{tabular}
+                \end{table}
 \subsection{Desempenho Geral}
 
 Ao contrário do cenário sob \textit{cold run}, utilizar o terceiro conjunto de consultas trouxe estabilidade nos valores das consultas do teste de força no MonetDB. Isso fez com que a inflexão que antes acontecia não acontecesse mais, podendo agora encontrar uma lógica na análise dos ambientes considerando o SGBD. As Figuras \ref{fig:power_snow_hot} e \ref{fig:power_star_hot} apresentam os gráficos do teste de força, agora apresentando queda nos valores conforme a base de dados aumenta.
 
-\begin{figure*}[htpb]
+\begin{figure*}[t]
         \centering
         \subfigure[]{\includegraphics[width=7.2cm]{power_snow_hot}\label{fig:power_snow_hot}}
         \subfigure[]{\includegraphics[width=7.2cm]{power_star_hot}\label{fig:power_star_hot}}
@@ -717,7 +694,7 @@ Pelo gráfico das Figuras \ref{fig:qph_snow_hot} e \ref{fig:qph_star_hot} perceb
         \end{tabular}
 \end{table}
     
-\begin{figure*}[htpb]
+\begin{figure*}[t]
         \centering
         \subfigure[]{\includegraphics[width=7.2cm]{qph_monet_hot}\label{fig:qph_monet_hot}}
         \subfigure[]{\includegraphics[width=7.2cm]{qph_psql_hot}\label{fig:qph_psql_hot}}
@@ -725,7 +702,7 @@ Pelo gráfico das Figuras \ref{fig:qph_snow_hot} e \ref{fig:qph_star_hot} perceb
         \label{fig:qph_sgbd_hot}
 \end{figure*}
 
-Os valores do SGBD PostgreSQL não tiveram mudanças drásticas se comparadas as execuções \textit{cold} e \textit{hot}, inclusive na base de dados 30GB sob a modelagem normalizada a primeira foi melhor que a segunda. A Tabela \ref{tab:ganho_postgresql_cold_hot} mostra a porcentagem de ganho e perdas entre os valores obtidos na terceira execução em relação à primeira execução para o PostgreSQL. Entretanto, os valores do MonetDB se alteraram de forma que houve impacto no resultado final tanto do teste de força como no cálculo final de \textit{benchmark}, como mostram os ganhos da \textit{hot run} em relação à \textit{cold run} na Tabela \ref{tab:ganho_monet_cold_hot}.
+Os valores do SGBD PostgreSQL não tiveram mudanças drásticas se comparadas as execuções \textit{cold} e \textit{hot} das bases de dados de 10GB e 30GB -- inclusive nesta sob a modelagem normalizada o desempenho em \textit{cold run} foi melhor que em \textit{hot run}. A Tabela \ref{tab:ganho_postgresql_cold_hot} mostra a porcentagem de ganho e perdas entre os valores obtidos na terceira execução em relação à primeira execução para o PostgreSQL. Entretanto, os valores do MonetDB se alteraram de forma que houve impacto no resultado final tanto do teste de força como no cálculo final de \textit{benchmark}, como mostram os ganhos da \textit{hot run} em relação à \textit{cold run} na Tabela \ref{tab:ganho_monet_cold_hot}.
 
 \begin{table}[htpb]
         \centering
@@ -755,15 +732,17 @@ Os valores do SGBD PostgreSQL não tiveram mudanças drásticas se comparadas as
 
 De acordo com a página oficial do MonetDB \cite{monetdb2017c}, este SGBD se destaca quando dados acessados pelo usuário podem ser mantidos na memória principal do servidor ou quando algumas colunas são solicitadas e são suficientes para manipular uma solicitação, como é o caso do ambiente analítico. Isso explica o porquê das consultas da primeira execução apresentarem desempenho inferior às da terceira execução. Na segunda e na terceira execução alguns dados das consultas já estão em \textit{cache}, assim o SGBD consegue recuperá-los mais rapidamente.
 
+O PostgreSQL, por outro lado, utiliza como \textit{cache} a configuração dos \texttt{shared\_buffers}. Ele corresponde a um vetor de blocos com 8KB, onde o SGBD procura por páginas já alocadas antes de verificar os dados em disco. Para lidar com varreduras sequenciais, são utilizados buffers com valor padrão de 256KB (32 blocos de 8KB) \cite{psqlcache2018r}. Conforme a base de dados aumenta, o ideal é modificar esse valor para que seja possível armazenar mais dados em \textit{cache}, geralmente 25\% da memória total do sistema operacional, porém não mais que 8GB \cite{psql2018conf}. Como esse valor padrão de 256KB não foi alterado, isso explica a variação pequena entre os resultados das bases de dados maiores.
+
 Dois exemplos que mostram a estabilidade nos valores alcançados pela \textit{cache} estão na primeira consulta (Q3) e na 11ª (Q14). No cenário de \textit{cold run} a primeira consulta sempre levava mais tempo que as demais e a Q14 demorava excessivamente conforme a base crescia, em detrimento das demais. Considerando este cenário uma justificativa a se utilizar seria a de que as consultas eram demoradas, porém, sob o cenário \textit{hot run} se vê que elas não apresentam o mesmo comportamento, tendo influência da memória \textit{cache}.
 
 \section{Execução com \textit{Drop Cache}}
 
-O último cenário consiste em, levando em consideração que o MonetDB sofre influência da memória \textit{cache}, executar as consultas de força três vezes como no cenário anterior, porém antes da terceira execução efetuar a limpeza na memória \textit{cache} do sistema. A intenção é averiguar se os resultados serão alterados ao mudar o estado da \textit{cache}.
+O último cenário consiste em, levando em consideração que o MonetDB sofre influência da memória \textit{cache}, executar as consultas de força três vezes como no cenário anterior, porém antes da terceira execução efetuar a limpeza na memória \textit{cache} do sistema operacional. A intenção é averiguar se os resultados serão alterados ao mudar o estado da \textit{cache}.
 
 \subsection{Base de Dados de 1GB}
 
-O primeiro detalhe que se nota de acordo com os valores de tempo totais, em segundos, de cada execução de consultas é que a segunda execução é sempre a mais rápida devido a alguns valores já estarem armazenados em \textit{cache}. Após ter limpado parte da \textit{cache}, a terceira execução já torna-se mais lenta que a segunda, porém não mais que a primeira, pois alguns valores ainda podem ter ficado armazenados na memória.
+O primeiro detalhe que se nota de acordo com os valores de tempo totais, em segundos, de cada execução de consultas é que a segunda execução é sempre a mais rápida devido a alguns valores já estarem armazenados em \textit{cache}, conforme mostra a Tabela \ref{tab:queries_cache_1}. Após ter limpado parte da \textit{cache}, a terceira execução já torna-se mais lenta que a segunda, porém não mais que a primeira, pois alguns valores ainda podem ter ficado armazenados na memória.
 
 \begin{table}[htpb]
         \centering
@@ -795,6 +774,33 @@ Dentre todas as consultas, a que mais sofreu impacto da oscilação da \textit{c
 \end{tabular}
 \end{table}
 
+As Tabelas \ref{tab:cache_monet_1} e \ref{tab:cache_psql_1} mostram os valores da memória \textit{cache} do sistema operacional durante a execução das consultas para o MonetDB e do PostgreSQL, respectivamente. São mostrados os valores antes da primeira execução, após a primeira e antes da segunda, após a segunda e antes da terceira, após realizar limpeza da \textit{cache} e por fim o valor após finalizar as execuções.
+
+\begin{table}[htpb]
+        \centering
+        \caption{Valores de \textit{cache} do sistema operacional durante a execução do MonetDB para base de dados de 1GB}
+        \label{tab:cache_monet_1}
+        \begin{tabular}{c|c|c|c|c|c|}
+        \cline{2-6}
+        & \textbf{\begin{tabular}[c]{@{}c@{}}Antes da 1ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 1ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 2ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após Limpar \\ Cache\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 3ª \\ Execução\end{tabular}} \\ \hline
+        \multicolumn{1}{|c|}{\textit{\textbf{Snowflake}}} & 70029               & 802988                   & 803468                  & 514004     & 791000                 \\ \hline
+        \multicolumn{1}{|c|}{\textit{\textbf{Star}}}      & 6940112             & 7689324                  & 7690476                 & 4078724    & 4736752                \\ \hline
+        \end{tabular}
+\end{table}
+
+\begin{table}[htpb]
+        \centering
+        \caption{Valores de \textit{cache} do sistema operacional durante a execução do PostgreSQL para base de dados de 1GB}
+        \label{tab:cache_psql_1}
+        \begin{tabular}{c|c|c|c|c|c|}
+        \cline{2-6}
+        & \textbf{\begin{tabular}[c]{@{}c@{}}Antes da 1ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 1ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 2ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após Limpar \\ Cache\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 3ª \\ Execução\end{tabular}} \\ \hline
+        \multicolumn{1}{|c|}{\textit{\textbf{Snowflake}}} & 10225788	& 11872876	& 11872852	& 511236	& 2133028
+        \\ \hline
+        \multicolumn{1}{|c|}{\textit{\textbf{Star}}}      & 15037328	& 15480228	& 15481116	& 183448	& 2826952
+        \\ \hline
+        \end{tabular}
+\end{table}
 
 \subsection{Base de Dados de 10GB}
 
@@ -831,6 +837,36 @@ Nesta base já nota-se de forma acentual a influência da memória na primeira c
         \end{tabular}
 \end{table}
 
+As Tabelas \ref{tab:cache_monet_10} e \ref{tab:cache_psql_10} mostram os valores de \textit{cache} durante as consultas dos SGBD para a base de dados de 10GB.
+
+\begin{table}[htpb]
+        \centering
+        \caption{Valores de \textit{cache} do sistema operacional durante a execução do MonetDB para base de dados de 10GB}
+        \label{tab:cache_monet_10}
+        \begin{tabular}{c|c|c|c|c|c|}
+        \cline{2-6}
+        & \textbf{\begin{tabular}[c]{@{}c@{}}Antes da 1ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 1ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 2ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após Limpar \\ Cache\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 3ª \\ Execução\end{tabular}} \\ \hline
+        \multicolumn{1}{|c|}{\textit{\textbf{Snowflake}}} & 791000	& 6366624	& 6387800	& 3685188	& 6213740      \\    \hline
+        \multicolumn{1}{|c|}{\textit{\textbf{Star}}}      & 4736752	& 11399260	& 10385332	& 3576824	& 9152120      \\  \hline
+        \end{tabular}
+\end{table}
+
+\begin{table}[htpb]
+        \centering
+        \caption{Valores de \textit{cache} do sistema operacional durante a execução do PostgreSQL para base de dados de 10GB}
+        \label{tab:cache_psql_10}
+        \begin{tabular}{c|c|c|c|c|c|}
+        \cline{2-6}
+        & \textbf{\begin{tabular}[c]{@{}c@{}}Antes da 1ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 1ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 2ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após Limpar \\ Cache\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 3ª \\ Execução\end{tabular}} \\ \hline
+        \multicolumn{1}{|c|}{\textit{\textbf{Snowflake}}} & 2133028	& 12346864	& 12150576	& 182032	& 13263164
+
+        \\ \hline
+        \multicolumn{1}{|c|}{\textit{\textbf{Star}}}      & 2826896	& 15058928	& 15153916	& 182628	& 15420316
+
+        \\ \hline
+        \end{tabular}
+\end{table}
+
 \subsection{Base de Dados de 30GB}
 
 Assim como as anteriores, a Tabela \ref{tab:queries_cache_30} mostra que a terceira execução é afetada pela \textit{cache}, bem como a primeira consulta, cujos valores são mostrados na Tabela \ref{tab:q1_cache_30}.
@@ -860,6 +896,38 @@ Assim como as anteriores, a Tabela \ref{tab:queries_cache_30} mostra que a terce
         PostgreSQL & 381.837     & 353.038     & 361.421     &                                     \\ \hline
         MonetDB    & 517.566     & 146.583     & 465.564     & \multirow{2}{*}{\textit{Star}}      \\ \cline{1-4}
         PostgreSQL & 586.428     & 570.704     & 571.626     &                                     \\ \hline
+        \end{tabular}
+\end{table}
+
+As Tabelas \ref{tab:cache_monet_30} e \ref{tab:cache_psql_30} mostram os valores de \textit{cache} durante as consultas dos SGBD para a base de dados de 30GB.
+
+\begin{table}[htpb]
+        \centering
+        \caption{Valores de \textit{cache} do sistema operacional durante a execução do MonetDB para base de dados de 30GB}
+        \label{tab:cache_monet_30}
+        \begin{tabular}{c|c|c|c|c|c|}
+        \cline{2-6}
+        & \textbf{\begin{tabular}[c]{@{}c@{}}Antes da 1ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 1ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 2ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após Limpar \\ Cache\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 3ª \\ Execução\end{tabular}} \\ \hline
+        \multicolumn{1}{|c|}{\textit{\textbf{Snowflake}}} & 6214112	& 8495460	& 8866544	& 3892824	& 6940108    \\     \hline
+        \multicolumn{1}{|c|}{\textit{\textbf{Star}}}      & 9152508	& 11193612	& 7962648	& 449280	& 10225872     \\     \hline
+        \end{tabular}
+\end{table}
+
+\begin{table}[htpb]
+        \centering
+        \caption{Valores de \textit{cache} do sistema operacional durante a execução do PostgreSQL para base de dados de 30GB}
+        \label{tab:cache_psql_30}
+        \begin{tabular}{c|c|c|c|c|c|}
+        \cline{2-6}
+        & \textbf{\begin{tabular}[c]{@{}c@{}}Antes da 1ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 1ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 2ª \\ Execução\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após Limpar \\ Cache\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Após 3ª \\ Execução\end{tabular}} \\ \hline
+        \multicolumn{1}{|c|}{\textit{\textbf{Snowflake}}} & 13844456	& 14718840	& 15093100	& 181636	& 15037352
+
+
+        \\ \hline
+        \multicolumn{1}{|c|}{\textit{\textbf{Star}}}      & 15420712	& 12669240	& 11621556	& 11973800	& 14680412
+
+
+        \\ \hline
         \end{tabular}
 \end{table}
 

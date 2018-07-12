@@ -3,7 +3,7 @@
 
 A essência de um \textit{benchmark} é identificar e definir os melhores padrões de excelência para produtos, serviços e/ou processos, e então realizar aperfeiçoamentos de forma que esses padrões sejam alcançados \cite{bhutta1999benchmarking}. De maneira geral, \textit{benchmarks} se consolidaram como uma ferramenta para melhorar o desempenho de organizações e a competitividade nos negócios \cite{kyro2003revising}.
 
-O TPC \textit{\textit{Benchmark}} H é um padrão de decisão de negócio internacionalmente aceito para comparações de desempenho entre SGBD utilizados em ambientes OLAP, criado pela organização TPC. De acordo com a página oficial do TPC \cite{tpc2017page}, esta organização sem fins lucrativos foi fundada com o objetivo de definir padrões para \textit{benchmarks} no processamento de transações e bancos de dados em geral. Ela é responsável pelo desenvolvimento e atualização destes \textit{benchmarks}, bem como pela divulgação dos resultados apresentados por eles. Entre os sócios\footnote{Lista de sócios acessada em Junho de 2017 (http://www.tpc.org/information/who/whoweare.asp)} responsáveis por isto estão as empresas Dell, Hewlet Packard, IBM, Microsoft, Oracle, Intel e Cisco.
+O TPC \textit{\textit{Benchmark}} H é um padrão de decisão de negócio internacionalmente aceito para comparações de desempenho entre SGBD utilizados em ambientes OLAP, criado pela organização TPC. De acordo com a página oficial do TPC \cite{tpc2017page}, esta organização sem fins lucrativos foi fundada com o objetivo de definir padrões para \textit{benchmarks} no processamento de transações e bancos de dados em geral. Ela é responsável pelo desenvolvimento e atualização destes \textit{benchmarks}, bem como pela divulgação dos resultados apresentados por eles. Entre os sócios\footnote{Lista de sócios acessada em Junho de 2017 (http://www.tpc.org/information/who/whoweare.asp)} do TPC estão as empresas Dell, Hewlet Packard, IBM, Microsoft, Oracle, Intel e Cisco.
 
 Alguns trabalhos já foram realizados utilizando o TPC-H \cite{ngamsuriyaroj2010performance, nadee2012performance, thanopoulou2012benchmarking, barata2014ycsb, rutishauser2012tpc, soares2012avaliaccao}. Ngamsuriyaroj e Pornpattana \cite{ngamsuriyaroj2010performance} aplicam as consultas do TPC-H no MySQL Cluster a fim de avaliar seu desempenho. O trabalho de Nadee e Ngamsuriyaroj \cite{nadee2012performance} tem uma proposta parecida com o primeiro \cite{ngamsuriyaroj2010performance}, porém, o intuito é avaliar o desempenho de um \textit{cluster} Java EE baseado nas características das consultas do TPC-H. Thanopoulou et al. \cite{thanopoulou2012benchmarking} foca em aplicar o TPC-H em bancos de dados de pequenas empresas que não podem arcar com configurações de \textit{hardware} melhores para administrar um banco de dados. Barata, Bernardino e Furtado \cite{barata2014ycsb} fazem uma descrição teórica de dois \textit{benchmarks}, o YCSB (\textit{Yahoo Cloud Serving Benchmark}), voltado para a área de \textit{Big Data}, e o TPC-H. Rutishauser e Noureldin \cite{rutishauser2012tpc} realizam uma análise comparativa entre PostgreSQL e MongoDB aplicando o TPC-H. O primeiro é um SGBD relacional clássico, e o outro um SGBD NoSQL com algumas consultas do TPC-H adaptadas. Por fim, Soares \cite{soares2012avaliaccao} compara SGBD relacionais e colunares executando um teste de força sob o \textit{Star Schema Benchmark} simulando bases de dados de 1GB, 2GB, 5GB e 10GB.
 
@@ -20,7 +20,7 @@ Com o QGen é possível gerar as consultas de acordo com a especificação do TP
 \section{Metodologia}
 \label{metodologia}
 
-Após a geração dos arquivos é criado em cada SGBD um esquema correspondente às classes utilizadas, tanto para o ambiente normalizado quanto para o denormalizado. Cada SGBD é então executado sobre os dois ambientes propostos. Em cada ambiente será executado o teste de desempenho, que consiste de duas execuções: o teste de força (do inglês \textit{Power Test}) e o teste de vazão (do inglês \textit{Throughput Test}), descritos nas Subseções \ref{power_test} e \ref{through_test}, respectivamente. O tempo resultante de cada etapa é utilizado para calcular o desempenho final do SGBD, medido em \textit{QphH@Size} -- quantidade de consultas executadas por hora, dada uma classe de tamanho de banco de dados. Uma execução é composta por:
+Após a geração dos arquivos é criado em cada SGBD um esquema correspondente às classes utilizadas, tanto para o ambiente normalizado quanto para o denormalizado. Cada SGBD é então executado sobre os dois ambientes propostos. Em cada ambiente será executado o teste de desempenho, que consiste de duas execuções: o teste de força (do inglês \textit{Power Test}) e o teste de vazão (do inglês \textit{Throughput Test}), descritos nas Subseções \ref{power_test} e \ref{through_test}, respectivamente. O tempo resultante de cada etapa é utilizado para calcular o desempenho final do SGBD, medido em \textit{QphH@Size} -- quantidade de consultas executadas por hora, dada uma classe de tamanho de banco de dados. Quanto maior o valor da unidade de medida, melhor o desempenho do SGBD. Uma execução é composta por:
 
 \begin{itemize}
 	\item \textit{SF}, que representa a classe do banco de dados.
@@ -30,7 +30,7 @@ Após a geração dos arquivos é criado em cada SGBD um esquema correspondente 
 	\item \textit{$T_{s}$}, que representa o tempo, em segundos, resultante do processo inteiro.
 	\item \textit{$RF_{j}$}, que representa a Função de Atualização (do inglês \textit{Refresh Function}, ou RF), onde:
 		\begin{itemize}
-		    \item RF-1: inserção de novos registros. O número de registros inseridos deve ser igual para o número de registros removidos pela RF-2. O pseudocódigo para a RF-1 é como:
+		    \item RF-1: inserção de novos registros. O número de registros inseridos deve ser igual para o número de registros removidos pela RF-2. O pseudocódigo para a RF-1 é:
 		
 \begin{verbatim}
     loop (SF * 1500) times
@@ -40,7 +40,7 @@ Após a geração dos arquivos é criado em cada SGBD um esquema correspondente 
         end loop
     end loop
 \end{verbatim}
-		    \item RF-2: remoção de registros antigos. O pseudocódigo para a RF-1 é como:
+		    \item RF-2: remoção de registros antigos. O pseudocódigo para a RF-1 é:
 		
 \begin{verbatim}
     loop (SF * 1500) times
@@ -63,7 +63,7 @@ O teste de força objetiva medir a execução de uma dada consulta do sistema co
 	\item Execução da RF-2.
 \end{itemize}
 
-Será armazenado ao fim do teste o tempo em segundos resultante de cada consulta, bem como o tempo de execução de cada função. Este resultado será utilizado na Equação \ref{eq:1}, onde \textit{Size} representa o SF.
+Será armazenado ao fim do teste o tempo em segundos resultante de cada consulta, bem como o tempo de execução de cada função. Este resultado será utilizado na Equação \ref{eq:1}, que representa a média geométrica entre as 22 consultas e as duas funções de atualização, ou seja, a 24ª raiz do produto de todos os termos. \textit{Size} representa o SF utilizado.
 
 \begin{myequation}%
 \label{eq:1}
@@ -137,7 +137,8 @@ Os tipos de dados atribuídos aos atributos de uma entidade podem ser do tipo id
 
 \section{Ambiente Denormalizado}
 
-As modificações no modelo do ambiente \textit{snowflake} se fundamentaram na criação de um modelo parecido com o apresentado pela modelagem \textit{star}, com uma Tabela Fato central descrita por Tabelas Dimensão. Também procurou-se eliminar quaisquer tabelas cujos atributos sejam frequentemente utilizados em operações de junção, alguns característicos de um modelo com Tabelas Subdimensão, e que possam ser incluídos nas tabelas que possuam relacionamento com eles. O esquema final do modelo \textit{star} é mostrado na Figura \ref{fig:star}.
+As modificações no modelo do ambiente \textit{snowflake} se fundamentaram na criação de um modelo parecido com o apresentado pela modelagem \textit{star}, com uma Tabela Fato central descrita por Tabelas Dimensão. Vale frisar que as modelagens denormalizadas em empresas variam entre um modelo \textit{star} e um modelo que pode utilizar apenas uma tabela contendo todos os atributos da empresa, conforme decisão de projeto.
+Também procurou-se eliminar quaisquer tabelas cujos atributos sejam frequentemente utilizados em operações de junção, alguns característicos de um modelo com Tabelas Subdimensão, e que possam ser incluídos nas tabelas que possuam relacionamento com eles. O esquema final do modelo \textit{star} é mostrado na Figura \ref{fig:star}.
 
 \begin{figure*}[h]
 	\centering

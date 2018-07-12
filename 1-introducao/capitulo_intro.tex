@@ -24,8 +24,7 @@ e proteção de um banco de dados por um longo período; e também atuam no proc
 a escolha do SGBD no processo de desenvolvimento de um ambiente de análise para organizações com grande quantidade de dados e que utilizam ferramentas OLAP 
 como auxílio na tomada de decisões é importante. 
 
-Duas classes de SGBD podem ser utilizadas para realizar o gerenciamento de um DW: SGBD relacionais tradicionais orientados à linha (tupla) e uma nova abordagem de SGBD 
-NoSQL que são orientados à coluna, que fornecem um melhor desempenho à recuperação de dados \cite{good2017column}. 
+Duas classes de SGBD podem ser utilizadas para realizar o gerenciamento de um DW: SGBD relacionais tradicionais orientados à linha (tupla) e uma nova abordagem de SGBD que são orientados à coluna, que fornecem um melhor desempenho à recuperação de dados \cite{good2017column}. 
 Dada a importância na escolha do SGBD e as diferentes soluções apresentadas por cada um, torna-se útil o uso de um 
 \textit{benchmark}\footnote{Ferramentas utilizadas para medir e validar o desempenho de alguma tecnologia sob condições de avaliação \cite{bouckaert2010benchmarking}} 
 para a realização de uma análise entre os SGBD. Existe uma organização sem fins lucrativos fundada com o objetivo de definir padrões para avaliar o 
@@ -34,9 +33,7 @@ Esta organização é responsável pela criação de um \textit{benchmark} volta
 
 Para refletir a realidade de uma empresa, o TPC-H propõe um ambiente de análise normalizado. Segundo Bax e Souza \cite{bax2003modelagem} 
 existe uma discussão sobre a normalização e a denormalização dos dados de um DW. Algumas empresas utilizam um modelo normalizado e têm como 
-justificativa a flexibilidade e a facilidade em situações de manutenção do DW. Por outro lado, existem empresas que utilizam modelos denormalizados 
-e têm como justificativa o ganho de desempenho nas consultas, visto que um modelo denormalizado tende a diminuir o número de tabelas e, por consequência, 
-as operações de junção entre tabelas. 
+justificativa a flexibilidade e a facilidade em situações de manutenção do DW, apesar do aumento na complexidade das consultas. Por outro lado, existem empresas que utilizam modelos denormalizados e têm como justificativa o ganho de desempenho nas consultas, visto que um modelo denormalizado tende a diminuir o número de tabelas e, por consequência, as operações de junção entre tabelas. 
 
 O objetivo deste trabalho é a realização de um estudo comparativo entre os SGBD PostgreSQL e MonetDB, o primeiro relacional orientado à linha e o segundo orientado à coluna, 
 como gerenciadores de DWs em ambientes OLAP. A comparação será realizada utilizando-se o \textit{benchmark} TPC-H em sua proposta original, um modelo de banco normalizado; 
@@ -51,7 +48,7 @@ ser escritas de acordo com as alterações efetuadas. E por fim a aplicação do
 
 A organização do documento segue da seguinte forma: 
 
-O Capítulo 2 apresenta detalhes sobre recuperação de informações, explicando os conceitos de \textit{Data Warehouse}, ambientes OLAP e a conexão entre ambos, bem como a forma de gerenciamento do DW através de SGBD. Assim é apresentada uma descrição da motivação no uso de SGBD como gerenciadores de DWs, assim como a descrição do modelo relacional e suas limitações. A partir destas limitações é descrito o modelo de SGBD NoSQL, com detalhes de como e porquê surgiram, incluindo a descrição do modelo colunar de banco de dados.
+O Capítulo 2 apresenta detalhes sobre recuperação de informações, explicando os conceitos de \textit{Data Warehouse}, ambientes OLAP e a conexão entre ambos, bem como a forma de gerenciamento do DW através de SGBD. Assim é apresentada uma descrição da motivação no uso de SGBD como gerenciadores de DWs, assim como a descrição do modelo relacional e suas limitações. A partir destas limitações é descrito o modelo de SGBD colunar com suas principais características.
 
 No Capítulo 3 é detalhado o \textit{benchmark} TPC-H, abrangendo informações sobre o ambiente normalizado proposto pelo próprio \textit{benchmark}, bem como sobre o ambiente denormalizado proposto neste trabalho. É também apresentada a metodologia utilizada para medição e análise do desempenho dos SGBD.
 

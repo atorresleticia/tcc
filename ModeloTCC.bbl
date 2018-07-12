@@ -144,95 +144,6 @@ Acessado em: 20 de maio de 2018.
 Dispon{\'\i}vel em:
   $<$https://www.educative.io/collection/page/5668639101419520/5649050225344512\\/5146118144917504$>$.}
 
-\bibitem{chang2008bigtable}
-\abntrefinfo{Chang et al.}{CHANG et al.}{2008}
-{CHANG, F. et al. Bigtable: A distributed storage system for structured data.
-\emph{ACM Transactions on Computer Systems (TOCS)}, ACM, v.~26, n.~2, p.~4,
-  2008.}
-
-\bibitem{decandia2007dynamo}
-\abntrefinfo{DeCandia et al.}{DECANDIA et al.}{2007}
-{DECANDIA, G. et al. Dynamo: amazon's highly available key-value store. In:
-  ACM. \emph{ACM SIGOPS operating systems review}. [S.l.], 2007. v.~41, n.~6,
-  p. 205--220.}
-
-\bibitem{neo2018nosql}
-\abntrefinfo{The\ldots}{THE\ldots}{2018}
-{THE Neo4j Graph Plataform - The \#1 Platform for Connected Data. 2018.
-Acessado em: 20 de maio de 2018.
-Dispon{\'\i}vel em: $<$https://neo4j.com/$>$.}
-
-\bibitem{voldemort2018nosql}
-\abntrefinfo{Project\ldots}{PROJECT\ldots}{2018}
-{PROJECT Voldemort: A distributed database. 2018.
-Acessado em: 20 de maio de 2018.
-Dispon{\'\i}vel em: $<$https://www.project-voldemort.com/voldemort/$>$.}
-
-\bibitem{amazon2018nosql}
-\abntrefinfo{Amazon\ldots}{AMAZON\ldots}{2018}
-{AMAZON DynamoDB - NoSQL Database Service. 2018.
-Acessado em: 20 de maio de 2018.
-Dispon{\'\i}vel em: $<$https://aws.amazon.com/dynamodb/$>$.}
-
-\bibitem{riak2018nosql}
-\abntrefinfo{Riak}{RIAK}{2018}
-{RIAK. 2018.
-Acessado em: 20 de maio de 2018.
-Dispon{\'\i}vel em: $<$http://basho.com/products/$>$.}
-
-\bibitem{redis2018nosql}
-\abntrefinfo{Redis}{REDIS}{2018}
-{REDIS. 2018.
-Acessado em: 20 de maio de 2018.
-Dispon{\'\i}vel em: $<$https://redis.io/$>$.}
-
-\bibitem{mongo2018nosql}
-\abntrefinfo{MongoDB\ldots}{MONGODB\ldots}{2018}
-{MONGODB for Giant Ideas. 2018.
-Acessado em: 20 de maio de 2018.
-Dispon{\'\i}vel em: $<$https://www.mongodb.com/$>$.}
-
-\bibitem{couch2018nosql}
-\abntrefinfo{Apache\ldots}{APACHE\ldots}{2018}
-{APACHE CouchDB. 2018.
-Acessado em: 20 de maio de 2018.
-Dispon{\'\i}vel em: $<$http://couchdb.apache.org/$>$.}
-
-\bibitem{monetdb2017c}
-\abntrefinfo{MonetDB\ldots}{MONETDB\ldots}{2017}
-{MONETDB -- The column-store pioneer. 2017.
-Acessado em: 20 de agosto de 2017.
-Dispon{\'\i}vel em: $<$https://www.monetdb.org/Home$>$.}
-
-\bibitem{cstore2018nosql}
-\abntrefinfo{C-Store\ldots}{C-STORE\ldots}{2018}
-{C-STORE: A Column-Oriented DBMS. 2018.
-Acessado em: 20 de maio de 2018.
-Dispon{\'\i}vel em: $<$http://db.lcs.mit.edu/projects/cstore/$>$.}
-
-\bibitem{google2018nosql}
-\abntrefinfo{BigTable\ldots}{BIGTABLE\ldots}{2018}
-{BIGTABLE - Scalable NoSQL Database Service. 2018.
-Acessado em: 20 de maio de 2018.
-Dispon{\'\i}vel em: $<$https://cloud.google.com/bigtable/$>$.}
-
-\bibitem{cassandra2018nosql}
-\abntrefinfo{Apache\ldots}{APACHE\ldots}{2018}
-{APACHE Cassandra. 2018.
-Acessado em: 20 de maio de 2018.
-Dispon{\'\i}vel em: $<$http://cassandra.apache.org/$>$.}
-
-\bibitem{brewer2000towards}
-\abntrefinfo{Brewer}{BREWER}{2000}
-{BREWER, E.~A. Towards robust distributed systems. In:  \emph{PODC}. [S.l.:
-  s.n.], 2000. v.~7.}
-
-\bibitem{gilbert2002brewer}
-\abntrefinfo{Gilbert e Lynch}{GILBERT; LYNCH}{2002}
-{GILBERT, S.; LYNCH, N. Brewer's conjecture and the feasibility of consistent,
-  available, partition-tolerant web services.
-\emph{Acm Sigact News}, ACM, v.~33, n.~2, p. 51--59, 2002.}
-
 \bibitem{khoshafian1987query}
 \abntrefinfo{Khoshafian et al.}{KHOSHAFIAN et al.}{1987}
 {KHOSHAFIAN, S. et al. A query processing strategy for the decomposed storage
@@ -300,6 +211,30 @@ Tese (Doutorado) --- Massachusetts Institute of Technology, 2008.}
   SIGMOD international conference on Management of data}. [S.l.], 2006. p.
   671--682.}
 
+\bibitem{monetdb2017c}
+\abntrefinfo{MonetDB\ldots}{MONETDB\ldots}{2017}
+{MONETDB -- The column-store pioneer. 2017.
+Acessado em: 20 de agosto de 2017.
+Dispon{\'\i}vel em: $<$https://www.monetdb.org/Home$>$.}
+
+\bibitem{cstore2018nosql}
+\abntrefinfo{C-Store\ldots}{C-STORE\ldots}{2018}
+{C-STORE: A Column-Oriented DBMS. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$http://db.lcs.mit.edu/projects/cstore/$>$.}
+
+\bibitem{vertica2017c}
+\abntrefinfo{Vertica}{VERTICA}{2017}
+{VERTICA. 2017.
+Acessado em: 20 de agosto de 2017.
+Dispon{\'\i}vel em: $<$https://www.vertica.com/$>$.}
+
+\bibitem{lucid2018column}
+\abntrefinfo{LucidDB\ldots}{LUCIDDB\ldots}{2018}
+{LUCIDDB Home Page. 2018.
+Acessado em: 01 de julho de 2018.
+Dispon{\'\i}vel em: $<$http://luciddb.sourceforge.net/$>$.}
+
 \bibitem{bhutta1999benchmarking}
 \abntrefinfo{Bhutta e Huq}{BHUTTA; HUQ}{1999}
 {BHUTTA, K.~S.; HUQ, F. Benchmarking--best practices: an integrated approach.
@@ -346,9 +281,11 @@ Feb, 2012.}
 
 \bibitem{soares2012avaliaccao}
 \abntrefinfo{Soares}{SOARES}{2012}
-{SOARES, B.~E. Uma avaliação experimental de desempenho entre sistemas
-  gerenciadores de bancos de dados colunares e relacionais.
-2012.}
+{SOARES, B.~E.
+\emph{Uma Avaliação Experimental de Desempenho entre Sistemas Gerenciadores
+  de Bancos de Dados Colunares e Relacionais}.
+Disserta��o (Monografia) --- Universidade Estadual do Oeste do Paraná,
+  2012.}
 
 \bibitem{tpc2017specs}
 \abntrefinfo{Transaction Processing Performance Council}{TRANSACTION PROCESSING
@@ -364,6 +301,19 @@ San Francisco, 2017. Acessado em: 12 de maio de 2017. Dispon{\'\i}vel em:
   in database performance testing.
 2018.}
 
+\bibitem{psqlcache2018r}
+\abntrefinfo{Understanding\ldots}{UNDERSTANDING\ldots}{2018}
+{UNDERSTANDING caching in Postgres - An in-depth guide. 2018.
+Acessado em: 05 de julho de 2018.
+Dispon{\'\i}vel em:
+  $<$https://madusudanan.com/blog/understanding-postgres-caching-in-depth/$>$.}
+
+\bibitem{psql2018conf}
+\abntrefinfo{Typical\ldots}{TYPICAL\ldots}{2018}
+{TYPICAL changes to postgresql.conf for large database installations. 2018.
+Acessado em: 05 de julho de 2018.
+Dispon{\'\i}vel em: $<$https://goo.gl/iEYUBu$>$.}
+
 \bibitem{tpc2018resultados}
 \abntrefinfo{Transaction Processing Performance Council}{TRANSACTION PROCESSING
   PERFORMANCE COUNCIL}{2018}
@@ -372,5 +322,17 @@ San Francisco, 2017. Acessado em: 12 de maio de 2017. Dispon{\'\i}vel em:
 Acessado em: 14 de junho de 2018.
 Dispon{\'\i}vel em:
   $<$http://www.tpc.org/tpch/results/tpch\_perf\_results.asp$>$.}
+
+\bibitem{cassandra2018nosql}
+\abntrefinfo{Apache\ldots}{APACHE\ldots}{2018}
+{APACHE Cassandra. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$http://cassandra.apache.org/$>$.}
+
+\bibitem{mongo2018nosql}
+\abntrefinfo{MongoDB\ldots}{MONGODB\ldots}{2018}
+{MONGODB for Giant Ideas. 2018.
+Acessado em: 20 de maio de 2018.
+Dispon{\'\i}vel em: $<$https://www.mongodb.com/$>$.}
 
 \end{thebibliography}
