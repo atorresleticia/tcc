@@ -20,9 +20,10 @@ O gerenciamento dos SGBD foi realizado por meio do \textit{driver} JDBC
 disponibilizado nas páginas oficiais do PostgreSQL e do MonetDB. Seu uso se deu 
 devido à simplificação no desenvolvimento de aplicações, por dar suporte a 
 diferentes SGBD e possuir boa documentação e tutoriais. Na análise de tempo 
-foi considerada a latência da Máquina Virtual Java (JVM), assim incluindo essa 
-latência no tempo total. As versões dos SGBD utilizadas 
-foram o PostgreSQL 9.6 e o MonetDB 11.29.3 e foram instalados no servidor do laboratório GIA (Grupo de Inteligência Aplicada), operando sob o 
+foi considerada a latência da Máquina Virtual Java (JVM), assim o tempo total 
+das consultas corresponde ao tempo de execução pelo SGBD adicionado 
+do tempo de resposta da JVM. As versões dos SGBD utilizadas 
+foram o PostgreSQL 9.6 e o MonetDB 11.29.3 e foram instalados no servidor do laboratório GIA (Grupo de Pesquisa em Inteligência Aplicada), operando sob o 
 sistema operacional Ubuntu Linux 16.04 LTS, com 16GB de RAM e dois 
 processadores Intel Xeon CPU E5620 2.40GHz.
 
@@ -80,8 +81,12 @@ o armazenamento em cache.
 Para averiguar se todas as 22 consultas do TPC-H executam de forma correta e em tempo hábil, principalmente 
 atentando-se ao fato de que no ambiente denormalizado elas foram modificadas, foi realizada uma execução 
 prévia de cada uma, sob a menor base de dados, utilizando o JDBC. Dessa execução, foram eliminadas as consultas 
-Q1, Q2, Q4, Q15, Q17, Q20 e Q21 por terem demorado horas no ambiente denormalizado -- e algumas tendo a execução 
-cancelada antes -- enquanto que as demais levaram apenas alguns segundos para executar. Essa mudança no número 
+Q2, Q4, Q15, Q17, Q20 e Q21 por terem demorado horas para executar -- e algumas tendo a execução 
+cancelada antes -- enquanto que as demais levaram apenas alguns segundos para tal. As consultas Q2, Q15 e Q17 demoraram 
+na modelagem denormalizada do PostgreSQL e a Q20 em sua modelagem normalizada; e as consultas Q4 e Q21 na modelagem denormalizada do MonetDB. A consulta 
+Q1 também foi retirada do experimento por resultar em \textit{overflow} de cálculo na modelagem normalizada do MonetDB.
+
+Essa mudança no número 
 de consultas fez com que as equações originais fossem adaptadas para a nova quantidade, 15. Tem-se neste caso a 17ª raiz do produto dos termos no teste de força conforme a Equação \ref{eq:1-2}.
 
 \begin{myequation}%
@@ -249,7 +254,7 @@ O número de registros das tabelas \textit{supplier, customer, part, partsupp} e
 
 Nesta execução fica evidente a diferença de tempo da primeira consulta para as demais no SGBD colunar. Tomando a segunda mais lenta no MonetDB normalizado e denormalizado (Q13), a Q3 é 6.3 vezes no primeiro ambiente, e quase quatro vezes no segundo, mais demorada. Ainda, o ambiente denormalizado continua tendo desempenho pior que o normalizado no MonetDB, como é possível verificar na Tabela \ref{tab:queries_cold_10}. A Tabela \ref{tab:forca_vazao_cold_10} continua apresentando a mesma lógica que a Tabela \ref{tab:forca_vazao_cold_1} nos resultados.
 
-\begin{table}[htpb]
+\begin{table}[t]
         \centering
         \caption{Tempo em segundos de todas as consultas do teste de força e funções de atualização sob \textit{cold run} para 10GB}
         \label{tab:queries_cold_10}
@@ -403,7 +408,7 @@ O comportamento do teste de força no banco MonetDB não segue uma queda conform
         \label{fig:power_cold}
 \end{figure*}
 
-O cálculo de desempenho final foi afetado por essa inflexão. Se analisar os resultados considerando os SGBD sob as modelagens \textit{snowflake} e \textit{star}, o MonetDB se destaca no resultado final, fazendo dele a melhor escolha entre os SGBD, como mostram os gráficos da Figuras \ref{fig:qph_snow_cold} e \ref{fig:qph_star_cold} e os ganhos obtidos por ele em relação ao PostgreSQL conforme a Tabela \ref{tab:ganho_monet_psql_cold}. Porém ao considerar os ambientes sob cada SGBD, a única conclusão coerente que se tem é de que o PostgreSQL é melhor em ambientes normalizados, como ilustra os gráficos das Figuras \ref{fig:qph_monet_cold} e \ref{fig:fig:qph_psql_hot}, no qual conforme a base de dados aumenta o cálculo de desempenho é menor e sempre há ganhos do normalizado em relação ao denormalizado, sendo estes \textbf{42\%, 70\%} e \textbf{54\%} para 1GB, 10GB e 30GB, respectivamente.
+O cálculo de desempenho final foi afetado por essa inflexão. Se analisar os resultados considerando os SGBD sob as modelagens \textit{snowflake} e \textit{star}, o MonetDB se destaca no resultado final, fazendo dele a melhor escolha entre os SGBD, como mostram os gráficos da Figuras \ref{fig:qph_snow_cold} e \ref{fig:qph_star_cold} e os ganhos obtidos por ele em relação ao PostgreSQL conforme a Tabela \ref{tab:ganho_monet_psql_cold}. Porém ao considerar os ambientes sob cada SGBD, a única conclusão coerente que se tem é de que o PostgreSQL é melhor em ambientes normalizados, como ilustram os gráficos das Figuras \ref{fig:qph_monet_cold} e \ref{fig:qph_psql_cold}, no qual conforme a base de dados aumenta o cálculo de desempenho é menor e sempre há ganhos do normalizado em relação ao denormalizado, sendo estes \textbf{42\%, 70\%} e \textbf{54\%} para 1GB, 10GB e 30GB, respectivamente.
 
 \begin{figure*}[htpb]
         \centering
@@ -732,7 +737,9 @@ Os valores do SGBD PostgreSQL não tiveram mudanças drásticas se comparadas as
 
 De acordo com a página oficial do MonetDB \cite{monetdb2017c}, este SGBD se destaca quando dados acessados pelo usuário podem ser mantidos na memória principal do servidor ou quando algumas colunas são solicitadas e são suficientes para manipular uma solicitação, como é o caso do ambiente analítico. Isso explica o porquê das consultas da primeira execução apresentarem desempenho inferior às da terceira execução. Na segunda e na terceira execução alguns dados das consultas já estão em \textit{cache}, assim o SGBD consegue recuperá-los mais rapidamente.
 
-O PostgreSQL, por outro lado, utiliza como \textit{cache} a configuração dos \texttt{shared\_buffers}. Ele corresponde a um vetor de blocos com 8KB, onde o SGBD procura por páginas já alocadas antes de verificar os dados em disco. Para lidar com varreduras sequenciais, são utilizados buffers com valor padrão de 256KB (32 blocos de 8KB) \cite{psqlcache2018r}. Conforme a base de dados aumenta, o ideal é modificar esse valor para que seja possível armazenar mais dados em \textit{cache}, geralmente 25\% da memória total do sistema operacional, porém não mais que 8GB \cite{psql2018conf}. Como esse valor padrão de 256KB não foi alterado, isso explica a variação pequena entre os resultados das bases de dados maiores.
+O PostgreSQL, por outro lado, utiliza como \textit{cache} a configuração dos \texttt{shared\_buffers}. Ele corresponde a um vetor de blocos com 8KB, onde o SGBD procura por páginas já alocadas antes de verificar os dados em disco. Para lidar com varreduras sequenciais, são utilizados buffers com valor padrão de 256KB (32 blocos de 8KB) \cite{psqlcache2018r}. Conforme a base de dados aumenta, o ideal é modificar esse valor para que seja possível armazenar mais dados em \textit{cache}, geralmente 25\% da memória total do sistema operacional, porém não mais que 8GB \cite{psql2018conf}. Como esse valor padrão de 256KB não foi alterado, isso explica a variação pequena entre os resultados das bases de dados maiores. O próprio \textit{driver} JDBC possui sua política de \textit{cache} através do \textit{Statement Caching}, sendo opção do desenvolvedor habilitá-la ou não \cite{jdbc2018cache}. Neste trabalho tal política não foi habilitada.
+
+% Statement Cache
 
 Dois exemplos que mostram a estabilidade nos valores alcançados pela \textit{cache} estão na primeira consulta (Q3) e na 11ª (Q14). No cenário de \textit{cold run} a primeira consulta sempre levava mais tempo que as demais e a Q14 demorava excessivamente conforme a base crescia, em detrimento das demais. Considerando este cenário uma justificativa a se utilizar seria a de que as consultas eram demoradas, porém, sob o cenário \textit{hot run} se vê que elas não apresentam o mesmo comportamento, tendo influência da memória \textit{cache}.
 

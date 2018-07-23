@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.4.22)  12 JUL 2018 12:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.4.22)  23 JUL 2018 14:42
 entering extended mode
 **"c:/Users/Leticia Torres/Google Drive/UNIOESTE/TCC/TCC/ModeloTCC.tex"
 ("c:/Users/Leticia Torres/Google Drive/UNIOESTE/TCC/TCC/ModeloTCC.tex"
@@ -579,13 +579,12 @@ Writing index file ModeloTCC.idx
 \openout4 = `ModeloTCC.glo'.
 
 Writing glossary file ModeloTCC.glo 
-(ModeloTCC.aux (iniciais/capa.aux) (iniciais/rosto.aux) (iniciais/aprova.aux)
-(iniciais/dedica.aux) (iniciais/agradece.aux) (iniciais/sumario.aux)
-(iniciais/resumo.aux) (1-introducao/capitulo_intro.aux)
-(3-FUNDAMENTOS/capitulo_fundamentos.aux) (5-TPCH/capitulo_tpch.aux)
-(6-Experimento/capitulo_experimento.aux) (7-Conclusao/capitulo_conclusao.aux)
-(apend/apendice2.aux) (apend/apendice3.aux) (apend/apendice4.aux)
-(apend/apendice5.aux))
+(ModeloTCC.aux (iniciais/capa.aux) (iniciais/rosto2.aux) (iniciais/dedica.aux)
+(iniciais/agradece.aux) (iniciais/sumario.aux) (iniciais/resumo.aux)
+(1-introducao/capitulo_intro.aux) (3-FUNDAMENTOS/capitulo_fundamentos.aux)
+(5-TPCH/capitulo_tpch.aux) (6-Experimento/capitulo_experimento.aux)
+(7-Conclusao/capitulo_conclusao.aux) (apend/apendice2.aux) (apend/apendice3.aux
+) (apend/apendice4.aux) (apend/apendice5.aux))
 \openout1 = `ModeloTCC.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
@@ -603,7 +602,8 @@ LaTeX Font Info:    ... okay on input line 132.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 132.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 132.
 
- ("C:\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+
+("C:\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 132.
@@ -704,61 +704,51 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <11> not available
 
 {C:/Users/Leticia Torres/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./
 simbolo.jpg>]
-\openout2 = `iniciais/rosto.aux'.
+\openout2 = `iniciais/rosto2.aux'.
 
- (iniciais/rosto.tex
+ (iniciais/rosto2.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 15.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 18.
-
-Underfull \hbox (badness 1072) in paragraph at lines 25--26
-[]\T1/ptm/m/n/12 Monografia apre-sen-tada como re-qui-sito par-cial
- []
-
-LaTeX Font Info:    Try loading font information for U+lasy on input line 30.
-("C:\MiKTeX 2.9\tex\latex\base\ulasy.fd"
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 30.
-
-("C:\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 30.
-
-("C:\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) [2
-
-
-]
-\openout2 = `iniciais/aprova.aux'.
-
- (iniciais/aprova.tex)
-[3
+) [2
 
 
 ]
 \openout2 = `iniciais/dedica.aux'.
 
- (iniciais/dedica.tex) [4
+ (iniciais/dedica.tex
+LaTeX Font Info:    Try loading font information for U+lasy on input line 17.
+
+("C:\MiKTeX 2.9\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 17.
+
+("C:\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 17.
+
+("C:\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)) [3
 
 
 ]
 \openout2 = `iniciais/agradece.aux'.
 
- (iniciais/agradece.tex [5
+ (iniciais/agradece.tex
+[4
 
 
-]) [6]
+]) [5]
 \openout2 = `iniciais/sumario.aux'.
 
-
-(iniciais/sumario.tex
+ (iniciais/sumario.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 9.
- (ModeloTCC.lof [7
+ (ModeloTCC.lof [6
 
 
 
@@ -766,7 +756,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
 \tf@lof=\write5
 \openout5 = `ModeloTCC.lof'.
 
- [8] (ModeloTCC.lot [9
+ [7] (ModeloTCC.lot [8
 
 ]
 LaTeX Font Info:    Try loading font information for TS1+ptm on input line 26.
@@ -777,24 +767,24 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 \tf@lot=\write6
 \openout6 = `ModeloTCC.lot'.
 
- [10] [11
+ [9] [10
 
-] [12
+] [11
 
 ] (ModeloTCC.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 14.
 
-[13
+[12
 
 ])
 \tf@toc=\write7
 \openout7 = `ModeloTCC.toc'.
 
-) [14]
+) [13]
 \openout2 = `iniciais/resumo.aux'.
 
- (iniciais/resumo.tex) [15
+ (iniciais/resumo.tex) [14
 
 
 
@@ -811,715 +801,322 @@ less on input line 169.
 
 (1-introducao/capitulo_intro.tex
 Cap\'{\i }tulo 1.
-
-LaTeX Warning: Citation `wrembel2007data' on page 1 undefined on input line 4.
-
-
-LaTeX Warning: Citation `wrembel2007data' on page 1 undefined on input line 7.
-
-
-LaTeX Warning: Citation `codd1998providing' on page 1 undefined on input line 1
-1.
-
-
-LaTeX Warning: Citation `chaudhuri1997overview' on page 1 undefined on input li
-ne 12.
-
-
-LaTeX Warning: Citation `wrembel2007data' on page 1 undefined on input line 16.
-
-
-
-LaTeX Warning: Citation `codd1998providing' on page 1 undefined on input line 1
-6.
-
-
-LaTeX Warning: Citation `kimball2002dw' on page 1 undefined on input line 16.
-
 [1
 
 
 
-]
-
-LaTeX Warning: Citation `navathe2011banco' on page 2 undefined on input line 22
-.
-
-
-LaTeX Warning: Citation `good2017column' on page 2 undefined on input line 27.
-
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 29.
-
-LaTeX Warning: Citation `bouckaert2010benchmarking' on page 2 undefined on inpu
-t line 29.
-
-
-LaTeX Warning: Citation `tpc2017page' on page 2 undefined on input line 31.
-
-
-LaTeX Warning: Citation `tpch2017page' on page 2 undefined on input line 32.
-
-
-LaTeX Warning: Citation `bax2003modelagem' on page 2 undefined on input line 34
-.
-
-[2]) [3]
+] [2]) [3]
 \openout2 = `3-FUNDAMENTOS/capitulo_fundamentos.aux'.
 
  (3-FUNDAMENTOS/capitulo_fundamentos.tex
 Cap\'{\i }tulo 2.
-
-LaTeX Warning: Citation `kimball2002dw' on page 4 undefined on input line 6.
-
-
-LaTeX Warning: Citation `inmon2005building' on page 4 undefined on input line 8
-.
-
-
-LaTeX Warning: Citation `shim2002past' on page 4 undefined on input line 11.
-
-
-LaTeX Warning: Citation `inmon2005building' on page 4 undefined on input line 1
-3.
-
-
-LaTeX Warning: Citation `kimball2002dw' on page 4 undefined on input line 13.
-
-
-LaTeX Warning: Citation `kimball2002dw' on page 4 undefined on input line 19.
-
-
-LaTeX Warning: Citation `inmon2005building' on page 4 undefined on input line 1
-9.
-
-
-LaTeX Warning: Citation `wrembel2007data' on page 4 undefined on input line 19.
-
-
 [4
 
 
 
-]
-
-LaTeX Warning: Citation `chaudhuri1997overview' on page 5 undefined on input li
-ne 21.
-
-
-LaTeX Warning: Citation `codd1998providing' on page 5 undefined on input line 2
-3.
-
-
-LaTeX Warning: Citation `vertabelo2017olap' on page 5 undefined on input line 2
-6.
-
-
-LaTeX Warning: Citation `kimball2002dw' on page 5 undefined on input line 28.
-
-[5]
-<img/dw_arc.png, id=74, 898.85812pt x 468.24937pt>
+] [5]
+<img/dw_arc.png, id=71, 898.85812pt x 468.24937pt>
 File: img/dw_arc.png Graphic file (type png)
 <use img/dw_arc.png>
 Package pdftex.def Info: img/dw_arc.png  used on input line 40.
 (pdftex.def)             Requested size: 455.8843pt x 237.48935pt.
-
-
-LaTeX Warning: Citation `kimball2002dw' on page 6 undefined on input line 42.
-
-
-LaTeX Warning: Citation `kimball2002dw' on page 6 undefined on input line 42.
-
-
-LaTeX Warning: Citation `sen2005comparison' on page 6 undefined on input line 4
-6.
-
-
-LaTeX Warning: Citation `sen2005comparison' on page 6 undefined on input line 4
-6.
-
-
-LaTeX Warning: Citation `kimball2002dw' on page 6 undefined on input line 46.
-
-[6]
-
-LaTeX Warning: Citation `kimball2002dw' on page 7 undefined on input line 48.
-
-
-LaTeX Warning: Citation `sen2005comparison' on page 7 undefined on input line 4
-8.
-
-
-LaTeX Warning: Citation `kimball2002dw' on page 7 undefined on input line 50.
-
-[7 <./img/dw_arc.png>]
-<img/star_dim.png, id=83, 545.78906pt x 272.51813pt>
+ [6] [7 <./img/dw_arc.png>]
+<img/star_dim.png, id=80, 545.78906pt x 272.51813pt>
 File: img/star_dim.png Graphic file (type png)
 <use img/star_dim.png>
 Package pdftex.def Info: img/star_dim.png  used on input line 56.
 (pdftex.def)             Requested size: 369.88582pt x 184.68613pt.
-
-
-LaTeX Warning: Citation `navathe2011banco' on page 8 undefined on input line 61
-.
-
-
-LaTeX Warning: Citation `levene2003snowflake' on page 8 undefined on input line
- 61.
-
-<img/snow.png, id=84, 552.56438pt x 264.99pt>
+<img/snow.png, id=81, 552.56438pt x 264.99pt>
 File: img/snow.png Graphic file (type png)
 <use img/snow.png>
 Package pdftex.def Info: img/snow.png  used on input line 65.
 (pdftex.def)             Requested size: 369.88582pt x 177.38063pt.
-
-LaTeX Warning: Citation `navathe2011banco' on page 8 undefined on input line 72
-.
-
-[8 <./img/star_dim.png>]
+ [8 <./img/star_dim.png>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 76.
-
-
-LaTeX Warning: Citation `navathe2011banco' on page 9 undefined on input line 83
-.
-
-[9 <./img/snow.png>]
+ [9 <./img/snow.png>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 102.
-
-
-LaTeX Warning: Citation `codd1970relational' on page 10 undefined on input line
- 106.
-
-[10]
-<3-FUNDAMENTOS/funcionario_projeto.png, id=97, 408.02437pt x 80.55093pt>
+ [10]
+<3-FUNDAMENTOS/funcionario_projeto.png, id=93, 408.02437pt x 80.55093pt>
 File: 3-FUNDAMENTOS/funcionario_projeto.png Graphic file (type png)
 <use 3-FUNDAMENTOS/funcionario_projeto.png>
 Package pdftex.def Info: 3-FUNDAMENTOS/funcionario_projeto.png  used on input l
 ine 127.
 (pdftex.def)             Requested size: 369.88582pt x 73.0249pt.
-<3-FUNDAMENTOS/relacao_func_proj.png, id=98, 408.02437pt x 233.37187pt>
+<3-FUNDAMENTOS/relacao_func_proj.png, id=94, 408.02437pt x 233.37187pt>
 File: 3-FUNDAMENTOS/relacao_func_proj.png Graphic file (type png)
 <use 3-FUNDAMENTOS/relacao_func_proj.png>
 Package pdftex.def Info: 3-FUNDAMENTOS/relacao_func_proj.png  used on input lin
 e 148.
 (pdftex.def)             Requested size: 369.88582pt x 211.5675pt.
- [11 <./3-FUNDAMENTOS/funcionario_projeto.png>]
-
-LaTeX Warning: Citation `postgres2018r' on page 12 undefined on input line 159.
-
-
-
-LaTeX Warning: Citation `mysql2018r' on page 12 undefined on input line 159.
-
-
-LaTeX Warning: Citation `microsoft2018r' on page 12 undefined on input line 159
-.
-
-
-LaTeX Warning: Citation `lite2018r' on page 12 undefined on input line 159.
-
-
-LaTeX Warning: Citation `maria2018r' on page 12 undefined on input line 159.
-
-
-LaTeX Warning: Citation `oracle2018r' on page 12 undefined on input line 159.
-
-[12 <./3-FUNDAMENTOS/relacao_func_proj.png>]
-
-LaTeX Warning: Citation `pritchett2008base' on page 13 undefined on input line 
-171.
-
-
-LaTeX Warning: Citation `sharding2018educative' on page 13 undefined on input l
-ine 171.
-
-
-LaTeX Warning: Citation `pritchett2008base' on page 13 undefined on input line 
-179.
-
-
-LaTeX Warning: Citation `pritchett2008base' on page 13 undefined on input line 
-190.
-
-[13]
-
-LaTeX Warning: Citation `pritchett2008base' on page 14 undefined on input line 
-209.
-
-
-LaTeX Warning: Citation `khoshafian1987query' on page 14 undefined on input lin
-e 230.
-
-
-LaTeX Warning: Citation `matei2010column' on page 14 undefined on input line 23
-1.
-
-
-LaTeX Warning: Citation `abadi2008column' on page 14 undefined on input line 23
-1.
-
-
-LaTeX Warning: Citation `abadi2013design' on page 14 undefined on input line 23
-2.
-
-
-LaTeX Warning: Citation `khoshafian1987query' on page 14 undefined on input lin
-e 232.
-
-<3-FUNDAMENTOS/registros.png, id=108, 412.54124pt x 112.92188pt>
+ [11 <./3-FUNDAMENTOS/funcionario_projeto.png>] [12 <./3-FUNDAMENTOS/relacao_fu
+nc_proj.png>] [13]
+<3-FUNDAMENTOS/registros.png, id=105, 412.54124pt x 112.92188pt>
 File: 3-FUNDAMENTOS/registros.png Graphic file (type png)
 <use 3-FUNDAMENTOS/registros.png>
 Package pdftex.def Info: 3-FUNDAMENTOS/registros.png  used on input line 285.
 (pdftex.def)             Requested size: 341.43306pt x 93.45976pt.
-<3-FUNDAMENTOS/row.png, id=109, 397.485pt x 84.315pt>
+<3-FUNDAMENTOS/row.png, id=106, 397.485pt x 84.315pt>
 File: 3-FUNDAMENTOS/row.png Graphic file (type png)
 <use 3-FUNDAMENTOS/row.png>
 Package pdftex.def Info: 3-FUNDAMENTOS/row.png  used on input line 292.
 (pdftex.def)             Requested size: 227.62204pt x 48.28517pt.
-<3-FUNDAMENTOS/column.png, id=110, 308.65312pt x 142.28156pt>
+<3-FUNDAMENTOS/column.png, id=107, 308.65312pt x 142.28156pt>
 File: 3-FUNDAMENTOS/column.png Graphic file (type png)
 <use 3-FUNDAMENTOS/column.png>
 Package pdftex.def Info: 3-FUNDAMENTOS/column.png  used on input line 293.
 (pdftex.def)             Requested size: 193.47882pt x 89.19061pt.
-
-LaTeX Warning: Citation `matei2010column' on page 14 undefined on input line 29
-8.
-
-[14]
-
-LaTeX Warning: Citation `abadi2007materialization' on page 15 undefined on inpu
-t line 322.
-
-
-LaTeX Warning: Citation `abadi2007materialization' on page 15 undefined on inpu
-t line 327.
-
-
-LaTeX Warning: Citation `abadi2008query' on page 15 undefined on input line 327
-.
-
-[15 <./3-FUNDAMENTOS/registros.png> <./3-FUNDAMENTOS/row.png> <./3-FUNDAMENTOS/
-column.png>]
+ [14] [15 <./3-FUNDAMENTOS/registros.png> <./3-FUNDAMENTOS/row.png> <./3-FUNDAM
+ENTOS/column.png>]
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 333.
- ("C:\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+
+("C:\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-<3-FUNDAMENTOS/em.png, id=120, 373.395pt x 97.86563pt>
+<3-FUNDAMENTOS/em.png, id=117, 373.395pt x 97.86563pt>
 File: 3-FUNDAMENTOS/em.png Graphic file (type png)
 <use 3-FUNDAMENTOS/em.png>
 Package pdftex.def Info: 3-FUNDAMENTOS/em.png  used on input line 342.
 (pdftex.def)             Requested size: 398.33858pt x 104.40755pt.
-<3-FUNDAMENTOS/lm.png, id=121, 561.59813pt x 332.74312pt>
+<3-FUNDAMENTOS/lm.png, id=118, 561.59813pt x 332.74312pt>
 File: 3-FUNDAMENTOS/lm.png Graphic file (type png)
 <use 3-FUNDAMENTOS/lm.png>
 Package pdftex.def Info: 3-FUNDAMENTOS/lm.png  used on input line 354.
 (pdftex.def)             Requested size: 398.33858pt x 236.01062pt.
-
-
-LaTeX Warning: Citation `khoshafian1987query' on page 16 undefined on input lin
-e 365.
-
-[16 <./3-FUNDAMENTOS/em.png>]
-<3-FUNDAMENTOS/vertical.png, id=128, 525.46312pt x 126.4725pt>
+ [16 <./3-FUNDAMENTOS/em.png>]
+<3-FUNDAMENTOS/vertical.png, id=124, 525.46312pt x 126.4725pt>
 File: 3-FUNDAMENTOS/vertical.png Graphic file (type png)
 <use 3-FUNDAMENTOS/vertical.png>
 Package pdftex.def Info: 3-FUNDAMENTOS/vertical.png  used on input line 376.
 (pdftex.def)             Requested size: 455.8843pt x 109.72913pt.
- [17 <./3-FUNDAMENTOS/lm.png> <./3-FUNDAMENTOS/vertical.png>]
 
-LaTeX Warning: Citation `abadi2008query' on page 18 undefined on input line 388
-.
-
-
-LaTeX Warning: Citation `stonebraker2005c' on page 18 undefined on input line 4
-08.
-
-
-LaTeX Warning: Citation `boncz2005monetdb' on page 18 undefined on input line 4
-08.
-
-[18]
-
-LaTeX Warning: Citation `westmann2000implementation' on page 19 undefined on in
-put line 454.
-
-
-LaTeX Warning: Citation `westmann2000implementation' on page 19 undefined on in
-put line 458.
-
-
-LaTeX Warning: Citation `roth1993database' on page 19 undefined on input line 4
-58.
-
-[19]
-
-LaTeX Warning: Citation `abadi2006integrating' on page 20 undefined on input li
-ne 469.
-
-
-LaTeX Warning: Citation `monetdb2017c' on page 20 undefined on input line 487.
-
-
-LaTeX Warning: Citation `cstore2018nosql' on page 20 undefined on input line 48
-7.
-
-
-LaTeX Warning: Citation `vertica2017c' on page 20 undefined on input line 487.
-
-
-LaTeX Warning: Citation `lucid2018column' on page 20 undefined on input line 48
-7.
-
-[20]) [21]
+[17 <./3-FUNDAMENTOS/lm.png> <./3-FUNDAMENTOS/vertical.png>] [18] [19] [20])
+[21]
 \openout2 = `5-TPCH/capitulo_tpch.aux'.
 
  (5-TPCH/capitulo_tpch.tex
 Cap\'{\i }tulo 3.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <24.88> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 1.
-
-LaTeX Warning: Citation `bhutta1999benchmarking' on page 22 undefined on input 
-line 4.
-
-
-LaTeX Warning: Citation `kyro2003revising' on page 22 undefined on input line 4
-.
-
-
-LaTeX Warning: Citation `tpc2017page' on page 22 undefined on input line 6.
-
-
-LaTeX Warning: Citation `ngamsuriyaroj2010performance' on page 22 undefined on 
-input line 8.
-
-
-LaTeX Warning: Citation `nadee2012performance' on page 22 undefined on input li
-ne 8.
-
-
-LaTeX Warning: Citation `thanopoulou2012benchmarking' on page 22 undefined on i
-nput line 8.
-
-
-LaTeX Warning: Citation `barata2014ycsb' on page 22 undefined on input line 8.
-
-
-LaTeX Warning: Citation `rutishauser2012tpc' on page 22 undefined on input line
- 8.
-
-
-LaTeX Warning: Citation `soares2012avaliaccao' on page 22 undefined on input li
-ne 8.
-
-
-LaTeX Warning: Citation `ngamsuriyaroj2010performance' on page 22 undefined on 
-input line 8.
-
-
-LaTeX Warning: Citation `nadee2012performance' on page 22 undefined on input li
-ne 8.
-
-
-LaTeX Warning: Citation `ngamsuriyaroj2010performance' on page 22 undefined on 
-input line 8.
-
-
-LaTeX Warning: Citation `thanopoulou2012benchmarking' on page 22 undefined on i
-nput line 8.
-
-
-LaTeX Warning: Citation `barata2014ycsb' on page 22 undefined on input line 8.
-
-
-LaTeX Warning: Citation `rutishauser2012tpc' on page 22 undefined on input line
- 8.
-
-
-LaTeX Warning: Citation `soares2012avaliaccao' on page 22 undefined on input li
-ne 8.
-
 [22
 
 
 
-]
-
-LaTeX Warning: Citation `tpc2017specs' on page 23 undefined on input line 10.
-
-[23] [24] [25] [26]
-<img/snow_flake.png, id=168, 612.78937pt x 497.60907pt>
+] [23] [24] [25] [26]
+<img/snow_flake.png, id=165, 612.78937pt x 497.60907pt>
 File: img/snow_flake.png Graphic file (type png)
 <use img/snow_flake.png>
 Package pdftex.def Info: img/snow_flake.png  used on input line 126.
 (pdftex.def)             Requested size: 455.8843pt x 370.1991pt.
-
-
-LaTeX Warning: Citation `tpc2017specs' on page 27 undefined on input line 128.
-
-
-LaTeX Warning: Citation `tpc2017specs' on page 27 undefined on input line 128.
-
-
-LaTeX Warning: Citation `tpc2017specs' on page 27 undefined on input line 134.
-
-[27 <./img/snow_flake.png>]
-<img/star.png, id=173, 670.75594pt x 396.7322pt>
+ [27 <./img/snow_flake.png>]
+<img/star.png, id=170, 670.75594pt x 396.7322pt>
 File: img/star.png Graphic file (type png)
 <use img/star.png>
-Package pdftex.def Info: img/star.png  used on input line 145.
+Package pdftex.def Info: img/star.png  used on input line 146.
 (pdftex.def)             Requested size: 455.8843pt x 269.64113pt.
- [28 <./img/star.png>]) [29] [30]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[28] [29 <./img/star.png>]) [30]
 \openout2 = `6-Experimento/capitulo_experimento.aux'.
 
-
-(6-Experimento/capitulo_experimento.tex
+ (6-Experimento/capitulo_experimento.tex
 Cap\'{\i }tulo 4.
-
-LaTeX Warning: Citation `raasveldt2018fair' on page 31 undefined on input line 
-35.
-
 [31
 
 
 
 ]
-
-LaTeX Warning: Citation `raasveldt2018fair' on page 32 undefined on input line 
-46.
-
-<6-Experimento/flux.png, id=188, 758.08218pt x 347.79938pt>
+<6-Experimento/flux.png, id=185, 758.08218pt x 347.79938pt>
 File: 6-Experimento/flux.png Graphic file (type png)
 <use 6-Experimento/flux.png>
-Package pdftex.def Info: 6-Experimento/flux.png  used on input line 56.
+Package pdftex.def Info: 6-Experimento/flux.png  used on input line 57.
 (pdftex.def)             Requested size: 455.8843pt x 209.15886pt.
-[32 <./6-Experimento/flux.png>]
-<6-Experimento/power_flux.png, id=192, 816.04875pt x 302.63063pt>
+ [32 <./6-Experimento/flux.png>]
+<6-Experimento/power_flux.png, id=189, 816.04875pt x 302.63063pt>
 File: 6-Experimento/power_flux.png Graphic file (type png)
 <use 6-Experimento/power_flux.png>
-Package pdftex.def Info: 6-Experimento/power_flux.png  used on input line 75.
+Package pdftex.def Info: 6-Experimento/power_flux.png  used on input line 76.
 (pdftex.def)             Requested size: 455.8843pt x 169.06563pt.
- [33 <./6-Experimento/power_flux.png>] [34]
+ [33 <./6-Experimento/power_flux.png>]
+[34]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17.28> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 164.
-
-[35] [36] [37]
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 169.
+ [35] [36] [37] [38]
 <6-Experimento/power_snow_cold.png, id=209, 355.3275pt x 212.29312pt>
 File: 6-Experimento/power_snow_cold.png Graphic file (type png)
 <use 6-Experimento/power_snow_cold.png>
 Package pdftex.def Info: 6-Experimento/power_snow_cold.png  used on input line 
-400.
+405.
 (pdftex.def)             Requested size: 204.85974pt x 122.398pt.
 <6-Experimento/power_star_cold.png, id=210, 353.82187pt x 212.29312pt>
 File: 6-Experimento/power_star_cold.png Graphic file (type png)
 <use 6-Experimento/power_star_cold.png>
 Package pdftex.def Info: 6-Experimento/power_star_cold.png  used on input line 
-401.
+406.
 (pdftex.def)             Requested size: 204.85974pt x 122.91629pt.
- [38]
-
-LaTeX Warning: Reference `fig:fig:qph_psql_hot' on page 39 undefined on input l
-ine 406.
-
-<6-Experimento/qph_snow_cold.png, id=214, 414.79968pt x 252.19218pt>
+<6-Experimento/qph_snow_cold.png, id=211, 414.79968pt x 252.19218pt>
 File: 6-Experimento/qph_snow_cold.png Graphic file (type png)
 <use 6-Experimento/qph_snow_cold.png>
 Package pdftex.def Info: 6-Experimento/qph_snow_cold.png  used on input line 41
-0.
+5.
 (pdftex.def)             Requested size: 204.85974pt x 124.54881pt.
-<6-Experimento/qph_star_cold.png, id=215, 412.54124pt x 245.41687pt>
+<6-Experimento/qph_star_cold.png, id=212, 412.54124pt x 245.41687pt>
 File: 6-Experimento/qph_star_cold.png Graphic file (type png)
 <use 6-Experimento/qph_star_cold.png>
 Package pdftex.def Info: 6-Experimento/qph_star_cold.png  used on input line 41
-1.
+6.
 (pdftex.def)             Requested size: 204.85974pt x 121.8693pt.
+ [39]
 <6-Experimento/qph_monet_cold.png, id=216, 414.79968pt x 251.43938pt>
 File: 6-Experimento/qph_monet_cold.png Graphic file (type png)
 <use 6-Experimento/qph_monet_cold.png>
 Package pdftex.def Info: 6-Experimento/qph_monet_cold.png  used on input line 4
-31.
+36.
 (pdftex.def)             Requested size: 204.85974pt x 124.17703pt.
 <6-Experimento/qph_psql_cold.png, id=217, 417.05812pt x 249.93375pt>
 File: 6-Experimento/qph_psql_cold.png Graphic file (type png)
 <use 6-Experimento/qph_psql_cold.png>
 Package pdftex.def Info: 6-Experimento/qph_psql_cold.png  used on input line 43
-2.
+7.
 (pdftex.def)             Requested size: 204.85974pt x 122.76988pt.
-[39] [40 <./6-Experimento/power_snow_cold.png> <./6-Experimento/power_star_cold
-.png> <./6-Experimento/qph_snow_cold.png> <./6-Experimento/qph_star_cold.png> <
-./6-Experimento/qph_monet_cold.png> <./6-Experimento/qph_psql_cold.png>]
-[41] [42]
-<6-Experimento/power_snow_hot.png, id=237, 417.05812pt x 243.91125pt>
+ [40 <./6-Experimento/power_snow_cold.png> <./6-Experimento/power_star_cold.png
+> <./6-Experimento/qph_snow_cold.png> <./6-Experimento/qph_star_cold.png>] [41 
+<./6-Experimento/qph_monet_cold.png> <./6-Experimento/qph_psql_cold.png>] [42]
+<6-Experimento/power_snow_hot.png, id=234, 417.05812pt x 243.91125pt>
 File: 6-Experimento/power_snow_hot.png Graphic file (type png)
 <use 6-Experimento/power_snow_hot.png>
 Package pdftex.def Info: 6-Experimento/power_snow_hot.png  used on input line 6
-68.
+73.
 (pdftex.def)             Requested size: 204.85974pt x 119.81157pt.
-<6-Experimento/power_star_hot.png, id=238, 444.15938pt x 267.24844pt>
+<6-Experimento/power_star_hot.png, id=235, 444.15938pt x 267.24844pt>
 File: 6-Experimento/power_star_hot.png Graphic file (type png)
 <use 6-Experimento/power_star_hot.png>
 Package pdftex.def Info: 6-Experimento/power_star_hot.png  used on input line 6
-69.
+74.
 (pdftex.def)             Requested size: 204.85974pt x 123.262pt.
-<6-Experimento/qph_snow_hot.png, id=239, 413.29407pt x 252.19218pt>
+<6-Experimento/qph_snow_hot.png, id=236, 413.29407pt x 252.19218pt>
 File: 6-Experimento/qph_snow_hot.png Graphic file (type png)
 <use 6-Experimento/qph_snow_hot.png>
-Package pdftex.def Info: 6-Experimento/qph_snow_hot.png  used on input line 678
+Package pdftex.def Info: 6-Experimento/qph_snow_hot.png  used on input line 683
 .
 (pdftex.def)             Requested size: 204.85974pt x 125.00674pt.
-<6-Experimento/qph_star_hot.png, id=240, 411.78844pt x 245.41687pt>
+<6-Experimento/qph_star_hot.png, id=237, 411.78844pt x 245.41687pt>
 File: 6-Experimento/qph_star_hot.png Graphic file (type png)
 <use 6-Experimento/qph_star_hot.png>
-Package pdftex.def Info: 6-Experimento/qph_star_hot.png  used on input line 679
+Package pdftex.def Info: 6-Experimento/qph_star_hot.png  used on input line 684
 .
 (pdftex.def)             Requested size: 204.85974pt x 122.09024pt.
-<6-Experimento/qph_monet_hot.png, id=241, 417.81094pt x 255.20343pt>
+<6-Experimento/qph_monet_hot.png, id=238, 417.81094pt x 255.20343pt>
 File: 6-Experimento/qph_monet_hot.png Graphic file (type png)
 <use 6-Experimento/qph_monet_hot.png>
-Package pdftex.def Info: 6-Experimento/qph_monet_hot.png  used on input line 69
-9.
+Package pdftex.def Info: 6-Experimento/qph_monet_hot.png  used on input line 70
+4.
 (pdftex.def)             Requested size: 204.85974pt x 125.13254pt.
-<6-Experimento/qph_psql_hot.png, id=242, 418.56375pt x 253.69781pt>
+<6-Experimento/qph_psql_hot.png, id=239, 418.56375pt x 253.69781pt>
 File: 6-Experimento/qph_psql_hot.png Graphic file (type png)
 <use 6-Experimento/qph_psql_hot.png>
-Package pdftex.def Info: 6-Experimento/qph_psql_hot.png  used on input line 700
+Package pdftex.def Info: 6-Experimento/qph_psql_hot.png  used on input line 705
 .
 (pdftex.def)             Requested size: 204.85974pt x 124.16591pt.
- [43]
-
-LaTeX Warning: Citation `monetdb2017c' on page 44 undefined on input line 733.
-
-[44]
-
-LaTeX Warning: Citation `psqlcache2018r' on page 45 undefined on input line 735
-.
-
-
-LaTeX Warning: Citation `psql2018conf' on page 45 undefined on input line 735.
-
-[45 <./6-Experimento/power_snow_hot.png> <./6-Experimento/power_star_hot.png> <
-./6-Experimento/qph_snow_hot.png> <./6-Experimento/qph_star_hot.png>] [46 <./6-
-Experimento/qph_monet_hot.png> <./6-Experimento/qph_psql_hot.png>]
+ [43] [44] [45 <./6-Experimento/power_snow_hot.png> <./6-Experimento/power_star
+_hot.png> <./6-Experimento/qph_snow_hot.png> <./6-Experimento/qph_star_hot.png>
+] [46 <./6-Experimento/qph_monet_hot.png> <./6-Experimento/qph_psql_hot.png>]
 LaTeX Font Info:    Font shape `TS1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 785.
- [47]
-[48] [49]
-<6-Experimento/power_snow_cache.png, id=271, 399.74344pt x 248.42813pt>
+(Font)              Font shape `TS1/ptm/b/n' tried instead on input line 792.
+ [47] [48] [49]
+<6-Experimento/power_snow_cache.png, id=268, 399.74344pt x 248.42813pt>
 File: 6-Experimento/power_snow_cache.png Graphic file (type png)
 <use 6-Experimento/power_snow_cache.png>
 Package pdftex.def Info: 6-Experimento/power_snow_cache.png  used on input line
- 940.
+ 947.
 (pdftex.def)             Requested size: 204.85974pt x 127.31454pt.
-<6-Experimento/power_star_cache.png, id=272, 350.05782pt x 212.29312pt>
+<6-Experimento/power_star_cache.png, id=269, 350.05782pt x 212.29312pt>
 File: 6-Experimento/power_star_cache.png Graphic file (type png)
 <use 6-Experimento/power_star_cache.png>
 Package pdftex.def Info: 6-Experimento/power_star_cache.png  used on input line
- 941.
+ 948.
 (pdftex.def)             Requested size: 204.85974pt x 124.23795pt.
-<6-Experimento/power_snow_cache_2.png, id=273, 384.6872pt x 236.38312pt>
+<6-Experimento/power_snow_cache_2.png, id=270, 384.6872pt x 236.38312pt>
 File: 6-Experimento/power_snow_cache_2.png Graphic file (type png)
 <use 6-Experimento/power_snow_cache_2.png>
 Package pdftex.def Info: 6-Experimento/power_snow_cache_2.png  used on input li
-ne 950.
+ne 957.
 (pdftex.def)             Requested size: 204.85974pt x 125.8848pt.
-<6-Experimento/power_star_cache_2.png, id=274, 349.305pt x 212.29312pt>
+<6-Experimento/power_star_cache_2.png, id=271, 349.305pt x 212.29312pt>
 File: 6-Experimento/power_star_cache_2.png Graphic file (type png)
 <use 6-Experimento/power_star_cache_2.png>
 Package pdftex.def Info: 6-Experimento/power_star_cache_2.png  used on input li
-ne 951.
+ne 958.
 (pdftex.def)             Requested size: 204.85974pt x 124.5068pt.
  [50 <./6-Experimento/power_snow_cache.png> <./6-Experimento/power_star_cache.p
 ng>]
-<6-Experimento/qph_monet_cache.png, id=280, 418.56375pt x 253.69781pt>
+<6-Experimento/qph_monet_cache.png, id=277, 418.56375pt x 253.69781pt>
 File: 6-Experimento/qph_monet_cache.png Graphic file (type png)
 <use 6-Experimento/qph_monet_cache.png>
 Package pdftex.def Info: 6-Experimento/qph_monet_cache.png  used on input line 
-960.
+967.
 (pdftex.def)             Requested size: 204.85974pt x 124.16591pt.
-<6-Experimento/qph_psql_cache.png, id=281, 417.05812pt x 252.19218pt>
+<6-Experimento/qph_psql_cache.png, id=278, 417.05812pt x 252.19218pt>
 File: 6-Experimento/qph_psql_cache.png Graphic file (type png)
 <use 6-Experimento/qph_psql_cache.png>
 Package pdftex.def Info: 6-Experimento/qph_psql_cache.png  used on input line 9
-61.
+68.
 (pdftex.def)             Requested size: 204.85974pt x 123.87924pt.
-<6-Experimento/qph_snow_cache.png, id=282, 415.5525pt x 255.20343pt>
+<6-Experimento/qph_snow_cache.png, id=279, 415.5525pt x 255.20343pt>
 File: 6-Experimento/qph_snow_cache.png Graphic file (type png)
 <use 6-Experimento/qph_snow_cache.png>
 Package pdftex.def Info: 6-Experimento/qph_snow_cache.png  used on input line 9
-70.
+77.
 (pdftex.def)             Requested size: 204.85974pt x 125.81012pt.
-<6-Experimento/qph_star_cache.png, id=283, 409.53pt x 244.66406pt>
+<6-Experimento/qph_star_cache.png, id=280, 409.53pt x 244.66406pt>
 File: 6-Experimento/qph_star_cache.png Graphic file (type png)
 <use 6-Experimento/qph_star_cache.png>
 Package pdftex.def Info: 6-Experimento/qph_star_cache.png  used on input line 9
-71.
+78.
 (pdftex.def)             Requested size: 204.85974pt x 122.39145pt.
-<6-Experimento/qph_snow_cache_2.png, id=284, 415.5525pt x 248.42813pt>
+<6-Experimento/qph_snow_cache_2.png, id=281, 415.5525pt x 248.42813pt>
 File: 6-Experimento/qph_snow_cache_2.png Graphic file (type png)
 <use 6-Experimento/qph_snow_cache_2.png>
 Package pdftex.def Info: 6-Experimento/qph_snow_cache_2.png  used on input line
- 978.
+ 985.
 (pdftex.def)             Requested size: 204.85974pt x 122.47003pt.
-<6-Experimento/qph_star_cache_2.png, id=285, 409.53pt x 244.66406pt>
+<6-Experimento/qph_star_cache_2.png, id=282, 409.53pt x 244.66406pt>
 File: 6-Experimento/qph_star_cache_2.png Graphic file (type png)
 <use 6-Experimento/qph_star_cache_2.png>
 Package pdftex.def Info: 6-Experimento/qph_star_cache_2.png  used on input line
- 979.
+ 986.
 (pdftex.def)             Requested size: 204.85974pt x 122.39145pt.
-<6-Experimento/qph_monet_cache_2.png, id=286, 414.79968pt x 256.70906pt>
+<6-Experimento/qph_monet_cache_2.png, id=283, 414.79968pt x 256.70906pt>
 File: 6-Experimento/qph_monet_cache_2.png Graphic file (type png)
 <use 6-Experimento/qph_monet_cache_2.png>
 Package pdftex.def Info: 6-Experimento/qph_monet_cache_2.png  used on input lin
-e 986.
+e 993.
 (pdftex.def)             Requested size: 204.85974pt x 126.77954pt.
-<6-Experimento/qph_psql_cache_2.png, id=287, 422.32782pt x 252.945pt>
+<6-Experimento/qph_psql_cache_2.png, id=284, 422.32782pt x 252.945pt>
 File: 6-Experimento/qph_psql_cache_2.png Graphic file (type png)
 <use 6-Experimento/qph_psql_cache_2.png>
 Package pdftex.def Info: 6-Experimento/qph_psql_cache_2.png  used on input line
- 987.
+ 994.
 (pdftex.def)             Requested size: 204.85974pt x 122.69746pt.
-
-
-LaTeX Warning: Citation `rutishauser2012tpc' on page 51 undefined on input line
- 992.
-
-
-LaTeX Warning: Citation `tpc2018resultados' on page 51 undefined on input line 
-992.
-
-
-LaTeX Warning: Citation `microsoft2018r' on page 51 undefined on input line 992
-.
-
-[51 <./6-Experimento/power_snow_cache_2.png> <./6-Experimento/power_star_cache_
-2.png> <./6-Experimento/qph_monet_cache.png> <./6-Experimento/qph_psql_cache.pn
-g>]) [52 <./6-Experimento/qph_snow_cache.png> <./6-Experimento/qph_star_cache.p
-ng> <./6-Experimento/qph_snow_cache_2.png> <./6-Experimento/qph_star_cache_2.pn
-g>] [53 <./6-Experimento/qph_monet_cache_2.png> <./6-Experimento/qph_psql_cache
-_2.png>]
+ [51 <./6-Experimento/power_snow_cache_2.png> <./6-Experimento/power_star_cache
+_2.png> <./6-Experimento/qph_monet_cache.png> <./6-Experimento/qph_psql_cache.p
+ng>]) [52 <./6-Experimento/qph_snow_cache.png> <./6-Experimento/qph_star_cache.
+png> <./6-Experimento/qph_snow_cache_2.png> <./6-Experimento/qph_star_cache_2.p
+ng>] [53 <./6-Experimento/qph_monet_cache_2.png> <./6-Experimento/qph_psql_cach
+e_2.png>]
 \openout2 = `7-Conclusao/capitulo_conclusao.aux'.
 
- (7-Conclusao/capitulo_conclusao.tex
+
+(7-Conclusao/capitulo_conclusao.tex
 Cap\'{\i }tulo 5.
 [54
 
 
 
-] [55] [56]
-
-LaTeX Warning: Citation `cassandra2018nosql' on page 57 undefined on input line
- 47.
-
-
-LaTeX Warning: Citation `cstore2018nosql' on page 57 undefined on input line 47
-.
-
-
-LaTeX Warning: Citation `mongo2018nosql' on page 57 undefined on input line 47.
-
-
-) [57]
+] [55] [56]) [57]
 \openout2 = `apend/apendice2.aux'.
 
  (apend/apendice2.tex
@@ -1567,77 +1164,51 @@ el em:
  []
 
 [103]
-
-ModeloTCC.bbl:287: Package inputenc Error: Unicode character ï¿½ (U+FFFD)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-ModeloTCC.bbl:287: Package inputenc Error: Unicode character ï¿½ (U+FFFD)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-Underfull \hbox (badness 1939) in paragraph at lines 320--325
+Underfull \hbox (badness 1939) in paragraph at lines 326--331
 []\T1/ptm/m/n/12 TRANSACTION PRO-CES-SING PER-FOR-MANCE COUN-CIL. \T1/ptm/m/it/
 12 TPC-H - Top Ten
  []
 
 
-Underfull \hbox (badness 1983) in paragraph at lines 320--325
+Underfull \hbox (badness 1983) in paragraph at lines 326--331
 \T1/ptm/m/it/12 Per-for-mance Re-sults\T1/ptm/m/n/12 . 2018. Aces-sado em: 14 d
 e ju-nho de 2018. Dis-po-ní-vel em:
  []
 
 
-Underfull \hbox (badness 1270) in paragraph at lines 328--331
+Underfull \hbox (badness 1270) in paragraph at lines 334--337
 []\T1/ptm/m/n/12 APACHE Cas-san-dra. 2018. Aces-sado em: 20 de maio de 2018. Di
 s-po-ní-vel em:
  []
 
-) [104] (ModeloTCC.aux (iniciais/capa.aux) (iniciais/rosto.aux)
-(iniciais/aprova.aux) (iniciais/dedica.aux) (iniciais/agradece.aux)
-(iniciais/sumario.aux) (iniciais/resumo.aux) (1-introducao/capitulo_intro.aux)
+) [104] [105] (ModeloTCC.aux (iniciais/capa.aux) (iniciais/rosto2.aux)
+(iniciais/dedica.aux) (iniciais/agradece.aux) (iniciais/sumario.aux)
+(iniciais/resumo.aux) (1-introducao/capitulo_intro.aux)
 (3-FUNDAMENTOS/capitulo_fundamentos.aux) (5-TPCH/capitulo_tpch.aux)
 (6-Experimento/capitulo_experimento.aux) (7-Conclusao/capitulo_conclusao.aux)
 (apend/apendice2.aux) (apend/apendice3.aux) (apend/apendice4.aux)
-(apend/apendice5.aux))
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+(apend/apendice5.aux)) ) 
 Here is how much of TeX's memory you used:
- 8990 strings out of 492972
- 129029 string characters out of 3142019
+ 8978 strings out of 492972
+ 128691 string characters out of 3142019
  317246 words of memory out of 3000000
- 12438 multiletter control sequences out of 15000+200000
- 76671 words of font info for 105 fonts, out of 3000000 for 9000
+ 12434 multiletter control sequences out of 15000+200000
+ 73868 words of font info for 103 fonts, out of 3000000 for 9000
  1150 hyphenation exceptions out of 8191
- 41i,16n,46p,1757b,1886s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cmextra/cmex8.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi6.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmmi8.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmr8.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/MiKTeX 2.9/fonts/
-type1/public/amsfonts/symbols/msam10.pfb><C:/MiKTeX 2.9/fonts/type1/urw/courier
-/ucrr8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/MiKTeX 2.9/font
-s/type1/urw/times/utmbi8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><
-C:/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ModeloTCC.pdf (119 pages, 1078553 bytes).
+ 41i,16n,46p,1801b,1886s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12
+.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmmi8.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr12.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+><C:/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/MiKTeX 2.9/f
+onts/type1/urw/courier/ucrr8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.p
+fb><C:/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/MiKTeX 2.9/fonts/type1/
+urw/times/utmr8a.pfb><C:/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on ModeloTCC.pdf (119 pages, 1077382 bytes).
 PDF statistics:
  525 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

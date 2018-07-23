@@ -1,10 +1,10 @@
 \babel@toc {brazil}{}
-\contentsline {chapter}{Lista de Figuras}{vii}
-\contentsline {chapter}{Lista de Tabelas}{ix}
-\contentsline {chapter}{Lista de Abreviaturas e Siglas}{xi}
-\contentsline {chapter}{Lista de S\IeC {\'\i }mbolos}{xii}
-\contentsline {chapter}{Sum\IeC {\'a}rio}{xiii}
-\contentsline {chapter}{Resumo}{xv}
+\contentsline {chapter}{Lista de Figuras}{vi}
+\contentsline {chapter}{Lista de Tabelas}{viii}
+\contentsline {chapter}{Lista de Abreviaturas e Siglas}{x}
+\contentsline {chapter}{Lista de S\IeC {\'\i }mbolos}{xi}
+\contentsline {chapter}{Sum\IeC {\'a}rio}{xii}
+\contentsline {chapter}{Resumo}{xiv}
 \contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}
 \contentsline {chapter}{\numberline {2}Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}{4}
 \contentsline {section}{\numberline {2.1}Sistemas Gerenciadores de Banco de Dados}{9}
@@ -22,8 +22,8 @@
 \contentsline {section}{\numberline {4.2}Execu\IeC {\c c}\IeC {\~a}o \textit {Cold Run}}{35}
 \contentsline {subsection}{\numberline {4.2.1}Base de Dados de 1GB}{35}
 \contentsline {subsection}{\numberline {4.2.2}Base de Dados de 10GB}{37}
-\contentsline {subsection}{\numberline {4.2.3}Base de Dados de 30GB}{38}
-\contentsline {subsection}{\numberline {4.2.4}Desempenho Geral}{38}
+\contentsline {subsection}{\numberline {4.2.3}Base de Dados de 30GB}{37}
+\contentsline {subsection}{\numberline {4.2.4}Desempenho Geral}{37}
 \contentsline {section}{\numberline {4.3}Execu\IeC {\c c}\IeC {\~a}o \textit {Hot Run}}{41}
 \contentsline {subsection}{\numberline {4.3.1}Base de Dados de 1GB}{41}
 \contentsline {subsection}{\numberline {4.3.2}Base de Dados de 10GB}{41}

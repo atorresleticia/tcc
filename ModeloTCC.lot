@@ -4,12 +4,12 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces N\IeC {\'u}mero m\IeC {\'\i }nimo de sess\IeC {\~o}es para uma classe de banco de dados\relax }}{26}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Tempo de carregamento em segundos para os cen\IeC {\'a}rios de \textit {benchmark}\relax }}{34}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Tempo de carregamento em segundos para os cen\IeC {\'a}rios de \textit {benchmark}\relax }}{35}
 \contentsline {table}{\numberline {4.2}{\ignorespaces Tamanho em bytes das entidades\relax }}{35}
 \contentsline {table}{\numberline {4.3}{\ignorespaces Tamanho da base de dados nos SGBD em Mb para os cen\IeC {\'a}rios de \textit {benchmark}\relax }}{35}
 \contentsline {table}{\numberline {4.4}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {cold run} para 1GB\relax }}{36}
 \contentsline {table}{\numberline {4.5}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {cold run} para 1GB\relax }}{36}
-\contentsline {table}{\numberline {4.6}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {cold run} para 10GB\relax }}{37}
+\contentsline {table}{\numberline {4.6}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {cold run} para 10GB\relax }}{38}
 \contentsline {table}{\numberline {4.7}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {cold run} para 10GB\relax }}{38}
 \contentsline {table}{\numberline {4.8}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {cold run} para 30GB\relax }}{39}
 \contentsline {table}{\numberline {4.9}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {cold run} para 30GB\relax }}{39}

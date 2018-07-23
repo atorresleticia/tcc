@@ -284,8 +284,7 @@ Feb, 2012.}
 {SOARES, B.~E.
 \emph{Uma Avaliação Experimental de Desempenho entre Sistemas Gerenciadores
   de Bancos de Dados Colunares e Relacionais}.
-Disserta��o (Monografia) --- Universidade Estadual do Oeste do Paraná,
-  2012.}
+Tese (Monografia) --- Universidade Estadual do Oeste do Paraná, 2012.}
 
 \bibitem{tpc2017specs}
 \abntrefinfo{Transaction Processing Performance Council}{TRANSACTION PROCESSING
@@ -313,6 +312,13 @@ Dispon{\'\i}vel em:
 {TYPICAL changes to postgresql.conf for large database installations. 2018.
 Acessado em: 05 de julho de 2018.
 Dispon{\'\i}vel em: $<$https://goo.gl/iEYUBu$>$.}
+
+\bibitem{jdbc2018cache}
+\abntrefinfo{Statement\ldots}{STATEMENT\ldots}{2018}
+{STATEMENT and Result Set Caching. 2018.
+Acessado em: 12 de julho de 2018.
+Dispon{\'\i}vel em:
+  $<$https://docs.oracle.com/cd/B28359\_01/java.111/b31224/stmtcach.htm$>$.}
 
 \bibitem{tpc2018resultados}
 \abntrefinfo{Transaction Processing Performance Council}{TRANSACTION PROCESSING
