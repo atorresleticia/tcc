@@ -21,22 +21,22 @@
 \contentsline {table}{\numberline {4.15}{\ignorespaces Tempo em segundos de todas as consultas do teste de for\IeC {\c c}a e fun\IeC {\c c}\IeC {\~o}es de atualiza\IeC {\c c}\IeC {\~a}o sob \textit {hot run} para 30GB\relax }}{44}
 \contentsline {table}{\numberline {4.16}{\ignorespaces Valores do teste de for\IeC {\c c}a e vaz\IeC {\~a}o sob \textit {hot run} para 30GB\relax }}{44}
 \contentsline {table}{\numberline {4.17}{\ignorespaces Porcentagem de ganho de desempenho do MonetDB em rela\IeC {\c c}\IeC {\~a}o ao PostgreSQL sob \textit {hot run}\relax }}{45}
-\contentsline {table}{\numberline {4.18}{\ignorespaces Porcentagem de ganho e perda de desempenho do PostgreSQL da \textit {hot run} em rela\IeC {\c c}\IeC {\~a}o \IeC {\`a} \textit {cold run}\relax }}{46}
+\contentsline {table}{\numberline {4.18}{\ignorespaces Porcentagem de ganho e perda de desempenho do PostgreSQL da \textit {hot run} em rela\IeC {\c c}\IeC {\~a}o \IeC {\`a} \textit {cold run}\relax }}{45}
 \contentsline {table}{\numberline {4.19}{\ignorespaces Porcentagem de ganho de desempenho do MonetDB da \textit {hot run} em rela\IeC {\c c}\IeC {\~a}o \IeC {\`a} \textit {cold run}\relax }}{46}
 \contentsline {table}{\numberline {4.20}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o das consultas da 1\IeC {\textordfeminine }, 2\IeC {\textordfeminine } e 3\IeC {\textordfeminine } execu\IeC {\c c}\IeC {\~a}o para 1GB\relax }}{47}
-\contentsline {table}{\numberline {4.21}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o da primeira consulta para 1GB\relax }}{47}
+\contentsline {table}{\numberline {4.21}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o da primeira consulta para 1GB\relax }}{48}
 \contentsline {table}{\numberline {4.22}{\ignorespaces Valores de \textit {cache} do sistema operacional durante a execu\IeC {\c c}\IeC {\~a}o do MonetDB para base de dados de 1GB\relax }}{48}
 \contentsline {table}{\numberline {4.23}{\ignorespaces Valores de \textit {cache} do sistema operacional durante a execu\IeC {\c c}\IeC {\~a}o do PostgreSQL para base de dados de 1GB\relax }}{48}
-\contentsline {table}{\numberline {4.24}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o das consultas da 1\IeC {\textordfeminine }, 2\IeC {\textordfeminine } e 3\IeC {\textordfeminine } execu\IeC {\c c}\IeC {\~a}o para 10GB\relax }}{48}
+\contentsline {table}{\numberline {4.24}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o das consultas da 1\IeC {\textordfeminine }, 2\IeC {\textordfeminine } e 3\IeC {\textordfeminine } execu\IeC {\c c}\IeC {\~a}o para 10GB\relax }}{49}
 \contentsline {table}{\numberline {4.25}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o da primeira consulta para 10GB\relax }}{49}
 \contentsline {table}{\numberline {4.26}{\ignorespaces Valores de \textit {cache} do sistema operacional durante a execu\IeC {\c c}\IeC {\~a}o do MonetDB para base de dados de 10GB\relax }}{49}
-\contentsline {table}{\numberline {4.27}{\ignorespaces Valores de \textit {cache} do sistema operacional durante a execu\IeC {\c c}\IeC {\~a}o do PostgreSQL para base de dados de 10GB\relax }}{49}
-\contentsline {table}{\numberline {4.28}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o das consultas da 1\IeC {\textordfeminine }, 2\IeC {\textordfeminine } e 3\IeC {\textordfeminine } execu\IeC {\c c}\IeC {\~a}o para 30GB\relax }}{49}
-\contentsline {table}{\numberline {4.29}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o da primeira consulta para 30GB\relax }}{49}
+\contentsline {table}{\numberline {4.27}{\ignorespaces Valores de \textit {cache} do sistema operacional durante a execu\IeC {\c c}\IeC {\~a}o do PostgreSQL para base de dados de 10GB\relax }}{50}
+\contentsline {table}{\numberline {4.28}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o das consultas da 1\IeC {\textordfeminine }, 2\IeC {\textordfeminine } e 3\IeC {\textordfeminine } execu\IeC {\c c}\IeC {\~a}o para 30GB\relax }}{50}
+\contentsline {table}{\numberline {4.29}{\ignorespaces Tempo total de execu\IeC {\c c}\IeC {\~a}o da primeira consulta para 30GB\relax }}{50}
 \contentsline {table}{\numberline {4.30}{\ignorespaces Valores de \textit {cache} do sistema operacional durante a execu\IeC {\c c}\IeC {\~a}o do MonetDB para base de dados de 30GB\relax }}{50}
 \contentsline {table}{\numberline {4.31}{\ignorespaces Valores de \textit {cache} do sistema operacional durante a execu\IeC {\c c}\IeC {\~a}o do PostgreSQL para base de dados de 30GB\relax }}{50}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Porcentagem de ganho de tempo de carregamento do MonetDB em rela\IeC {\c c}\IeC {\~a}o ao PostgreSQL\relax }}{55}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Porcentagem de ganho de tempo de carregamento do MonetDB em rela\IeC {\c c}\IeC {\~a}o ao PostgreSQL\relax }}{56}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

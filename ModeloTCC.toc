@@ -32,11 +32,11 @@
 \contentsline {section}{\numberline {4.4}Execu\IeC {\c c}\IeC {\~a}o com \textit {Drop Cache}}{47}
 \contentsline {subsection}{\numberline {4.4.1}Base de Dados de 1GB}{47}
 \contentsline {subsection}{\numberline {4.4.2}Base de Dados de 10GB}{48}
-\contentsline {subsection}{\numberline {4.4.3}Base de Dados de 30GB}{48}
-\contentsline {subsection}{\numberline {4.4.4}Desempenho Geral}{50}
-\contentsline {chapter}{\numberline {5}Conclus\IeC {\~o}es}{54}
-\contentsline {chapter}{\numberline {A}Consultas do Ambiente Original Normalizado}{58}
-\contentsline {chapter}{\numberline {B}Consultas do Ambiente Denormalizado}{78}
-\contentsline {chapter}{\numberline {C}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Snowflake}}{95}
-\contentsline {chapter}{\numberline {D}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Star}}{98}
-\contentsline {chapter}{Refer\IeC {\^e}ncias Bibliogr\IeC {\'a}ficas}{100}
+\contentsline {subsection}{\numberline {4.4.3}Base de Dados de 30GB}{49}
+\contentsline {subsection}{\numberline {4.4.4}Desempenho Geral}{51}
+\contentsline {chapter}{\numberline {5}Conclus\IeC {\~o}es}{55}
+\contentsline {chapter}{\numberline {A}Consultas do Ambiente Original Normalizado}{59}
+\contentsline {chapter}{\numberline {B}Consultas do Ambiente Denormalizado}{79}
+\contentsline {chapter}{\numberline {C}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Snowflake}}{96}
+\contentsline {chapter}{\numberline {D}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Star}}{99}
+\contentsline {chapter}{Refer\IeC {\^e}ncias Bibliogr\IeC {\'a}ficas}{101}

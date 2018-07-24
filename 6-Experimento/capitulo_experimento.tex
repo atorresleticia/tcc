@@ -19,10 +19,7 @@ migração dos dados armazenados entre um banco e outro.
 O gerenciamento dos SGBD foi realizado por meio do \textit{driver} JDBC 
 disponibilizado nas páginas oficiais do PostgreSQL e do MonetDB. Seu uso se deu 
 devido à simplificação no desenvolvimento de aplicações, por dar suporte a 
-diferentes SGBD e possuir boa documentação e tutoriais. Na análise de tempo 
-foi considerada a latência da Máquina Virtual Java (JVM), assim o tempo total 
-das consultas corresponde ao tempo de execução pelo SGBD adicionado 
-do tempo de resposta da JVM. As versões dos SGBD utilizadas 
+diferentes SGBD e possuir boa documentação e tutoriais. Na análise dos tempos totais de execução foram incluídos o tempo gasto por todas as camadas que compõe a aplicação, como a Máquina Virtual Java (JVM), \textit{driver} JDBC e SGBD. As versões dos SGBD utilizadas 
 foram o PostgreSQL 9.6 e o MonetDB 11.29.3 e foram instalados no servidor do laboratório GIA (Grupo de Pesquisa em Inteligência Aplicada), operando sob o 
 sistema operacional Ubuntu Linux 16.04 LTS, com 16GB de RAM e dois 
 processadores Intel Xeon CPU E5620 2.40GHz.
@@ -666,9 +663,9 @@ Para a base de 30GB além de manter-se o comportamento das anteriores, percebe-s
                 \end{table}
 \subsection{Desempenho Geral}
 
-Ao contrário do cenário sob \textit{cold run}, utilizar o terceiro conjunto de consultas trouxe estabilidade nos valores das consultas do teste de força no MonetDB. Isso fez com que a inflexão que antes acontecia não acontecesse mais, podendo agora encontrar uma lógica na análise dos ambientes considerando o SGBD. As Figuras \ref{fig:power_snow_hot} e \ref{fig:power_star_hot} apresentam os gráficos do teste de força, agora apresentando queda nos valores conforme a base de dados aumenta.
+Ao contrário do cenário sob \textit{cold run}, utilizar o terceiro conjunto de consultas trouxe estabilidade nos valores das consultas do teste de força no MonetDB. Isso fez com que a inflexão que antes acontecia não acontecesse mais, podendo agora encontrar uma lógica na análise dos ambientes considerando o SGBD e perceber uma influencia mais forte do teste de força no cálculo de desempenho, apresentando todos os ganhos superiores ao teste de vazão. As Figuras \ref{fig:power_snow_hot} e \ref{fig:power_star_hot} apresentam os gráficos do teste de força, agora apresentando queda nos valores conforme a base de dados aumenta.
 
-\begin{figure*}[t]
+\begin{figure*}[htpb]
         \centering
         \subfigure[]{\includegraphics[width=7.2cm]{power_snow_hot}\label{fig:power_snow_hot}}
         \subfigure[]{\includegraphics[width=7.2cm]{power_star_hot}\label{fig:power_star_hot}}
@@ -709,7 +706,7 @@ Pelo gráfico das Figuras \ref{fig:qph_snow_hot} e \ref{fig:qph_star_hot} perceb
 
 Os valores do SGBD PostgreSQL não tiveram mudanças drásticas se comparadas as execuções \textit{cold} e \textit{hot} das bases de dados de 10GB e 30GB -- inclusive nesta sob a modelagem normalizada o desempenho em \textit{cold run} foi melhor que em \textit{hot run}. A Tabela \ref{tab:ganho_postgresql_cold_hot} mostra a porcentagem de ganho e perdas entre os valores obtidos na terceira execução em relação à primeira execução para o PostgreSQL. Entretanto, os valores do MonetDB se alteraram de forma que houve impacto no resultado final tanto do teste de força como no cálculo final de \textit{benchmark}, como mostram os ganhos da \textit{hot run} em relação à \textit{cold run} na Tabela \ref{tab:ganho_monet_cold_hot}.
 
-\begin{table}[htpb]
+\begin{table}[htp]
         \centering
         \caption{Porcentagem de ganho e perda de desempenho do PostgreSQL da \textit{hot run} em relação à \textit{cold run}}
         \label{tab:ganho_postgresql_cold_hot}
@@ -722,7 +719,7 @@ Os valores do SGBD PostgreSQL não tiveram mudanças drásticas se comparadas as
         \end{tabular}
 \end{table}
 
-\begin{table}[htpb]
+\begin{table}[h]
         \centering
         \caption{Porcentagem de ganho de desempenho do MonetDB da \textit{hot run} em relação à \textit{cold run}}
         \label{tab:ganho_monet_cold_hot}
@@ -737,7 +734,9 @@ Os valores do SGBD PostgreSQL não tiveram mudanças drásticas se comparadas as
 
 De acordo com a página oficial do MonetDB \cite{monetdb2017c}, este SGBD se destaca quando dados acessados pelo usuário podem ser mantidos na memória principal do servidor ou quando algumas colunas são solicitadas e são suficientes para manipular uma solicitação, como é o caso do ambiente analítico. Isso explica o porquê das consultas da primeira execução apresentarem desempenho inferior às da terceira execução. Na segunda e na terceira execução alguns dados das consultas já estão em \textit{cache}, assim o SGBD consegue recuperá-los mais rapidamente.
 
-O PostgreSQL, por outro lado, utiliza como \textit{cache} a configuração dos \texttt{shared\_buffers}. Ele corresponde a um vetor de blocos com 8KB, onde o SGBD procura por páginas já alocadas antes de verificar os dados em disco. Para lidar com varreduras sequenciais, são utilizados buffers com valor padrão de 256KB (32 blocos de 8KB) \cite{psqlcache2018r}. Conforme a base de dados aumenta, o ideal é modificar esse valor para que seja possível armazenar mais dados em \textit{cache}, geralmente 25\% da memória total do sistema operacional, porém não mais que 8GB \cite{psql2018conf}. Como esse valor padrão de 256KB não foi alterado, isso explica a variação pequena entre os resultados das bases de dados maiores. O próprio \textit{driver} JDBC possui sua política de \textit{cache} através do \textit{Statement Caching}, sendo opção do desenvolvedor habilitá-la ou não \cite{jdbc2018cache}. Neste trabalho tal política não foi habilitada.
+O PostgreSQL, por outro lado, utiliza como \textit{cache} a configuração dos \texttt{shared\_buffers}. Ele corresponde a um vetor de blocos com 8KB, onde o SGBD procura por páginas já alocadas antes de verificar os dados em disco. Para lidar com varreduras sequenciais, são utilizados buffers com valor padrão de 256KB (32 blocos de 8KB) \cite{psqlcache2018r}. Conforme a base de dados aumenta, o ideal é modificar esse valor para que seja possível armazenar mais dados em \textit{cache}, geralmente 25\% da memória total do sistema operacional, porém não mais que 8GB \cite{psql2018conf}. Como esse valor padrão de 256KB não foi alterado, isso explica a variação pequena entre os resultados das bases de dados maiores. 
+
+O próprio \textit{driver} JDBC possui sua política de \textit{cache} através do \textit{Statement Caching}, sendo opção do desenvolvedor habilitá-la ou não. Essa prática armazena em \textit{cache} \textit{statements}\footnote{Aqui \textit{statement} corresponde à interface utilizada pelo \textit{driver} JDBC para acessar o banco de dados, não cabendo uma tradução exata ao termo} executáveis que são utilizados repetidamente, como em um laço de repetição ou em um método frequentemente chamado, e pode ser habilitada sob duas formas: o \textit{Statement Caching} implícito, mais simples, e o explícito, mais complexo e com desempenho superior à \textit{cache} implícita por tratar também dos dados e do estado de um \textit{statement} \cite{jdbc2018cache}. Neste trabalho tal política não foi habilitada.
 
 % Statement Cache
 
