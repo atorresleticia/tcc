@@ -39,4 +39,4 @@
 \contentsline {chapter}{\numberline {B}Consultas do Ambiente Denormalizado}{79}
 \contentsline {chapter}{\numberline {C}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Snowflake}}{96}
 \contentsline {chapter}{\numberline {D}DDL para Cria\IeC {\c c}\IeC {\~a}o do Ambiente \textit {Star}}{99}
-\contentsline {chapter}{Refer\IeC {\^e}ncias Bibliogr\IeC {\'a}ficas}{101}
+\contentsline {chapter}{Refer\IeC {\^e}ncias}{101}

@@ -34,7 +34,7 @@ De maneira geral, a pesquisa corroborou a teoria de que SGBDR atuam melhor sob o
 Como continuidade para a pesquisa sugere-se:
 
 \begin{itemize}
-    \item Realizar um estudo mais aprofundado sobre escalabilidade horizontal em bancos NoSQL, e se possível aplicar o \textit{benchmark} considerando um cenário utilizando um único servidor para processamento de consultas e outro com vários servidores, a fim de simular problemas que teoricamente são solucionados pelo particionamento horizontal, como queda, ou falha, e distribuição de dados.
+    \item Realizar um estudo mais aprofundado sobre escalabilidade horizontal, e se possível aplicar o \textit{benchmark} considerando um cenário utilizando um único servidor para processamento de consultas e outro com vários servidores, a fim de simular problemas que teoricamente são solucionados pelo particionamento horizontal, como queda, ou falha, e distribuição de dados.
 
     \item Utilizar bases de dados maiores, a partir de 100GB, para que se possa comparar os resultados com os contidos na página oficial do TPC-H e avaliar o comportamento dos valores de desempenho das modelagens, se tais valores podem se equiparar a partir de um certo tamanho de base de dados.
 
@@ -42,6 +42,6 @@ Como continuidade para a pesquisa sugere-se:
 
     \item Aplicar os resultados encontrados nesta pesquisa em empresas que ainda utilizem bancos relacionais ou, mesmo que usem outras alternativas, que ainda tenham uma modelagem normalizada, realizando a migração tanto do SGBD quanto da modelagem para um modelo colunar denormalizado.
 
-    \item Comparar diferentes modelos colunares que, de preferência, trabalhem sob diferentes algoritmos de compressão, como o Cassandra \cite{cassandra2018nosql} e o C-Store \cite{cstore2018nosql}. Pode-se também incluir diferentes classes de NoSQL a fim de verificar se alguma consegue desempenho melhor que a classe colunar em ambiente analítico, como o MongoDB \cite{mongo2018nosql}.
+    \item Comparar diferentes modelos colunares que, de preferência, trabalhem sob diferentes algoritmos de compressão, como o Cassandra \cite{cassandra2018nosql} e o C-Store \cite{cstore2018nosql}. Pode-se também incluir diferentes classes de SGBD da abordagem NoSQL a fim de verificar se alguma consegue desempenho melhor que a classe colunar em ambiente analítico, como o MongoDB \cite{mongo2018nosql}.
 
 \end{itemize}

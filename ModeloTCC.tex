@@ -128,6 +128,7 @@
 
 \makeglossary
 
+% \DeclareUnicodeCharacter{FFFD}{�}
 %============================================================
 \begin{document}
 
@@ -208,7 +209,8 @@
 %\bibliographystyle{abntex2-alf} % Estilo (AUTOR, data)
 
 \pagebreak
-\addcontentsline{toc}{chapter}{Referências Bibliográficas}
+\renewcommand{\bibname}{Referências}
+\addcontentsline{toc}{chapter}{Referências}
 
 \bibliography{Referencias}
 \end{document}

@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: ModeloTCC.aux
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: ModeloTCC.aux
 A level-1 auxiliary file: iniciais/capa.aux
 A level-1 auxiliary file: iniciais/rosto2.aux
 A level-1 auxiliary file: iniciais/dedica.aux
@@ -15,9 +17,66 @@ A level-1 auxiliary file: apend/apendice3.aux
 A level-1 auxiliary file: apend/apendice4.aux
 A level-1 auxiliary file: apend/apendice5.aux
 The style file: abnt-num.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: Referencias.bib
+Warning--entry type for "soares2012avaliaccao" isn't style-file defined
+--line 486 of file Referencias.bib
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 +---------------------------------------------------------+
 | Estilo bibliogr�fico abnt-num.bst vers�o 1.42.2.1           |
 | Em caso de d�vidas ou problemas com este estilo procure |
 | http://abntex.codigolivre.org.br                        |
 +---------------------------------------------------------+
+You've used 55 entries,
+            6480 wiz_defined-function locations,
+            1432 strings with 17404 characters,
+and the built_in function-call counts, 45594 in all, are:
+= -- 4890
+> -- 967
+< -- 62
++ -- 713
+- -- 288
+* -- 2865
+:= -- 5611
+add.period$ -- 221
+call.type$ -- 55
+change.case$ -- 526
+chr.to.int$ -- 98
+cite$ -- 55
+duplicate$ -- 1961
+empty$ -- 3420
+format.name$ -- 1499
+if$ -- 11614
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 932
+newline$ -- 292
+num.names$ -- 140
+pop$ -- 1330
+preamble$ -- 1
+purify$ -- 206
+quote$ -- 0
+skip$ -- 3621
+stack$ -- 1
+substring$ -- 2091
+swap$ -- 891
+text.length$ -- 47
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 148
+warning$ -- 0
+while$ -- 295
+width$ -- 0
+write$ -- 752
+(There was 1 warning)
